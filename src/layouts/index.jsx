@@ -2,7 +2,7 @@ import { Head } from 'minista/head'
 import '@styles/global.css'
 import interRegular from '@assets/fonts/inter-latin-400.woff2'
 import kumbhSansMedium from '@assets/fonts/kumbh-sans-latin-500.woff2'
-import { CtaRevolution, Footer, Header } from '@sections'
+import { CtaRevolution, Footer, Header, VideoModal } from '@sections'
 import { getPageTitle } from '@utils'
 
 export default function Layout({ url, title, description, robots, children }) {
@@ -39,6 +39,7 @@ export default function Layout({ url, title, description, robots, children }) {
         </main>
         <CtaRevolution />
         <Footer />
+        <VideoModal />
       </body>
     </html>
   )

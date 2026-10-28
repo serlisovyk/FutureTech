@@ -131,7 +131,7 @@
     position: absolute;
     inset: 0;
     display: block;
-    background-color: color-mix(in srgb, var(--dark-08) 70%, transparent);
+    background-color: var(--color-backdrop);
   }
 }
 
