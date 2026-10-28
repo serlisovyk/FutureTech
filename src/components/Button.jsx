@@ -5,9 +5,9 @@ import './Button.css'
 export function Button({
   variant = 'primary',
   icon,
-  isSmall = false,
   href,
   type = 'button',
+  isSmall = false,
   className,
   children,
   ...props

@@ -6,12 +6,10 @@ import { footer } from '@data/footer.js'
 import { socials } from '@data/socials.js'
 import './Footer.css'
 
-const buildYear = new Date().getFullYear()
-
 function TextLink({ label, href, isNew = false }) {
   return (
     <a className="footer__link" href={href}>
-      {label} {isNew && <Badge>New</Badge>}
+      {label} {isNew && <Badge>{footer.newLabel}</Badge>}
     </a>
   )
 }
@@ -33,7 +31,7 @@ function FooterColumn({ title, links, isButtons = false }) {
       <ul className={clsx('footer__list', isButtons && 'footer__list--buttons')}>
         {links.map((link) => (
           <li key={link.label}>
-            <LinkItem {...link} />
+            <LinkItem label={link.label} href={link.href} isNew={link.isNew} />
           </li>
         ))}
       </ul>
@@ -42,12 +40,19 @@ function FooterColumn({ title, links, isButtons = false }) {
 }
 
 export function Footer() {
+  const buildYear = new Date().getFullYear()
+
   return (
     <footer className="footer">
       <div className="container">
         <nav className="footer__nav" aria-label="Footer">
           {footer.columns.map((column) => (
-            <FooterColumn key={column.title} {...column} />
+            <FooterColumn
+              key={column.title}
+              title={column.title}
+              links={column.links}
+              isButtons={column.isButtons}
+            />
           ))}
         </nav>
         <div className="footer__bar">

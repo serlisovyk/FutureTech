@@ -1,4 +1,5 @@
 export const footer = {
+  newLabel: 'New',
   columns: [
     {
       title: 'Home',
