@@ -186,8 +186,12 @@ export function UiKit() {
           <Heading level={2} size="h3">
             AvatarGroup
           </Heading>
+          <p className="ui-kit__caption">In a rounded box, then in a capsule</p>
           <div className="ui-kit__panel">
             <AvatarGroup avatars={avatars} />
+          </div>
+          <div className="ui-kit__row">
+            <AvatarGroup avatars={avatars} isCapsule />
           </div>
         </div>
       </section>

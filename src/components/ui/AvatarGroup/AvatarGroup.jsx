@@ -1,9 +1,10 @@
+import { clsx } from 'clsx'
 import { Photo } from '@components/media/Photo'
 import './AvatarGroup.css'
 
-export function AvatarGroup({ avatars }) {
+export function AvatarGroup({ avatars, isCapsule = false }) {
   return (
-    <div className="avatar-group">
+    <div className={clsx('avatar-group', isCapsule && 'avatar-group--capsule')}>
       {avatars.map((src) => (
         <Photo
           key={src}

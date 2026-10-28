@@ -17,3 +17,23 @@
   background-color: var(--dark-15);
   object-fit: cover;
 }
+
+.avatar-group--capsule {
+  padding: calc(7px + (9 - 7) * var(--ramp-1440-1920));
+  border: var(--border);
+  border-radius: var(--radius-pill);
+  background-color: var(--dark-10);
+
+  & picture + picture {
+    margin-inline-start: -14px;
+  }
+
+  & .avatar-group__photo {
+    width: calc(
+      40px + (50 - 40) * var(--ramp-390-1440) + (60 - 50) * var(--ramp-1440-1920)
+    );
+    height: calc(
+      40px + (50 - 40) * var(--ramp-390-1440) + (60 - 50) * var(--ramp-1440-1920)
+    );
+  }
+}

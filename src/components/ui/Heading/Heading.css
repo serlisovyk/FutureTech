@@ -11,6 +11,13 @@
   );
 }
 
+.heading--hero {
+  font-size: calc(
+    30px + (55 - 30) * var(--ramp-390-1440) + (70 - 55) * var(--ramp-1440-1920)
+  );
+  line-height: 1.2;
+}
+
 .heading--h2 {
   font-size: calc(
     28px + (44 - 28) * var(--ramp-390-1440) + (58 - 44) * var(--ramp-1440-1920)
