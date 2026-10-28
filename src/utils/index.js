@@ -1,3 +1,6 @@
+export { formatCount } from './format-count.js'
 export { getAriaCurrent } from './get-aria-current.js'
+export { getCategoryName } from './get-category-name.js'
 export { getCurrentYear } from './get-current-year.js'
 export { getPageTitle } from './get-page-title.js'
+export { getPostUrl } from './get-post-url.js'
