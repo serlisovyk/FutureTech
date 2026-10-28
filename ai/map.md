@@ -21,7 +21,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `src/assets/` — `fonts/`, `images/` (photos, icons, decor), referenced by the build and emitted hashed.
 - `AGENTS.md` — the entry point for agents; `CLAUDE.md` points to it.
 - `ai/` — agent docs: this map, `workflow.md`, `rules/`, `skills/`, `decisions/`, `prompts/`,
-  `linear-task-template.md`, the archive `superpowers/`, and `design-system.md` (MY-246).
+  `linear-task-template.md`, the archive `superpowers/`, `design-system.md`.
 - `.claude/worktrees/` — one git worktree per task when tasks run in parallel; ignored by git.
 
 ## Where is the recipe
