@@ -58,6 +58,7 @@ each with the record that replaced it.
 - [CI on every push, and a size budget with limits by fact](2026-10-28-ci-size-limit.md)
 - [`/ui` ships, noindex and unlinked; the CSS limit is raised and an images limit added](2026-10-28-ui-page-and-size-limits.md)
 - [The CSS limit is raised to 2.7 kB for the footer](2026-10-28-footer-css-limit.md)
+- [The CSS limit goes from 2.5 kB to 3 kB for the header](2026-10-28-css-limit-header.md)
 - [The design is a third-party template: a reference only, never published](2026-10-28-design-is-a-reference.md)
 
 ### Code
@@ -72,6 +73,7 @@ each with the record that replaced it.
 - [Fonts are self-hosted static woff2 files, latin subset](2026-10-28-self-hosted-fonts.md)
 - [The Vite config is split into `vite/`, one module per concern](2026-10-28-vite-config-split.md)
 - [Article bodies are JS sections in `data/`, no MDX](2026-10-28-article-data.md)
+- [The mobile menu is a drawer on `Toggle` and `inert`, with a `scripting: none` fallback](2026-10-28-mobile-menu-drawer.md)
 
 ### Superseded
 
