@@ -9,8 +9,9 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
   context, no refs, no event props (`onClick`), no `dangerouslySetInnerHTML`, no browser API.
 - What a user can do on the page is wired by a class in `scripts/` through `data-*` hooks
   (`ai/rules/oop.md`), never by JSX.
-- Computation that the markup needs (a reading time, a filtered list, a URL) is a pure helper
-  next to the data, called by the component; never logic spread across the JSX.
+- Computation that the markup needs (a reading time, a filtered list, a URL, the current year)
+  is a pure helper in `utils/`, one function per file, called by the component; never logic
+  spread across the JSX.
 
 ## Files and names
 
@@ -19,6 +20,8 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
   exports `NewsCard`); its root element carries the kebab-case BEM block (`.news-card`).
 - Named exports only; a page exports what minista requires of a page (check the docs:
   `ai/rules/minista.md`).
+- One file holds one component and nothing else: a sub-component goes to its own file
+  (`FooterColumn.jsx`), a helper to `utils/`, a text or an id to `data/`.
 - One root element per component, with the block's class. A component is used by sections
   only; a section does not render another section.
 - An import that crosses folders uses the folder alias (list in `ai/map.md`):

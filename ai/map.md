@@ -14,7 +14,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `.husky/pre-commit` and `.lintstagedrc.json` — the pre-commit hook that runs them on the staged files.
 - `.github/workflows/ci.yml` — the checks on every push. `.size-limit.json` — the budget of the built JS, CSS, fonts and images.
 - `jsconfig.json` — the editor's copy of the aliases `vite/parts/aliases.js` defines: `@components`, `@sections`,
-  `@layouts`, `@data`, `@styles`, `@scripts`, `@assets`, one per `src/` folder.
+  `@layouts`, `@data`, `@styles`, `@scripts`, `@assets`, `@utils`, one per `src/` folder.
 - `src/pages/` — one JSX file per page, its file name is its URL: Home (`/`), News, Podcasts, Resources, Contact, 404, and `/ui`, the UI kit demo (noindex, linked from nowhere).
   The article route (MY-276) will render one page per blog post from `data/`.
 - `src/layouts/` — the page shell shared by every page: `<html>`, the head (title, stylesheet, the script), `<main>`;
@@ -28,6 +28,8 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `src/data/` — the texts and lists the components render, as plain exported values, one file per entity: `posts` (each with
   its article `body` sections), `categories`, `videos`, `podcasts`, `resources`, `testimonials`, `features`, `stats`, `faq`,
   `navigation`, `footer`, `socials`, `contacts`.
+- `src/utils/` — pure build-time helpers, one function per file (`get-current-year.js`), imported by components
+  and sections.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
   `.container`, `.visually-hidden`), `fonts.css`; `global.css` imports them in that order, the layout imports it first.
   Components and sections import their own stylesheet; the build bundles all into one file.

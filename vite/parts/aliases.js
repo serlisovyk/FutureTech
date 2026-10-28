@@ -10,5 +10,6 @@ export function getAliases() {
     '@styles': resolve(SRC, 'styles'),
     '@scripts': resolve(SRC, 'scripts'),
     '@assets': resolve(SRC, 'assets'),
+    '@utils': resolve(SRC, 'utils'),
   }
 }

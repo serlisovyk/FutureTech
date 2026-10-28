@@ -1,46 +1,12 @@
-import { clsx } from 'clsx'
-import { Badge } from '@components/Badge.jsx'
-import { Button } from '@components/Button.jsx'
 import { Icon } from '@components/Icon.jsx'
 import { footer } from '@data/footer.js'
 import { socials } from '@data/socials.js'
+import { getCurrentYear } from '@utils/get-current-year.js'
+import { FooterColumn } from './FooterColumn.jsx'
 import './Footer.css'
 
-function TextLink({ label, href, isNew = false }) {
-  return (
-    <a className="footer__link" href={href}>
-      {label} {isNew && <Badge>{footer.newLabel}</Badge>}
-    </a>
-  )
-}
-
-function PillLink({ label, href }) {
-  return (
-    <Button variant="outline" href={href} icon="arrow-up-right" isSmall>
-      {label}
-    </Button>
-  )
-}
-
-function FooterColumn({ title, links, isButtons = false }) {
-  const LinkItem = isButtons ? PillLink : TextLink
-
-  return (
-    <div className={clsx('footer__column', isButtons && 'footer__column--buttons')}>
-      <h2 className="footer__title">{title}</h2>
-      <ul className={clsx('footer__list', isButtons && 'footer__list--buttons')}>
-        {links.map((link) => (
-          <li key={link.label}>
-            <LinkItem label={link.label} href={link.href} isNew={link.isNew} />
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-}
-
 export function Footer() {
-  const buildYear = new Date().getFullYear()
+  const currentYear = getCurrentYear()
 
   return (
     <footer className="footer">
@@ -77,7 +43,7 @@ export function Footer() {
             ))}
           </ul>
           <p className="footer__copyright">
-            © {buildYear} {footer.copyright}
+            © {currentYear} {footer.copyright}
           </p>
         </div>
       </div>
