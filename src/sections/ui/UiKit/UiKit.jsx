@@ -6,6 +6,7 @@ import {
   Heading,
   MetaGrid,
   NewsCard,
+  PostFeed,
   SectionHeading,
   Stat,
   Tag,
@@ -15,7 +16,9 @@ import { resourceShowcases } from '@data/resources.js'
 import { stats } from '@data/stats.js'
 import {
   articleMeta,
+  blogFeedDemo,
   episodeCardDemo,
+  newsFeedDemo,
   podcastMeta,
   sectionHeadingDemo,
   videoCardDemo,
@@ -26,6 +29,8 @@ import './UiKit.css'
 export function UiKit() {
   const { meta: ebookMeta, avatars } = resourceShowcases[0]
   const trendingPosts = getPostsByPlacement('trending')
+  const blogPosts = getPostsByPlacement(blogFeedDemo.placement)
+  const headlinePosts = getPostsByPlacement(newsFeedDemo.placement)
 
   return (
     <div className="ui-kit">
@@ -255,6 +260,34 @@ export function UiKit() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="ui-kit__group">
+        <div className="container ui-kit__body">
+          <Heading level={2} size="h3">
+            PostRow and PostFeed
+          </Heading>
+          <p className="ui-kit__caption">
+            The blog feed: the tabs filter the rows; Biotechnology and Renewable
+            Energy have no post
+          </p>
+        </div>
+        <PostFeed
+          id={blogFeedDemo.id}
+          categories={blogFeedDemo.categories}
+          posts={blogPosts}
+        />
+        <div className="container ui-kit__body">
+          <p className="ui-kit__caption">
+            The news feed, limited to the first two posts
+          </p>
+        </div>
+        <PostFeed
+          id={newsFeedDemo.id}
+          categories={newsFeedDemo.categories}
+          posts={headlinePosts}
+          limit={newsFeedDemo.limit}
+        />
       </section>
     </div>
   )

@@ -1,3 +1,4 @@
+import { blogCategories, newsCategories } from './categories.js'
 import { episodes } from './podcasts.js'
 import { videos } from './videos.js'
 
@@ -23,3 +24,16 @@ export const sectionHeadingDemo = {
 export const videoCardDemo = videos.slice(0, 2)
 
 export const episodeCardDemo = episodes.slice(0, 3)
+
+export const blogFeedDemo = {
+  id: 'ui-blog-feed',
+  categories: blogCategories,
+  placement: 'blogs',
+}
+
+export const newsFeedDemo = {
+  id: 'ui-news-feed',
+  categories: newsCategories,
+  placement: 'headlines',
+  limit: 2,
+}
