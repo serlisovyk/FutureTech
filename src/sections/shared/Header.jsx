@@ -2,13 +2,8 @@ import { Svg } from 'minista/assets'
 import { Button } from '@components/Button.jsx'
 import { Icon } from '@components/Icon.jsx'
 import { navigationAction, navigationLinks, newsletter } from '@data/navigation.js'
+import { getAriaCurrent } from '@utils/get-aria-current.js'
 import './Header.css'
-
-function getAriaCurrent(href, currentPath) {
-  if (href !== currentPath) return undefined
-
-  return 'page'
-}
 
 export function Header({ currentPath }) {
   return (
