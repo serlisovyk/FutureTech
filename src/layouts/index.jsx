@@ -1,6 +1,7 @@
 import '@styles/global.css'
 import interRegular from '@assets/fonts/inter-latin-400.woff2'
 import kumbhSansMedium from '@assets/fonts/kumbh-sans-latin-500.woff2'
+import { Footer } from '@sections/shared/Footer.jsx'
 
 export default function Layout({ title, children }) {
   return (
@@ -27,6 +28,7 @@ export default function Layout({ title, children }) {
         <main id="main" tabIndex={-1}>
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   )

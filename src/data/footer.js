@@ -54,5 +54,5 @@ export const footer = {
     },
   ],
   legal: [{ label: 'Terms & Conditions' }, { label: 'Privacy Policy' }],
-  copyright: '© 2024 FutureTech. All rights reserved.',
+  copyright: 'FutureTech. All rights reserved.',
 }
