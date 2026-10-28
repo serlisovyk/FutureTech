@@ -18,8 +18,8 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `src/pages/` — one JSX file per page, its file name is its URL: Home (`/`), News, Podcasts, Resources, Contact, 404, and `/ui`, the UI kit demo (noindex, linked from nowhere).
   The article route (MY-276) will render one page per blog post from `data/`.
 - `src/layouts/` — the page shell shared by every page: `<html>`, the head (title, stylesheet, the script), `<main>`;
-  the header, the CTA and the footer join it with their sections.
-- `src/sections/` — one JSX file per page section, by page (`home/`, `news/`, …, `ui/`; `shared/` when two pages use it: `Footer`, every page's).
+  the header, the CTA (`CtaRevolution`) and the footer join it from `sections/shared/`.
+- `src/sections/` — one JSX file per page section, by page (`home/`, `news/`, …, `ui/`; `shared/` when two pages use it).
 - `src/components/` — repeated elements as JSX (a button, a card, a tag), each with its stylesheet beside it
   (`Icon.jsx` + `Icon.css`); `Icon` renders a sprite icon, `Photo` an optimized photo, `Heading` a heading (`level`
   is the tag, `size` the look). Sections do the same.
@@ -27,7 +27,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `CounterPill`, `AvatarGroup`. `/ui` shows each in every variant.
 - `src/data/` — the texts and lists the components render, as plain exported values, one file per entity: `posts` (each with
   its article `body` sections), `categories`, `videos`, `podcasts`, `resources`, `testimonials`, `features`, `stats`, `faq`,
-  `navigation`, `footer`, `socials`, `contacts`.
+  `navigation`, `footer`, `socials`, `contacts`, `cta`.
 - `src/utils/` — pure build-time helpers, one function per file (`get-current-year.js`), imported by components
   and sections.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
