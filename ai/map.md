@@ -13,12 +13,11 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `src/layouts/` — the page shell shared by every page: `<html>`, the head (title, stylesheet, the script), `<main>`;
   the header, the CTA and the footer join it with their sections.
 - `src/sections/` — one JSX file per page section, by page (`home/`, `news/`, …; `shared/` when two pages use it).
-- `src/components/` — repeated elements as JSX (a button, a card, a tag): props in, markup out; `Icon` renders a
-  sprite icon, `Photo` an optimized photo.
+- `src/components/` — repeated elements as JSX (a button, a card, a tag), each with its stylesheet beside it
+  (`Icon.jsx` + `Icon.css`); `Icon` renders a sprite icon, `Photo` an optimized photo. Sections do the same.
 - `src/data/` — the texts and lists the components render, as plain exported values.
-- `src/styles/` — all CSS: tokens and base, the `@font-face` rules (`fonts.css`), shared UI elements, one
-  stylesheet per component and section; the layout and the components import theirs, and the build bundles them
-  into one file.
+- `src/styles/` — global CSS only: tokens and base, the `@font-face` rules (`fonts.css`); `global.css` imports them
+  and the layout imports it. Components and sections import their own stylesheet; the build bundles all into one file.
 - `src/scripts/` — all browser JavaScript: `main.js` (the one entry, loaded by the layout: a table of root hook →
   class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`),
   `constants.js` (shared key names). `controllers/` (sections) appears with the first section that needs one.

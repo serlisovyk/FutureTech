@@ -22,9 +22,10 @@ order of the work.
    `<section>` with the block class and a container inside; the heading through the shared
    heading component. Roles and ARIA go in the JSX; the root gets `data-<name>`, the children
    the hooks of the widget that drives them (`ai/rules/oop.md`).
-4. **Styles** — one stylesheet per new block: BEM, native nesting, colours and shared values
-   from the tokens, the block's own values in its stylesheet (`ai/rules/css.md`), loaded the
-   way `ai/map.md` describes. Compare the three design widths with the design.
+4. **Styles** — `<Name>.css` beside the JSX of each new block, imported by it
+   (`import './Name.css'`): BEM, native nesting, colours and shared values from the tokens, the
+   block's own values in its stylesheet (`ai/rules/css.md`). Compare the three design widths
+   with the design.
 5. **Behavior** — only when the section does something: a widget in `scripts/components/`, and a
    controller in `scripts/controllers/` only when the section needs more than one widget or its
    own logic. `constructor(root, options)` and `start()`; the page works without it.

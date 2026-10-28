@@ -9,15 +9,15 @@ lives; `ai/rules/jsx.md`, `css.md` and `oop.md` cover markup, styles and scripts
 Content flows one way: data → component → section → page, and each block's look and behavior
 sit beside it. Each folder has one job:
 
-| Layer         | Owns                                                              | Must not                               |
-| ------------- | ----------------------------------------------------------------- | -------------------------------------- |
-| `data/`       | the texts and lists the JSX renders, as plain exported values     | hold markup, classes or styles         |
-| `components/` | a repeated element as a JSX function: props in, one root out      | know which page or section uses it     |
-| `sections/`   | one page section; composes components with data                   | hold another section's markup          |
-| `layouts/`    | the page shell: head, header, `<main>`, the CTA, the footer       | hold a section of one page             |
-| `pages/`      | a page: its metadata and the list of sections it renders          | contain section markup                 |
-| `styles/`     | tokens, shared UI elements, one stylesheet per component, section | style another block's elements         |
-| `scripts/`    | browser behavior: a class per widget and per section, `main.js`   | build markup that a component can hold |
+| Layer         | Owns                                                               | Must not                                |
+| ------------- | ------------------------------------------------------------------ | --------------------------------------- |
+| `data/`       | the texts and lists the JSX renders, as plain exported values      | hold markup, classes or styles          |
+| `components/` | a repeated element as a JSX function and its stylesheet beside it  | know which page or section uses it      |
+| `sections/`   | one page section and its stylesheet; composes components with data | hold another section's markup           |
+| `layouts/`    | the page shell: head, header, `<main>`, the CTA, the footer        | hold a section of one page              |
+| `pages/`      | a page: its metadata and the list of sections it renders           | contain section markup                  |
+| `styles/`     | global CSS only: tokens, reset, base, fonts, utilities             | hold a component's or a section's rules |
+| `scripts/`    | browser behavior: a class per widget and per section, `main.js`    | build markup that a component can hold  |
 
 ## Build time and browser
 

@@ -10,8 +10,12 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
   or a state (`.button--outline`, `.news-card--featured`).
 - Elements do not nest in the name: `block__element`, never `block__element__sub`; a
   two-word element is hyphenated (`header__nav-link`).
-- One block, one stylesheet named like its component in kebab-case; a shared element
-  (`.button`, `.tag`, headings) is in the shared UI styles.
+- One block, one stylesheet beside its JSX with the same name (`Button.css` next to
+  `Button.jsx`, `Hero.css` next to `sections/home/Hero.jsx`), imported by that JSX file. A
+  shared element is a component with its own stylesheet (`.button`, `.tag`).
+- `styles/` holds only global CSS: tokens, reset, base (headings, `:focus-visible`, the
+  container), the `@font-face` rules, utilities — never a component's or a section's rules
+  (decision `styles-next-to-components`).
 - A state a script sets is a native attribute (`[aria-expanded='true']`, `[aria-selected]`,
   `[hidden]`, `[inert]`) or a BEM modifier; a hook for a script is a `data-*` attribute,
   never a class (`ai/rules/style.md`).

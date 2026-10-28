@@ -1,6 +1,6 @@
 import { Sprite } from 'minista/assets'
 import { clsx } from 'clsx'
-import '../styles/icon.css'
+import './Icon.css'
 
 export function Icon({ name, title, size = 24, className, ...props }) {
   const isDecorative = !title

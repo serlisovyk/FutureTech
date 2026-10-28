@@ -60,6 +60,7 @@ each with the record that replaced it.
 
 - [Browser JavaScript in OOP style: a class per widget and per section](2026-10-28-oop-javascript.md)
 - [Pages set their head through minista's metadata and `Head`; CSS and one script entry are loaded by the layout](2026-10-28-page-head-and-entries.md)
+- [Styles live next to their JSX; `styles/` holds only global CSS](2026-10-28-styles-next-to-components.md)
 - [Breakpoints and fluid values: two structural queries, ramps between the drawn widths](2026-10-28-fluid-ramps.md) — not implemented yet
 - [Photos ship as AVIF with a WebP fallback, through one component](2026-10-28-image-formats.md)
 - [Fonts are self-hosted static woff2 files, latin subset](2026-10-28-self-hosted-fonts.md)
