@@ -38,6 +38,9 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
   styles. A list item rendered by `map` has a stable `key` from its data.
 - A section's tag, title, text and optional "View All" link are the shared heading component,
   never a per-section title markup.
+- UI kit first, then your own markup: a button, tag, badge, stat, meta pair, counter pill or avatar group is
+  the kit's component (`ai/map.md`), never a copy of its markup or styles. A variant the kit lacks is added to
+  the kit and to `/ui`, not drawn in the section.
 
 ## Images and icons
 
