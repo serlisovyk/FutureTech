@@ -27,6 +27,7 @@ export const heroFeatures = [
 
 export const featuresSection = {
   id: 'features',
+  titleId: 'features-title',
   tag: 'Unlock the Power of',
   title: 'FutureTech Features',
 }

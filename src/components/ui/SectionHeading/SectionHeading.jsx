@@ -3,13 +3,13 @@ import { Heading } from '@components/ui/Heading'
 import { Tag } from '@components/ui/Tag'
 import './SectionHeading.css'
 
-export function SectionHeading({ tag, title, link }) {
+export function SectionHeading({ tag, title, titleId, link }) {
   return (
     <div className="section-heading">
       <div className="section-heading__inner container">
         <div className="section-heading__text">
           <Tag>{tag}</Tag>
-          <Heading level={2} size="h2">
+          <Heading id={titleId} level={2} size="h2">
             {title}
           </Heading>
         </div>

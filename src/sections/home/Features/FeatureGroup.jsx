@@ -22,8 +22,8 @@ export function FeatureGroup({ icon, title, text, cards, hasWideIcon = false }) 
         </div>
       </div>
       <ul className="feature-group__cards">
-        {cards.map(({ title, text }) => (
-          <FeatureCard key={title} title={title} text={text} />
+        {cards.map(({ title: cardTitle, text: cardText }) => (
+          <FeatureCard key={cardTitle} title={cardTitle} text={cardText} />
         ))}
       </ul>
     </div>

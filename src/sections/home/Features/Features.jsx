@@ -4,8 +4,16 @@ import { FeatureGroup } from './FeatureGroup.jsx'
 
 export function Features() {
   return (
-    <section className="features" id={featuresSection.id}>
-      <SectionHeading tag={featuresSection.tag} title={featuresSection.title} />
+    <section
+      className="features"
+      id={featuresSection.id}
+      aria-labelledby={featuresSection.titleId}
+    >
+      <SectionHeading
+        tag={featuresSection.tag}
+        title={featuresSection.title}
+        titleId={featuresSection.titleId}
+      />
       {featureGroups.map(({ id, icon, title, text, cards, hasWideIcon }) => (
         <FeatureGroup
           key={id}

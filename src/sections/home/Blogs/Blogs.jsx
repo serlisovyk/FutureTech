@@ -7,8 +7,13 @@ export function Blogs() {
   const blogPosts = getPostsByPlacement(blogs.placement)
 
   return (
-    <section className="blogs" id={blogs.id}>
-      <SectionHeading tag={blogs.tag} title={blogs.title} link={blogs.link} />
+    <section className="blogs" id={blogs.id} aria-labelledby={blogs.titleId}>
+      <SectionHeading
+        tag={blogs.tag}
+        title={blogs.title}
+        titleId={blogs.titleId}
+        link={blogs.link}
+      />
       <PostFeed
         id={blogs.feedId}
         categories={blogCategories}

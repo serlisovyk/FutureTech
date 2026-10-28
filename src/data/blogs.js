@@ -1,5 +1,6 @@
 export const blogs = {
   id: 'blogs',
+  titleId: 'blogs-title',
   feedId: 'blogs-feed',
   tag: 'Learn, Connect, and Innovate',
   title: "Explore FutureTech's In-Depth Blog Posts",
