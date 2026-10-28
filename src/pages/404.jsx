@@ -1,6 +1,6 @@
-import { Head } from "minista/head"
+import { Head } from "minista/head";
 
-export const metadata = { title: "Page not found | FutureTech" }
+export const metadata = { title: "Page not found | FutureTech" };
 
 export default function NotFoundPage() {
   return (
@@ -14,5 +14,5 @@ export default function NotFoundPage() {
       <h1>Page not found</h1>
       <p>This page does not exist.</p>
     </>
-  )
+  );
 }

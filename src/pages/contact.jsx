@@ -1,6 +1,6 @@
-import { Head } from "minista/head"
+import { Head } from "minista/head";
 
-export const metadata = { title: "Contact | FutureTech" }
+export const metadata = { title: "Contact | FutureTech" };
 
 export default function ContactPage() {
   return (
@@ -14,5 +14,5 @@ export default function ContactPage() {
       <h1>Contact</h1>
       <p>Contact page placeholder.</p>
     </>
-  )
+  );
 }
