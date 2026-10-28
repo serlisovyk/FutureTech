@@ -24,11 +24,19 @@ Why it was chosen: decision `minista-jsx-static-html`. Where its config lives: `
 
 ## Plugins
 
-- In use: `pluginSsg` (JSX and MDX → HTML, with the CSS, scripts and images they reference).
-  The build task adds the image, SVG and sprite plugins (MY-249); this list then names them.
+- In use: `pluginSsg` (JSX and MDX → HTML, with the CSS, scripts and images they reference);
+  `pluginImage` (`Picture`, used through `Photo`); `pluginSprite` (`Sprite`, used through `Icon`);
+  `pluginSvg` (`Svg`, inline SVG).
 - Not used: `pluginIsland` (React in the browser, decision `minista-jsx-static-html`),
-  `pluginSearch`, `pluginArchive`. Adding any plugin is a decision for the author.
+  `pluginSearch`, `pluginArchive`; `pluginBeautify` indents the output, the opposite of minifying.
+  Adding any plugin is a decision for the author.
 - Plugin options live in the Vite config, one concern per module, never inline in a page.
+  The defaults `loading` and `decoding` of `pluginImage` do not reach `Picture` in the render build:
+  `Photo` sets them.
+- minista has no HTML minifier and needs none: React writes the pages without whitespace between tags.
+- A plugin of ours that edits the built pages (`vite/`) declares `enforce: 'post'` and
+  `generateBundle: { order: 'post', handler }`: minista rewrites the pages (images, sprite, SVG) in its own
+  `order: 'post'` hook, and an earlier plugin sees them without the `srcset` and the sprite.
 
 ## CLI
 

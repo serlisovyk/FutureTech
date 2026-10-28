@@ -330,13 +330,14 @@ Section names are the design's sitemap. A page is the header, its sections, the 
 - **Feature icons:** two-tone, `Yellow/55` + `Dark/25`, 80 / 60 / 50 (rows) and 50 / 40 / 30 (Home strip). About
   13 pieces: Home Future Technology Blog, Research Insights Blogs, Ebooks, Whitepapers, strip Latest News, Expert
   Contributors, Global Readership; Podcasts AI Revolution, AI Conversations; Resources, 2 whitepapers; Contact,
-  form and FAQ. Inline SVG or sprite symbols that take the two colours from custom properties.
+  form and FAQ. Sprite symbols that take the two colours from custom properties. **Flag:** at 1920 Ebooks,
+  Whitepapers and Global Readership are drawn in other colours; the 1440 and 390 frames use the two palette ones.
 - **Interface icons** (Heroicons, 24 grid; the sprite): arrow-up-right (24 / 20 / 20, every outline button, the
-  banner, round buttons), heart, eye, send (counters, outline 1.5, 24 / 20 / 20; 34 on the article page),
-  star (filled, stars), play (disc 70 / 50 / 50), bars-3 (menu, 34), plus and minus (FAQ 24 / 20 / 20),
-  envelope, phone, map-pin (contact buttons), chevron-down (phone code); brand glyphs X, Medium, LinkedIn
-  (24 / 20 / 20, footer and Contact). **Flag:** the glyph of the second counter pill is square (about 16 of 24):
-  confirm it is the eye before cutting the sprite.
+  banner, round buttons), counters (outline 1.5, 24 / 20 / 20; 34 on the article page): heart (outline, filled),
+  comment (a speech bubble, the second pill of a card), eye (the second pill on the article page), send;
+  arrow-down, star (filled, stars), play (disc 70 / 50 / 50), menu (bars, 34), plus and minus (FAQ 24 / 20 / 20),
+  chevron-down (phone code); brand glyphs Twitter (the bird, not X), Medium, LinkedIn (24 / 20 / 20, footer and
+  Contact). The Contact page draws no envelope, phone or map-pin.
 - **Photos** (placeholders in the design; the site needs its own, through the image plugin). Sizes 1920 / 1440 / 390:
 
 | Photo                          | 1920     | 1440              | 390           |

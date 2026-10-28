@@ -8,8 +8,8 @@ build. Where the files are: `ai/map.md`. Why the site is static: decision
 
 - Kumbh Sans (headings) and Inter (text) are self-hosted `woff2` files in `src/assets/fonts/`
   with `font-display: swap`. No font CDN, no request to Google Fonts.
-- Only the weights the design uses are shipped, latin subset. The head preloads the font of the
-  first screen.
+- Only the weights the design uses are shipped, latin subset (decision `self-hosted-fonts`).
+  The layout preloads the body face (Inter 400) and the heading face (Kumbh Sans 500).
 - A new weight, style or face is a decision for the author, not a drive-by edit.
 
 ## Images
@@ -18,11 +18,13 @@ build. Where the files are: `ai/map.md`. Why the site is static: decision
   `alt=""` and `aria-hidden="true"`, an informative one says what it shows.
 - An image below the first screen has `loading="lazy"`; the first screen's own image does not,
   and a photo there carries `fetchpriority="high"`.
-- Photos go through minista's image plugin: modern formats and a `srcset` with `sizes` that
-  match the layout at the three widths. The source file is never shipped as it is exported.
-- Icons are SVG in one sprite, used through one icon component; an SVG that must be inline
-  (the logo, a decor) goes through minista's SVG plugin. An export from a design tool is cleaned
-  before it is committed (no editor metadata, no embedded raster, no needless paths).
+- Photos go through minista's image plugin (`Photo`): AVIF with a WebP fallback and a `srcset` with
+  `sizes` that match the layout at the three widths (formats and quality: decision `image-formats`).
+  The source file in `assets/images/` is never shipped as it is: keep it near the largest size drawn.
+- Icons are SVG in one sprite (`assets/icons/`), used through `Icon`; an SVG that must be inline
+  (the logo) goes through minista's SVG plugin (`assets/logos/`). A decor made of hundreds of vectors is a
+  raster. An export from a design tool is cleaned before it is committed (no editor metadata, no embedded
+  raster, no needless paths).
 - A video is never self-hosted or embedded on page load: a preview image and a play button,
   the player is created when the user asks for it.
 - Asset files are named in lowercase with hyphens, by what they show (`mars-landscape.jpg`),

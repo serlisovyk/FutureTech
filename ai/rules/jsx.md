@@ -26,7 +26,7 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
 
 - A repeated element takes its data as props, spread from a `data/` item or passed one by one.
 - A variation is a prop and a BEM modifier (`isFeatured` → `news-card--featured`); class names
-  are joined by one small helper, not by string concatenation in each file.
+  are joined with `clsx`, not by string concatenation or a ternary in each file.
 - Texts and lists that repeat or are rendered by a loop live **only** in `data/` and are
   imported by the section that renders them, never copied into JSX. A literal in a section is
   for text unique to that section.
@@ -34,6 +34,17 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
   styles. A list item rendered by `map` has a stable `key` from its data.
 - A section's tag, title, text and optional "View All" link are the shared heading component,
   never a per-section title markup.
+
+## Images and icons
+
+- A photo is `<Photo src="/src/assets/images/<name>.jpg" alt sizes />`, never a bare `<img>` for a raster:
+  `width` and `height` come from the file, `sizes` states the rendered width at the layouts. It is lazy;
+  the first screen's photo passes `loading="eager"` and `fetchPriority="high"`.
+- An icon is `<Icon name="arrow-up-right" />`, the file name in `assets/icons/`. It is decorative unless it
+  has a `title`. Its block's stylesheet sets the size and the colour (`color`; the symbols use `currentColor`);
+  a two-tone feature icon takes `--icon-accent` and `--icon-base`.
+- The logo is inline: `<Svg src="/src/assets/logos/logo.svg" title="FutureTech" />` from `minista/assets`; its
+  parts carry the classes `logo__mark` and `logo__text`.
 
 ## Semantics and ARIA
 
