@@ -53,7 +53,8 @@ The JSX carries the roles, `aria-controls`, `aria-labelledby` and the initial `a
   `data-tab-panel="key"`.
 - `Disclosure`: root `data-disclosure`, `data-disclosure-trigger`, `data-disclosure-region`, and an
   optional `data-disclosure-label` whose text the option `labels` swaps.
-- `Toggle`: root `data-toggle`, `data-toggle-button`, `data-toggle-target`.
+- `Toggle`: root `data-toggle`, `data-toggle-button`, `data-toggle-target`, and `data-toggle-dismiss` on every
+  element whose click closes the target (focus goes back to the button, as on `Escape`); `onToggle` reports the state.
 - Content that must show without JavaScript carries no `hidden` in the JSX: `start()` hides
   what the state says is closed.
 - A new widget or controller is one more row in the table of `main.js`.

@@ -6,6 +6,7 @@ export class Toggle {
   #button
   #target
   #isOpen
+  #handleToggle
 
   constructor(root, options = {}) {
     this.#root = root
@@ -13,6 +14,7 @@ export class Toggle {
     this.#button = root.querySelector('[data-toggle-button]')
     this.#target = root.querySelector('[data-toggle-target]')
     this.#isOpen = this.#button.getAttribute('aria-expanded') === 'true'
+    this.#handleToggle = () => {}
   }
 
   get isOpen() {
@@ -23,7 +25,12 @@ export class Toggle {
     this.#renderExpanded()
 
     this.#button.addEventListener('click', () => this.toggle())
+    this.#root.addEventListener('click', (event) => this.#handleClick(event))
     this.#root.addEventListener('keydown', (event) => this.#handleKeydown(event))
+  }
+
+  onToggle(handler) {
+    this.#handleToggle = handler
   }
 
   open() {
@@ -45,9 +52,20 @@ export class Toggle {
     this.open()
   }
 
+  #handleClick(event) {
+    const isDismiss = event.target.closest('[data-toggle-dismiss]')
+    if (!isDismiss || !this.#isOpen) return
+
+    this.#closeToButton()
+  }
+
   #handleKeydown(event) {
     if (event.key !== KEYS.escape || !this.#isOpen) return
 
+    this.#closeToButton()
+  }
+
+  #closeToButton() {
     this.close()
     this.#button.focus()
   }
@@ -57,6 +75,7 @@ export class Toggle {
     this.#target.hidden = !this.#isOpen
 
     this.#renderLabel()
+    this.#handleToggle(this.#isOpen)
   }
 
   #renderLabel() {

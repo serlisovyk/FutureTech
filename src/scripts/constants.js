@@ -5,3 +5,7 @@ export const KEYS = Object.freeze({
   arrowLeft: 'ArrowLeft',
   arrowRight: 'ArrowRight',
 })
+
+export const MEDIA = Object.freeze({
+  mobileMenu: '(width < 768px)',
+})
