@@ -25,8 +25,6 @@
   }
 
   & .meta-item__value {
-    font-size: calc(
-      16px + (18 - 16) * var(--ramp-390-1440) + (20 - 18) * var(--ramp-1440-1920)
-    );
+    font-size: var(--font-size-subheading);
   }
 }

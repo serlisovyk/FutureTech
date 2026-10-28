@@ -26,7 +26,12 @@
   --font-size-lead: calc(
     14px + (16 - 14) * var(--ramp-390-1440) + (20 - 16) * var(--ramp-1440-1920)
   );
+  --font-size-subheading: calc(
+    16px + (18 - 16) * var(--ramp-390-1440) + (20 - 18) * var(--ramp-1440-1920)
+  );
   --font-size-button: calc(14px + (18 - 14) * var(--ramp-1440-1920));
+
+  --size-icon: calc(20px + (24 - 20) * var(--ramp-1440-1920));
 
   --space-container: calc(
     16px + (80 - 16) * var(--ramp-390-1440) + (162 - 80) * var(--ramp-1440-1920)

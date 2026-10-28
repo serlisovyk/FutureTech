@@ -8,8 +8,8 @@
 }
 
 .button__icon {
-  width: calc(20px + (24 - 20) * var(--ramp-1440-1920));
-  height: calc(20px + (24 - 20) * var(--ramp-1440-1920));
+  width: var(--size-icon);
+  height: var(--size-icon);
 }
 
 .button--primary {
