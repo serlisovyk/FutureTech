@@ -5,9 +5,23 @@ import {
   pluginSsg,
   pluginSvg,
 } from 'minista'
+import { fileURLToPath } from 'node:url'
 import { pluginSourceType } from './vite/source-type.js'
 
+const src = (folder) => fileURLToPath(new URL(`./src/${folder}`, import.meta.url))
+
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@components': src('components'),
+      '@sections': src('sections'),
+      '@layouts': src('layouts'),
+      '@data': src('data'),
+      '@styles': src('styles'),
+      '@scripts': src('scripts'),
+      '@assets': src('assets'),
+    },
+  },
   plugins: [
     pluginSsg(),
     pluginImage({
