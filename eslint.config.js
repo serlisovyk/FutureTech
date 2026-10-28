@@ -9,20 +9,15 @@ export default [
   js.configs.recommended,
   {
     files: ['src/**/*.jsx'],
-    ...react.configs.flat.recommended,
-  },
-  {
-    files: ['src/**/*.jsx'],
-    ...react.configs.flat['jsx-runtime'],
-  },
-  {
-    files: ['src/**/*.jsx'],
-    ...jsxA11y.flatConfigs.recommended,
-  },
-  {
-    files: ['src/**/*.jsx'],
+    plugins: { react, 'jsx-a11y': jsxA11y },
+    languageOptions: react.configs.flat.recommended.languageOptions,
     settings: { react: { version: 'detect' } },
-    rules: { 'react/prop-types': 'off' },
+    rules: {
+      ...react.configs.flat.recommended.rules,
+      ...react.configs.flat['jsx-runtime'].rules,
+      ...jsxA11y.flatConfigs.recommended.rules,
+      'react/prop-types': 'off',
+    },
   },
   {
     files: ['src/scripts/**/*.js'],
