@@ -1,3 +1,5 @@
+import { site } from './site.js'
+
 export const footer = {
   newLabel: 'New',
   columns: [
@@ -55,5 +57,5 @@ export const footer = {
     },
   ],
   legal: [{ label: 'Terms & Conditions' }, { label: 'Privacy Policy' }],
-  copyright: 'FutureTech. All rights reserved.',
+  copyright: `${site.name}. All rights reserved.`,
 }

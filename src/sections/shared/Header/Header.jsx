@@ -1,6 +1,7 @@
 import { Svg } from 'minista/assets'
 import { Button, Icon } from '@components'
 import { navigationAction, navigationLinks, newsletter } from '@data/navigation.js'
+import { site } from '@data/site.js'
 import { getAriaCurrent } from '@utils'
 import './Header.css'
 
@@ -26,7 +27,7 @@ export function Header({ currentPath }) {
             <Svg
               className="header__logo-image"
               src="/src/assets/logos/logo.svg"
-              title="FutureTech"
+              title={site.name}
             />
           </a>
 

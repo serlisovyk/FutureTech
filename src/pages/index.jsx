@@ -1,17 +1,14 @@
-import { Head } from 'minista/head'
+import { site } from '@data/site.js'
 
-export const metadata = { title: 'FutureTech' }
+export const metadata = {
+  description:
+    'FutureTech is a blog about technology, the future of science and the people building it.',
+}
 
 export default function HomePage() {
   return (
     <>
-      <Head>
-        <meta
-          name="description"
-          content="FutureTech is a blog about technology, the future of science and the people building it."
-        />
-      </Head>
-      <h1>FutureTech</h1>
+      <h1>{site.name}</h1>
       <p>Home page placeholder.</p>
     </>
   )
