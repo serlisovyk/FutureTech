@@ -11,4 +11,5 @@
   background-clip: padding-box, border-box;
   color: var(--white);
   font-size: calc(12px + (16 - 12) * var(--ramp-1440-1920));
+  line-height: 1.5;
 }
