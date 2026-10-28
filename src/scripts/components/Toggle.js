@@ -1,4 +1,4 @@
-import { KEYS } from '../constants.js'
+import { KEYS } from '@scripts/constants.js'
 
 export class Toggle {
   #root
