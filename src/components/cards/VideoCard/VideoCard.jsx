@@ -44,6 +44,8 @@ export function VideoCard({
           variant="outline"
           icon="ui/arrow-up-right"
           className="video-card__button"
+          videoId={videoId}
+          videoTitle={title}
         >
           Listen Podcast
           <span className="visually-hidden">: {title}</span>

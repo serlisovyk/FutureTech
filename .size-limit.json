@@ -3,13 +3,13 @@
     "name": "JavaScript",
     "path": "dist/assets/*.js",
     "gzip": true,
-    "limit": "1.5 kB"
+    "limit": "2 kB"
   },
   {
     "name": "CSS",
     "path": "dist/assets/*.css",
     "gzip": true,
-    "limit": "4 kB"
+    "limit": "4.5 kB"
   },
   {
     "name": "Fonts",
@@ -23,6 +23,6 @@
     "path": "dist/assets/*.{avif,webp}",
     "gzip": false,
     "brotli": false,
-    "limit": "60 kB"
+    "limit": "850 kB"
   }
 ]

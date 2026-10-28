@@ -6,6 +6,8 @@ export function Button({
   icon,
   href,
   ariaCurrent,
+  videoId,
+  videoTitle,
   className,
   children,
   isToggleDismiss = false,
@@ -41,7 +43,13 @@ export function Button({
   }
 
   return (
-    <button className={classNames} type={type} data-toggle-dismiss={toggleDismiss}>
+    <button
+      className={classNames}
+      type={type}
+      data-toggle-dismiss={toggleDismiss}
+      data-video-id={videoId}
+      data-video-title={videoTitle}
+    >
       {content}
     </button>
   )
