@@ -41,3 +41,14 @@
     color: var(--yellow-55);
   }
 }
+
+.button--small {
+  padding-block: calc(7px + (9 - 7) * var(--ramp-1440-1920));
+  padding-inline: calc(13px + (15 - 13) * var(--ramp-1440-1920));
+  border-radius: var(--radius-control);
+
+  & .button__icon {
+    width: calc(18px + (20 - 18) * var(--ramp-1440-1920));
+    height: calc(18px + (20 - 18) * var(--ramp-1440-1920));
+  }
+}

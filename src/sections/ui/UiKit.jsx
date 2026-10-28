@@ -69,6 +69,20 @@ export function UiKit() {
               Download
             </Button>
           </div>
+          <p className="ui-kit__caption">Outline, small: a link and a button</p>
+          <div className="ui-kit__row">
+            <Button
+              variant="outline"
+              href="/resources"
+              icon="arrow-up-right"
+              isSmall
+            >
+              Whitepapers
+            </Button>
+            <Button variant="outline" icon="arrow-up-right" isSmall>
+              Whitepapers
+            </Button>
+          </div>
         </div>
       </section>
 

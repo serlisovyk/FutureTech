@@ -5,6 +5,7 @@ import './Button.css'
 export function Button({
   variant = 'primary',
   icon,
+  isSmall = false,
   href,
   type = 'button',
   className,
@@ -16,7 +17,12 @@ export function Button({
 
   return (
     <Element
-      className={clsx('button', `button--${variant}`, className)}
+      className={clsx(
+        'button',
+        `button--${variant}`,
+        isSmall && 'button--small',
+        className,
+      )}
       href={href}
       type={isLink ? undefined : type}
       {...props}
