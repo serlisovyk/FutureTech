@@ -36,7 +36,8 @@ and proportional to the project size.
 Models mostly know minista v3, which is outdated: v5 is a set of Vite plugins with a
 different API. Before writing config or using an API, check it against the official docs
 (<https://minista.dev>) and the guide that `minista agents` prints — never against memory.
-`ai/rules/minista.md` has the details.
+Run `npx --no-install minista agents` for the installed guide (`--json` for the metadata it
+generates). `ai/rules/minista.md` has the details.
 
 ## Decisions
 
