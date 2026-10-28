@@ -8,7 +8,7 @@ export const posts = [
     date: '2023-10-15',
     author: {
       name: 'John Techson',
-      avatar: '/src/assets/images/portraits/portrait-man-denim-shirt.png',
+      avatar: '/src/assets/images/portraits/portrait-man-yellow-tshirt.png',
     },
     image: '/src/assets/images/photos/light-waves-abstract.jpg',
     imageAlt: 'Streams of light bending through an abstract quantum landscape',
