@@ -1,0 +1,95 @@
+import { Svg } from 'minista/assets'
+import { Button } from '@components/Button.jsx'
+import { Icon } from '@components/Icon.jsx'
+import { navigationAction, navigationLinks } from '@data/navigation.js'
+import './Header.css'
+
+function getAriaCurrent(href, currentPath) {
+  if (href !== currentPath) return undefined
+
+  return 'page'
+}
+
+export function Header({ currentPath }) {
+  return (
+    <header className="header" data-header>
+      <Button className="header__skip" href="#main">
+        Skip to content
+      </Button>
+
+      <a className="header__banner" href={navigationAction.href}>
+        <span>
+          Subscribe to our Newsletter For{' '}
+          <span className="header__banner-extra">New &amp; latest </span>Blogs and
+          Resources
+        </span>
+        <Icon name="arrow-up-right" className="header__banner-icon" />
+      </a>
+
+      <div className="header__bar">
+        <div className="container header__inner">
+          <a className="header__logo" href="/">
+            <Svg
+              className="header__logo-image"
+              src="/src/assets/logos/logo.svg"
+              title="FutureTech"
+            />
+          </a>
+
+          <button
+            className="header__burger"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="header-menu"
+            data-toggle-button
+          >
+            <Icon name="menu" size={34} />
+          </button>
+
+          <div className="header__menu" id="header-menu" data-toggle-target hidden>
+            <div className="header__backdrop" data-toggle-dismiss></div>
+
+            <div className="header__drawer">
+              <button
+                className="header__close"
+                type="button"
+                aria-label="Close menu"
+                data-toggle-dismiss
+                data-header-close
+              >
+                <Icon name="close" size={34} />
+              </button>
+
+              <nav className="header__nav" aria-label="Main">
+                <ul className="header__list">
+                  {navigationLinks.map(({ label, href }) => (
+                    <li key={href}>
+                      <a
+                        className="header__link"
+                        href={href}
+                        aria-current={getAriaCurrent(href, currentPath)}
+                        data-toggle-dismiss
+                      >
+                        {label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+
+              <Button
+                className="header__action"
+                href={navigationAction.href}
+                aria-current={getAriaCurrent(navigationAction.href, currentPath)}
+                data-toggle-dismiss
+              >
+                {navigationAction.label}
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  )
+}

@@ -3,8 +3,9 @@ import interRegular from '@assets/fonts/inter-latin-400.woff2'
 import kumbhSansMedium from '@assets/fonts/kumbh-sans-latin-500.woff2'
 import { CtaRevolution } from '@sections/shared/CtaRevolution.jsx'
 import { Footer } from '@sections/shared/Footer.jsx'
+import { Header } from '@sections/shared/Header.jsx'
 
-export default function Layout({ title, children }) {
+export default function Layout({ url, title, children }) {
   return (
     <html lang="en">
       <head>
@@ -26,6 +27,7 @@ export default function Layout({ title, children }) {
         <script type="module" src="/src/scripts/main.js"></script>
       </head>
       <body>
+        <Header currentPath={url} />
         <main id="main" tabIndex={-1}>
           {children}
         </main>
