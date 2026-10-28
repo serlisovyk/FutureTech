@@ -93,7 +93,7 @@ export const posts = [
     date: '2023-12-10',
     author: {
       name: 'Astronomer X',
-      avatar: '/src/assets/images/portraits/portrait-man-henley.png',
+      avatar: '/src/assets/images/portraits/portrait-man-white-shirt.jpg',
     },
     image: '/src/assets/images/photos/mars-landscape.jpg',
     imageAlt: 'A rust-red Martian landscape under a pale sky',
@@ -371,7 +371,7 @@ export const posts = [
     date: '2023-12-10',
     author: {
       name: 'Astronomer X',
-      avatar: '/src/assets/images/portraits/portrait-man-yellow-tshirt.png',
+      avatar: '/src/assets/images/portraits/portrait-man-white-shirt.jpg',
     },
     image: '/src/assets/images/photos/vr-business-interface.jpg',
     imageAlt: 'A futuristic business dashboard floating in front of a user',

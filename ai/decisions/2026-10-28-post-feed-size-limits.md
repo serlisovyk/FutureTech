@@ -11,7 +11,7 @@ entry counts every generated file (`cards-and-modal-size-limits`).
 ## Decision
 
 - CSS: 4.5 kB → 5 kB (measured 4.69 kB gzipped).
-- Images: 850 kB → 900 kB (measured 852.88 kB).
+- Images: 850 kB → 900 kB (measured 846.67 kB with the post feed avatars).
 - JavaScript (1.82 kB of 2 kB) and fonts do not change. Limits stay by fact, rounded up with small headroom
   (`ci-size-limit`).
 
