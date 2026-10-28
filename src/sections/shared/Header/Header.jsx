@@ -17,7 +17,7 @@ export function Header({ currentPath }) {
           <span className="header__banner-extra">{newsletter.extra} </span>
           {newsletter.tail}
         </span>
-        <Icon name="arrow-up-right" className="header__banner-icon" />
+        <Icon name="ui/arrow-up-right" className="header__banner-icon" />
       </a>
 
       <div className="header__bar">
@@ -38,7 +38,7 @@ export function Header({ currentPath }) {
             aria-controls="header-menu"
             data-toggle-button
           >
-            <Icon name="menu" size={34} />
+            <Icon name="ui/menu" size={34} />
           </button>
 
           <div className="header__menu" id="header-menu" data-toggle-target hidden>
@@ -52,7 +52,7 @@ export function Header({ currentPath }) {
                 data-toggle-dismiss
                 data-header-close
               >
-                <Icon name="close" size={34} />
+                <Icon name="ui/close" size={34} />
               </button>
 
               <nav className="header__nav" aria-label="Main">

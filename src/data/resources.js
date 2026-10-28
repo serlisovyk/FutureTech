@@ -1,14 +1,14 @@
 export const resourceShowcases = [
   {
     id: 'ebooks',
-    icon: 'feature-ebooks',
+    icon: 'feature/ebooks',
     title: 'Ebooks',
     lead: 'Explore our collection of ebooks covering a wide spectrum of future technology topics.',
     cta: 'Download Ebooks Now',
     overview: {
       title: 'Variety of Topics',
       text: 'Topics include AI in education (25%), renewable energy (20%), healthcare (15%), space exploration (25%), and biotechnology (15%).',
-      image: '/src/assets/images/vr-library-students.jpg',
+      image: '/src/assets/images/photos/vr-library-students.jpg',
     },
     meta: [
       { label: 'Total Ebooks', value: 'Over 100 ebooks' },
@@ -21,22 +21,22 @@ export const resourceShowcases = [
     },
     users: '10k + Users',
     avatars: [
-      '/src/assets/images/portrait-man-denim-shirt.png',
-      '/src/assets/images/portrait-man-yellow-tshirt.png',
-      '/src/assets/images/portrait-woman-striped-top.png',
-      '/src/assets/images/portrait-man-henley.png',
+      '/src/assets/images/portraits/portrait-man-denim-shirt.png',
+      '/src/assets/images/portraits/portrait-man-yellow-tshirt.png',
+      '/src/assets/images/portraits/portrait-woman-striped-top.png',
+      '/src/assets/images/portraits/portrait-man-henley.png',
     ],
   },
   {
     id: 'whitepapers',
-    icon: 'feature-whitepapers',
+    icon: 'feature/whitepapers',
     title: 'Whitepapers',
     lead: 'Dive into comprehensive reports and analyses with our collection of whitepapers.',
     cta: 'Download Whitepapers Now',
     overview: {
       title: 'Topics Coverage',
       text: 'Whitepapers cover quantum computing (20%), AI ethics (15%), space mining prospects (20%), AI in healthcare (15%), and renewable energy strategies (30%).',
-      image: '/src/assets/images/ai-hand-circuit-board.jpg',
+      image: '/src/assets/images/photos/ai-hand-circuit-board.jpg',
     },
     meta: [
       { label: 'Total Whitepapers', value: 'Over 50 whitepapers' },
@@ -49,10 +49,10 @@ export const resourceShowcases = [
     },
     users: '10k + Users',
     avatars: [
-      '/src/assets/images/portrait-woman-beanie-denim.png',
-      '/src/assets/images/portrait-man-black-blazer.png',
-      '/src/assets/images/portrait-man-beard-green-sweater.png',
-      '/src/assets/images/portrait-woman-white-tee.png',
+      '/src/assets/images/portraits/portrait-woman-beanie-denim.png',
+      '/src/assets/images/portraits/portrait-man-black-blazer.png',
+      '/src/assets/images/portraits/portrait-man-beard-green-sweater.png',
+      '/src/assets/images/portraits/portrait-woman-white-tee.png',
     ],
   },
 ]
@@ -64,11 +64,11 @@ export const resourceTabs = [
     items: [
       {
         id: 'quantum-computing-whitepaper',
-        icon: 'feature-quantum-whitepaper',
+        icon: 'feature/quantum-whitepaper',
         title: 'Quantum Computing Whitepaper',
         lead: 'Provides technical specifications and requirements for implementing quantum computing systems.',
         text: 'An in-depth whitepaper exploring the principles, applications, and potential impact of quantum computing.',
-        image: '/src/assets/images/purple-wave-particles.jpg',
+        image: '/src/assets/images/photos/purple-wave-particles.jpg',
         meta: [
           { label: 'Publication Date', value: 'July 2023' },
           { label: 'Category', value: 'Quantum Computing' },
@@ -77,11 +77,11 @@ export const resourceTabs = [
       },
       {
         id: 'space-exploration-whitepaper',
-        icon: 'feature-space-whitepaper',
+        icon: 'feature/space-whitepaper',
         title: 'Space Exploration Whitepaper',
         lead: 'Explores Mars colonization, asteroid resource potential, and space tourism.',
         text: 'An in-depth whitepaper covering the latest advancements in space exploration, including Mars missions and asteroid mining.',
-        image: '/src/assets/images/ai-blue-robot-hologram.jpg',
+        image: '/src/assets/images/photos/ai-blue-robot-hologram.jpg',
         meta: [
           { label: 'Publication Date', value: 'September 2023' },
           { label: 'Category', value: 'Space Exploration' },
@@ -96,11 +96,11 @@ export const resourceTabs = [
     items: [
       {
         id: 'ai-in-education-ebook',
-        icon: 'feature-ebooks',
+        icon: 'feature/ebooks',
         title: 'AI in Education Ebook',
         lead: 'Covers adaptive tutoring, automated grading, and learning analytics in the classroom.',
         text: 'An ebook that shows how artificial intelligence is reshaping teaching and learning, with case studies from schools and universities.',
-        image: '/src/assets/images/vr-library-students.jpg',
+        image: '/src/assets/images/photos/vr-library-students.jpg',
         meta: [
           { label: 'Publication Date', value: 'May 2023' },
           { label: 'Category', value: 'Artificial Intelligence' },
@@ -109,11 +109,11 @@ export const resourceTabs = [
       },
       {
         id: 'biotechnology-breakthroughs-ebook',
-        icon: 'feature-ebooks',
+        icon: 'feature/ebooks',
         title: 'Biotechnology Breakthroughs Ebook',
         lead: 'Follows gene editing, lab-grown tissue, and personalized medicine from the lab to the clinic.',
         text: 'An ebook that explains the biotechnology advances most likely to reach patients in the next decade, written for curious non-specialists.',
-        image: '/src/assets/images/puzzle-head-brain.jpg',
+        image: '/src/assets/images/photos/puzzle-head-brain.jpg',
         meta: [
           { label: 'Publication Date', value: 'June 2023' },
           { label: 'Category', value: 'Biotechnology' },
@@ -128,11 +128,11 @@ export const resourceTabs = [
     items: [
       {
         id: 'ai-in-healthcare-report',
-        icon: 'feature-whitepapers',
+        icon: 'feature/whitepapers',
         title: 'AI in Healthcare Report',
         lead: 'Summarizes where hospitals use AI today and which results have been proven in practice.',
         text: 'A report on the adoption of artificial intelligence in hospitals and clinics, with benchmarks, case studies, and lessons learned.',
-        image: '/src/assets/images/vr-doctors-hologram.jpg',
+        image: '/src/assets/images/photos/vr-doctors-hologram.jpg',
         meta: [
           { label: 'Publication Date', value: 'October 2023' },
           { label: 'Category', value: 'Healthcare' },
@@ -141,11 +141,11 @@ export const resourceTabs = [
       },
       {
         id: 'renewable-energy-outlook-report',
-        icon: 'feature-whitepapers',
+        icon: 'feature/whitepapers',
         title: 'Renewable Energy Outlook Report',
         lead: 'Compares solar, wind, and storage costs and the policies that shape their growth.',
         text: 'A report on the state of renewable energy: how costs have fallen, where capacity is growing fastest, and what stands in the way.',
-        image: '/src/assets/images/wind-turbines-sunset.jpg',
+        image: '/src/assets/images/photos/wind-turbines-sunset.jpg',
         meta: [
           { label: 'Publication Date', value: 'August 2023' },
           { label: 'Category', value: 'Renewable Energy' },
@@ -161,18 +161,18 @@ export const resourceCards = [
     id: 'futuretech-trends-2024',
     title: 'FutureTech Trends 2024',
     text: 'An ebook that predicts upcoming technology trends for the next year, including AI developments.',
-    image: '/src/assets/images/vr-business-interface.jpg',
+    image: '/src/assets/images/photos/vr-business-interface.jpg',
   },
   {
     id: 'space-exploration-ebook',
     title: 'Space Exploration Ebook',
     text: 'An ebook that follows the next decade of space exploration, from lunar bases to crewed missions to Mars.',
-    image: '/src/assets/images/astronaut-planet-vinyl.jpg',
+    image: '/src/assets/images/photos/astronaut-planet-vinyl.jpg',
   },
   {
     id: 'quantum-computing-whitepaper',
     title: 'Quantum Computing Whitepaper',
     text: 'An in-depth whitepaper exploring the principles and applications of quantum computing.',
-    image: '/src/assets/images/light-waves-abstract.jpg',
+    image: '/src/assets/images/photos/light-waves-abstract.jpg',
   },
 ]

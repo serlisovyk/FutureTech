@@ -1,7 +1,7 @@
 export const heroFeatures = [
   {
     id: 'latest-news',
-    icon: 'feature-news',
+    icon: 'feature/news',
     title: 'Latest News Updates',
     subtitle: 'Stay Current',
     text: 'Over 1,000 articles published monthly',
@@ -9,7 +9,7 @@ export const heroFeatures = [
   },
   {
     id: 'expert-contributors',
-    icon: 'feature-experts',
+    icon: 'feature/experts',
     title: 'Expert Contributors',
     subtitle: 'Trusted Insights',
     text: '50+ renowned AI experts on our team',
@@ -17,7 +17,7 @@ export const heroFeatures = [
   },
   {
     id: 'global-readership',
-    icon: 'feature-readership',
+    icon: 'feature/readership',
     title: 'Global Readership',
     subtitle: 'Worldwide Impact',
     text: '2 million monthly readers',
@@ -28,7 +28,7 @@ export const heroFeatures = [
 export const featureGroups = [
   {
     id: 'future-technology-blog',
-    icon: 'feature-blog',
+    icon: 'feature/blog',
     title: 'Future Technology Blog',
     text: 'Stay informed with our blog section dedicated to future technology.',
     cards: [
@@ -52,7 +52,7 @@ export const featureGroups = [
   },
   {
     id: 'research-insights-blogs',
-    icon: 'feature-research',
+    icon: 'feature/research',
     title: 'Research Insights Blogs',
     text: 'Dive deep into future technology concepts with our research section.',
     cards: [

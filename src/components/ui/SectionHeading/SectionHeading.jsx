@@ -14,7 +14,7 @@ export function SectionHeading({ tag, title, link }) {
           </Heading>
         </div>
         {link && (
-          <Button variant="outline" icon="arrow-up-right" href={link.href}>
+          <Button variant="outline" icon="ui/arrow-up-right" href={link.href}>
             {link.label}
           </Button>
         )}

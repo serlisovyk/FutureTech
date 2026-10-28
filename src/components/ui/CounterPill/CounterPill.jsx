@@ -5,7 +5,10 @@ import './CounterPill.css'
 export function CounterPill({ icon, label, count, isLiked = false }) {
   return (
     <span className={clsx('counter-pill', isLiked && 'counter-pill--liked')}>
-      <Icon name={isLiked ? 'heart-filled' : icon} className="counter-pill__icon" />
+      <Icon
+        name={isLiked ? 'ui/heart-filled' : icon}
+        className="counter-pill__icon"
+      />
       <span className="counter-pill__count">
         {count}
         <span className="visually-hidden"> {label}</span>

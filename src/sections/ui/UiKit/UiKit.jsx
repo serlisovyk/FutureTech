@@ -51,10 +51,10 @@ export function UiKit() {
           <div className="ui-kit__row">
             <Button href="/contact">Contact Us</Button>
             <Button>Contact Us</Button>
-            <Button href="/contact" icon="arrow-up-right">
+            <Button href="/contact" icon="ui/arrow-up-right">
               Contact Us
             </Button>
-            <Button icon="arrow-down">Download</Button>
+            <Button icon="ui/arrow-down">Download</Button>
           </div>
           <p className="ui-kit__caption">
             Outline: a link, a button, with each icon
@@ -64,10 +64,10 @@ export function UiKit() {
               Read More
             </Button>
             <Button variant="outline">Read More</Button>
-            <Button variant="outline" href="/news" icon="arrow-up-right">
+            <Button variant="outline" href="/news" icon="ui/arrow-up-right">
               Read More
             </Button>
-            <Button variant="outline" icon="arrow-down">
+            <Button variant="outline" icon="ui/arrow-down">
               Download
             </Button>
           </div>
@@ -76,12 +76,12 @@ export function UiKit() {
             <Button
               variant="outline"
               href="/resources"
-              icon="arrow-up-right"
+              icon="ui/arrow-up-right"
               isSmall
             >
               Whitepapers
             </Button>
-            <Button variant="outline" icon="arrow-up-right" isSmall>
+            <Button variant="outline" icon="ui/arrow-up-right" isSmall>
               Whitepapers
             </Button>
           </div>
@@ -158,11 +158,11 @@ export function UiKit() {
             Liked, then likes, comments, views and shares
           </p>
           <div className="ui-kit__row">
-            <CounterPill icon="heart" label="likes" count="24.5k" isLiked />
-            <CounterPill icon="heart" label="likes" count="24.5k" />
-            <CounterPill icon="comment" label="comments" count="340" />
-            <CounterPill icon="eye" label="views" count="1.2k" />
-            <CounterPill icon="send" label="shares" count="86" />
+            <CounterPill icon="ui/heart" label="likes" count="24.5k" isLiked />
+            <CounterPill icon="ui/heart" label="likes" count="24.5k" />
+            <CounterPill icon="ui/comment" label="comments" count="340" />
+            <CounterPill icon="ui/eye" label="views" count="1.2k" />
+            <CounterPill icon="ui/send" label="shares" count="86" />
           </div>
         </div>
       </section>

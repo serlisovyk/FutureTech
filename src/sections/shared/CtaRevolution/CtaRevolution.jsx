@@ -31,7 +31,7 @@ export function CtaRevolution() {
                   <h3 className="cta-revolution__card-title">{card.title}</h3>
                   <span className="cta-revolution__arrow">
                     <Icon
-                      name="arrow-up-right"
+                      name="ui/arrow-up-right"
                       className="cta-revolution__arrow-icon"
                     />
                   </span>
