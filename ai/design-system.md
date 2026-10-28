@@ -6,7 +6,7 @@ third-party template (decision `design-is-a-reference`): only this description i
 - Every size is px, in the order **1920 / 1440 / 390** (Desktop, Laptop, Mobile); a fluid value is written from
   these three numbers (decision `fluid-ramps`). "-" means not drawn at that width.
 - Line heights are unitless; letter spacing is -3% unless a row says `ls 0`. Colours are the design's colour
-  styles (`Dark/10` = `#1A1A1A`); the CSS task names the tokens.
+  styles (`Dark/10` = `#1A1A1A`); token names: `ai/rules/css.md`.
 - Drawn states: nav item active / inactive, filter tab default / active, counter pill normal / liked, FAQ item
   closed / open. Hover, focus, pressed, error and the opened mobile menu are **not drawn**.
 - **Flag** marks a contradiction or a gap for the CSS task or the author; nothing was invented.
@@ -59,8 +59,8 @@ Page background `Dark/08`. The guide defines 26 styles; the pages use 11. Unused
 | Grey/80        | `#CCCCCC` | One heading ("Similar News")                                                                                                                     |
 | Yellow/55      | `#FFD11A` | The accent: Contact Us and Send buttons, arrow glyphs, round buttons, feature icons, logo mark, FAQ plus, contact icons, end of the "New" border |
 
-- **Off-palette, as drawn:** star yellow `#FFCE22` (30 stars; next to `Yellow/55`, merge only with the result in
-  front of you); liked-heart orange `#FF5500` (the counter pill of a liked post has no fill or border, the heart
+- **Off-palette, as drawn:** star yellow `#FFCE22` (30 stars; the CSS uses `Yellow/55`, the author's call);
+  liked-heart orange `#FF5500` (token `--color-like`; the counter pill of a liked post has no fill or border, the heart
   is filled); `#D9D9D9` behind the country flag.
 - **Flag:** the separators of the first testimonial row at 1920 are `#E5EFFF`; every other separator is
   `Dark/15`. Use `Dark/15`. Stale colours under a layer's style (`#05051A`, `#050523`, `#FFAA00`) are ignored.
@@ -222,7 +222,7 @@ The values in use, as a scale: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 30, 3
 - **Feature card:** `Dark/10`, border, radius 12 / 10 / 10, padding 40 / 30 / 24, a card heading and a body line.
 - **CTA card:** same surface inside a tray (`Dark/08`, border, radius 12 / 10 / 10, padding 20 / 10 / 10): title
   `card title` with a round arrow button on the right, body below. Three across, stacked at 390.
-- **Testimonial:** avatar 60 / 50 / 50 with name and place, centred; a stars pill (5 stars `#FFCE22` 24 / 20 / 20,
+- **Testimonial:** avatar 60 / 50 / 50 with name and place, centred; a stars pill (5 stars `Yellow/55` 24 / 20 / 20,
   fill `Dark/08`, border, 180x44 / 140x36) overlaps the top of the quote card by 23 / 17 / 17; quote card
   `Dark/10`, border, radius 12 / 12 / 10, padding 50 30 30 30 / 40 24 24 24 / 30 20 20 20.
 - **Avatar group:** 4 overlapping circles (overlap 9 to 14) with a 2 / 1 / 1px ring. Hero: in a capsule

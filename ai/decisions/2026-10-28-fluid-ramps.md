@@ -1,6 +1,6 @@
 # Breakpoints and fluid values: two structural queries, ramps between the drawn widths
 
-Date: 2026-10-28 · Status: accepted (not implemented)
+Date: 2026-10-28 · Status: accepted
 
 ## Context
 

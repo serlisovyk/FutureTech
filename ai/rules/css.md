@@ -13,9 +13,12 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
 - One block, one stylesheet beside its JSX with the same name (`Button.css` next to
   `Button.jsx`, `Hero.css` next to `sections/home/Hero.jsx`), imported by that JSX file. A
   shared element is a component with its own stylesheet (`.button`, `.tag`).
-- `styles/` holds only global CSS: tokens, reset, base (headings, `:focus-visible`, the
+- `styles/` holds only global CSS: tokens, reset, base (`body`, `:focus-visible`, the
   container), the `@font-face` rules, utilities — never a component's or a section's rules
   (decision `styles-next-to-components`).
+- A heading is never styled by its tag: the reset zeroes `h1`–`h6`, and the look comes from the
+  `Heading` component's class (`heading--display`, `heading--h2`, `heading--h3`) or the block's
+  own class.
 - An `@import` or `url()` that leaves the stylesheet's folder uses the alias
   (`url('@assets/fonts/inter-latin-400.woff2')`); one in the same folder stays `./`.
 - A state a script sets is a native attribute (`[aria-expanded='true']`, `[aria-selected]`,
@@ -48,7 +51,13 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
 - Colours (also inside a gradient or a shadow), the font families, radii, the type steps and
   the spacing two or more blocks share are tokens in the variables stylesheet (listed in
   `ai/design-system.md`). `#`, `rgb(` and `hsl(` appear nowhere else; `transparent` and
-  `currentColor` stay keywords. Never hard-code a colour or a step of the type scale.
+  `currentColor` stay keywords. Never hard-code a colour; a size only one block uses is written in
+  that block (the heading sizes live in `Heading.css`).
+- Names: a colour is its design style in lowercase (`--dark-15`, `--yellow-55`, `--white`; the off-palette
+  heart is `--color-like`); a size is `--font-size-<role>`, `--space-<role>` or `--radius-<role>`; the families
+  are `--font-kumbh` and `--font-inter`; `--border` is the 1px line. A new token follows these.
+- A divider is `--border` on a full-width section, its content in a `.container` inside: the line ignores
+  the side padding by construction, no utility class.
 - A value one block uses is written in that block's stylesheet, not made a token. A value used
   twice in one block is a custom property on its root rule. When a second block needs it, it
   becomes a token on the existing scale.
@@ -76,8 +85,9 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
 
 ## Motion and focus
 
-- Reduced motion is handled once, in the base styles; a component never adds its own
-  `prefers-reduced-motion` block. A duration comes from a transition token.
+- Reduced motion is handled once, in the reset: it sets `--transition-duration` to `0s`. A component
+  never adds its own `prefers-reduced-motion` block, and the duration of every transition and animation
+  comes from that token.
 - A `transition` names its properties, never `all`.
 - A state that hides content for an animation applies only under a class a script puts on
   `<html>`, so the page is complete without script.
