@@ -10,6 +10,8 @@ classes and follow `ai/rules/jsx.md`.
 - The only non-class modules are `main.js`, the composition root, and `constants.js`, in
   camelCase.
 - Named exports only, no default exports; imports carry the `.js` extension.
+- An import from another folder of `scripts/` uses the alias (`@scripts/constants.js`), never `../`;
+  an import inside the same folder stays `./` (`main.js` → `./components/Tabs.js`).
 - Folders by role: `scripts/components/` — reusable widgets (`Tabs`, `Toggle`, `Disclosure`,
   a dialog, a reveal); `scripts/controllers/` — one controller per section that needs more
   than one widget or its own logic (a post feed, the contact form).

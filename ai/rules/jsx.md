@@ -21,6 +21,10 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
   `ai/rules/minista.md`).
 - One root element per component, with the block's class. A component is used by sections
   only; a section does not render another section.
+- An import that crosses folders uses the folder alias (list in `ai/map.md`):
+  `import { Icon } from '@components/Icon.jsx'`; one inside the same folder stays `./`; never `../`.
+  The one exception is a root path (`/src/assets/…`, `/src/scripts/main.js`): minista's `Sprite`, `Svg`
+  and `Picture` read their `src` from the project root, not through Vite's aliases.
 
 ## Props and data
 

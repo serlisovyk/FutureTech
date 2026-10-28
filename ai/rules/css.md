@@ -16,6 +16,8 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
 - `styles/` holds only global CSS: tokens, reset, base (headings, `:focus-visible`, the
   container), the `@font-face` rules, utilities — never a component's or a section's rules
   (decision `styles-next-to-components`).
+- An `@import` or `url()` that leaves the stylesheet's folder uses the alias
+  (`url('@assets/fonts/inter-latin-400.woff2')`); one in the same folder stays `./`.
 - A state a script sets is a native attribute (`[aria-expanded='true']`, `[aria-selected]`,
   `[hidden]`, `[inert]`) or a BEM modifier; a hook for a script is a `data-*` attribute,
   never a class (`ai/rules/style.md`).

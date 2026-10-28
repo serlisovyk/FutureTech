@@ -8,6 +8,8 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `package.json` — the scripts `dev`, `build`, `preview`, `check` (`minista check`), `format` and `format:check`;
   `vite.config.js` — the Vite config with minista's plugins; `vite/` — our own small build plugins.
 - `.prettierrc`, `.prettierignore` — Prettier.
+- `jsconfig.json` — the editor's copy of the aliases `vite.config.js` defines: `@components`, `@sections`,
+  `@layouts`, `@data`, `@styles`, `@scripts`, `@assets`, one per `src/` folder.
 - `src/pages/` — one JSX file per page, its file name is its URL: Home (`/`), News, Podcasts, Resources, Contact, 404.
   The article route (MY-276) will render one page per blog post from `data/`.
 - `src/layouts/` — the page shell shared by every page: `<html>`, the head (title, stylesheet, the script), `<main>`;
