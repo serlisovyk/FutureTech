@@ -10,15 +10,16 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `.prettierrc`, `.prettierignore` — Prettier.
 - `src/pages/` — one JSX file per page, its file name is its URL: Home (`/`), News, Podcasts, Resources, Contact, 404.
   The article route (MY-276) will render one page per blog post from `data/`.
-- `src/layouts/` — the page shell shared by every page: `<html>`, the head (title, stylesheet), `<main>`;
+- `src/layouts/` — the page shell shared by every page: `<html>`, the head (title, stylesheet, the script), `<main>`;
   the header, the CTA and the footer join it with their sections.
 - `src/sections/` — one JSX file per page section, by page (`home/`, `news/`, …; `shared/` when two pages use it).
 - `src/components/` — repeated elements as JSX (a button, a card, a tag): props in, markup out.
 - `src/data/` — the texts and lists the components render, as plain exported values.
 - `src/styles/` — all CSS: tokens and base, shared UI elements, one stylesheet per component and section; the
   layout and the components import theirs, and the build bundles them into one file.
-- `src/scripts/` — all browser JavaScript: `main.js` (the one entry, loaded by the layout), `components/` (widgets),
-  `controllers/` (sections). Empty until the first widget (MY-250) adds `main.js` and its tag in the layout.
+- `src/scripts/` — all browser JavaScript: `main.js` (the one entry, loaded by the layout: a table of root hook →
+  class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`),
+  `constants.js` (shared key names). `controllers/` (sections) appears with the first section that needs one.
 - `src/assets/` — `fonts/`, `images/` (photos, icons, decor), referenced by the build and emitted hashed.
 - `AGENTS.md` — the entry point for agents; `CLAUDE.md` points to it.
 - `ai/` — agent docs: this map, `workflow.md`, `rules/`, `skills/`, `decisions/`, `prompts/`,

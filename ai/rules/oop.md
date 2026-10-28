@@ -42,6 +42,20 @@ Each class has one reason to change:
 - A section that a ready component covers needs no controller: `main.js` creates the
   component directly.
 
+## Markup a widget expects
+
+The JSX carries the roles, `aria-controls`, `aria-labelledby` and the initial `aria-expanded` /
+`aria-selected`; the class reads them and sets states and `hidden` (`ai/rules/style.md`).
+
+- `Tabs`: root `data-tabs`, `data-tab-list`, buttons `data-tab="key"` paired with panels
+  `data-tab-panel="key"`.
+- `Disclosure`: root `data-disclosure`, `data-disclosure-trigger`, `data-disclosure-region`, and an
+  optional `data-disclosure-label` whose text the option `labels` swaps.
+- `Toggle`: root `data-toggle`, `data-toggle-button`, `data-toggle-target`.
+- Content that must show without JavaScript carries no `hidden` in the JSX: `start()` hides
+  what the state says is closed.
+- A new widget or controller is one more row in the table of `main.js`.
+
 ## Constructor and lifecycle
 
 - One constructor shape everywhere: `constructor(root, options)`. `root` is the element the
