@@ -6,12 +6,12 @@ export function VideoModal() {
   return (
     <dialog
       className="video-modal"
-      aria-labelledby="video-modal-title"
+      aria-labelledby={videoModal.titleId}
       data-video-modal
     >
       <div className="video-modal__panel">
         <div className="video-modal__bar">
-          <h2 className="video-modal__title" id="video-modal-title">
+          <h2 className="video-modal__title" id={videoModal.titleId}>
             <span data-video-modal-title></span>
           </h2>
 

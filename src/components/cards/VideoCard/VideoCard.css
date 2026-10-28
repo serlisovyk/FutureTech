@@ -45,6 +45,10 @@
   width: calc(50px + (70 - 50) * var(--ramp-1440-1920));
   height: calc(50px + (70 - 50) * var(--ramp-1440-1920));
   color: var(--white);
+
+  @media (scripting: none) {
+    visibility: hidden;
+  }
 }
 
 .video-card__play-icon {
