@@ -1,7 +1,7 @@
 import { Svg } from 'minista/assets'
 import { Button } from '@components/Button.jsx'
 import { Icon } from '@components/Icon.jsx'
-import { navigationAction, navigationLinks } from '@data/navigation.js'
+import { navigationAction, navigationLinks, newsletter } from '@data/navigation.js'
 import './Header.css'
 
 function getAriaCurrent(href, currentPath) {
@@ -17,11 +17,11 @@ export function Header({ currentPath }) {
         Skip to content
       </Button>
 
-      <a className="header__banner" href={navigationAction.href}>
+      <a className="header__banner" href={newsletter.href}>
         <span>
-          Subscribe to our Newsletter For{' '}
-          <span className="header__banner-extra">New &amp; latest </span>Blogs and
-          Resources
+          {newsletter.lead}{' '}
+          <span className="header__banner-extra">{newsletter.extra} </span>
+          {newsletter.tail}
         </span>
         <Icon name="arrow-up-right" className="header__banner-icon" />
       </a>

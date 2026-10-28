@@ -29,7 +29,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `CounterPill`, `AvatarGroup`. `/ui` shows each in every variant.
 - `src/data/` — the texts and lists the components render, as plain exported values, one file per entity: `posts` (each with
   its article `body` sections), `categories`, `videos`, `podcasts`, `resources`, `testimonials`, `features`, `stats`, `faq`,
-  `navigation`, `footer`, `socials`, `contacts`, `cta`.
+  `navigation` (the header links, its action and the newsletter strip), `footer`, `socials`, `contacts`, `cta`.
 - `src/utils/` — pure build-time helpers, one function per file (`get-current-year.js`), imported by components
   and sections.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,

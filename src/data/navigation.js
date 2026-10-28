@@ -1,10 +1,15 @@
-export const navigation = [
+export const navigationLinks = [
   { label: 'Home', href: '/' },
   { label: 'News', href: '/news' },
   { label: 'Podcasts', href: '/podcasts' },
   { label: 'Resources', href: '/resources' },
-  { label: 'Contact Us', href: '/contact', isAction: true },
 ]
 
-export const navigationLinks = navigation.filter((item) => !item.isAction)
-export const navigationAction = navigation.find((item) => item.isAction)
+export const navigationAction = { label: 'Contact Us', href: '/contact' }
+
+export const newsletter = {
+  href: '/contact',
+  lead: 'Subscribe to our Newsletter For',
+  extra: 'New & latest',
+  tail: 'Blogs and Resources',
+}
