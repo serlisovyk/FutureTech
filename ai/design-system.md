@@ -234,7 +234,7 @@ The values in use, as a scale: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 30, 3
   navbar (`Dark/10`, padding 24 x 162 / 20 x 80 / 20 x 16). Left: logo. Centre: nav, gap 40 / 24: the active item is
   a box (`Dark/08`, 1px `Dark/20`, padding 14 x 24 / 10 x 18) with a White I500 label, the others bare Grey/60
   text. Right: Contact Us. At 390: logo left and a 34 menu glyph (White) right; nav and Contact Us are not
-  shown. **Flag:** the opened menu is not drawn; derive it from these surfaces after asking the author.
+  shown. The opened menu is not drawn: it is a drawer on these surfaces (decision `mobile-menu-drawer`).
 - **Footer:** inside the CTA band section: block padding 80 / 60 / 40; five columns 255 / 216 wide (Home, News,
   Blogs, Podcasts, Resources), each a footer heading over links; Resources lists 4 outline-style link buttons
   (fill `Dark/08`, border, radius 8 / 6 / 6, padding 10 x 16 / 8 x 14, 20 / 18 arrow). Bottom bar (1px line on

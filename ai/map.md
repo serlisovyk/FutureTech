@@ -20,6 +20,8 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `src/layouts/` — the page shell shared by every page: `<html>`, the head (title, stylesheet, the script), `<main>`;
   the header, the CTA (`CtaRevolution`) and the footer join it from `sections/shared/`.
 - `src/sections/` — one JSX file per page section, by page (`home/`, `news/`, …, `ui/`; `shared/` when two pages use it).
+  `shared/Header` is on every page: the skip link, the newsletter strip, the navbar and the mobile menu (a drawer, one
+  `data-header` root; the layout passes it the current path).
 - `src/components/` — repeated elements as JSX (a button, a card, a tag), each with its stylesheet beside it
   (`Icon.jsx` + `Icon.css`); `Icon` renders a sprite icon, `Photo` an optimized photo, `Heading` a heading (`level`
   is the tag, `size` the look). Sections do the same.
@@ -35,7 +37,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   Components and sections import their own stylesheet; the build bundles all into one file.
 - `src/scripts/` — all browser JavaScript: `main.js` (the one entry, loaded by the layout: a table of root hook →
   class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`),
-  `constants.js` (shared key names). `controllers/` (sections) appears with the first section that needs one.
+  `constants.js` (key names, the menu query), `controllers/` (one per section: `HeaderController`, which runs the menu).
 - `src/assets/` — referenced by the build and emitted hashed: `fonts/` (woff2), `icons/` (every sprite icon, one
   sprite), `logos/` (inline SVG: the logo and its mark), `images/` (photos, decor).
 - `AGENTS.md` — the entry point for agents; `CLAUDE.md` points to it.
