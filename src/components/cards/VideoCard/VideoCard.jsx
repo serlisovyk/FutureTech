@@ -1,22 +1,17 @@
 import { clsx } from 'clsx'
 import { Photo } from '@components/media/Photo'
 import { Button } from '@components/ui/Button'
+import { PlayButton } from '@components/ui/PlayButton'
 import {
   cardPhotoBreakpoints,
   episodeCardPhotoSizes,
   videoCardPhotoSizes,
 } from '@data/card-photos.js'
-import { VideoCardPlay } from './VideoCardPlay.jsx'
 import './VideoCard.css'
 
-export function VideoCard({
-  title,
-  text,
-  duration,
-  image,
-  videoId,
-  isEpisode = false,
-}) {
+export function VideoCard(props) {
+  const { title, text, duration, image, videoId, isEpisode = false } = props
+
   const photoSizes = isEpisode ? episodeCardPhotoSizes : videoCardPhotoSizes
 
   return (
@@ -31,7 +26,7 @@ export function VideoCard({
           className="video-card__photo"
         />
         <div className="video-card__controls">
-          <VideoCardPlay title={title} videoId={videoId} />
+          <PlayButton title={title} videoId={videoId} />
           <span className="video-card__duration">{duration}</span>
         </div>
       </div>

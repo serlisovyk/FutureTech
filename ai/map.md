@@ -30,15 +30,15 @@ Navigation only: where things live and who owns what. How it works is in the cod
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
 - UI kit (`components/ui/`): `Button`, `Tag`, `Badge`, `SectionHeading`, `Stat`, `MetaItem` and `MetaGrid`,
-  `CounterPill`, `AvatarGroup`, `Heading` (`level` is the tag, `size` the look). `/ui` shows each in every variant.
+  `CounterPill`, `AvatarGroup`, `PlayButton` (the ▶ that opens the video modal), `Heading` (`level` is the tag, `size` the look). `/ui` shows each in every variant.
 - Cards (`components/cards/`): `NewsCard` (photo, title, category, counters, link to the article) and `VideoCard` (preview with the
-  play button; `isEpisode` adds Listen Podcast). The play button's `data-video-*` hooks are for the video modal. Both are on `/ui`.
+  `PlayButton`; `isEpisode` adds Listen Podcast, which opens the same video). Both are on `/ui`.
 - `src/data/` — the texts and lists the components render, as plain exported values, one file per entity: `posts` (each with
   its article `body` sections), `categories`, `videos`, `podcasts`, `resources`, `testimonials`, `features`, `stats`, `faq`,
   `navigation` (the header links, its action and the newsletter strip), `footer`, `socials`, `contacts`, `cta`, `site` (the site
   name), `video-modal` (its close label and title id), `card-photos` (the `sizes` and widths of the card photos), `ui-kit` (the `/ui` demo lists).
 - `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, `format-count.js`, …), re-exported by
-  `index.js` (plain JS, no JSX), imported by components, sections and the layout.
+  `index.js` (plain JS, no JSX), imported by components, sections and the layout; `constants.js` holds their numbers.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
   `.container`, `.visually-hidden`), `fonts.css`; `global.css` imports them in that order, the layout imports it first.
   Components and sections import their own stylesheet; the build bundles all into one file.

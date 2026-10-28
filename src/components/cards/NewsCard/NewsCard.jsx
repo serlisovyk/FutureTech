@@ -5,15 +5,9 @@ import { cardPhotoBreakpoints, newsCardPhotoSizes } from '@data/card-photos.js'
 import { formatCount, getCategoryName, getPostUrl } from '@utils'
 import './NewsCard.css'
 
-export function NewsCard({
-  slug,
-  title,
-  category,
-  image,
-  imageAlt,
-  likes,
-  comments,
-}) {
+export function NewsCard(props) {
+  const { slug, title, category, image, imageAlt, likes, comments } = props
+
   return (
     <article className="news-card">
       <Photo

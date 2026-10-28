@@ -1,10 +1,11 @@
-const THOUSAND = 1000
-const DECIMALS = 1
+import { COUNT_FORMAT } from './constants.js'
 
 export function formatCount(count) {
-  if (count < THOUSAND) return String(count)
+  if (count < COUNT_FORMAT.thousand) return String(count)
 
-  const thousands = Number((count / THOUSAND).toFixed(DECIMALS))
+  const thousands = Number(
+    (count / COUNT_FORMAT.thousand).toFixed(COUNT_FORMAT.decimals),
+  )
 
   return `${thousands}k`
 }

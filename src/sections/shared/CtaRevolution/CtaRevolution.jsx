@@ -24,11 +24,11 @@ export function CtaRevolution() {
           </div>
         </div>
         <ul className="cta-revolution__cards">
-          {cta.cards.map((card) => (
-            <li key={card.id} className="cta-revolution__item">
-              <a className="cta-revolution__card" href={card.href}>
+          {cta.cards.map(({ id, href, title, text }) => (
+            <li key={id} className="cta-revolution__item">
+              <a className="cta-revolution__card" href={href}>
                 <div className="cta-revolution__card-head">
-                  <h3 className="cta-revolution__card-title">{card.title}</h3>
+                  <h3 className="cta-revolution__card-title">{title}</h3>
                   <span className="cta-revolution__arrow">
                     <Icon
                       name="ui/arrow-up-right"
@@ -36,7 +36,7 @@ export function CtaRevolution() {
                     />
                   </span>
                 </div>
-                <p>{card.text}</p>
+                <p>{text}</p>
               </a>
             </li>
           ))}

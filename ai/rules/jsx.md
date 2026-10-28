@@ -39,6 +39,10 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
 - A repeated element takes its data as props, passed one by one by name. No `...props` rest or spread in a
   component, and no `{...item}` of a data item: a prop the callers use is named in the signature.
 - Props with a default come last in the destructuring list (`{ icon, children, variant = 'primary' }`).
+- A signature whose props do not fit on one line takes `props` and destructures them on the next line, followed
+  by a blank line: `function NewsCard(props)`, then `const { slug, title, … } = props`.
+- A `map` callback destructures its item (`({ label, href }) =>`); when that does not fit on one line, the callback
+  takes the item and destructures it in a block body the same way.
 - No ternary in a `return` and none for an optional attribute: compute a named `const` above the `return`, or
   return early (`ai/rules/style.md`).
 - A variation is a prop and a BEM modifier (`isFeatured` → `news-card--featured`); class names

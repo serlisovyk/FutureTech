@@ -2,19 +2,21 @@ import { clsx } from 'clsx'
 import { Icon } from '@components/media/Icon'
 import './Button.css'
 
-export function Button({
-  icon,
-  href,
-  ariaCurrent,
-  videoId,
-  videoTitle,
-  className,
-  children,
-  isToggleDismiss = false,
-  variant = 'primary',
-  type = 'button',
-  isSmall = false,
-}) {
+export function Button(props) {
+  const {
+    icon,
+    href,
+    ariaCurrent,
+    videoId,
+    videoTitle,
+    className,
+    children,
+    isToggleDismiss = false,
+    variant = 'primary',
+    type = 'button',
+    isSmall = false,
+  } = props
+
   const classNames = clsx(
     'button',
     `button--${variant}`,

@@ -12,32 +12,28 @@ export function Footer() {
     <footer className="footer">
       <div className="container">
         <nav className="footer__nav" aria-label="Footer">
-          {footer.columns.map((column) => (
+          {footer.columns.map(({ title, links, isButtons }) => (
             <FooterColumn
-              key={column.title}
-              title={column.title}
-              links={column.links}
-              isButtons={column.isButtons}
+              key={title}
+              title={title}
+              links={links}
+              isButtons={isButtons}
             />
           ))}
         </nav>
         <div className="footer__bar">
           <ul className="footer__legal">
-            {footer.legal.map((item) => (
-              <li key={item.label} className="footer__legal-item">
-                {item.label}
+            {footer.legal.map(({ label }) => (
+              <li key={label} className="footer__legal-item">
+                {label}
               </li>
             ))}
           </ul>
           <ul className="footer__socials">
-            {socials.map((social) => (
-              <li key={social.name}>
-                <a
-                  className="footer__social"
-                  href={social.href}
-                  aria-label={social.name}
-                >
-                  <Icon name={social.icon} className="footer__social-icon" />
+            {socials.map(({ name, href, icon }) => (
+              <li key={name}>
+                <a className="footer__social" href={href} aria-label={name}>
+                  <Icon name={icon} className="footer__social-icon" />
                 </a>
               </li>
             ))}

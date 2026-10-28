@@ -122,13 +122,13 @@ export function UiKit() {
           </Heading>
           <p className="ui-kit__caption">Regular, then large</p>
           <div className="ui-kit__row ui-kit__row--wide">
-            {stats.map((stat) => (
-              <Stat key={stat.id} value={stat.value} label={stat.label} />
+            {stats.map(({ id, value, label }) => (
+              <Stat key={id} value={value} label={label} />
             ))}
           </div>
           <div className="ui-kit__row ui-kit__row--wide">
-            {stats.map((stat) => (
-              <Stat key={stat.id} value={stat.value} label={stat.label} isLarge />
+            {stats.map(({ id, value, label }) => (
+              <Stat key={id} value={value} label={label} isLarge />
             ))}
           </div>
         </div>
@@ -197,18 +197,22 @@ export function UiKit() {
             link to the article
           </p>
           <div className="ui-kit__grid ui-kit__grid--news">
-            {trendingPosts.map((post) => (
-              <NewsCard
-                key={post.slug}
-                slug={post.slug}
-                title={post.title}
-                category={post.category}
-                image={post.image}
-                imageAlt={post.imageAlt}
-                likes={post.counters.likes}
-                comments={post.counters.comments}
-              />
-            ))}
+            {trendingPosts.map((post) => {
+              const { slug, title, category, image, imageAlt, counters } = post
+
+              return (
+                <NewsCard
+                  key={slug}
+                  slug={slug}
+                  title={title}
+                  category={category}
+                  image={image}
+                  imageAlt={imageAlt}
+                  likes={counters.likes}
+                  comments={counters.comments}
+                />
+              )
+            })}
           </div>
         </div>
       </section>
@@ -223,14 +227,14 @@ export function UiKit() {
             text
           </p>
           <div className="ui-kit__grid ui-kit__grid--video">
-            {videoCardDemo.map((video) => (
+            {videoCardDemo.map(({ id, title, text, duration, poster, videoId }) => (
               <VideoCard
-                key={video.id}
-                title={video.title}
-                text={video.text}
-                duration={video.duration}
-                image={video.poster}
-                videoId={video.videoId}
+                key={id}
+                title={title}
+                text={text}
+                duration={duration}
+                image={poster}
+                videoId={videoId}
               />
             ))}
           </div>
@@ -238,14 +242,14 @@ export function UiKit() {
             The episode, three across: the same with the Listen Podcast button
           </p>
           <div className="ui-kit__grid ui-kit__grid--episode">
-            {episodeCardDemo.map((episode) => (
+            {episodeCardDemo.map(({ id, title, text, duration, image, videoId }) => (
               <VideoCard
-                key={episode.id}
-                title={episode.title}
-                text={episode.text}
-                duration={episode.duration}
-                image={episode.image}
-                videoId={episode.videoId}
+                key={id}
+                title={title}
+                text={text}
+                duration={duration}
+                image={image}
+                videoId={videoId}
                 isEpisode
               />
             ))}
