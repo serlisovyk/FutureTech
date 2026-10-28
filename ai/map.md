@@ -23,16 +23,18 @@ Navigation only: where things live and who owns what. How it works is in the cod
   the header, the CTA (`CtaRevolution`) and the footer join it from `sections/shared/`.
 - `src/sections/` — one folder per section (its JSX, its stylesheet, its parts, an `index.jsx`), by page group (`home/`, `news/`, …,
   `ui/`; `shared/` when two pages use it); `sections/index.jsx` re-exports the groups.
-  Home (`sections/home/`): `Features` (id `features`: the heading band and two `FeatureGroup`s, each an icon, title and text beside a 2 x 2 grid of cards).
   `shared/Header` is on every page: the skip link, the newsletter strip, the navbar and the mobile menu (a drawer, one
   `data-header` root; the layout passes it the current path). `shared/VideoModal` is the one `<dialog>` the layout renders on every
   page; any `[data-video-id]` button opens it.
-  `home/Blogs` (id `blogs`, the footer's `/#blogs`) is the Home blog feed: `SectionHeading` and a `PostFeed` of the `blogs` posts.
+- Home sections (`sections/home/`), in design order on `pages/index.jsx`: `Hero` (the page's `h1`, the eyebrow, three
+  stats, the avatar capsule over the decor with the link to Resources, the strip of three feature links, `HeroFeature`),
+  `Features` (id `features`: the heading band and two `FeatureGroup`s, each an icon, title and text beside a 2 x 2 grid
+  of `FeatureCard`s), `Blogs` (id `blogs`: `SectionHeading` and a `PostFeed` of the `blogs` posts).
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
 - UI kit (`components/ui/`): `Button`, `Tag`, `Badge`, `SectionHeading`, `Stat`, `MetaItem` and `MetaGrid`,
-  `CounterPill`, `AvatarGroup`, `PlayButton` (the ▶ that opens the video modal), `Heading` (`level` is the tag, `size` the look). `/ui` shows each in every variant.
+  `CounterPill`, `AvatarGroup`, `PlayButton` (the ▶ that opens the video modal), `Heading` (`level` is the tag, `size` the look; `hero` is the Home title). `AvatarGroup` has a capsule variant. `/ui` shows each in every variant.
 - Cards (`components/cards/`): `NewsCard` (photo, title, category, counters, link to the article) and `VideoCard` (preview with the
   `PlayButton`; `isEpisode` adds Listen Podcast, which opens the same video). Both are on `/ui`.
 - `PostRow` (cards: author, date, title, excerpt, counters, link to the article) and `PostFeed` (`components/feeds/`: the category
@@ -40,7 +42,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `src/data/` — the texts and lists the components render, as plain exported values, one file per entity: `blogs` (the Home blog section's id, heading and limit), `posts` (each with
   its article `body` sections), `categories`, `videos`, `podcasts`, `resources`, `testimonials`, `features`, `stats`, `faq`,
   `navigation` (the header links, its action and the newsletter strip), `footer`, `socials`, `contacts`, `cta`, `site` (the site
-  name), `video-modal` (its close label and title id), `card-photos` (the `sizes` and widths of the card and avatar photos), `post-feed` (its tab list label, empty text and announcements), `ui-kit` (the `/ui` demo lists).
+  name), `hero` (the Home hero texts, decor and avatars), `video-modal` (its close label and title id), `card-photos` (the `sizes` and widths of the card and avatar photos), `post-feed` (its tab list label, empty text and announcements), `ui-kit` (the `/ui` demo lists).
 - `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, `format-count.js`, …), re-exported by
   `index.js` (plain JS, no JSX), imported by components, sections and the layout; `constants.js` holds their numbers.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
