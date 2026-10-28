@@ -1,12 +1,14 @@
-import { AvatarGroup } from '@components/AvatarGroup.jsx'
-import { Badge } from '@components/Badge.jsx'
-import { Button } from '@components/Button.jsx'
-import { CounterPill } from '@components/CounterPill.jsx'
-import { Heading } from '@components/Heading.jsx'
-import { MetaGrid } from '@components/MetaGrid.jsx'
-import { SectionHeading } from '@components/SectionHeading.jsx'
-import { Stat } from '@components/Stat.jsx'
-import { Tag } from '@components/Tag.jsx'
+import {
+  AvatarGroup,
+  Badge,
+  Button,
+  CounterPill,
+  Heading,
+  MetaGrid,
+  SectionHeading,
+  Stat,
+  Tag,
+} from '@components'
 import { resourceShowcases } from '@data/resources.js'
 import { stats } from '@data/stats.js'
 import './UiKit.css'

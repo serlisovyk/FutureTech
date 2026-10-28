@@ -1,4 +1,4 @@
-import { Icon } from '@components/Icon.jsx'
+import { Icon } from '@components'
 import { footer } from '@data/footer.js'
 import { socials } from '@data/socials.js'
 import { getCurrentYear } from '@utils/get-current-year.js'

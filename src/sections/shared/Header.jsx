@@ -1,6 +1,5 @@
 import { Svg } from 'minista/assets'
-import { Button } from '@components/Button.jsx'
-import { Icon } from '@components/Icon.jsx'
+import { Button, Icon } from '@components'
 import { navigationAction, navigationLinks, newsletter } from '@data/navigation.js'
 import { getAriaCurrent } from '@utils/get-aria-current.js'
 import './Header.css'

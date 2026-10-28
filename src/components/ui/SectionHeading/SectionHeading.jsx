@@ -1,6 +1,6 @@
-import { Button } from './Button.jsx'
-import { Heading } from './Heading.jsx'
-import { Tag } from './Tag.jsx'
+import { Button } from '@components/ui/Button'
+import { Heading } from '@components/ui/Heading'
+import { Tag } from '@components/ui/Tag'
 import './SectionHeading.css'
 
 export function SectionHeading({ tag, title, link }) {

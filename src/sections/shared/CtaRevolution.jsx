@@ -1,7 +1,5 @@
 import { Svg } from 'minista/assets'
-import { Heading } from '@components/Heading.jsx'
-import { Icon } from '@components/Icon.jsx'
-import { Tag } from '@components/Tag.jsx'
+import { Heading, Icon, Tag } from '@components'
 import { cta } from '@data/cta.js'
 import './CtaRevolution.css'
 

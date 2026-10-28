@@ -1,5 +1,5 @@
 import { clsx } from 'clsx'
-import { Icon } from './Icon.jsx'
+import { Icon } from '@components/media/Icon'
 import './Button.css'
 
 export function Button({

@@ -1,4 +1,4 @@
-import { MetaItem } from './MetaItem.jsx'
+import { MetaItem } from '@components/ui/MetaItem'
 import './MetaGrid.css'
 
 export function MetaGrid({ items, isCard = false }) {

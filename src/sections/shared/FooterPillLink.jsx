@@ -1,4 +1,4 @@
-import { Button } from '@components/Button.jsx'
+import { Button } from '@components'
 
 export function FooterPillLink({ label, href }) {
   return (

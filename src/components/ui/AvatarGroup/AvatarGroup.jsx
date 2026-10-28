@@ -1,4 +1,4 @@
-import { Photo } from './Photo.jsx'
+import { Photo } from '@components/media/Photo'
 import './AvatarGroup.css'
 
 export function AvatarGroup({ avatars }) {

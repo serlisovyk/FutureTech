@@ -1,5 +1,5 @@
 import { clsx } from 'clsx'
-import { Icon } from './Icon.jsx'
+import { Icon } from '@components/media/Icon'
 import './CounterPill.css'
 
 export function CounterPill({ icon, label, count, isLiked = false }) {

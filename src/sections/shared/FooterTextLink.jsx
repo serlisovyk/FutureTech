@@ -1,4 +1,4 @@
-import { Badge } from '@components/Badge.jsx'
+import { Badge } from '@components'
 import { footer } from '@data/footer.js'
 
 export function FooterTextLink({ label, href, isNew = false }) {
