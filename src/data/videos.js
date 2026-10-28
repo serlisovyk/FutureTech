@@ -5,7 +5,7 @@ export const videos = [
     text: "Embark on a journey through the Red Planet's breathtaking landscapes and uncover the mysteries of Mars.",
     duration: '2.30 min',
     poster: '/src/assets/images/photos/mars-landscape.jpg',
-    videoId: 'placeholder-video-id',
+    videoId: 'yOplTCgnJFQ',
   },
   {
     id: 'blockchain-explained',
@@ -13,7 +13,7 @@ export const videos = [
     text: 'Delve into the world of blockchain technology and its transformative impact on the financial industry.',
     duration: '3.15 min',
     poster: '/src/assets/images/photos/miniature-figures-coins.jpg',
-    videoId: 'placeholder-video-id',
+    videoId: 'Pl8OlkkwRpc',
   },
   {
     id: 'mental-health-awareness',
@@ -21,7 +21,7 @@ export const videos = [
     text: 'An exploration of the importance of mental health awareness and the initiatives reshaping workplaces for employee well-being.',
     duration: '4.10 min',
     poster: '/src/assets/images/photos/puzzle-head-brain.jpg',
-    videoId: 'placeholder-video-id',
+    videoId: '4FT5RYuifwE',
   },
   {
     id: 'revolutionizing-investment-strategies',
@@ -29,6 +29,6 @@ export const videos = [
     text: 'A look at how data and artificial intelligence are changing the way investors build portfolios, manage risk, and spot new opportunities.',
     duration: '2.45 min',
     poster: '/src/assets/images/photos/stock-chart-open-hand.jpg',
-    videoId: 'placeholder-video-id',
+    videoId: 'ui7kRlJMqjM',
   },
 ]
