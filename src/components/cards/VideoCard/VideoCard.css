@@ -1,0 +1,103 @@
+.video-card {
+  display: flex;
+  flex-direction: column;
+  gap: calc(20px + (30 - 20) * var(--ramp-1440-1920));
+}
+
+.video-card__preview {
+  position: relative;
+  height: calc(
+    210px + (331 - 210) * var(--ramp-390-1440) + (412 - 331) * var(--ramp-1440-1920)
+  );
+  border-radius: var(--radius-card);
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to bottom, transparent 44%, var(--dark-08));
+  }
+}
+
+.video-card__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-card__controls {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 30px;
+}
+
+.video-card__play {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: calc(50px + (70 - 50) * var(--ramp-1440-1920));
+  height: calc(50px + (70 - 50) * var(--ramp-1440-1920));
+  color: var(--white);
+}
+
+.video-card__play-icon {
+  width: calc(40.6px + (56.88 - 40.6) * var(--ramp-1440-1920));
+  height: calc(40.6px + (56.88 - 40.6) * var(--ramp-1440-1920));
+}
+
+.video-card__duration {
+  color: var(--grey-50);
+  font-size: var(--font-size-button);
+}
+
+.video-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: calc(4px + (6 - 4) * var(--ramp-390-1440) + (10 - 6) * var(--ramp-1440-1920));
+}
+
+.video-card__title {
+  color: var(--white);
+  font-size: calc(
+    18px + (20 - 18) * var(--ramp-390-1440) + (24 - 20) * var(--ramp-1440-1920)
+  );
+  font-weight: 600;
+}
+
+.video-card__button {
+  align-self: flex-start;
+
+  @media (width < 768px) {
+    align-self: stretch;
+  }
+}
+
+.video-card--episode {
+  gap: calc(
+    20px + (24 - 20) * var(--ramp-390-1440) + (30 - 24) * var(--ramp-1440-1920)
+  );
+
+  & .video-card__preview {
+    height: calc(
+      208px + (244 - 208) * var(--ramp-390-1440) + (290 - 244) *
+        var(--ramp-1440-1920)
+    );
+  }
+
+  & .video-card__body {
+    gap: calc(
+      6px + (10 - 6) * var(--ramp-390-1440) + (14 - 10) * var(--ramp-1440-1920)
+    );
+  }
+
+  & .video-card__title {
+    font-size: var(--font-size-card-title);
+  }
+}
