@@ -4,6 +4,7 @@
   justify-content: center;
   gap: calc(4px + (10 - 4) * var(--ramp-1440-1920));
   font-size: var(--font-size-button);
+  line-height: 1.5;
   text-align: center;
 }
 
