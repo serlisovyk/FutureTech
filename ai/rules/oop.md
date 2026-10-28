@@ -50,7 +50,12 @@ The JSX carries the roles, `aria-controls`, `aria-labelledby` and the initial `a
 `aria-selected`; the class reads them and sets states and `hidden` (`ai/rules/style.md`).
 
 - `Tabs`: root `data-tabs`, `data-tab-list`, buttons `data-tab="key"` paired with panels
-  `data-tab-panel="key"`.
+  `data-tab-panel="key"`; `onSelect(handler)` reports the selected tab after every selection, the first one in `start()` too.
+- Post feed (`PostFeedController`): root `data-post-feed` (no `data-tabs`: the controller owns its `Tabs`), the bar `data-tab-list`,
+  every tab `data-tab="<category>"` with its announcement in `data-status`, one `data-post-feed-panel` (a `tabpanel` every tab
+  controls, without `data-tab-panel`), rows `data-category="<category>"`, `data-post-feed-empty` and a `role="status"` region
+  `data-post-feed-status`. The controller shows the rows of the key, the empty text when none shows, repoints the
+  panel's `aria-labelledby` and copies `data-status` into the region, except for the selection `start()` makes.
 - `Disclosure`: root `data-disclosure`, `data-disclosure-trigger`, `data-disclosure-region`, and an
   optional `data-disclosure-label` whose text the option `labels` swaps.
 - `Toggle`: root `data-toggle`, `data-toggle-button`, `data-toggle-target`, and `data-toggle-dismiss` on every

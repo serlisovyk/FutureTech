@@ -33,10 +33,12 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `CounterPill`, `AvatarGroup`, `PlayButton` (the ▶ that opens the video modal), `Heading` (`level` is the tag, `size` the look). `/ui` shows each in every variant.
 - Cards (`components/cards/`): `NewsCard` (photo, title, category, counters, link to the article) and `VideoCard` (preview with the
   `PlayButton`; `isEpisode` adds Listen Podcast, which opens the same video). Both are on `/ui`.
+- `PostRow` (cards: author, date, title, excerpt, counters, link to the article) and `PostFeed` (`components/feeds/`: the category
+  tabs and the list of `PostRow`s, filtered in the browser by `PostFeedController`); both are on `/ui`.
 - `src/data/` — the texts and lists the components render, as plain exported values, one file per entity: `posts` (each with
   its article `body` sections), `categories`, `videos`, `podcasts`, `resources`, `testimonials`, `features`, `stats`, `faq`,
   `navigation` (the header links, its action and the newsletter strip), `footer`, `socials`, `contacts`, `cta`, `site` (the site
-  name), `video-modal` (its close label and title id), `card-photos` (the `sizes` and widths of the card photos), `ui-kit` (the `/ui` demo lists).
+  name), `video-modal` (its close label and title id), `card-photos` (the `sizes` and widths of the card and avatar photos), `post-feed` (its tab list label, empty text and announcements), `ui-kit` (the `/ui` demo lists).
 - `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, `format-count.js`, …), re-exported by
   `index.js` (plain JS, no JSX), imported by components, sections and the layout; `constants.js` holds their numbers.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
@@ -44,8 +46,9 @@ Navigation only: where things live and who owns what. How it works is in the cod
   Components and sections import their own stylesheet; the build bundles all into one file.
 - `src/scripts/` — all browser JavaScript: `main.js` (the one entry, loaded by the layout: a table of root hook →
   class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`, `VideoModal`),
-  `constants.js` (key names, the menu query, the video trigger and embed, the no-index sentinel), `controllers/` (one per section:
-  `HeaderController`, which runs the menu; `VideoModalController`, which opens the modal from any play button).
+  `constants.js` (key names, the menu query, the video and post feed hooks, the video embed, the no-index sentinel), `controllers/`
+  (one per section: `HeaderController`, which runs the menu; `VideoModalController`, which opens the modal from any play button;
+  `PostFeedController`, which filters a feed's rows by the selected tab).
 - `src/assets/` — referenced by the build and emitted hashed: `fonts/` (woff2), `icons/` (sprite icons in `ui/`, `social/`,
   `feature/`; one sprite per folder), `logos/` (inline SVG: the logo and its mark), `images/` (`photos/`, `portraits/`, `decor/`).
 - `AGENTS.md` — the entry point for agents; `CLAUDE.md` points to it.

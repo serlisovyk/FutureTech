@@ -45,7 +45,8 @@ Roles, `aria-controls` and `aria-labelledby` are in the JSX; the script changes 
 - **Tabs** (`tablist` / `tab` / `tabpanel`): `aria-selected` on the tabs and `tabindex="-1"`
   on the inactive ones; the arrows move the selection, `Home` and `End` go to the ends; a panel
   is named by `aria-labelledby`. A filter that shows and hides list items is tabs only when it
-  drives `tabpanel`s; otherwise it is a group of `aria-pressed` buttons with a live count.
+  drives a `tabpanel` (one shared panel that every tab controls counts, its `aria-labelledby` follows the
+  selection) and announces the count in a live region; otherwise it is a group of `aria-pressed` buttons with one.
 - **Disclosure** — a button with `aria-expanded` and `aria-controls`; the hidden content is out
   of the tab order (`inert` or `hidden`); a changed label is text, not only an icon.
 - **Menu** (the mobile navigation) — a button with `aria-expanded`, `aria-controls` and a label
