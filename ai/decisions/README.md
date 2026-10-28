@@ -55,6 +55,7 @@ each with the record that replaced it.
 - [Line endings: Prettier `endOfLine: auto`, no `.gitattributes`](2026-10-28-line-endings-auto.md)
 - [ESLint (with the JSX plugins), Stylelint and a Husky pre-commit hook; no more rule sets](2026-10-28-linters.md)
 - [Deployed on Vercel](2026-10-28-vercel-deploy.md)
+- [CI on every push, and a size budget with limits by fact](2026-10-28-ci-size-limit.md)
 - [The design is a third-party template: a reference only, never published](2026-10-28-design-is-a-reference.md)
 
 ### Code
