@@ -1,4 +1,4 @@
-import "../styles/global.css";
+import '../styles/global.css'
 
 export default function Layout({ title, children }) {
   return (
@@ -12,5 +12,5 @@ export default function Layout({ title, children }) {
         </main>
       </body>
     </html>
-  );
+  )
 }
