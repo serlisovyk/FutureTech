@@ -44,3 +44,16 @@
   border-radius: var(--radius-card);
   background-color: var(--dark-10);
 }
+
+.ui-kit__play {
+  color: var(--white);
+
+  @media (scripting: none) {
+    display: none;
+  }
+}
+
+.ui-kit__play-icon {
+  width: calc(50px + (70 - 50) * var(--ramp-1440-1920));
+  height: calc(50px + (70 - 50) * var(--ramp-1440-1920));
+}

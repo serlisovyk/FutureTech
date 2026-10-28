@@ -4,6 +4,7 @@ import {
   Button,
   CounterPill,
   Heading,
+  Icon,
   MetaGrid,
   SectionHeading,
   Stat,
@@ -12,10 +13,13 @@ import {
 import { resourceShowcases } from '@data/resources.js'
 import { stats } from '@data/stats.js'
 import { articleMeta, podcastMeta, sectionHeadingDemo } from '@data/ui-kit.js'
+import { videos } from '@data/videos.js'
 import './UiKit.css'
 
 export function UiKit() {
   const { meta: ebookMeta, avatars } = resourceShowcases[0]
+  const [firstVideo, secondVideo] = videos
+  const demoVideos = [firstVideo, secondVideo]
 
   return (
     <div className="ui-kit">
@@ -173,6 +177,31 @@ export function UiKit() {
           </Heading>
           <div className="ui-kit__panel">
             <AvatarGroup avatars={avatars} />
+          </div>
+        </div>
+      </section>
+
+      <section className="ui-kit__group">
+        <div className="container ui-kit__body">
+          <Heading level={2} size="h3">
+            VideoModal
+          </Heading>
+          <p className="ui-kit__caption">
+            Play buttons: each opens the modal with its video
+          </p>
+          <div className="ui-kit__row">
+            {demoVideos.map(({ id, title, videoId }) => (
+              <button
+                key={id}
+                className="ui-kit__play"
+                type="button"
+                aria-label={`Play: ${title}`}
+                data-video-id={videoId}
+                data-video-title={title}
+              >
+                <Icon name="ui/play" className="ui-kit__play-icon" />
+              </button>
+            ))}
           </div>
         </div>
       </section>
