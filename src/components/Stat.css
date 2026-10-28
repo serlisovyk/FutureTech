@@ -1,0 +1,35 @@
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: calc(2 * var(--ramp-390-1440) + (10 - 2) * var(--ramp-1440-1920));
+}
+
+.stat__value {
+  color: var(--white);
+  font-size: calc(
+    24px + (30 - 24) * var(--ramp-390-1440) + (40 - 30) * var(--ramp-1440-1920)
+  );
+  font-weight: 600;
+}
+
+.stat__plus {
+  color: var(--yellow-55);
+}
+
+.stat__label {
+  font-size: var(--font-size-button);
+}
+
+.stat--large {
+  gap: calc(6 * var(--ramp-390-1440) + (10 - 6) * var(--ramp-1440-1920));
+
+  & .stat__value {
+    font-size: calc(
+      24px + (40 - 24) * var(--ramp-390-1440) + (60 - 40) * var(--ramp-1440-1920)
+    );
+  }
+
+  & .stat__label {
+    font-size: inherit;
+  }
+}
