@@ -1,0 +1,46 @@
+:root {
+  --white: #fff;
+  --dark-08: #141414;
+  --dark-10: #1a1a1a;
+  --dark-15: #262626;
+  --dark-20: #333;
+  --dark-25: #404040;
+  --dark-40: #666;
+  --grey-50: #7e7e81;
+  --grey-60: #98989a;
+  --grey-80: #ccc;
+  --yellow-55: #ffd11a;
+  --color-like: #f50;
+
+  --font-kumbh: 'Kumbh Sans', system-ui, sans-serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+
+  --transition-duration: 0.2s;
+
+  --ramp-390-1440: clamp(0px, (100vw - 390px) / 1050, 1px);
+  --ramp-1440-1920: clamp(0px, (100vw - 1440px) / 480, 1px);
+
+  --font-size-card-title: calc(
+    16px + (18 - 16) * var(--ramp-390-1440) + (22 - 18) * var(--ramp-1440-1920)
+  );
+  --font-size-lead: calc(
+    14px + (16 - 14) * var(--ramp-390-1440) + (20 - 16) * var(--ramp-1440-1920)
+  );
+  --font-size-button: calc(14px + (18 - 14) * var(--ramp-1440-1920));
+
+  --space-container: calc(
+    16px + (80 - 16) * var(--ramp-390-1440) + (162 - 80) * var(--ramp-1440-1920)
+  );
+  --space-section: calc(
+    40px + (60 - 40) * var(--ramp-390-1440) + (80 - 60) * var(--ramp-1440-1920)
+  );
+  --space-card: calc(
+    24px + (30 - 24) * var(--ramp-390-1440) + (40 - 30) * var(--ramp-1440-1920)
+  );
+
+  --radius-card: calc(10px + (12 - 10) * var(--ramp-1440-1920));
+  --radius-control: calc(6px + (8 - 6) * var(--ramp-1440-1920));
+  --radius-pill: 100px;
+
+  --border: 1px solid var(--dark-15);
+}

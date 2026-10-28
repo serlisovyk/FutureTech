@@ -1,0 +1,26 @@
+.heading {
+  color: var(--white);
+  font-family: var(--font-kumbh);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.heading--display {
+  font-size: calc(
+    28px + (55 - 28) * var(--ramp-390-1440) + (80 - 55) * var(--ramp-1440-1920)
+  );
+}
+
+.heading--h2 {
+  font-size: calc(
+    28px + (44 - 28) * var(--ramp-390-1440) + (58 - 44) * var(--ramp-1440-1920)
+  );
+}
+
+.heading--h3 {
+  font-size: calc(
+    24px + (30 - 24) * var(--ramp-390-1440) + (40 - 30) * var(--ramp-1440-1920)
+  );
+  font-weight: 600;
+  line-height: 1.5;
+}
