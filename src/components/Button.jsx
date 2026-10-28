@@ -12,10 +12,10 @@ export function Button({
   ...props
 }) {
   const isLink = Boolean(href)
-  const Tag = isLink ? 'a' : 'button'
+  const Element = isLink ? 'a' : 'button'
 
   return (
-    <Tag
+    <Element
       className={clsx('button', `button--${variant}`, className)}
       href={href}
       type={isLink ? undefined : type}
@@ -23,6 +23,6 @@ export function Button({
     >
       {children}
       {icon && <Icon name={icon} className="button__icon" />}
-    </Tag>
+    </Element>
   )
 }
