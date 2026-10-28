@@ -27,6 +27,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `shared/Header` is on every page: the skip link, the newsletter strip, the navbar and the mobile menu (a drawer, one
   `data-header` root; the layout passes it the current path). `shared/VideoModal` is the one `<dialog>` the layout renders on every
   page; any `[data-video-id]` button opens it.
+  `home/Blogs` (id `blogs`, the footer's `/#blogs`) is the Home blog feed: `SectionHeading` and a `PostFeed` of the `blogs` posts.
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
@@ -36,7 +37,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `PlayButton`; `isEpisode` adds Listen Podcast, which opens the same video). Both are on `/ui`.
 - `PostRow` (cards: author, date, title, excerpt, counters, link to the article) and `PostFeed` (`components/feeds/`: the category
   tabs and the list of `PostRow`s, filtered in the browser by `PostFeedController`); both are on `/ui`.
-- `src/data/` — the texts and lists the components render, as plain exported values, one file per entity: `posts` (each with
+- `src/data/` — the texts and lists the components render, as plain exported values, one file per entity: `blogs` (the Home blog section's id, heading and limit), `posts` (each with
   its article `body` sections), `categories`, `videos`, `podcasts`, `resources`, `testimonials`, `features`, `stats`, `faq`,
   `navigation` (the header links, its action and the newsletter strip), `footer`, `socials`, `contacts`, `cta`, `site` (the site
   name), `video-modal` (its close label and title id), `card-photos` (the `sizes` and widths of the card and avatar photos), `post-feed` (its tab list label, empty text and announcements), `ui-kit` (the `/ui` demo lists).
