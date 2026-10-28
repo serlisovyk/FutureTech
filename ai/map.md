@@ -19,7 +19,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   The article route (MY-276) will render one page per blog post from `data/`.
 - `src/layouts/` — the page shell shared by every page: `<html>`, the head (title, stylesheet, the script), `<main>`;
   the header, the CTA and the footer join it with their sections.
-- `src/sections/` — one JSX file per page section, by page (`home/`, `news/`, …, `ui/`; `shared/` when two pages use it).
+- `src/sections/` — one JSX file per page section, by page (`home/`, `news/`, …, `ui/`; `shared/` when two pages use it: `Footer`, every page's).
 - `src/components/` — repeated elements as JSX (a button, a card, a tag), each with its stylesheet beside it
   (`Icon.jsx` + `Icon.css`); `Icon` renders a sprite icon, `Photo` an optimized photo, `Heading` a heading (`level`
   is the tag, `size` the look). Sections do the same.
