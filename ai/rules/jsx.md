@@ -22,8 +22,8 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
   `ai/rules/minista.md`): its component and `metadata = { title, description }`, plus `robots` when the page needs
   it. The page has no `Head` and no site name: the layout builds the head (decision `shared-page-head`).
 - A component is a folder: `components/<group>/<Component>/` holds `<Component>.jsx`, `<Component>.css` and an
-  `index.js`; a section is `sections/<group>/<Section>/` with its parts. Each group has an `index.js`, and the root
-  `index.js` of `components/` and `sections/` re-exports the groups (decision `folders-and-barrels`).
+  `index.jsx`; a section is `sections/<group>/<Section>/` with its parts. Each group has an `index.jsx`, and the root
+  `index.jsx` of `components/` and `sections/` re-exports the groups (decision `folders-and-barrels`).
 - One file holds one component and nothing else: a sub-component goes to its own file
   (`FooterColumn.jsx`), a helper to `utils/`, a text or an id to `data/`.
 - One root element per component, with the block's class. A component is used by sections

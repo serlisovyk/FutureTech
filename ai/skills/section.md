@@ -17,10 +17,10 @@ order of the work.
    classes or styles in the data; a computed value is a pure helper beside it.
 2. **Components first** — reuse what `components/` already has (button, tag, section heading,
    cards, counters; `import { Button } from '@components'`) before writing markup. A new repeated part is a
-   component: a folder `components/<group>/<Name>/` with `<Name>.jsx`, `<Name>.css` and `index.js`, plus a line in
-   the group's `index.js`; one root, explicit props, its BEM block as the class, no hooks or handlers.
+   component: a folder `components/<group>/<Name>/` with `<Name>.jsx`, `<Name>.css` and `index.jsx`, plus a line in
+   the group's `index.jsx`; one root, explicit props, its BEM block as the class, no hooks or handlers.
 3. **Section** — a folder `sections/<page>/<Name>/` (`shared/` when two pages use it) with `<Name>.jsx`, its
-   parts and `index.js`, and a line in the group's `index.js`: a root
+   parts and `index.jsx`, and a line in the group's `index.jsx`: a root
    `<section>` with the block class and a container inside; the heading through the shared
    heading component. Roles and ARIA go in the JSX; the root gets `data-<name>`, the children
    the hooks of the widget that drives them (`ai/rules/oop.md`).

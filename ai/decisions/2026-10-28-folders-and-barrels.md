@@ -11,10 +11,10 @@ touched every importer. The icons and images had the same problem, and `Icon` to
 ## Decision
 
 - A component is a folder `components/<group>/<Component>/` with `<Component>.jsx`, `<Component>.css` and an
-  `index.js` that exports it. Groups by role: `ui/` (the kit) and `media/` (`Icon`, `Photo`). A group has an
-  `index.js`, and `components/index.js` re-exports the groups.
+  `index.jsx` that exports it. Groups by role: `ui/` (the kit) and `media/` (`Icon`, `Photo`). A group has an
+  `index.jsx`, and `components/index.jsx` re-exports the groups.
 - A section is a folder `sections/<group>/<Section>/` with its `.jsx`, `.css`, its own parts (one component per
-  file) and an `index.js` that exports the section only. `sections/<group>/index.js` and `sections/index.js`
+  file) and an `index.jsx` that exports the section only. `sections/<group>/index.jsx` and `sections/index.jsx`
   re-export, and `utils/index.js` re-exports the helpers.
 - Code outside `components/` imports from the root barrel: `import { Button, Tag } from '@components'`, and
   likewise `@sections` and `@utils`. Inside `components/` a component imports another by its folder
@@ -31,6 +31,6 @@ touched every importer. The icons and images had the same problem, and `Icon` to
   the folders it uses; the symbols and markup are the same.
 - A barrel imports every component's stylesheet, so the bundle order follows the barrels; the bundle holds the
   same rules (every page already loaded every block's styles).
-- A new component or section is a folder plus a line in its group's `index.js`; a new asset folder needs no
+- A new component or section is a folder plus a line in its group's `index.jsx`; a new asset folder needs no
   config.
 - Rejected: a root barrel inside `components/` (cycles); a `group` prop on `Icon` (two fields for one file).
