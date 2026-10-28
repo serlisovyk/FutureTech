@@ -6,6 +6,7 @@ export function Photo({
   sizes,
   breakpoints,
   ariaHidden,
+  fetchPriority,
   className,
   formats = ['avif', 'webp'],
   loading = 'lazy',
@@ -19,6 +20,7 @@ export function Photo({
       formats={formats}
       loading={loading}
       aria-hidden={ariaHidden}
+      fetchPriority={fetchPriority}
       className={className}
     />
   )
