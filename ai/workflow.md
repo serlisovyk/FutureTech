@@ -143,11 +143,10 @@ git push origin main
 git branch -d my-<n>-<slug>
 ```
 
-- Until the repo has a remote, the `pull` and `push` steps are skipped and the report says so.
 - After a rebase that brings in another branch's page work, check the combined result in
   the browser too: a global style change in one branch can break a block of the other.
-- Once `main` deploys to Vercel, check the live site read-only (open it, fetch it) after the
-  push and never change the Vercel project settings from a task.
+- `main` deploys to Vercel: after the push, check the live site, <https://futuretech-cyan.vercel.app>,
+  read-only (open it, fetch it) and never change the Vercel project settings from a task.
 - History stays linear: rebase onto `main`, then fast-forward. Never force-push `main`.
 - If the branch was pushed (for a preview), delete it on the remote too
   (`git push origin --delete my-<n>-<slug>`).

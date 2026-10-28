@@ -1,6 +1,6 @@
 # Deployed on Vercel
 
-Date: 2026-10-28 · Status: accepted (not implemented)
+Date: 2026-10-28 · Status: accepted
 
 ## Context
 

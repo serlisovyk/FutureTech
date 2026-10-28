@@ -53,7 +53,7 @@ each with the record that replaced it.
 - [Dependency versions are pinned exactly](2026-10-28-pinned-dependency-versions.md)
 - [The MIT license is declared in `package.json` only, no `LICENSE` file](2026-10-28-license-in-package-json.md)
 - [Line endings: Prettier `endOfLine: auto`, no `.gitattributes`](2026-10-28-line-endings-auto.md)
-- [Deployed on Vercel](2026-10-28-vercel-deploy.md) — not implemented yet
+- [Deployed on Vercel](2026-10-28-vercel-deploy.md)
 - [The design is a third-party template: a reference only, never published](2026-10-28-design-is-a-reference.md)
 
 ### Code

@@ -30,6 +30,11 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `linear-task-template.md`, the archive `superpowers/`, `design-system.md`.
 - `.claude/worktrees/` — one git worktree per task when tasks run in parallel; ignored by git.
 
+## Deployment
+
+- Live site: <https://futuretech-cyan.vercel.app>, deployed by Vercel's Git integration.
+- `main` is production; every other branch gets a preview. The config is `vercel.json` only.
+
 ## Where is the recipe
 
 - A page section or a repeated element: `ai/skills/section.md`. Reviewing a diff: `ai/skills/review.md`.
