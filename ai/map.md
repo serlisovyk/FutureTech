@@ -24,7 +24,8 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `src/sections/` — one folder per section (its JSX, its stylesheet, its parts, an `index.jsx`), by page group (`home/`, `news/`, …,
   `ui/`; `shared/` when two pages use it); `sections/index.jsx` re-exports the groups.
   `shared/Header` is on every page: the skip link, the newsletter strip, the navbar and the mobile menu (a drawer, one
-  `data-header` root; the layout passes it the current path).
+  `data-header` root; the layout passes it the current path). `shared/VideoModal` is the one `<dialog>` the layout renders on every
+  page; any `[data-video-id]` button opens it.
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
@@ -33,15 +34,16 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `src/data/` — the texts and lists the components render, as plain exported values, one file per entity: `posts` (each with
   its article `body` sections), `categories`, `videos`, `podcasts`, `resources`, `testimonials`, `features`, `stats`, `faq`,
   `navigation` (the header links, its action and the newsletter strip), `footer`, `socials`, `contacts`, `cta`, `site` (the site
-  name), `ui-kit` (the `/ui` demo lists).
+  name), `video-modal` (its close label), `ui-kit` (the `/ui` demo lists).
 - `src/utils/` — pure build-time helpers, one function per file (`get-current-year.js`, `get-aria-current.js`, `get-page-title.js`), re-exported by
   `index.js` (plain JS, no JSX), imported by components, sections and the layout.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
   `.container`, `.visually-hidden`), `fonts.css`; `global.css` imports them in that order, the layout imports it first.
   Components and sections import their own stylesheet; the build bundles all into one file.
 - `src/scripts/` — all browser JavaScript: `main.js` (the one entry, loaded by the layout: a table of root hook →
-  class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`),
-  `constants.js` (key names, the menu query, the no-index sentinel), `controllers/` (one per section: `HeaderController`, which runs the menu).
+  class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`, `VideoModal`),
+  `constants.js` (key names, the menu query, the video trigger and embed, the no-index sentinel), `controllers/` (one per section:
+  `HeaderController`, which runs the menu; `VideoModalController`, which opens the modal from any play button).
 - `src/assets/` — referenced by the build and emitted hashed: `fonts/` (woff2), `icons/` (sprite icons in `ui/`, `social/`,
   `feature/`; one sprite per folder), `logos/` (inline SVG: the logo and its mark), `images/` (`photos/`, `portraits/`, `decor/`).
 - `AGENTS.md` — the entry point for agents; `CLAUDE.md` points to it.
