@@ -60,6 +60,7 @@ each with the record that replaced it.
 - [The CSS limit is raised to 4 kB for the header, the CTA and the footer](2026-10-28-shared-blocks-css-limit.md)
 - [The limits are raised for the cards and the video modal; images are measured as a total](2026-10-28-cards-and-modal-size-limits.md)
 - [The CSS and images limits are raised for the post feed](2026-10-28-post-feed-size-limits.md)
+- [The CSS and images limits are raised for the first Home sections](2026-10-28-home-wave-size-limits.md)
 - [The design is a third-party template: a reference only, never published](2026-10-28-design-is-a-reference.md)
 
 ### Code
