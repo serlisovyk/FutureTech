@@ -9,7 +9,7 @@ export function AvatarGroup({ avatars }) {
           key={src}
           src={src}
           alt=""
-          aria-hidden="true"
+          ariaHidden="true"
           sizes="50px"
           breakpoints={[150, 225]}
           className="avatar-group__photo"

@@ -2,8 +2,9 @@ import { Sprite } from 'minista/assets'
 import { clsx } from 'clsx'
 import './Icon.css'
 
-export function Icon({ name, title, size = 24, className, ...props }) {
+export function Icon({ name, title, className, size = 24 }) {
   const isDecorative = !title
+  const role = isDecorative ? undefined : 'img'
 
   return (
     <Sprite
@@ -12,9 +13,8 @@ export function Icon({ name, title, size = 24, className, ...props }) {
       width={size}
       height={size}
       title={title}
-      role={isDecorative ? undefined : 'img'}
+      role={role}
       aria-hidden={isDecorative}
-      {...props}
     />
   )
 }

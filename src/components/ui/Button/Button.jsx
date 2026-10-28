@@ -3,17 +3,20 @@ import { Icon } from '@components/media/Icon'
 import './Button.css'
 
 export function Button({
-  variant = 'primary',
   icon,
   href,
-  type = 'button',
-  isSmall = false,
+  ariaCurrent,
   className,
   children,
-  ...props
+  isToggleDismiss = false,
+  variant = 'primary',
+  type = 'button',
+  isSmall = false,
 }) {
   const isLink = Boolean(href)
   const Element = isLink ? 'a' : 'button'
+  const buttonType = isLink ? undefined : type
+  const toggleDismiss = isToggleDismiss || undefined
 
   return (
     <Element
@@ -24,8 +27,9 @@ export function Button({
         className,
       )}
       href={href}
-      type={isLink ? undefined : type}
-      {...props}
+      type={buttonType}
+      aria-current={ariaCurrent}
+      data-toggle-dismiss={toggleDismiss}
     >
       {children}
       {icon && <Icon name={icon} className="button__icon" />}

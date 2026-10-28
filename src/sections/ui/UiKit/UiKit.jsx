@@ -11,20 +11,8 @@ import {
 } from '@components'
 import { resourceShowcases } from '@data/resources.js'
 import { stats } from '@data/stats.js'
+import { articleMeta, podcastMeta, sectionHeadingDemo } from '@data/ui-kit.js'
 import './UiKit.css'
-
-const articleMeta = [
-  { label: 'Publication Date', value: 'October 15, 2023' },
-  { label: 'Category', value: 'Healthcare' },
-  { label: 'Reading Time', value: '10 Min' },
-  { label: 'Author Name', value: 'Dr. Emily Walker' },
-]
-
-const podcastMeta = [
-  { label: 'Total Episodes', value: '50' },
-  { label: 'Average Episode Length', value: '30 min' },
-  { label: 'Release Frequency', value: 'Weekly' },
-]
 
 export function UiKit() {
   const { meta: ebookMeta, avatars } = resourceShowcases[0]
@@ -107,13 +95,13 @@ export function UiKit() {
           <p className="ui-kit__caption">With the View All link, then without it</p>
         </div>
         <SectionHeading
-          tag="Learn, Connect, and Innovate"
-          title="Explore FutureTech's In-Depth Blog Posts"
-          link={{ href: '/news', label: 'View All Blogs' }}
+          tag={sectionHeadingDemo.tag}
+          title={sectionHeadingDemo.title}
+          link={sectionHeadingDemo.link}
         />
         <SectionHeading
-          tag="Learn, Connect, and Innovate"
-          title="Explore FutureTech's In-Depth Blog Posts"
+          tag={sectionHeadingDemo.tag}
+          title={sectionHeadingDemo.title}
         />
       </section>
 

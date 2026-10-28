@@ -76,8 +76,8 @@ export function Header({ currentPath }) {
               <Button
                 className="header__action"
                 href={navigationAction.href}
-                aria-current={getAriaCurrent(navigationAction.href, currentPath)}
-                data-toggle-dismiss
+                ariaCurrent={getAriaCurrent(navigationAction.href, currentPath)}
+                isToggleDismiss
               >
                 {navigationAction.label}
               </Button>
