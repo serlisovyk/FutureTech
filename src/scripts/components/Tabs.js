@@ -5,12 +5,14 @@ export class Tabs {
   #tabList
   #tabs
   #panels
+  #handleSelect
 
   constructor(root, options = {}) {
     this.#options = { shouldWrap: true, ...options }
     this.#tabList = root.querySelector('[data-tab-list]')
     this.#tabs = [...root.querySelectorAll('[data-tab]')]
     this.#panels = [...root.querySelectorAll('[data-tab-panel]')]
+    this.#handleSelect = () => {}
   }
 
   start() {
@@ -24,9 +26,14 @@ export class Tabs {
     this.#tabList.addEventListener('keydown', (event) => this.#handleKeydown(event))
   }
 
+  onSelect(handler) {
+    this.#handleSelect = handler
+  }
+
   select(selectedTab, shouldFocus = false) {
     this.#renderTabs(selectedTab)
     this.#renderPanels(selectedTab.dataset.tab)
+    this.#handleSelect(selectedTab)
 
     if (shouldFocus) selectedTab.focus()
   }

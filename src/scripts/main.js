@@ -2,6 +2,7 @@ import { Disclosure } from './components/Disclosure.js'
 import { Tabs } from './components/Tabs.js'
 import { Toggle } from './components/Toggle.js'
 import { HeaderController } from './controllers/HeaderController.js'
+import { PostFeedController } from './controllers/PostFeedController.js'
 import { VideoModalController } from './controllers/VideoModalController.js'
 
 const ROOTS = [
@@ -9,6 +10,7 @@ const ROOTS = [
   { selector: '[data-disclosure]', Component: Disclosure },
   { selector: '[data-toggle]', Component: Toggle },
   { selector: '[data-header]', Component: HeaderController },
+  { selector: '[data-post-feed]', Component: PostFeedController },
   { selector: '[data-video-modal]', Component: VideoModalController },
 ]
 

@@ -12,7 +12,13 @@ export const MEDIA = Object.freeze({
 
 export const SELECTORS = Object.freeze({
   videoTrigger: '[data-video-id]',
+  postFeedRow: '[data-category]',
+  postFeedPanel: '[data-post-feed-panel]',
+  postFeedEmpty: '[data-post-feed-empty]',
+  postFeedStatus: '[data-post-feed-status]',
 })
+
+export const ALL_CATEGORY = 'all'
 
 export const VIDEO_EMBED = Object.freeze({
   baseUrl: 'https://www.youtube-nocookie.com/embed/',
