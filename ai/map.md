@@ -23,7 +23,9 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `src/components/` — repeated elements as JSX (a button, a card, a tag), each with its stylesheet beside it
   (`Icon.jsx` + `Icon.css`); `Icon` renders a sprite icon, `Photo` an optimized photo, `Heading` a heading (`level`
   is the tag, `size` the look). Sections do the same.
-- `src/data/` — the texts and lists the components render, as plain exported values.
+- `src/data/` — the texts and lists the components render, as plain exported values, one file per entity: `posts` (each with
+  its article `body` sections), `categories`, `videos`, `podcasts`, `resources`, `testimonials`, `features`, `stats`, `faq`,
+  `navigation`, `footer`, `socials`, `contacts`.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
   `.container`, `.visually-hidden`), `fonts.css`; `global.css` imports them in that order, the layout imports it first.
   Components and sections import their own stylesheet; the build bundles all into one file.
