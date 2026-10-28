@@ -1,0 +1,20 @@
+.avatar-group {
+  display: inline-flex;
+  padding-block: calc(8px + (10 - 8) * var(--ramp-1440-1920));
+  padding-inline: calc(8px + (10 - 8) * var(--ramp-1440-1920));
+  border-radius: 12px;
+  background-color: var(--dark-08);
+
+  & picture + picture {
+    margin-inline-start: -9px;
+  }
+}
+
+.avatar-group__photo {
+  width: calc(40px + (50 - 40) * var(--ramp-1440-1920));
+  height: calc(40px + (50 - 40) * var(--ramp-1440-1920));
+  border: calc(1px + (2 - 1) * var(--ramp-1440-1920)) solid var(--dark-40);
+  border-radius: 50%;
+  background-color: var(--dark-15);
+  object-fit: cover;
+}
