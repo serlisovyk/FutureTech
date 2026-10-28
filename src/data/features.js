@@ -25,6 +25,12 @@ export const heroFeatures = [
   },
 ]
 
+export const featuresSection = {
+  id: 'features',
+  tag: 'Unlock the Power of',
+  title: 'FutureTech Features',
+}
+
 export const featureGroups = [
   {
     id: 'future-technology-blog',
@@ -53,6 +59,7 @@ export const featureGroups = [
   {
     id: 'research-insights-blogs',
     icon: 'feature/research',
+    hasWideIcon: true,
     title: 'Research Insights Blogs',
     text: 'Dive deep into future technology concepts with our research section.',
     cards: [
