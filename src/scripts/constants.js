@@ -9,3 +9,5 @@ export const KEYS = Object.freeze({
 export const MEDIA = Object.freeze({
   mobileMenu: '(width < 768px)',
 })
+
+export const NO_INDEX = -1

@@ -1,6 +1,4 @@
-import { KEYS } from '@scripts/constants.js'
-
-const NO_INDEX = -1
+import { KEYS, NO_INDEX } from '@scripts/constants.js'
 
 export class Tabs {
   #options
@@ -68,7 +66,9 @@ export class Tabs {
     const wrappedIndex = (nextIndex + tabCount) % tabCount
     const clampedIndex = Math.min(Math.max(nextIndex, 0), tabCount - 1)
 
-    return shouldWrap ? wrappedIndex : clampedIndex
+    if (shouldWrap) return wrappedIndex
+
+    return clampedIndex
   }
 
   #renderTabs(selectedTab) {
