@@ -1,5 +1,5 @@
 import { Head } from 'minista/head'
-import { UiKit } from '@sections/ui/UiKit.jsx'
+import { UiKit } from '@sections'
 
 export const metadata = { title: 'UI kit | FutureTech' }
 

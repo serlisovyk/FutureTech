@@ -1,9 +1,7 @@
 import '@styles/global.css'
 import interRegular from '@assets/fonts/inter-latin-400.woff2'
 import kumbhSansMedium from '@assets/fonts/kumbh-sans-latin-500.woff2'
-import { CtaRevolution } from '@sections/shared/CtaRevolution.jsx'
-import { Footer } from '@sections/shared/Footer.jsx'
-import { Header } from '@sections/shared/Header.jsx'
+import { CtaRevolution, Footer, Header } from '@sections'
 
 export default function Layout({ url, title, children }) {
   return (
