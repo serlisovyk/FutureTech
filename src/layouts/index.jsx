@@ -5,6 +5,7 @@ export default function Layout({ title, children }) {
     <html lang="en">
       <head>
         <title>{title}</title>
+        <script type="module" src="/src/scripts/main.js"></script>
       </head>
       <body>
         <main id="main" tabIndex={-1}>
