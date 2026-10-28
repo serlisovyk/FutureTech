@@ -5,11 +5,9 @@ import { Tag } from '@components/Tag.jsx'
 import { cta } from '@data/cta.js'
 import './CtaRevolution.css'
 
-const TITLE_ID = 'cta-revolution-title'
-
 export function CtaRevolution() {
   return (
-    <section className="cta-revolution" aria-labelledby={TITLE_ID}>
+    <section className="cta-revolution" aria-labelledby={cta.titleId}>
       <div className="cta-revolution__inner container">
         <div className="cta-revolution__intro">
           <Svg
@@ -21,7 +19,7 @@ export function CtaRevolution() {
             <Tag>{cta.tag}</Tag>
           </div>
           <div className="cta-revolution__text">
-            <Heading level={2} size="h2" id={TITLE_ID}>
+            <Heading level={2} size="h2" id={cta.titleId}>
               {cta.title}
             </Heading>
             <p className="cta-revolution__lead">{cta.text}</p>
