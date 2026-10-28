@@ -14,7 +14,7 @@
   gap: calc(2px + (4 - 2) * var(--ramp-1440-1920));
   min-width: 0;
   padding: calc(
-    20px + (24 - 20) * var(--ramp-390-1440) + (30 - 24) * var(--ramp-1440-1920)
+    19px + (23 - 19) * var(--ramp-390-1440) + (29 - 23) * var(--ramp-1440-1920)
   );
   border: var(--border);
   border-radius: calc(8px + (13 - 8) * var(--ramp-1440-1920));

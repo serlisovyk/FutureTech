@@ -2,8 +2,8 @@
   display: inline-flex;
   align-items: center;
   gap: calc(2px + (4 - 2) * var(--ramp-1440-1920));
-  padding-block: calc(6px + (8 - 6) * var(--ramp-1440-1920));
-  padding-inline: calc(12px + (16 - 12) * var(--ramp-1440-1920));
+  padding-block: calc(5px + (7 - 5) * var(--ramp-1440-1920));
+  padding-inline: calc(11px + (15 - 11) * var(--ramp-1440-1920));
   border: var(--border);
   border-radius: var(--radius-pill);
   background-color: var(--dark-10);

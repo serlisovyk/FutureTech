@@ -1,7 +1,7 @@
 .badge {
   display: inline-block;
-  padding-block: calc(2px + (4 - 2) * var(--ramp-1440-1920));
-  padding-inline: calc(10px + (12 - 10) * var(--ramp-1440-1920));
+  padding-block: calc(1px + (3 - 1) * var(--ramp-1440-1920));
+  padding-inline: calc(9px + (11 - 9) * var(--ramp-1440-1920));
   border: 1px solid transparent;
   border-radius: calc(4px + (6 - 4) * var(--ramp-1440-1920));
   background-image:

@@ -30,8 +30,8 @@
 }
 
 .button--outline {
-  padding-block: calc(14px + (18 - 14) * var(--ramp-1440-1920));
-  padding-inline: calc(20px + (24 - 20) * var(--ramp-1440-1920));
+  padding-block: calc(13px + (17 - 13) * var(--ramp-1440-1920));
+  padding-inline: calc(19px + (23 - 19) * var(--ramp-1440-1920));
   border: var(--border);
   border-radius: calc(8px + (12 - 8) * var(--ramp-1440-1920));
   background-color: var(--dark-08);

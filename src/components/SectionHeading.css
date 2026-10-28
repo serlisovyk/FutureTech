@@ -1,6 +1,6 @@
 .section-heading {
   padding-block: calc(
-    40px + (80 - 40) * var(--ramp-390-1440) + (120 - 80) * var(--ramp-1440-1920)
+    39px + (79 - 39) * var(--ramp-390-1440) + (119 - 79) * var(--ramp-1440-1920)
   );
   border-block: var(--border);
   background-color: var(--dark-10);
