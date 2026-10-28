@@ -1,0 +1,10 @@
+.tag {
+  display: inline-block;
+  padding-block: calc(4px + (6 - 4) * var(--ramp-1440-1920));
+  padding-inline: calc(8px + (10 - 8) * var(--ramp-1440-1920));
+  border-radius: 4px;
+  background-color: var(--dark-20);
+  color: var(--white);
+  font-size: var(--font-size-lead);
+  font-weight: 500;
+}

@@ -1,0 +1,28 @@
+.section-heading {
+  padding-block: calc(
+    40px + (80 - 40) * var(--ramp-390-1440) + (120 - 80) * var(--ramp-1440-1920)
+  );
+  border-block: var(--border);
+  background-color: var(--dark-10);
+}
+
+.section-heading__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(200px + (250 - 200) * var(--ramp-1440-1920));
+
+  @media (width < 768px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+  }
+}
+
+.section-heading__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(10px + (16 - 10) * var(--ramp-1440-1920));
+  min-width: 0;
+}
