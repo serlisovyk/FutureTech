@@ -1,5 +1,7 @@
+export const allCategory = { slug: 'all', name: 'All' }
+
 export const blogCategories = [
-  { slug: 'all', name: 'All' },
+  allCategory,
   { slug: 'quantum-computing', name: 'Quantum Computing' },
   { slug: 'ai-ethics', name: 'AI Ethics' },
   { slug: 'space-exploration', name: 'Space Exploration' },
@@ -8,7 +10,7 @@ export const blogCategories = [
 ]
 
 export const newsCategories = [
-  { slug: 'all', name: 'All' },
+  allCategory,
   { slug: 'technology', name: 'Technology' },
   { slug: 'politics', name: 'Politics' },
   { slug: 'health', name: 'Health' },
