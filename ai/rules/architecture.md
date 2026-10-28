@@ -31,8 +31,8 @@ sit beside it. Each folder has one job:
 
 ## Pages and routes
 
-- A page file renders the layout with its metadata (title, description) and its sections,
-  nothing else. The same section on two pages is one file in `sections/shared/`, not a copy.
+- A page file exports its metadata (title, description) and renders its sections, nothing else;
+  the layout builds the head from the metadata (decision `shared-page-head`). The same section on two pages is one file in `sections/shared/`, not a copy.
 - A page generated per item (the article route) gets its list of paths and its data from
   `data/` through minista's static-data API, so a new post needs no new page file.
 - Links between pages are root-relative clean URLs without `.html` (`/news`, `/blog/<slug>`);

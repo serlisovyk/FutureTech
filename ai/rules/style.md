@@ -17,7 +17,8 @@ Prettier decides the formatting; these are the rules it does not. Markup and dat
 - Early `return` instead of nested `if` / `else`; no nested ternaries.
 - **A clean `return`:** a name, a literal, one call or a boolean of names. A chain, a
   comparison, `??` or a ternary is computed into a `const` first. In JSX a conditional element
-  is `{isShown && <Tag />}` or a `const` above the `return`.
+  is `{isShown && <Tag />}` or a `const` above the `return`; an optional attribute is never a ternary
+  (`role={isX ? undefined : 'img'}`): its value is a named `const` or the function returns early.
 - **Named conditions:** a long or compound condition becomes a named `const` (`isEmpty`) or
   early returns, one idea per line; no side effect inside a condition.
 - **Booleans** start with `is`, `has`, `can` or `should` — fields, props, results and options.

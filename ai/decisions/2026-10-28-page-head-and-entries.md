@@ -1,6 +1,6 @@
 # Pages set their head through minista's metadata and `Head`; CSS and one script entry are loaded by the layout
 
-Date: 2026-10-28 · Status: accepted
+Date: 2026-10-28 · Status: superseded by 2026-10-28-shared-page-head.md
 
 ## Context
 

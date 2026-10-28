@@ -16,7 +16,7 @@ classes and follow `ai/rules/jsx.md`.
   a dialog, a reveal); `scripts/controllers/` — one controller per section that needs more
   than one widget or its own logic (a post feed, the contact form).
 - `scripts/constants.js` — what scripts share: the media queries (equal to the CSS
-  breakpoints), key names, storage keys, state classes.
+  breakpoints), key names, storage keys, state classes, sentinels (`NO_INDEX`); a class file declares no constant of its own.
 
 ## Encapsulation
 

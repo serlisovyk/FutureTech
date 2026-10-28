@@ -14,32 +14,36 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `.husky/pre-commit` and `.lintstagedrc.json` — the pre-commit hook that runs them on the staged files.
 - `.github/workflows/ci.yml` — the checks on every push. `.size-limit.json` — the budget of the built JS, CSS, fonts and images.
 - `jsconfig.json` — the editor's copy of the aliases `vite/parts/aliases.js` defines: `@components`, `@sections`,
-  `@layouts`, `@data`, `@styles`, `@scripts`, `@assets`, `@utils`, one per `src/` folder.
+  `@layouts`, `@data`, `@styles`, `@scripts`, `@assets`, `@utils`, one per `src/` folder; `@components`, `@sections` and
+  `@utils` are barrels (`index.js`), imported bare.
 - `src/pages/` — one JSX file per page, its file name is its URL: Home (`/`), News, Podcasts, Resources, Contact, 404, and `/ui`, the UI kit demo (noindex, linked from nowhere).
+  A page exports `metadata` (title, description, `robots` when needed) and its content, no head.
   The article route (MY-276) will render one page per blog post from `data/`.
-- `src/layouts/` — the page shell shared by every page: `<html>`, the head (title, stylesheet, the script), `<main>`;
+- `src/layouts/` — the page shell shared by every page: `<html>`, the head (the title and meta from the page's `metadata`, the script), `<main>`;
   the header, the CTA (`CtaRevolution`) and the footer join it from `sections/shared/`.
-- `src/sections/` — one JSX file per page section, by page (`home/`, `news/`, …, `ui/`; `shared/` when two pages use it).
+- `src/sections/` — one folder per section (its JSX, its stylesheet, its parts, an `index.js`), by page group (`home/`, `news/`, …,
+  `ui/`; `shared/` when two pages use it); `sections/index.js` re-exports the groups.
   `shared/Header` is on every page: the skip link, the newsletter strip, the navbar and the mobile menu (a drawer, one
   `data-header` root; the layout passes it the current path).
-- `src/components/` — repeated elements as JSX (a button, a card, a tag), each with its stylesheet beside it
-  (`Icon.jsx` + `Icon.css`); `Icon` renders a sprite icon, `Photo` an optimized photo, `Heading` a heading (`level`
-  is the tag, `size` the look). Sections do the same.
-- UI kit (in `components/`): `Button`, `Tag`, `Badge`, `SectionHeading`, `Stat`, `MetaItem` and `MetaGrid`,
-  `CounterPill`, `AvatarGroup`. `/ui` shows each in every variant.
+- `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.js`),
+  in groups by role with an `index.js`; `components/index.js` re-exports the groups.
+- `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
+- UI kit (`components/ui/`): `Button`, `Tag`, `Badge`, `SectionHeading`, `Stat`, `MetaItem` and `MetaGrid`,
+  `CounterPill`, `AvatarGroup`, `Heading` (`level` is the tag, `size` the look). `/ui` shows each in every variant.
 - `src/data/` — the texts and lists the components render, as plain exported values, one file per entity: `posts` (each with
   its article `body` sections), `categories`, `videos`, `podcasts`, `resources`, `testimonials`, `features`, `stats`, `faq`,
-  `navigation` (the header links, its action and the newsletter strip), `footer`, `socials`, `contacts`, `cta`.
-- `src/utils/` — pure build-time helpers, one function per file (`get-current-year.js`, `get-aria-current.js`), imported by components
-  and sections.
+  `navigation` (the header links, its action and the newsletter strip), `footer`, `socials`, `contacts`, `cta`, `site` (the site
+  name), `ui-kit` (the `/ui` demo lists).
+- `src/utils/` — pure build-time helpers, one function per file (`get-current-year.js`, `get-aria-current.js`, `get-page-title.js`), re-exported by
+  `index.js`, imported by components, sections and the layout.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
   `.container`, `.visually-hidden`), `fonts.css`; `global.css` imports them in that order, the layout imports it first.
   Components and sections import their own stylesheet; the build bundles all into one file.
 - `src/scripts/` — all browser JavaScript: `main.js` (the one entry, loaded by the layout: a table of root hook →
   class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`),
-  `constants.js` (key names, the menu query), `controllers/` (one per section: `HeaderController`, which runs the menu).
-- `src/assets/` — referenced by the build and emitted hashed: `fonts/` (woff2), `icons/` (every sprite icon, one
-  sprite), `logos/` (inline SVG: the logo and its mark), `images/` (photos, decor).
+  `constants.js` (key names, the menu query, the no-index sentinel), `controllers/` (one per section: `HeaderController`, which runs the menu).
+- `src/assets/` — referenced by the build and emitted hashed: `fonts/` (woff2), `icons/` (sprite icons in `ui/`, `social/`,
+  `feature/`; one sprite per folder), `logos/` (inline SVG: the logo and its mark), `images/` (`photos/`, `portraits/`, `decor/`).
 - `AGENTS.md` — the entry point for agents; `CLAUDE.md` points to it.
 - `ai/` — agent docs: this map, `workflow.md`, `rules/`, `skills/`, `decisions/`, `prompts/`,
   `linear-task-template.md`, the archive `superpowers/`, `design-system.md`.

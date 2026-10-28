@@ -87,12 +87,13 @@ the wildcard for each folder that has a barrel (`@components`, `@sections`, `@ut
 ## Code style
 
 - No `...props`. `Button` gains `ariaCurrent` and `isToggleDismiss`; `Heading` gains `id`; `Photo` gets `src`,
-  `alt`, `sizes`, `breakpoints`, `className`, `ariaHidden`, `formats`, `loading`; `Icon` keeps `name`, `title`,
+  `alt`, `sizes`, `breakpoints`, `ariaHidden`, `fetchPriority` (the first-screen photo passes it, `jsx.md`),
+  `className`, `formats`, `loading`; `Icon` keeps `name`, `title`,
   `size`, `className`. minista's own `Svg` and `Sprite` take attributes from the caller by design and are not
   ours. `{...column}`-style spreads of a data item do not exist in the repo.
 - A prop with a default is last in the destructuring list.
-- No ternary in a `return` or for an optional attribute: `Button` and `CounterPill` compute a named `const`,
-  `Icon` returns early for the decorative case. The class's `#stepIndex` returns early.
+- No ternary in a `return` or for an optional attribute: `Button`, `CounterPill` and `Icon` compute a named `const` above the
+  `return`. The class's `#stepIndex` returns early.
 - `NO_INDEX` moves to `scripts/constants.js`. The other controllers have only value-assignment ternaries, which stay.
 - `UiKit`'s demo lists move to `data/ui-kit.js`.
 

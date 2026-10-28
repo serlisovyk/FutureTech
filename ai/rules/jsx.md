@@ -19,19 +19,28 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
 - A component or section file is named in PascalCase after its function (`NewsCard.jsx`
   exports `NewsCard`); its root element carries the kebab-case BEM block (`.news-card`).
 - Named exports only; a page exports what minista requires of a page (check the docs:
-  `ai/rules/minista.md`).
+  `ai/rules/minista.md`): its component and `metadata = { title, description }`, plus `robots` when the page needs
+  it. The page has no `Head` and no site name: the layout builds the head (decision `shared-page-head`).
+- A component is a folder: `components/<group>/<Component>/` holds `<Component>.jsx`, `<Component>.css` and an
+  `index.js`; a section is `sections/<group>/<Section>/` with its parts. Each group has an `index.js`, and the root
+  `index.js` of `components/` and `sections/` re-exports the groups (decision `folders-and-barrels`).
 - One file holds one component and nothing else: a sub-component goes to its own file
   (`FooterColumn.jsx`), a helper to `utils/`, a text or an id to `data/`.
 - One root element per component, with the block's class. A component is used by sections
   only; a section does not render another section.
-- An import that crosses folders uses the folder alias (list in `ai/map.md`):
-  `import { Icon } from '@components/Icon.jsx'`; one inside the same folder stays `./`; never `../`.
+- An import that crosses folders uses the folder alias (list in `ai/map.md`): `import { Button, Tag } from '@components'`,
+  `from '@sections'`, `from '@utils'` (the barrels); one inside the same folder stays `./`; never `../`. A component of
+  `components/` imports another by its folder (`@components/media/Icon`), never the root barrel: that is a cycle.
   The one exception is a root path (`/src/assets/…`, `/src/scripts/main.js`): minista's `Sprite`, `Svg`
   and `Picture` read their `src` from the project root, not through Vite's aliases.
 
 ## Props and data
 
-- A repeated element takes its data as props, spread from a `data/` item or passed one by one.
+- A repeated element takes its data as props, passed one by one by name. No `...props` rest or spread in a
+  component, and no `{...item}` of a data item: a prop the callers use is named in the signature.
+- Props with a default come last in the destructuring list (`{ icon, children, variant = 'primary' }`).
+- No ternary in a `return` and none for an optional attribute: compute a named `const` above the `return`, or
+  return early (`ai/rules/style.md`).
 - A variation is a prop and a BEM modifier (`isFeatured` → `news-card--featured`); class names
   are joined with `clsx`, not by string concatenation or a ternary in each file.
 - Texts and lists that repeat or are rendered by a loop live **only** in `data/` and are
@@ -47,10 +56,10 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
 
 ## Images and icons
 
-- A photo is `<Photo src="/src/assets/images/<name>.jpg" alt sizes />`, never a bare `<img>` for a raster:
+- A photo is `<Photo src="/src/assets/images/photos/<name>.jpg" alt sizes />`, never a bare `<img>` for a raster:
   `width` and `height` come from the file, `sizes` states the rendered width at the layouts. It is lazy;
   the first screen's photo passes `loading="eager"` and `fetchPriority="high"`.
-- An icon is `<Icon name="arrow-up-right" />`, the file name in `assets/icons/`. It is decorative unless it
+- An icon is `<Icon name="ui/arrow-up-right" />`, its path in `assets/icons/` without the extension. It is decorative unless it
   has a `title`. Its block's stylesheet sets the size and the colour (`color`; the symbols use `currentColor`);
   a two-tone feature icon takes `--icon-accent` and `--icon-base`.
 - The logo is inline: `<Svg src="/src/assets/logos/logo.svg" title="FutureTech" />` from `minista/assets`; its

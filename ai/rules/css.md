@@ -11,7 +11,7 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
 - Elements do not nest in the name: `block__element`, never `block__element__sub`; a
   two-word element is hyphenated (`header__nav-link`).
 - One block, one stylesheet beside its JSX with the same name (`Button.css` next to
-  `Button.jsx`, `Hero.css` next to `sections/home/Hero.jsx`), imported by that JSX file. A
+  `Button.jsx` in the component's folder, `Hero.css` next to `Hero.jsx` in `sections/home/Hero/`), imported by that JSX file. A
   shared element is a component with its own stylesheet (`.button`, `.tag`).
 - `styles/` holds only global CSS: tokens, reset, base (`body`, `:focus-visible`, the
   container), the `@font-face` rules, utilities — never a component's or a section's rules

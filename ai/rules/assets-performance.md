@@ -21,19 +21,19 @@ build. Where the files are: `ai/map.md`. Why the site is static: decision
 - Photos go through minista's image plugin (`Photo`): AVIF with a WebP fallback and a `srcset` with
   `sizes` that match the layout at the three widths (formats and quality: decision `image-formats`).
   The source file in `assets/images/` is never shipped as it is: keep it near the largest size drawn.
-- Icons are SVG in one sprite (`assets/icons/`), used through `Icon`; an SVG that must be inline
+- Icons are SVG, a sprite per folder (`assets/icons/ui/`, `social/`, `feature/`), used through `Icon`; an SVG that must be inline
   (the logo) goes through minista's SVG plugin (`assets/logos/`). A decor made of hundreds of vectors is a
   raster. An export from a design tool is cleaned before it is committed (no editor metadata, no embedded
   raster, no needless paths).
 - A video is never self-hosted or embedded on page load: a preview image and a play button,
   the player is created when the user asks for it.
 - Asset files are named in lowercase with hyphens, by what they show (`mars-landscape.jpg`),
-  not by their place in the design.
+  not by their place in the design, and sorted into subfolders by meaning (`icons/ui/`, `images/portraits/`).
 - An asset the code no longer uses is deleted in the same change.
 
 ## Page metadata
 
-- Every page and every article has a unique `<title>` and meta `description`, the viewport
+- Every page and every article has a unique `<title>` and meta `description`, both set in its `metadata` and printed by the layout, the viewport
   meta, and `lang` equal to the language of its content.
 - Absolute URLs (canonical, `og:url`, `og:image`) are built from one site origin constant,
   never written out per page.
