@@ -55,13 +55,17 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
 
 ## Breakpoints and fluid values
 
-- The design is drawn at three widths: Desktop, Laptop, Mobile (exact numbers and the values
-  at each in `ai/design-system.md`). Which media queries exist and how type and spacing move
-  between the widths is a decision record (MY-246); no other breakpoint is invented.
+- The design is drawn at three widths: Desktop 1920, Laptop 1440, Mobile 390 (the values at each
+  are in `ai/design-system.md`, in that order). The scheme is decision `fluid-ramps`.
+- Media queries change structure only: `@media (width < 1024px)` stacks side-by-side
+  compositions, `@media (width < 768px)` makes grids one column and the header a menu button.
+  There is no query at 1440, and no other breakpoint is invented.
+- Type, spacing and radii are fluid: the size at 390 plus the growth of each segment, from the
+  design numbers, through the two ramps in the variables stylesheet, for example
+  `calc(28px + (44 - 28) * var(--ramp-390-1440) + (58 - 44) * var(--ramp-1440-1920))`. A flat
+  segment leaves its term out. Never a bare `vw` coefficient tuned by eye, never a query per width.
 - A new rule takes its values from the `ai/design-system.md` tables and is checked at the three
   widths and in between. The base rule is the widest layout; a narrower screen overrides it.
-- A `clamp()` is written with readable anchors (the design numbers), never a bare `vw`
-  coefficient tuned by eye, and its minimum is below its maximum.
 - No horizontal scroll at any width from Mobile to Desktop, and none at 200% zoom.
 
 ## Motion and focus
