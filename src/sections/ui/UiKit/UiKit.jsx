@@ -4,22 +4,28 @@ import {
   Button,
   CounterPill,
   Heading,
-  Icon,
   MetaGrid,
+  NewsCard,
   SectionHeading,
   Stat,
   Tag,
+  VideoCard,
 } from '@components'
 import { resourceShowcases } from '@data/resources.js'
 import { stats } from '@data/stats.js'
-import { articleMeta, podcastMeta, sectionHeadingDemo } from '@data/ui-kit.js'
-import { videos } from '@data/videos.js'
+import {
+  articleMeta,
+  episodeCardDemo,
+  podcastMeta,
+  sectionHeadingDemo,
+  videoCardDemo,
+} from '@data/ui-kit.js'
+import { getPostsByPlacement } from '@utils'
 import './UiKit.css'
 
 export function UiKit() {
   const { meta: ebookMeta, avatars } = resourceShowcases[0]
-  const [firstVideo, secondVideo] = videos
-  const demoVideos = [firstVideo, secondVideo]
+  const trendingPosts = getPostsByPlacement('trending')
 
   return (
     <div className="ui-kit">
@@ -184,23 +190,64 @@ export function UiKit() {
       <section className="ui-kit__group">
         <div className="container ui-kit__body">
           <Heading level={2} size="h3">
-            VideoModal
+            NewsCard
           </Heading>
           <p className="ui-kit__caption">
-            Play buttons: each opens the modal with its video
+            Three across: the photo, the title, the category, the counters and the
+            link to the article
           </p>
-          <div className="ui-kit__row">
-            {demoVideos.map(({ id, title, videoId }) => (
-              <button
-                key={id}
-                className="ui-kit__play"
-                type="button"
-                aria-label={`Play: ${title}`}
-                data-video-id={videoId}
-                data-video-title={title}
-              >
-                <Icon name="ui/play" className="ui-kit__play-icon" />
-              </button>
+          <div className="ui-kit__grid ui-kit__grid--news">
+            {trendingPosts.map((post) => (
+              <NewsCard
+                key={post.slug}
+                slug={post.slug}
+                title={post.title}
+                category={post.category}
+                image={post.image}
+                imageAlt={post.imageAlt}
+                likes={post.counters.likes}
+                comments={post.counters.comments}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="ui-kit__group">
+        <div className="container ui-kit__body">
+          <Heading level={2} size="h3">
+            VideoCard
+          </Heading>
+          <p className="ui-kit__caption">
+            The video, two across: the play button, the duration, the title and the
+            text
+          </p>
+          <div className="ui-kit__grid ui-kit__grid--video">
+            {videoCardDemo.map((video) => (
+              <VideoCard
+                key={video.id}
+                title={video.title}
+                text={video.text}
+                duration={video.duration}
+                image={video.poster}
+                videoId={video.videoId}
+              />
+            ))}
+          </div>
+          <p className="ui-kit__caption">
+            The episode, three across: the same with the Listen Podcast button
+          </p>
+          <div className="ui-kit__grid ui-kit__grid--episode">
+            {episodeCardDemo.map((episode) => (
+              <VideoCard
+                key={episode.id}
+                title={episode.title}
+                text={episode.text}
+                duration={episode.duration}
+                image={episode.image}
+                videoId={episode.videoId}
+                isEpisode
+              />
             ))}
           </div>
         </div>

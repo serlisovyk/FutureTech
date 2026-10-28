@@ -1,3 +1,6 @@
+import { episodes } from './podcasts.js'
+import { videos } from './videos.js'
+
 export const articleMeta = [
   { label: 'Publication Date', value: 'October 15, 2023' },
   { label: 'Category', value: 'Healthcare' },
@@ -16,3 +19,7 @@ export const sectionHeadingDemo = {
   title: "Explore FutureTech's In-Depth Blog Posts",
   link: { href: '/news', label: 'View All Blogs' },
 }
+
+export const videoCardDemo = videos.slice(0, 2)
+
+export const episodeCardDemo = episodes.slice(0, 3)
