@@ -1,0 +1,261 @@
+.hero__main {
+  display: grid;
+  grid-template-columns: 1fr calc(523px + (653 - 523) * var(--ramp-1440-1920));
+  padding-inline-end: var(--space-container);
+
+  @media (width < 1024px) {
+    grid-template-columns: 1fr;
+    padding-inline-end: 0;
+  }
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: calc(30px + (100 - 30) * var(--ramp-390-1440));
+  min-width: 0;
+  padding-block-start: calc(
+    40px + (100 - 40) * var(--ramp-390-1440) + (150 - 100) * var(--ramp-1440-1920)
+  );
+}
+
+.hero__intro {
+  display: flex;
+  flex-direction: column;
+  gap: calc(
+    14px + (20 - 14) * var(--ramp-390-1440) + (30 - 20) * var(--ramp-1440-1920)
+  );
+  padding-inline: var(--space-container)
+    calc(16px + (40 - 16) * var(--ramp-390-1440) + (50 - 40) * var(--ramp-1440-1920));
+}
+
+.hero__eyebrow {
+  color: var(--dark-40);
+  font-family: var(--font-kumbh);
+  font-size: calc(
+    18px + (22 - 18) * var(--ramp-390-1440) + (30 - 22) * var(--ramp-1440-1920)
+  );
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: calc(
+    10px + (14 - 10) * var(--ramp-390-1440) + (20 - 14) * var(--ramp-1440-1920)
+  );
+}
+
+.hero__lead {
+  color: var(--grey-50);
+}
+
+.hero__stats {
+  --hero-stats-gap: calc(
+    40px + (80 - 40) * var(--ramp-390-1440) + (100 - 80) * var(--ramp-1440-1920)
+  );
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: var(--hero-stats-gap);
+  margin-block-start: auto;
+  padding-inline-start: var(--space-container);
+  border-block-start: var(--border);
+}
+
+.hero__stat {
+  position: relative;
+  padding-block: calc(
+      19px + (29 - 19) * var(--ramp-390-1440) + (49 - 29) * var(--ramp-1440-1920)
+    )
+    calc(20px + (30 - 20) * var(--ramp-390-1440) + (50 - 30) * var(--ramp-1440-1920));
+
+  & + &::before {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: calc(var(--hero-stats-gap) / -2);
+    border-inline-start: var(--border);
+  }
+}
+
+.hero__aside {
+  --hero-aside-space: calc(
+    40px + (50 - 40) * var(--ramp-390-1440) + (80 - 50) * var(--ramp-1440-1920)
+  );
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: calc(20px + (30 - 20) * var(--ramp-1440-1920));
+  isolation: isolate;
+  padding-block: calc(100px + (150 - 100) * var(--ramp-390-1440))
+    var(--hero-aside-space);
+  padding-inline: var(--hero-aside-space);
+  padding-inline-start: calc(var(--hero-aside-space) - 1px);
+  border-inline-start: var(--border);
+
+  @media (width < 1024px) {
+    padding-inline-start: var(--hero-aside-space);
+    border-inline-start: none;
+  }
+}
+
+.hero__decor {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.hero__decor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;
+}
+
+.hero__aside-button {
+  @media (width < 768px) {
+    align-self: stretch;
+  }
+}
+
+.hero__aside-text {
+  display: flex;
+  flex-direction: column;
+  gap: calc(4px + (6 - 4) * var(--ramp-390-1440) + (14 - 6) * var(--ramp-1440-1920));
+}
+
+.hero__aside-title {
+  color: var(--white);
+  font-size: calc(
+    18px + (20 - 18) * var(--ramp-390-1440) + (24 - 20) * var(--ramp-1440-1920)
+  );
+  font-weight: 500;
+}
+
+.hero__strip {
+  border-block-start: var(--border);
+}
+
+.hero__features {
+  --hero-features-gap: calc(100px + (160 - 100) * var(--ramp-1440-1920));
+  --hero-feature-space: calc(
+    30px + (40 - 30) * var(--ramp-390-1440) + (50 - 40) * var(--ramp-1440-1920)
+  );
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: var(--hero-features-gap);
+
+  @media (width < 1024px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero__feature {
+  position: relative;
+
+  @media (width < 1024px) {
+    & + & .hero__feature-card {
+      padding-block-start: var(--hero-feature-space);
+    }
+  }
+
+  & + &::before {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: calc(var(--hero-features-gap) / -2);
+    border-inline-start: var(--border);
+
+    @media (width < 1024px) {
+      inset-block: 0 auto;
+      inset-inline: 0;
+      border-inline-start: none;
+      border-block-start: var(--border);
+    }
+  }
+}
+
+.hero__feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: calc(
+    10px + (20 - 10) * var(--ramp-390-1440) + (30 - 20) * var(--ramp-1440-1920)
+  );
+  height: 100%;
+  padding-block: calc(var(--hero-feature-space) - 1px) var(--hero-feature-space);
+  border-radius: var(--radius-card);
+}
+
+.hero__feature-body {
+  display: flex;
+  flex-direction: column;
+  gap: calc(
+    16px + (20 - 16) * var(--ramp-390-1440) + (30 - 20) * var(--ramp-1440-1920)
+  );
+}
+
+.hero__feature-icon {
+  width: calc(
+    30px + (40 - 30) * var(--ramp-390-1440) + (50 - 40) * var(--ramp-1440-1920)
+  );
+  height: calc(
+    30px + (40 - 30) * var(--ramp-390-1440) + (50 - 40) * var(--ramp-1440-1920)
+  );
+}
+
+.hero__feature-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(14px + (20 - 14) * var(--ramp-1440-1920));
+}
+
+.hero__feature-titles {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: calc(2px + (4 - 2) * var(--ramp-1440-1920));
+  min-width: 0;
+}
+
+.hero__feature-title {
+  color: var(--white);
+  font-size: var(--font-size-subheading);
+  font-weight: 500;
+}
+
+.hero__feature-subtitle {
+  color: var(--grey-50);
+}
+
+.hero__feature-arrow {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: calc(
+    40px + (44 - 40) * var(--ramp-390-1440) + (52 - 44) * var(--ramp-1440-1920)
+  );
+  height: calc(
+    40px + (44 - 40) * var(--ramp-390-1440) + (52 - 44) * var(--ramp-1440-1920)
+  );
+  border-radius: var(--radius-pill);
+  background-color: var(--yellow-55);
+  color: var(--dark-08);
+}
+
+.hero__feature-arrow-icon {
+  width: var(--size-icon);
+  height: var(--size-icon);
+}
+
+.hero__feature-text {
+  font-family: var(--font-kumbh);
+  font-size: var(--font-size-lead);
+}

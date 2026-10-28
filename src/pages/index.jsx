@@ -1,5 +1,4 @@
-import { site } from '@data/site.js'
-import { Blogs, Features } from '@sections'
+import { Blogs, Features, Hero } from '@sections'
 
 export const metadata = {
   description:
@@ -9,8 +8,7 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
-      <h1>{site.name}</h1>
-      <p>Home page placeholder.</p>
+      <Hero />
       <Features />
       <Blogs />
     </>
