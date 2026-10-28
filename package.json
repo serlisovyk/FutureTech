@@ -1,12 +1,16 @@
 {
   "name": "futuretech",
+  "description": "Multi-page tech blog built with minista 5, Vite 8, React 19 JSX rendered to static HTML, plain CSS and vanilla JavaScript.",
   "private": true,
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "dev": "minista",
     "build": "minista build",
     "preview": "minista preview",
-    "check": "minista check"
+    "check": "minista check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
@@ -16,5 +20,8 @@
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "vite": "8.3.5"
+  },
+  "devDependencies": {
+    "prettier": "3.9.10"
   }
 }
