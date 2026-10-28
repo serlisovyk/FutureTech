@@ -1,6 +1,8 @@
 import '@styles/global.css'
+import { CtaRevolution } from '@sections/shared/CtaRevolution.jsx'
 import interRegular from '@assets/fonts/inter-latin-400.woff2'
 import kumbhSansMedium from '@assets/fonts/kumbh-sans-latin-500.woff2'
+import { CtaRevolution } from '@sections/shared/CtaRevolution.jsx'
 import { Footer } from '@sections/shared/Footer.jsx'
 
 export default function Layout({ title, children }) {
@@ -28,6 +30,7 @@ export default function Layout({ title, children }) {
         <main id="main" tabIndex={-1}>
           {children}
         </main>
+        <CtaRevolution />
         <Footer />
       </body>
     </html>
