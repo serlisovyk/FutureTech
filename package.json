@@ -15,6 +15,7 @@
     "lint:fix": "eslint . --fix",
     "lint:css": "stylelint \"src/**/*.css\"",
     "lint:css:fix": "stylelint \"src/**/*.css\" --fix",
+    "size": "size-limit",
     "prepare": "husky"
   },
   "engines": {
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@eslint/js": "9.39.5",
+    "@size-limit/file": "14.3.0",
     "eslint": "9.39.5",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-jsx-a11y": "6.10.2",
@@ -37,6 +39,7 @@
     "husky": "9.1.7",
     "lint-staged": "16.4.0",
     "prettier": "3.9.10",
+    "size-limit": "14.3.0",
     "stylelint": "17.16.0",
     "stylelint-config-standard": "40.0.0"
   }
