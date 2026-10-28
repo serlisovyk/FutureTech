@@ -81,6 +81,8 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
   segment leaves its term out. Never a bare `vw` coefficient tuned by eye, never a query per width.
 - A new rule takes its values from the `ai/design-system.md` tables and is checked at the three
   widths and in between. The base rule is the widest layout; a narrower screen overrides it.
+- A block with a border has padding of the design's value minus the border width, so its outer size is the
+  design's (a 1px border on 18px padding: `calc(17px …)`; decision `borders-inside`). A transparent border keeps its width.
 - No horizontal scroll at any width from Mobile to Desktop, and none at 200% zoom.
 
 ## Motion and focus
