@@ -13,26 +13,36 @@ export function Button({
   type = 'button',
   isSmall = false,
 }) {
-  const isLink = Boolean(href)
-  const Element = isLink ? 'a' : 'button'
-  const buttonType = isLink ? undefined : type
+  const classNames = clsx(
+    'button',
+    `button--${variant}`,
+    isSmall && 'button--small',
+    className,
+  )
   const toggleDismiss = isToggleDismiss || undefined
-
-  return (
-    <Element
-      className={clsx(
-        'button',
-        `button--${variant}`,
-        isSmall && 'button--small',
-        className,
-      )}
-      href={href}
-      type={buttonType}
-      aria-current={ariaCurrent}
-      data-toggle-dismiss={toggleDismiss}
-    >
+  const content = (
+    <>
       {children}
       {icon && <Icon name={icon} className="button__icon" />}
-    </Element>
+    </>
+  )
+
+  if (href) {
+    return (
+      <a
+        className={classNames}
+        href={href}
+        aria-current={ariaCurrent}
+        data-toggle-dismiss={toggleDismiss}
+      >
+        {content}
+      </a>
+    )
+  }
+
+  return (
+    <button className={classNames} type={type} data-toggle-dismiss={toggleDismiss}>
+      {content}
+    </button>
   )
 }

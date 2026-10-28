@@ -4,7 +4,7 @@ import './Icon.css'
 
 export function Icon({ name, title, className, size = 24 }) {
   const isDecorative = !title
-  const role = isDecorative ? undefined : 'img'
+  const role = title && 'img'
 
   return (
     <Sprite
@@ -14,7 +14,7 @@ export function Icon({ name, title, className, size = 24 }) {
       height={size}
       title={title}
       role={role}
-      aria-hidden={isDecorative}
+      aria-hidden={isDecorative || undefined}
     />
   )
 }
