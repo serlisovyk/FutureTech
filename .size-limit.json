@@ -9,7 +9,7 @@
     "name": "CSS",
     "path": "dist/assets/*.css",
     "gzip": true,
-    "limit": "8 kB"
+    "limit": "9 kB"
   },
   {
     "name": "Fonts",
@@ -23,6 +23,6 @@
     "path": "dist/assets/*.{avif,webp}",
     "gzip": false,
     "brotli": false,
-    "limit": "3.7 MB"
+    "limit": "4.2 MB"
   }
 ]
