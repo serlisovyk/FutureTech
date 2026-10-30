@@ -93,6 +93,16 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
 - A `transition` names its properties, never `all`.
 - A state that hides content for an animation applies only under a class a script puts on
   `<html>`, so the page is complete without script.
+- Reveal on scroll: mark a block with `data-reveal` in the component that owns it, a block below the first screen and
+  never the header, the Home hero, a `PageIntro` or the photo that is the first screen's largest image. Mark the
+  content, not a full-width band with lines. Each card of a grid is marked itself: the cascade is the order in which
+  they enter, not markup. The look lives in the base styles (opacity and a short shift, only under
+  `(scripting: enabled)` and `(prefers-reduced-motion: no-preference)`); a block never styles `[data-reveal]` itself.
+- Hover: `:hover` only inside `@media (hover: hover)`, a step that fits the block and never a jump. A control steps its
+  background one level up (Dark/08 to Dark/10, Dark/10 to Dark/15), brightens its border to `--dark-40` and turns its text
+  white; a link with the ↗ arrow moves the arrow 2px up and right, and a link card does it for its arrow
+  circle; a text link turns white, a social icon yellow. Transitions name `background-color`, `border-color`, `color` or
+  `transform` and take `--transition-duration`. Focus is only the base ring: the hover look is not repeated on `:focus-visible`.
 - One `:focus-visible` rule in the base styles draws the ring for every control; a hover look
   never sits on `:focus`, and never `outline: none` without a replacement.
 - A control drawn under 44 px keeps its drawn size and gets a larger invisible hit area.

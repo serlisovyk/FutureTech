@@ -6,8 +6,8 @@ Branch `my-284-reveal-hover`. Spec: `ai/superpowers/specs/2026-10-30-reveal-hove
 ## Reveal
 
 - `Reveal` (`scripts/components/`), root `<html data-reveal-root>`, one row in `main.js`. It finds `[data-reveal]`
-  inside the root; `start()` returns early under reduced motion or without `IntersectionObserver`, skips the items already
-  on the first screen (`top < innerHeight`), observes the rest, and only then puts `is-reveal-ready` on the root.
+  inside the root; `start()` returns early under reduced motion or without `IntersectionObserver`, drops the hook from the
+  items already rendered on the first screen (`top < innerHeight`), so nothing on screen is ever hidden, observes the rest, and only then puts `is-reveal-ready` on the root.
 - When items intersect it numbers those of one callback batch 0, 1, 2 … (capped) into `--reveal-index`, adds
   `is-revealed` and unobserves them: a cascade without markup, and a lone item has index 0.
 - CSS in `styles/base.css`, with the one `@keyframes`: under `(scripting: enabled)` and `(prefers-reduced-motion:

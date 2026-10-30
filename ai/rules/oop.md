@@ -65,6 +65,9 @@ The JSX carries the roles, `aria-controls`, `aria-labelledby` and the initial `a
 - `CountUp`: root `data-count-up`, holding `data-count-up-number` (the final digits and an optional suffix, nothing else) inside an
   `aria-hidden` wrapper next to a visually hidden twin with the final value. `start()` renders 0 and the count runs when the number
   enters the viewport; reduced motion or no `IntersectionObserver` leave the final value in place.
+- `Reveal`: root `<html data-reveal-root>`, items `data-reveal`. `start()` leaves reduced motion and a browser without
+  `IntersectionObserver` untouched, drops the hook from items already on the first screen, observes the rest and then puts
+  `is-reveal-ready` on the root; an item that enters gets `--reveal-index` (its place in the batch that entered with it) and `is-revealed`, once.
 - Content that must show without JavaScript carries no `hidden` in the JSX: `start()` hides
   what the state says is closed.
 - A new widget or controller is one more row in the table of `main.js`.

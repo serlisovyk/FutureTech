@@ -73,11 +73,12 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, `format-count.js`, …), re-exported by
   `index.js` (plain JS, no JSX), imported by components, sections and the layout; `constants.js` holds their numbers.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
-  `.container`, `.visually-hidden`), `fonts.css`; `global.css` imports them in that order, the layout imports it first.
+  `.container`, `.visually-hidden`, the `reveal` keyframes and the hidden start state), `fonts.css`; `global.css` imports them in that order, the layout imports it first.
   Components and sections import their own stylesheet; the build bundles all into one file.
 - `src/scripts/` — all browser JavaScript: `main.js` (the one entry, loaded by the layout: a table of root hook →
-  class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`, `VideoModal`, `CountUp`),
-  `constants.js` (key names, the menu query, the video and post feed hooks, the video embed, the count-up timing, the no-index sentinel), `controllers/`
+  class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`, `VideoModal`, `CountUp`, `Reveal`: root `<html data-reveal-root>`,
+  fades in every `[data-reveal]` below the first screen once, cascading the ones that enter together),
+  `constants.js` (key names, the menu query, the video and post feed hooks, the video embed, the count-up and reveal settings, the no-index sentinel), `controllers/`
   (one per section: `HeaderController`, which runs the menu; `VideoModalController`, which opens the modal from any play button;
   `PostFeedController`, which filters a feed's rows by the selected tab).
 - `src/assets/` — referenced by the build and emitted hashed: `fonts/` (woff2), `icons/` (sprite icons in `ui/`, `social/`,
