@@ -1,4 +1,9 @@
-import { ResourceLibrary, ResourceStats, ResourcesIntro } from '@sections'
+import {
+  ResourceCards,
+  ResourceLibrary,
+  ResourceStats,
+  ResourcesIntro,
+} from '@sections'
 
 export const metadata = {
   title: 'Resources',
@@ -11,6 +16,7 @@ export default function ResourcesPage() {
       <ResourcesIntro />
       <ResourceStats />
       <ResourceLibrary />
+      <ResourceCards />
     </>
   )
 }
