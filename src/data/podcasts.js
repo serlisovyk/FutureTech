@@ -1,9 +1,24 @@
+export const podcastsIntro = {
+  titleId: 'podcasts-title',
+  titleStart: 'Unlock the World of Artificial Intelligence',
+  titleEnd: 'through Podcasts',
+  text: "Dive deep into the AI universe with our collection of insightful podcasts. Explore the latest trends, breakthroughs, and discussions on artificial intelligence. Whether you're an enthusiast or a professional, our AI podcasts offer a gateway to knowledge and innovation.",
+}
+
+export const topPodcasts = {
+  id: 'top-podcasts',
+  titleId: 'top-podcasts-title',
+  title: 'Top Podcasts',
+}
+
 export const podcasts = [
   {
     id: 'ai-revolution',
+    titleId: 'ai-revolution-title',
     icon: 'feature/ai-revolution',
     title: 'AI Revolution',
     rating: 5,
+    ratingLabel: 'Rated 5 out of 5',
     host: 'Dr. Sarah Mitchell',
     tagline: 'Delves into the transformative impact of AI',
     text: 'Join Dr. Sarah Mitchell as she delves into the transformative impact of AI on industries, featuring expert interviews and real-world case studies. Explore the possibilities of AI in healthcare, finance, and more.',
@@ -17,9 +32,11 @@ export const podcasts = [
   },
   {
     id: 'ai-conversations',
+    titleId: 'ai-conversations-title',
     icon: 'feature/ai-conversations',
     title: 'AI Conversations',
     rating: 5,
+    ratingLabel: 'Rated 5 out of 5',
     host: 'Mark Anderson',
     tagline: 'Engage in thought-provoking conversations with leading experts.',
     text: "Mark discusses the future of AI, the impact on society, and how it's shaping industries worldwide. Engage in thought-provoking conversations with leading experts.",
