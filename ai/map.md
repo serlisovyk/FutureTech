@@ -50,7 +50,8 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `ResourceCards` (id `resource-cards`, the last section: a hidden `h2` and three `ResourceCard`s of `resourceCards` split by
   lines, each photo, title, text, "View Details" to its tab and the download button).
 - Blog sections (`sections/blog/`), on `pages/blog/[slug].jsx`: `Article` (the post's `h1`, its `MetaGrid`, and one `ArticleSection` per
-  `body` entry: an `h2` with the entry's `id`, the anchor of the future table of contents, and its paragraphs). Texts: `data/article.js`.
+  `body` entry: an `h2` with the entry's `id`, the anchor of the future table of contents, and its paragraphs), `SimilarNews` (the `minor`
+  `Heading` with "View All News", and three `NewsCard`s chosen by `getSimilarPosts`). Texts: `data/article.js`.
 - Contact sections (`sections/contact/`), in design order on `pages/contact.jsx`: `ContactInfo` (id `contact-info`: the page's
   hidden `h1` and four `ContactColumn`s of `contacts` split by lines, 2 x 2 below 1024px, one column below 768px),
   `ContactForm` (the `<form id="contact-form">` beside the icon and `h2`: a field part per kind, `ContactFormController` checks it,
@@ -61,7 +62,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
 - UI kit (`components/ui/`): `Button`, `Tag`, `Badge`, `SectionHeading`, `Stat` (its number counts up from 0 in view), `MetaItem` and `MetaGrid`,
-  `CounterPill`, `AvatarGroup`, `PlayButton` (the ▶ that opens the video modal), `Heading` (`level` is the tag, `size` the look; `hero` is the Home title). `AvatarGroup` has a capsule variant. `/ui` shows each in every variant.
+  `CounterPill`, `AvatarGroup`, `PlayButton` (the ▶ that opens the video modal), `Heading` (`level` is the tag, `size` the look; `hero` is the Home title, `minor` the grey one). `AvatarGroup` has a capsule variant. `/ui` shows each in every variant.
 - Cards (`components/cards/`): `NewsCard` (photo, title, category, counters, link to the article) and `VideoCard` (preview with the
   `PlayButton`; `isEpisode` adds Listen Podcast, which opens the same video). Both are on `/ui`.
 - `PageIntro` (`components/page/`): the page's `h1` over two lines with the text beside the second one (stacked at
@@ -74,6 +75,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   name), `hero` (the Home hero texts, decor and avatars), `news` (the News intro, the featured story, the trending cards, the news hub and the videos section), `video-modal` (its close label and title id), `card-photos` (the `sizes` and widths of the card and avatar photos), `post-feed` (its tab list label, empty text and announcements), `ui-kit` (the `/ui` demo lists).
 - `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, `format-count.js`, …), re-exported by
   `index.js` (plain JS, no JSX), imported by components, sections and the layout; `constants.js` holds their numbers.
+  `getSimilarPosts(post, count)`: same-category posts first, then the newest, newest first, never `post`.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
   `.container`, `.visually-hidden`, the `reveal` keyframes and the hidden start state), `fonts.css`; `global.css` imports them in that order, the layout imports it first.
   Components and sections import their own stylesheet; the build bundles all into one file.
