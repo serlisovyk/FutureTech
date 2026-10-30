@@ -38,6 +38,9 @@ Navigation only: where things live and who owns what. How it works is in the cod
   post: photo, title, text, `MetaGrid`, counters, Read More), `TrendingStories` (id `trending-stories`: three `NewsCard`s, a hidden `h2`),
   `NewsHub` (id `news-hub`: `SectionHeading` and a `PostFeed` of the `headlines` posts),
   `FeaturedVideos` (id `featured-videos`: `SectionHeading` and the `videos` as a 2 x 2 list of `VideoCard`s split by lines).
+- Podcasts sections (`sections/podcasts/`), in design order on `pages/podcasts.jsx`: `PodcastsIntro` (the `PageIntro` of Podcasts),
+  `TopPodcasts` (id `top-podcasts`: one `PodcastShow` per show of `podcasts`: icon, title, stars, host plate with Listen Podcast
+  beside the video preview, lead text and `MetaGrid` stats).
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
