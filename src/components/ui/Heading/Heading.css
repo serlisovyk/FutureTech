@@ -24,6 +24,13 @@
   );
 }
 
+.heading--minor {
+  color: var(--grey-80);
+  font-size: calc(
+    20px + (22 - 20) * var(--ramp-390-1440) + (28 - 22) * var(--ramp-1440-1920)
+  );
+}
+
 .heading--h3 {
   font-size: calc(
     24px + (30 - 24) * var(--ramp-390-1440) + (40 - 30) * var(--ramp-1440-1920)

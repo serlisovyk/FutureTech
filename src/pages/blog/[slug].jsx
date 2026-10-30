@@ -1,4 +1,4 @@
-import { Article } from '@sections'
+import { Article, SimilarNews } from '@sections'
 import { posts } from '@data/posts.js'
 
 export function getStaticData() {
@@ -9,5 +9,11 @@ export function getStaticData() {
 }
 
 export default function ArticlePage({ post }) {
-  return <Article post={post} />
+  return (
+    <>
+      <Article post={post} />
+
+      <SimilarNews post={post} />
+    </>
+  )
 }

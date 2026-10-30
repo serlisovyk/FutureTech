@@ -1,0 +1,26 @@
+.similar-news__inner {
+  display: flex;
+  flex-direction: column;
+  gap: calc(
+    30px + (40 - 30) * var(--ramp-390-1440) + (60 - 40) * var(--ramp-1440-1920)
+  );
+  padding-block: var(--space-section);
+}
+
+.similar-news__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 30px;
+}
+
+.similar-news__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  @media (width < 768px) {
+    grid-template-columns: 1fr;
+  }
+}
