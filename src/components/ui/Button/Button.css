@@ -51,6 +51,10 @@
   padding-block: 17px;
   border-radius: var(--radius-control);
   background-color: var(--dark-10);
+
+  &.button--compact {
+    padding-block: calc(13px + (17 - 13) * var(--ramp-1440-1920));
+  }
 }
 
 .button--small {

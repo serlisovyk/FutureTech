@@ -97,6 +97,20 @@ export function UiKit() {
               Download Ebooks Now
             </Button>
           </div>
+          <p className="ui-kit__caption">Ghost, compact: a link and a button</p>
+          <div className="ui-kit__row">
+            <Button
+              variant="ghost"
+              href="/contact"
+              icon="ui/arrow-up-right"
+              isCompact
+            >
+              contact@ai-podcasts.com
+            </Button>
+            <Button variant="ghost" icon="ui/arrow-up-right" isCompact>
+              contact@ai-podcasts.com
+            </Button>
+          </div>
         </div>
       </section>
 

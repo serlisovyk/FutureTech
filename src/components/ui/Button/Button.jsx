@@ -18,12 +18,14 @@ export function Button(props) {
     variant = 'primary',
     type = 'button',
     isSmall = false,
+    isCompact = false,
   } = props
 
   const classNames = clsx(
     'button',
     `button--${variant}`,
     isSmall && 'button--small',
+    isCompact && 'button--compact',
     className,
   )
   const toggleDismiss = isToggleDismiss || undefined
