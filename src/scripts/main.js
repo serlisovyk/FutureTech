@@ -3,6 +3,7 @@ import { Disclosure } from './components/Disclosure.js'
 import { Reveal } from './components/Reveal.js'
 import { Tabs } from './components/Tabs.js'
 import { Toggle } from './components/Toggle.js'
+import { ContactFormController } from './controllers/ContactFormController.js'
 import { HeaderController } from './controllers/HeaderController.js'
 import { PostFeedController } from './controllers/PostFeedController.js'
 import { VideoModalController } from './controllers/VideoModalController.js'
@@ -14,6 +15,7 @@ const ROOTS = [
   { selector: '[data-count-up]', Component: CountUp },
   { selector: '[data-reveal-root]', Component: Reveal },
   { selector: '[data-header]', Component: HeaderController },
+  { selector: '[data-contact-form]', Component: ContactFormController },
   { selector: '[data-post-feed]', Component: PostFeedController },
   { selector: '[data-video-modal]', Component: VideoModalController },
 ]

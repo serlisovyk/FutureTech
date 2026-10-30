@@ -34,6 +34,17 @@ export const SELECTORS = Object.freeze({
   postFeedPanel: '[data-post-feed-panel]',
   postFeedEmpty: '[data-post-feed-empty]',
   postFeedStatus: '[data-post-feed-status]',
+  formField: '[data-form-field]',
+  formControl: '[data-form-control]',
+  formCountry: '[data-form-country]',
+  formFlag: '[data-form-flag]',
+  formStatus: '[data-form-status]',
+})
+
+export const VALIDITY_ERRORS = Object.freeze({
+  valueMissing: 'errorValueMissing',
+  typeMismatch: 'errorTypeMismatch',
+  patternMismatch: 'errorPatternMismatch',
 })
 
 export const ALL_CATEGORY = 'all'
