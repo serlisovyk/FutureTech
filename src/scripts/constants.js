@@ -8,6 +8,14 @@ export const KEYS = Object.freeze({
 
 export const MEDIA = Object.freeze({
   mobileMenu: '(width < 768px)',
+  reducedMotion: '(prefers-reduced-motion: reduce)',
+})
+
+export const COUNT_UP = Object.freeze({
+  duration: 1500,
+  threshold: 0.5,
+  easingPower: 3,
+  numberPattern: /^(\d+)(\D*)$/,
 })
 
 export const SELECTORS = Object.freeze({

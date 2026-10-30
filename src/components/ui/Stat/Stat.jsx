@@ -7,9 +7,12 @@ export function Stat({ value, label, isLarge = false }) {
 
   return (
     <div className={clsx('stat', isLarge && 'stat--large')}>
-      <p className="stat__value">
-        {number}
-        {hasPlus && <span className="stat__plus">+</span>}
+      <p className="stat__value" data-count-up>
+        <span aria-hidden="true">
+          <span data-count-up-number>{number}</span>
+          {hasPlus && <span className="stat__plus">+</span>}
+        </span>
+        <span className="visually-hidden">{value}</span>
       </p>
       <p className="stat__label">{label}</p>
     </div>
