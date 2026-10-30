@@ -39,6 +39,7 @@ export function ResourceCard({ titleId, title, text, image, detailsHref }) {
           variant="ghost"
           href={downloadHref}
           className="resource-card__button"
+          isCompact
         >
           {downloadLabel}
           <span className="visually-hidden">: {title}</span>

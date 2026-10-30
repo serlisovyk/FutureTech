@@ -48,6 +48,7 @@ export function ResourceRow(props) {
                 icon="ui/arrow-up-right"
                 href={downloadHref}
                 className="resource-row__download"
+                isCompact
               >
                 {downloadLabel}
                 <span className="visually-hidden">: {title}</span>
