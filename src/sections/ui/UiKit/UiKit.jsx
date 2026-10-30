@@ -88,6 +88,15 @@ export function UiKit() {
               Whitepapers
             </Button>
           </div>
+          <p className="ui-kit__caption">Ghost: a link and a button</p>
+          <div className="ui-kit__row">
+            <Button variant="ghost" href="/resources" icon="ui/arrow-up-right">
+              Download Ebooks Now
+            </Button>
+            <Button variant="ghost" icon="ui/arrow-up-right">
+              Download Ebooks Now
+            </Button>
+          </div>
         </div>
       </section>
 

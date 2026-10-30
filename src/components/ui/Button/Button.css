@@ -30,17 +30,27 @@
   }
 }
 
-.button--outline {
-  padding-block: calc(13px + (17 - 13) * var(--ramp-1440-1920));
+.button--outline,
+.button--ghost {
   padding-inline: calc(19px + (23 - 19) * var(--ramp-1440-1920));
   border: var(--border);
-  border-radius: calc(8px + (12 - 8) * var(--ramp-1440-1920));
-  background-color: var(--dark-08);
   color: var(--grey-60);
 
   & .button__icon {
     color: var(--yellow-55);
   }
+}
+
+.button--outline {
+  padding-block: calc(13px + (17 - 13) * var(--ramp-1440-1920));
+  border-radius: calc(8px + (12 - 8) * var(--ramp-1440-1920));
+  background-color: var(--dark-08);
+}
+
+.button--ghost {
+  padding-block: 17px;
+  border-radius: var(--radius-control);
+  background-color: var(--dark-10);
 }
 
 .button--small {
