@@ -1,4 +1,4 @@
-import { ContactInfo, Faq } from '@sections'
+import { ContactForm, ContactInfo, Faq } from '@sections'
 
 export const metadata = {
   title: 'Contact',
@@ -9,6 +9,7 @@ export default function ContactPage() {
   return (
     <>
       <ContactInfo />
+      <ContactForm />
       <Faq />
     </>
   )

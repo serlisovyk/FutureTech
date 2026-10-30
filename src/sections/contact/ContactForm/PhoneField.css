@@ -1,0 +1,59 @@
+.phone-field {
+  display: flex;
+  gap: calc(12px + (16 - 12) * var(--ramp-1440-1920));
+}
+
+.phone-field__code {
+  position: relative;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: calc(4px + (6 - 4) * var(--ramp-1440-1920));
+  width: calc(78px + (100 - 78) * var(--ramp-1440-1920));
+  border: var(--border);
+  border-radius: 7px;
+  background-color: var(--dark-10);
+
+  &:has(:focus-visible) {
+    outline: 2px solid var(--yellow-55);
+    outline-offset: 2px;
+  }
+}
+
+.phone-field__flag {
+  flex: none;
+  width: calc(30px + (34 - 30) * var(--ramp-1440-1920));
+  height: calc(30px + (34 - 30) * var(--ramp-1440-1920));
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.phone-field__flag-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.phone-field__chevron {
+  width: var(--size-icon);
+  height: var(--size-icon);
+  color: var(--white);
+}
+
+.phone-field__select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background-color: var(--dark-10);
+  color: var(--white);
+  color-scheme: dark;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.phone-field__number {
+  flex: 1;
+  min-width: 0;
+}

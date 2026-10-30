@@ -11,6 +11,7 @@
   --grey-80: #ccc;
   --yellow-55: #ffd11a;
   --color-like: #f50;
+  --color-error: #ff5c5c;
   --color-backdrop: color-mix(in srgb, var(--dark-08) 70%, transparent);
 
   --font-kumbh: 'Kumbh Sans', system-ui, sans-serif;
