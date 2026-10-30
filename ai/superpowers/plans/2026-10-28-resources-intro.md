@@ -28,7 +28,8 @@ Branch `my-273-resources-intro`. Spec: `ai/superpowers/specs/2026-10-28-resource
 
 - `ResourceStats`: a full-width section with a line above and below; a `container` list of four columns split by
   vertical lines in the middle of the column gap (160 / 100 at 1920 / 1440; 4 columns of 279 / 245). Block padding of
-  a cell 80 / 60 / 17 (the 390 value is the design's row of 97 less the stat's own height). Below 768 px two columns
+  a cell 80 / 60 / 20 less the border (`borders-inside`; the large `Stat` has no gap at 390, so the design's row of 97
+  is 20 + 57 + 20). Below 768 px two columns
   with a 20 px gap: a vertical line between the pair, a full-width horizontal line between the rows.
 - The lines are absolutely positioned pseudo-elements, as in the Home hero strip, so they add no size.
 
@@ -36,6 +37,8 @@ Branch `my-273-resources-intro`. Spec: `ai/superpowers/specs/2026-10-28-resource
 
 - The intro paragraph is the design's 87-character text; the design's own bottom padding of the intro is 130 at 1920
   where the shared `PageIntro` has 150 (News draws 150): kept shared.
+- At 390 the columns are equal, so "Countries Accessing Our Content" wraps to two lines and the second row is taller
+  than the design's 97 (the design cell seems to hug its text).
 - Whether the strip has lines above and below is not readable in the design data: drawn, as the Home hero strip and
   every full-width section.
 

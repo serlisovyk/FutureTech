@@ -62,6 +62,9 @@ The JSX carries the roles, `aria-controls`, `aria-labelledby` and the initial `a
   element whose click closes the target (focus goes back to the button, as on `Escape`); `onToggle` reports the state.
 - `VideoModal`: root is a native `<dialog data-video-modal>`, with `data-video-modal-title`, `data-video-modal-player`
   and `data-video-modal-close`; its controller opens it from any `[data-video-id]` element (the title in `data-video-title`).
+- `CountUp`: root `data-count-up`, holding `data-count-up-number` (the final digits and an optional suffix, nothing else) inside an
+  `aria-hidden` wrapper next to a visually hidden twin with the final value. `start()` renders 0 and the count runs when the number
+  enters the viewport; reduced motion or no `IntersectionObserver` leave the final value in place.
 - Content that must show without JavaScript carries no `hidden` in the JSX: `start()` hides
   what the state says is closed.
 - A new widget or controller is one more row in the table of `main.js`.
