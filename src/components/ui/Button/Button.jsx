@@ -19,6 +19,7 @@ export function Button(props) {
     type = 'button',
     isSmall = false,
     isCompact = false,
+    isLarge = false,
   } = props
 
   const classNames = clsx(
@@ -26,6 +27,7 @@ export function Button(props) {
     `button--${variant}`,
     isSmall && 'button--small',
     isCompact && 'button--compact',
+    isLarge && 'button--large',
     className,
   )
   const toggleDismiss = isToggleDismiss || undefined

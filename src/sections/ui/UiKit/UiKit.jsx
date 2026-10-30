@@ -59,6 +59,10 @@ export function UiKit() {
             </Button>
             <Button icon="ui/arrow-down">Download</Button>
           </div>
+          <p className="ui-kit__caption">Primary, large: a button</p>
+          <div className="ui-kit__row">
+            <Button isLarge>Send</Button>
+          </div>
           <p className="ui-kit__caption">
             Outline: a link, a button, with each icon
           </p>

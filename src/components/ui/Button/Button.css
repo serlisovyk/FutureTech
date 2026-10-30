@@ -47,6 +47,13 @@
   }
 }
 
+.button--large {
+  padding-block: calc(14px + (18 - 14) * var(--ramp-1440-1920));
+  padding-inline: calc(34px + (46 - 34) * var(--ramp-1440-1920));
+  border-radius: 8px;
+  line-height: 24px;
+}
+
 .button--outline,
 .button--ghost {
   padding-inline: calc(19px + (23 - 19) * var(--ramp-1440-1920));
