@@ -1,0 +1,67 @@
+.contact-info__list {
+  --contact-info-gap: calc(60px + (100 - 60) * var(--ramp-1440-1920));
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: var(--contact-info-gap);
+
+  @media (width < 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (width < 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-info__item {
+  position: relative;
+  min-width: 0;
+  padding-block: calc(
+    20px + (60 - 20) * var(--ramp-390-1440) + (80 - 60) * var(--ramp-1440-1920)
+  );
+
+  &:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: calc(var(--contact-info-gap) / -2);
+    border-inline-start: var(--border);
+  }
+
+  @media (width < 1024px) {
+    &:nth-child(odd)::before {
+      display: none;
+    }
+
+    &:nth-child(n + 3)::after {
+      content: '';
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline: calc(var(--contact-info-gap) / -2);
+      border-block-start: var(--border);
+    }
+
+    &:nth-child(3)::after {
+      inset-inline-start: 0;
+    }
+
+    &:nth-child(4)::after {
+      inset-inline-end: 0;
+    }
+  }
+
+  @media (width < 768px) {
+    &:not(:first-child)::before {
+      display: none;
+    }
+
+    &:nth-child(n + 2)::after {
+      content: '';
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline: 0;
+      border-block-start: var(--border);
+    }
+  }
+}

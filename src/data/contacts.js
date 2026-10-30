@@ -1,5 +1,11 @@
 import { socials } from './socials.js'
 
+export const contactInfo = {
+  id: 'contact-info',
+  titleId: 'contact-info-title',
+  title: 'Contact FutureTech',
+}
+
 export const contacts = [
   {
     id: 'general-inquiries',
