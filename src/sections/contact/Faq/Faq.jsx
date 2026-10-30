@@ -19,7 +19,7 @@ export function Faq() {
             <p>{text}</p>
           </div>
 
-          <Button variant="ghost" icon="ui/arrow-up-right" href={askHref}>
+          <Button variant="ghost" icon="ui/arrow-up-right" href={askHref} isCompact>
             {askLabel}
           </Button>
         </div>
