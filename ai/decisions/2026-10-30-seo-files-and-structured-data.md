@@ -15,9 +15,9 @@ page, and `public/` is copied untouched.
   URL is its file name (the clean URLs `vercel.json` serves); its title, description, `robots` and `article:published_time`
   are read back from the head the layout printed. Nothing lists pages or posts by hand: a new page or entry of
   `data/posts.js` is in all three files after the next build. The origin is `site.url`.
-- **What is public.** `404.html` and a page with a `noindex` meta (`/ui`) are out of the sitemap and `llms.txt` and are
-  `Disallow`ed in `robots.txt`; `/ui` keeps its `noindex` meta as well. The sitemap's `lastmod` is the post date for an
-  article and absent for the other pages (no honest date to give).
+- **What is public.** `404.html` and `/ui` carry a `noindex` meta and are out of the sitemap and `llms.txt`; `robots.txt`
+  allows everything, because a `Disallow` would stop a crawler from reading that `noindex`. The sitemap's `lastmod` is
+  the post date for an article and absent for the other pages (no honest date to give).
 - **Fixed-URL files in `public/`.** The favicon (SVG and a 48 px PNG), the apple-touch icon and the 1200 x 630
   `og-image.png` are committed there: crawlers and browsers cache them by URL and an icon is asked for by a fixed path. They
   were rendered once from the logo and the site's fonts, not at every build. An article's `og:image` is its photo's source

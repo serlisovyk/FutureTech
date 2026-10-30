@@ -1,6 +1,7 @@
 export const metadata = {
   title: 'Page not found',
   description: 'The page you are looking for does not exist on FutureTech.',
+  robots: 'noindex',
 }
 
 export default function NotFoundPage() {

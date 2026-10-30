@@ -19,7 +19,7 @@ export function siteFiles() {
         this.emitFile({
           type: 'asset',
           fileName: SITE_FILES.robots,
-          source: buildRobots(pages),
+          source: buildRobots(),
         })
         this.emitFile({
           type: 'asset',
