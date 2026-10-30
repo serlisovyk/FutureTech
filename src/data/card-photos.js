@@ -17,6 +17,9 @@ export const podcastShowPhotoSizes =
 export const resourceRowPhotoSizes =
   '(width < 768px) calc(100vw - 32px), (width < 1024px) calc(87.8vw + 16px), (width < 1440px) calc(58vw - 110px), (width < 1920px) calc(35.2vw + 241px), calc(100vw - 1003px)'
 
+export const resourceCardPhotoSizes =
+  '(width < 768px) calc(100vw - 32px), (width < 1920px) calc((100vw - 280px) / 3), calc((100vw - 508px) / 3)'
+
 export const postRowAvatarSizes = '(width < 1920px) 60px, 80px'
 
 export const postRowAvatarBreakpoints = [80, 120, 160]

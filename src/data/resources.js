@@ -203,23 +203,36 @@ export const resourceTabs = [
   },
 ]
 
+export const resourceCardsSection = {
+  id: 'resource-cards',
+  titleId: 'resource-cards-title',
+  title: 'Featured resources',
+  detailsLabel: 'View Details',
+}
+
 export const resourceCards = [
   {
     id: 'futuretech-trends-2024',
+    titleId: 'futuretech-trends-2024-card-title',
     title: 'FutureTech Trends 2024',
     text: 'An ebook that predicts upcoming technology trends for the next year, including AI developments.',
     image: '/src/assets/images/photos/vr-business-interface.jpg',
+    detailsHref: '/resources#ebooks',
   },
   {
     id: 'space-exploration-ebook',
+    titleId: 'space-exploration-ebook-card-title',
     title: 'Space Exploration Ebook',
     text: 'An ebook that follows the next decade of space exploration, from lunar bases to crewed missions to Mars.',
     image: '/src/assets/images/photos/astronaut-planet-vinyl.jpg',
+    detailsHref: '/resources#ebooks',
   },
   {
     id: 'quantum-computing-whitepaper',
+    titleId: 'quantum-computing-whitepaper-card-title',
     title: 'Quantum Computing Whitepaper',
     text: 'An in-depth whitepaper exploring the principles and applications of quantum computing.',
     image: '/src/assets/images/photos/light-waves-abstract.jpg',
+    detailsHref: '/resources#whitepapers',
   },
 ]
