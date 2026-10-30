@@ -35,7 +35,8 @@ Navigation only: where things live and who owns what. How it works is in the cod
   drives `Disclosure` below 768px, and six `TestimonialCard`s in two `TestimonialGroup` lists, the second one the
   `Disclosure` region).
 - News sections (`sections/news/`), in design order on `pages/news.jsx`: `NewsIntro` (the `PageIntro` of News), `FeaturedNews` (the `featured`
-  post: photo, title, text, `MetaGrid`, counters, Read More).
+  post: photo, title, text, `MetaGrid`, counters, Read More), `TrendingStories` (id `trending-stories`: three `NewsCard`s, a hidden `h2`),
+  `NewsHub` (id `news-hub`: `SectionHeading` and a `PostFeed` of the `headlines` posts).
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
@@ -50,7 +51,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `src/data/` — the texts and lists the components render, as plain exported values, one file per entity: `blogs` (the Home blog section's id, heading and limit), `posts` (each with
   its article `body` sections), `categories`, `videos`, `podcasts`, `resources` (the Home section's heading, its showcases, the Resources page lists), `testimonials`, `features`, `stats`, `faq`,
   `navigation` (the header links, its action and the newsletter strip), `footer`, `socials`, `contacts`, `cta`, `site` (the site
-  name), `hero` (the Home hero texts, decor and avatars), `news` (the News intro and the featured story's id and labels), `video-modal` (its close label and title id), `card-photos` (the `sizes` and widths of the card and avatar photos), `post-feed` (its tab list label, empty text and announcements), `ui-kit` (the `/ui` demo lists).
+  name), `hero` (the Home hero texts, decor and avatars), `news` (the News intro, the featured story, the trending cards and the news hub), `video-modal` (its close label and title id), `card-photos` (the `sizes` and widths of the card and avatar photos), `post-feed` (its tab list label, empty text and announcements), `ui-kit` (the `/ui` demo lists).
 - `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, `format-count.js`, …), re-exported by
   `index.js` (plain JS, no JSX), imported by components, sections and the layout; `constants.js` holds their numbers.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
