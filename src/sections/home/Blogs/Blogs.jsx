@@ -14,6 +14,7 @@ export function Blogs() {
         titleId={blogs.titleId}
         link={blogs.link}
       />
+
       <PostFeed
         id={blogs.feedId}
         categories={blogCategories}

@@ -7,6 +7,7 @@ import './Hero.css'
 
 export function Hero() {
   const { decor, aside } = hero
+
   const heroStats = stats.slice(0, 3)
 
   return (
@@ -58,6 +59,7 @@ export function Hero() {
           </Button>
         </div>
       </div>
+
       <div className="hero__strip">
         <ul className="hero__features container">
           {heroFeatures.map(({ id, href, icon, title, subtitle, text }) => (
