@@ -30,24 +30,27 @@ none new.
 - The icon shown follows `aria-expanded`; both icons are in the markup. Under `(scripting: none)` neither is drawn.
 - Open item: a thin line between the question and the answer, the radius of the card; closed: the smaller radius.
   The look is selected with `:has([aria-expanded='true'])` on the item, so the script writes only the attribute.
-- Smooth open: the region is a one-row grid whose row goes `1fr` to `0fr` while `hidden` is set, with `visibility`
-  in the same transition so the closed answer leaves the tab and reading order. The transition duration is
-  `--transition-duration`, so reduced motion makes it instant (`ai/rules/css.md`).
+- Smooth open: the region is a one-row grid whose row goes `1fr` to `0fr`, with `visibility` in the same transition so
+  the closed answer leaves the tab and reading order. The closed look is keyed on the button's `aria-expanded` under
+  `(scripting: enabled)`, not on `hidden`: it is then true from the first paint, so `Disclosure.start()` setting `hidden`
+  changes nothing and no closing animation runs at load. The grid sets its own `display`, so `hidden` alone never hides
+  it. The duration is `--transition-duration`: reduced motion makes it instant (`ai/rules/css.md`).
 
 ## Layout
 
 - Section: a line above, a `container` grid `[intro | list]` like the Resources row (intro `min(413 -> 519, 34%)`,
-  gap 60 / 80, intro centred); the list has the start border and padding 60 / 80 (one less on the border side).
+  gap 60 / 80, intro centred); the list has the start border and padding 60 / 80 (one less on the border side) and an end padding 60 at 1440
+  that falls to 0 at 1920, as drawn.
   Under 1024 px one column; the intro has block padding 40 and the list a top border (40, the card gap 20 as drawn);
   under 768 px the button fills the width.
 - Intro: the two-tone icon (50 / 60 / 80), the `Heading` level 2 in the h3 look (Kumbh 600, 20 / 28 / 40), the text,
   the ghost `Button` with the arrow. Heading order: `h1` of the page, `h2` of the section.
 - Items: Dark/10 card with a border, padding 24 / 24 / 34, gap between cards 20 / 24 / 30; question Inter 500 (16 / 18 /
-  20, no letter spacing), icon 20 / 20 / 24 at the right and at the top; answer Inter 400 (14 / 16 / 18), Grey/50.
+  20, no letter spacing), icon 20 / 20 / 24 at the right and at the top; answer Inter 400 (14 / 16 / 18), Grey/50. The line and the answer stop short of the icon column, as the open card is drawn.
 
 ## Deviations from the design (reported)
 
-- The design draws "Ask Qustion"; the site says "Ask Question".
+- The design draws "Ask Qustion"; the site says "Ask Question". The intro text is the design's shorter variant.
 - The ghost button keeps the kit's size (57 high at 1440 and 390; the design's is 49).
 - The answer's Grey/50 on Dark/10 is 4.30:1: kept as drawn, already in the design system's contrast flag.
 
