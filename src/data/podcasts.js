@@ -50,6 +50,16 @@ export const podcasts = [
   },
 ]
 
+export const latestPodcasts = {
+  id: 'latest-podcasts',
+  titleId: 'latest-podcasts-title',
+  moreId: 'latest-podcasts-more',
+  tag: 'Stay Informed with Fresh Content',
+  title: 'Latest Podcast Episodes',
+  moreLabel: 'View All Episodes',
+  initialCount: 3,
+}
+
 export const episodes = [
   {
     id: 'ai-in-healthcare',

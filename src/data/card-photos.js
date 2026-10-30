@@ -19,7 +19,7 @@ export const postRowAvatarSizes = '(width < 1920px) 60px, 80px'
 export const postRowAvatarBreakpoints = [80, 120, 160]
 
 export const episodeCardPhotoSizes =
-  '(width < 768px) calc(100vw - 32px), (width < 1920px) calc((100vw - 280px) / 3), calc((100vw - 508px) / 3)'
+  '(width < 768px) calc(100vw - 32px), (width < 1024px) calc((100vw - 140px) / 2), (width < 1920px) calc((100vw - 280px) / 3), calc((100vw - 508px) / 3)'
 
 export const testimonialAvatarSizes = '(width < 1920px) 50px, 60px'
 
