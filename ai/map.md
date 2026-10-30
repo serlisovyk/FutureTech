@@ -17,10 +17,10 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `@layouts`, `@data`, `@styles`, `@scripts`, `@assets`, `@utils`, one per `src/` folder; `@components`, `@sections` and
   `@utils` are barrels (`index.jsx`; `index.js` for `utils/`, which holds no JSX), imported bare.
 - `src/pages/` — one JSX file per page, its file name is its URL: Home (`/`), News, Podcasts, Resources, Contact, 404, and `/ui`, the UI kit demo (noindex, linked from nowhere).
-  A page exports `metadata` (title, description, `robots` when needed) and its content, no head.
+  A page exports `metadata` (a unique title and description, `robots` when needed) and its content, no head.
   `pages/blog/[slug].jsx` is the article route: `getStaticData` makes one page per entry of `data/posts.js` at `/blog/<slug>`
   (`getPostUrl`), built as `dist/blog/<slug>.html`; it passes the post's title and excerpt as the page's title and description.
-- `src/layouts/` — the page shell shared by every page: `<html>`, the head (the title and meta from the page's `metadata`, the script), `<main>`;
+- `src/layouts/` — the page shell shared by every page: `<html>`, the head (the title, description, canonical, icons, Open Graph and Twitter meta from the page's `metadata`, `url` and, on an article, its `post`; the script), `<main>`;
   the header, the CTA (`CtaRevolution`) and the footer join it from `sections/shared/`.
 - `src/sections/` — one folder per section (its JSX, its stylesheet, its parts, an `index.jsx`), by page group (`home/`, `news/`, …,
   `ui/`; `shared/` when two pages use it); `sections/index.jsx` re-exports the groups.
@@ -58,6 +58,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   the phone field is a flag box over a native country `<select>`, then the number; countries in `data/countries.js`),
   `Faq` (id `faq`: icon, `h2`, text and the "Ask Question" link to the form, beside one `FaqItem` per question of `faq`, each
   its own `Disclosure`, the first open).
+- `public/` — files that need a fixed URL, copied to `dist/` as they are: the favicon (`favicon.svg`, `favicon.png`), `apple-touch-icon.png` and the site's link-preview image `og-image.png` (1200 x 630); an article's `og:image` is its photo's hashed JPEG (`getSocialMeta`).
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
@@ -72,7 +73,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `src/data/` — the texts and lists the components render, as plain exported values, one file per entity: `blogs` (the Home blog section's id, heading and limit), `posts` (each with
   its article `body` sections), `categories`, `videos`, `podcasts` (the Podcasts intro, the Top Podcasts section, the shows, the Latest Podcasts section and the episodes), `resources` (the Resources intro and counters strip, the Home section's heading, its showcases, the Resources page lists and cards), `testimonials`, `features`, `stats`, `faq`, `contact-form` (ids, texts, the fields and their error texts), `countries`,
   `navigation` (the header links, its action and the newsletter strip), `footer`, `socials`, `contacts`, `cta`, `site` (the site
-  name), `hero` (the Home hero texts, decor and avatars), `news` (the News intro, the featured story, the trending cards, the news hub and the videos section), `video-modal` (its close label and title id), `card-photos` (the `sizes` and widths of the card and avatar photos), `post-feed` (its tab list label, empty text and announcements), `ui-kit` (the `/ui` demo lists).
+  name, the production origin, the locale, the theme colour, the icons and the social image), `hero` (the Home hero texts, decor and avatars), `news` (the News intro, the featured story, the trending cards, the news hub and the videos section), `video-modal` (its close label and title id), `card-photos` (the `sizes` and widths of the card and avatar photos), `post-feed` (its tab list label, empty text and announcements), `ui-kit` (the `/ui` demo lists).
 - `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, `format-count.js`, …), re-exported by
   `index.js` (plain JS, no JSX), imported by components, sections and the layout; `constants.js` holds their numbers.
   `getSimilarPosts(post, count)`: same-category posts first, then the newest, newest first, never `post`.

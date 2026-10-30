@@ -19,7 +19,7 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
 - A component or section file is named in PascalCase after its function (`NewsCard.jsx`
   exports `NewsCard`); its root element carries the kebab-case BEM block (`.news-card`).
 - Named exports only; a page exports what minista requires of a page (check the docs:
-  `ai/rules/minista.md`): its component and `metadata = { title, description }`, plus `robots` when the page needs
+  `ai/rules/minista.md`): its component and `metadata = { title, description }`, both unique on the site (a new page always gives them), plus `robots` when the page needs
   it. The page has no `Head` and no site name: the layout builds the head (decision `shared-page-head`).
 - A component is a folder: `components/<group>/<Component>/` holds `<Component>.jsx`, `<Component>.css` and an
   `index.jsx`; a section is `sections/<group>/<Section>/` with its parts. Each group has an `index.jsx`, and the root
