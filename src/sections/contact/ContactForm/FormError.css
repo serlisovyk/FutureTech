@@ -1,6 +1,18 @@
 .form-error {
-  margin-block-start: 8px;
+  min-height: var(--contact-form-gap);
+  padding-block-start: calc(
+    2px + (6 - 2) * var(--ramp-390-1440) + (8 - 6) * var(--ramp-1440-1920)
+  );
   color: var(--color-error);
   font-size: calc(14px + (16 - 14) * var(--ramp-1440-1920));
   letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.form-error--floating {
+  position: absolute;
+  inset-block-start: 100%;
+  inset-inline: 0;
+  min-height: 0;
+  padding-block-start: 8px;
 }

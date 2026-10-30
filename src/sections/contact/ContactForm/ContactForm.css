@@ -48,7 +48,6 @@
 .contact-form__form {
   display: flex;
   flex-direction: column;
-  gap: var(--contact-form-gap);
   min-width: 0;
   padding-block: calc(var(--contact-form-padding) - 1px) var(--contact-form-padding);
   padding-inline-start: calc(var(--contact-form-padding) - 1px);
@@ -65,7 +64,7 @@
 .contact-form__row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--contact-form-gap) 50px;
+  column-gap: 50px;
 
   @media (width < 768px) {
     grid-template-columns: 1fr;
@@ -73,6 +72,7 @@
 }
 
 .contact-form__actions {
+  position: relative;
   display: flex;
   flex-direction: column;
 }

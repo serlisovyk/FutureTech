@@ -70,8 +70,8 @@ The JSX carries the roles, `aria-controls`, `aria-labelledby` and the initial `a
   `is-reveal-ready` on the root; an item that enters gets `--reveal-index` (its place in the batch that entered with it) and `is-revealed`, once.
 - Contact form (`ContactFormController`): root is the `<form data-contact-form>` (no `novalidate` in the markup: `start()` sets it). Every
   field is `data-form-field` around one `data-form-control` (the native constraint attributes are the rule) and a `data-form-error`
-  (`hidden`, empty, named by the control's `aria-describedby`); a `FormField` owns one, checks it on `blur`, and while it shows an
-  error on `input` / `change`, and writes `aria-invalid`, the text and `hidden`. The text of a failed `validity` key is the control's
+  (always in the layout and empty until an error, so showing one moves nothing; named by the control's `aria-describedby`); a `FormField` owns one, checks it on `blur`, and while it shows an
+  error on `input` / `change`, and writes `aria-invalid` and the text. The text of a failed `validity` key is the control's
   `data-error-value-missing`, `-type-mismatch` or `-pattern-mismatch`: no text in the script. The phone: a `data-form-country`
   select whose options carry `data-country`, `data-pattern` and `data-error`, which the controller copies to the number
   (`pattern`, `data-error-pattern-mismatch`), and one `data-form-flag` per country, shown when it matches. `data-form-status` is a

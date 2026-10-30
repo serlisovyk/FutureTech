@@ -41,6 +41,9 @@ Branch `my-278-contact-form`. Spec: `ai/superpowers/specs/2026-10-28-contact-for
   34%, gap 60 / 80, title centred). The form is the column: start border, padding 60 / 80 (one less on the border
   side), end padding 0; below 1024 px a top border and padding 40 x 20 (one less at the border). Field gap 50 / 30 /
   20, label to field 16 / 12 / 12; rows of two with gap 50, one column below 768 px.
+- Error slots: the gap between fields is the always-present, empty error line of the field above (min height = the gap,
+  text 14 / 14 / 16), so an error appears without moving anything; a click that blurs an invalid field still lands. The
+  consent error floats under the actions, in the form's bottom padding.
 - Fields: fill Dark/10, border, radius control, padding 20 / 16 / 16, text 18 / 14 / 14, label Inter 500; the message is
   163 / 163 / 127 high. The country box is 100 x 67 / 78 x 53, flag 34 / 30 / 30, chevron, 16 / 12 / 12 to the number.
 - Footer row: the checkbox (28 / 24 / 24, radius 4) grows, Send beside it with gap 70; stacked below 768 px, Send full width.

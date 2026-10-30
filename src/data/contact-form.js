@@ -38,8 +38,8 @@ export const contactFields = {
     pattern: '[^@\\s]+@[^@\\s]+\\.[^@\\s]+',
     errors: {
       valueMissing: 'Enter your email address.',
-      typeMismatch: 'Enter a valid email address, like name@example.com.',
-      patternMismatch: 'Enter a valid email address, like name@example.com.',
+      typeMismatch: 'Enter a valid email address.',
+      patternMismatch: 'Enter a valid email address.',
     },
   },
   phone: {

@@ -25,7 +25,7 @@ export function ConsentField({ id, errorId, name, label, errors }) {
         <span>{label}</span>
       </label>
 
-      <FormError id={errorId} />
+      <FormError id={errorId} isFloating />
     </div>
   )
 }

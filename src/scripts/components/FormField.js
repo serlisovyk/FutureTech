@@ -80,7 +80,6 @@ export class FormField {
 
     this.#control.setAttribute('aria-invalid', 'true')
     this.#error.textContent = this.#getMessage()
-    this.#error.hidden = false
   }
 
   #renderValid() {
@@ -88,6 +87,5 @@ export class FormField {
 
     this.#control.removeAttribute('aria-invalid')
     this.#error.textContent = ''
-    this.#error.hidden = true
   }
 }

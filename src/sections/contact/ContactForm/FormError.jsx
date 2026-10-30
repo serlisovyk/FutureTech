@@ -1,5 +1,8 @@
+import { clsx } from 'clsx'
 import './FormError.css'
 
-export function FormError({ id }) {
-  return <p className="form-error" id={id} data-form-error hidden></p>
+export function FormError({ id, isFloating = false }) {
+  const classNames = clsx('form-error', isFloating && 'form-error--floating')
+
+  return <p className={classNames} id={id} data-form-error></p>
 }

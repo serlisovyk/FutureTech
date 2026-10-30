@@ -30,6 +30,8 @@ Branch `my-278-contact-form`. What a visitor sees and does; the build is in
   how many digits the chosen country needs; an unchecked consent asks to agree. Text fields are trimmed when checked.
 - An invalid field gets a red border and its message under it; a screen reader reads that message with the field and
   hears the field as invalid. The browser's own bubbles do not show.
+- A message shows in space that is already there: nothing on the page moves when it appears or goes, so a click on Send
+  or on the checkbox is never lost because a field lost focus. The consent message sits under the Send row.
 - Send checks every field at once, shows every message and moves focus to the first invalid field. Nothing is sent
   while any field is invalid.
 
