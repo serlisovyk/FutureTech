@@ -54,6 +54,8 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
   for text unique to that section.
 - A `data/` module exports named constants of plain values; it holds no JSX, class names or
   styles. A list item rendered by `map` has a stable `key` from its data.
+- A new article is one entry in `data/posts.js` with a unique `slug` and a `body` of at least one section: its page,
+  `/blog/<slug>`, is generated; a link to it is always `getPostUrl(slug)`, never a typed path.
 - A section's tag, title, text and optional "View All" link are the shared heading component,
   never a per-section title markup.
 - UI kit first, then your own markup: a button, tag, badge, stat, meta pair, counter pill or avatar group is

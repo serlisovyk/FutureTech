@@ -1,0 +1,26 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: calc(
+    30px + (40 - 30) * var(--ramp-390-1440) + (60 - 40) * var(--ramp-1440-1920)
+  );
+  padding-block: var(--space-section);
+}
+
+.article__header {
+  display: flex;
+  flex-direction: column;
+  gap: calc(
+    16px + (20 - 16) * var(--ramp-390-1440) + (30 - 20) * var(--ramp-1440-1920)
+  );
+  max-width: 900px;
+}
+
+.article__body {
+  display: flex;
+  flex-direction: column;
+  gap: calc(
+    30px + (40 - 30) * var(--ramp-390-1440) + (50 - 40) * var(--ramp-1440-1920)
+  );
+  max-width: 900px;
+}

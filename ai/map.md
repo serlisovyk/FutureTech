@@ -18,7 +18,8 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `@utils` are barrels (`index.jsx`; `index.js` for `utils/`, which holds no JSX), imported bare.
 - `src/pages/` — one JSX file per page, its file name is its URL: Home (`/`), News, Podcasts, Resources, Contact, 404, and `/ui`, the UI kit demo (noindex, linked from nowhere).
   A page exports `metadata` (title, description, `robots` when needed) and its content, no head.
-  The article route (MY-276) will render one page per blog post from `data/`.
+  `pages/blog/[slug].jsx` is the article route: `getStaticData` makes one page per entry of `data/posts.js` at `/blog/<slug>`
+  (`getPostUrl`), built as `dist/blog/<slug>.html`; it passes the post's title and excerpt as the page's title and description.
 - `src/layouts/` — the page shell shared by every page: `<html>`, the head (the title and meta from the page's `metadata`, the script), `<main>`;
   the header, the CTA (`CtaRevolution`) and the footer join it from `sections/shared/`.
 - `src/sections/` — one folder per section (its JSX, its stylesheet, its parts, an `index.jsx`), by page group (`home/`, `news/`, …,
@@ -48,6 +49,8 @@ Navigation only: where things live and who owns what. How it works is in the cod
   per tab, a `ResourceRow` per resource: intro, photo, download, `MetaGrid`),
   `ResourceCards` (id `resource-cards`, the last section: a hidden `h2` and three `ResourceCard`s of `resourceCards` split by
   lines, each photo, title, text, "View Details" to its tab and the download button).
+- Blog sections (`sections/blog/`), on `pages/blog/[slug].jsx`: `Article` (the post's `h1`, its `MetaGrid`, and one `ArticleSection` per
+  `body` entry: an `h2` with the entry's `id`, the anchor of the future table of contents, and its paragraphs). Texts: `data/article.js`.
 - Contact sections (`sections/contact/`), in design order on `pages/contact.jsx`: `ContactInfo` (id `contact-info`: the page's
   hidden `h1` and four `ContactColumn`s of `contacts` split by lines, 2 x 2 below 1024px, one column below 768px),
   `Faq` (id `faq`: icon, `h2`, text and the "Ask Question" link to the form, beside one `FaqItem` per question of `faq`, each

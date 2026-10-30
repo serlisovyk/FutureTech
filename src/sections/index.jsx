@@ -1,3 +1,4 @@
+export * from './blog/index.jsx'
 export * from './contact/index.jsx'
 export * from './home/index.jsx'
 export * from './news/index.jsx'

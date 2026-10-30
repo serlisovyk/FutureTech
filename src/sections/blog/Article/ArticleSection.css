@@ -1,0 +1,7 @@
+.article-section {
+  display: flex;
+  flex-direction: column;
+  gap: calc(
+    14px + (16 - 14) * var(--ramp-390-1440) + (20 - 16) * var(--ramp-1440-1920)
+  );
+}
