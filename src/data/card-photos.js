@@ -14,6 +14,9 @@ export const featuredNewsPhotoBreakpoints = [360, 515, 626]
 export const podcastShowPhotoSizes =
   '(width < 768px) calc(100vw - 80px), (width < 1024px) calc(100vw - 180px), (width < 1440px) calc(64vw - 150px), calc(35.4vw + 237px)'
 
+export const resourceRowPhotoSizes =
+  '(width < 768px) calc(100vw - 32px), (width < 1024px) calc(87.8vw + 16px), (width < 1440px) calc(58vw - 110px), (width < 1920px) calc(35.2vw + 241px), calc(100vw - 1003px)'
+
 export const postRowAvatarSizes = '(width < 1920px) 60px, 80px'
 
 export const postRowAvatarBreakpoints = [80, 120, 160]

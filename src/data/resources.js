@@ -85,13 +85,25 @@ export const resourceShowcases = [
   },
 ]
 
+export const resourceLibrary = {
+  id: 'resource-library',
+  titleId: 'resource-library-title',
+  tag: 'Dive into the Details',
+  title: 'In-Depth Reports and Analysis',
+  tabListLabel: 'Resource types',
+  downloadLabel: 'Download PDF Now',
+  downloadHref: '/contact',
+}
+
 export const resourceTabs = [
   {
     id: 'whitepapers',
+    tabId: 'whitepapers-tab',
     label: 'Whitepapers',
     items: [
       {
         id: 'quantum-computing-whitepaper',
+        titleId: 'quantum-computing-whitepaper-title',
         icon: 'feature/quantum-whitepaper',
         title: 'Quantum Computing Whitepaper',
         lead: 'Provides technical specifications and requirements for implementing quantum computing systems.',
@@ -105,6 +117,7 @@ export const resourceTabs = [
       },
       {
         id: 'space-exploration-whitepaper',
+        titleId: 'space-exploration-whitepaper-title',
         icon: 'feature/space-whitepaper',
         title: 'Space Exploration Whitepaper',
         lead: 'Explores Mars colonization, asteroid resource potential, and space tourism.',
@@ -120,10 +133,12 @@ export const resourceTabs = [
   },
   {
     id: 'ebooks',
+    tabId: 'ebooks-tab',
     label: 'Ebooks',
     items: [
       {
         id: 'ai-in-education-ebook',
+        titleId: 'ai-in-education-ebook-title',
         icon: 'feature/ebooks',
         title: 'AI in Education Ebook',
         lead: 'Covers adaptive tutoring, automated grading, and learning analytics in the classroom.',
@@ -137,6 +152,7 @@ export const resourceTabs = [
       },
       {
         id: 'biotechnology-breakthroughs-ebook',
+        titleId: 'biotechnology-breakthroughs-ebook-title',
         icon: 'feature/ebooks',
         title: 'Biotechnology Breakthroughs Ebook',
         lead: 'Follows gene editing, lab-grown tissue, and personalized medicine from the lab to the clinic.',
@@ -152,10 +168,12 @@ export const resourceTabs = [
   },
   {
     id: 'reports',
+    tabId: 'reports-tab',
     label: 'Reports',
     items: [
       {
         id: 'ai-in-healthcare-report',
+        titleId: 'ai-in-healthcare-report-title',
         icon: 'feature/whitepapers',
         title: 'AI in Healthcare Report',
         lead: 'Summarizes where hospitals use AI today and which results have been proven in practice.',
@@ -169,6 +187,7 @@ export const resourceTabs = [
       },
       {
         id: 'renewable-energy-outlook-report',
+        titleId: 'renewable-energy-outlook-report-title',
         icon: 'feature/whitepapers',
         title: 'Renewable Energy Outlook Report',
         lead: 'Compares solar, wind, and storage costs and the policies that shape their growth.',
