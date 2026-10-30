@@ -1,3 +1,5 @@
+import { PodcastsIntro, TopPodcasts } from '@sections'
+
 export const metadata = {
   title: 'Podcasts',
   description:
@@ -7,8 +9,8 @@ export const metadata = {
 export default function PodcastsPage() {
   return (
     <>
-      <h1>Podcasts</h1>
-      <p>Podcasts page placeholder.</p>
+      <PodcastsIntro />
+      <TopPodcasts />
     </>
   )
 }
