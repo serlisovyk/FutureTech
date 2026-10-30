@@ -23,7 +23,7 @@ Branch `my-266-home-resources`. No spec: the section has no behavior (no script,
 - A row is one `.container` grid `left | right`, as the Features rows: the left column is 413 / 519 px (a ramp) capped
   at 34%, gap 60 / 80, centred vertically. The right column has a left line (1px border, padding minus it), padding 80 / 60.
 - Left: `Icon` (80 / 60 / 50, the two palette colours), an `h3` (`Heading`, size `h3`), the lead, a download `Button`
-  (outline, restyled to the ghost look: `Dark/10` fill, control radius, full column width), then the audience block:
+  (a new `ghost` kit variant, also on `/ui`: `Dark/10` fill, control radius, full column width), then the audience block:
   "Downloaded By" over "10k + Users" and an `AvatarGroup`.
 - Right: the overview row (`h4` title and text side by side, stacked at 390), a `Photo` (917x332 / 747x275 / 358x169,
   `alt=""`: decorative), a facts row (the total in a `MetaGrid` card that hugs its text, the formats card with the Preview
