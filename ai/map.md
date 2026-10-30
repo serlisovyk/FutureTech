@@ -34,7 +34,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `Testimonials` (id `testimonials`, the last section: `SectionHeading` with the "View All Testimonials" button that
   drives `Disclosure` below 768px, and six `TestimonialCard`s in two `TestimonialGroup` lists, the second one the
   `Disclosure` region).
-- News sections (`sections/news/`), in design order on `pages/news.jsx` after `PageIntro`: `FeaturedNews` (the `featured`
+- News sections (`sections/news/`), in design order on `pages/news.jsx`: `NewsIntro` (the `PageIntro` of News), `FeaturedNews` (the `featured`
   post: photo, title, text, `MetaGrid`, counters, Read More).
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.

@@ -1,6 +1,4 @@
-import { PageIntro } from '@components'
-import { newsIntro } from '@data/news.js'
-import { FeaturedNews } from '@sections'
+import { FeaturedNews, NewsIntro } from '@sections'
 
 export const metadata = {
   title: 'News',
@@ -10,12 +8,7 @@ export const metadata = {
 export default function NewsPage() {
   return (
     <>
-      <PageIntro
-        titleId={newsIntro.titleId}
-        titleStart={newsIntro.titleStart}
-        titleEnd={newsIntro.titleEnd}
-        text={newsIntro.text}
-      />
+      <NewsIntro />
       <FeaturedNews />
     </>
   )

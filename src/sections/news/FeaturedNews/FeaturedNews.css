@@ -59,10 +59,7 @@
   gap: calc(
     20px + (30 - 20) * var(--ramp-390-1440) + (50 - 30) * var(--ramp-1440-1920)
   );
-
-  & .meta-item {
-    gap: calc(2px + (4 - 2) * var(--ramp-1440-1920));
-  }
+  --meta-item-gap: calc(2px + (4 - 2) * var(--ramp-1440-1920));
 }
 
 .featured-news__footer {

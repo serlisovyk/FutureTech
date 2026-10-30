@@ -1,7 +1,10 @@
 .meta-item {
   display: flex;
   flex-direction: column;
-  gap: calc(4px + (6 - 4) * var(--ramp-390-1440) + (10 - 6) * var(--ramp-1440-1920));
+  gap: var(
+    --meta-item-gap,
+    calc(4px + (6 - 4) * var(--ramp-390-1440) + (10 - 6) * var(--ramp-1440-1920))
+  );
 }
 
 .meta-item__value {

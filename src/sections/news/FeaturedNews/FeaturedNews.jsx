@@ -4,25 +4,14 @@ import {
   featuredNewsPhotoSizes,
 } from '@data/card-photos.js'
 import { featuredNews } from '@data/news.js'
-import {
-  formatCount,
-  formatDate,
-  getCategoryName,
-  getPostsByPlacement,
-  getPostUrl,
-} from '@utils'
+import { formatCount, getPostMeta, getPostsByPlacement, getPostUrl } from '@utils'
 import './FeaturedNews.css'
 
 export function FeaturedNews() {
   const [post] = getPostsByPlacement(featuredNews.placement)
-  const { slug, title, excerpt, date, category, author, image, imageAlt, counters } =
-    post
+  const { slug, title, excerpt, image, imageAlt, counters } = post
 
-  const meta = [
-    { label: featuredNews.labels.category, value: getCategoryName(category) },
-    { label: featuredNews.labels.date, value: formatDate(date) },
-    { label: featuredNews.labels.author, value: author.name },
-  ]
+  const meta = getPostMeta(post, featuredNews.labels)
 
   return (
     <section className="featured-news" aria-labelledby={featuredNews.titleId}>
