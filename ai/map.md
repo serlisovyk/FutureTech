@@ -30,7 +30,10 @@ Navigation only: where things live and who owns what. How it works is in the cod
   stats, the avatar capsule over the decor with the link to Resources, the strip of three feature links, `HeroFeature`),
   `Features` (id `features`: the heading band and two `FeatureGroup`s, each an icon, title and text beside a 2 x 2 grid
   of `FeatureCard`s), `Blogs` (id `blogs`: `SectionHeading` and a `PostFeed` of the `blogs` posts), `Resources` (id `resources`:
-  `SectionHeading` and two `ResourceShowcase`s, Ebooks and Whitepapers: download link and audience beside the photo and facts).
+  `SectionHeading` and two `ResourceShowcase`s, Ebooks and Whitepapers: download link and audience beside the photo and facts),
+  `Testimonials` (id `testimonials`, the last section: `SectionHeading` with the "View All Testimonials" button that
+  drives `Disclosure` below 768px, and six `TestimonialCard`s in two `TestimonialGroup` lists, the second one the
+  `Disclosure` region).
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
