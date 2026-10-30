@@ -49,7 +49,9 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `ResourceCards` (id `resource-cards`, the last section: a hidden `h2` and three `ResourceCard`s of `resourceCards` split by
   lines, each photo, title, text, "View Details" to its tab and the download button).
 - Contact sections (`sections/contact/`), in design order on `pages/contact.jsx`: `ContactInfo` (id `contact-info`: the page's
-  hidden `h1` and four `ContactColumn`s of `contacts` split by lines, 2 x 2 below 1024px, one column below 768px).
+  hidden `h1` and four `ContactColumn`s of `contacts` split by lines, 2 x 2 below 1024px, one column below 768px),
+  `Faq` (id `faq`: icon, `h2`, text and the "Ask Question" link to the form, beside one `FaqItem` per question of `faq`, each
+  its own `Disclosure`, the first open).
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
