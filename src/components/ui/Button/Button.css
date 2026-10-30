@@ -6,11 +6,22 @@
   font-size: var(--font-size-button);
   line-height: 1.5;
   text-align: center;
+  transition:
+    background-color var(--transition-duration),
+    border-color var(--transition-duration),
+    color var(--transition-duration);
+
+  @media (hover: hover) {
+    &:hover .button__icon {
+      transform: translate(2px, -2px);
+    }
+  }
 }
 
 .button__icon {
   width: var(--size-icon);
   height: var(--size-icon);
+  transition: transform var(--transition-duration);
 }
 
 .button--primary {
@@ -28,6 +39,12 @@
     position: absolute;
     inset: -2px;
   }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: color-mix(in srgb, var(--yellow-55), var(--white) 15%);
+    }
+  }
 }
 
 .button--outline,
@@ -39,18 +56,37 @@
   & .button__icon {
     color: var(--yellow-55);
   }
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--dark-40);
+      color: var(--white);
+    }
+  }
 }
 
 .button--outline {
   padding-block: calc(13px + (17 - 13) * var(--ramp-1440-1920));
   border-radius: calc(8px + (12 - 8) * var(--ramp-1440-1920));
   background-color: var(--dark-08);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--dark-10);
+    }
+  }
 }
 
 .button--ghost {
   padding-block: 17px;
   border-radius: var(--radius-control);
   background-color: var(--dark-10);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--dark-15);
+    }
+  }
 
   &.button--compact {
     padding-block: calc(13px + (17 - 13) * var(--ramp-1440-1920));

@@ -23,6 +23,16 @@
   color: var(--grey-60);
   font-size: var(--font-size-button);
   white-space: nowrap;
+  transition:
+    background-color var(--transition-duration),
+    color var(--transition-duration);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--dark-10);
+      color: var(--white);
+    }
+  }
 
   &[aria-selected='true'] {
     border-radius: calc(8px + (10 - 8) * var(--ramp-1440-1920));

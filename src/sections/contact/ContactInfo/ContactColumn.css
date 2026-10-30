@@ -58,6 +58,18 @@
   border-radius: 6px;
   background-color: var(--dark-10);
   color: var(--white);
+  transition:
+    background-color var(--transition-duration),
+    border-color var(--transition-duration),
+    color var(--transition-duration);
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--dark-40);
+      background-color: var(--dark-15);
+      color: var(--yellow-55);
+    }
+  }
 }
 
 .contact-column__social-icon {

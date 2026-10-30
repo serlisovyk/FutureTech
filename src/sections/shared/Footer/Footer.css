@@ -60,12 +60,19 @@
   align-items: center;
   gap: 8px;
   color: var(--dark-40);
+  transition: color var(--transition-duration);
 
   &::after {
     content: '';
     position: absolute;
     inset-block: calc(var(--footer-link-gap) / -2);
     inset-inline: 0;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--white);
+    }
   }
 }
 
@@ -119,11 +126,18 @@
   position: relative;
   display: flex;
   color: var(--white);
+  transition: color var(--transition-duration);
 
   &::after {
     content: '';
     position: absolute;
     inset: -10px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--yellow-55);
+    }
   }
 }
 

@@ -33,6 +33,17 @@
     12px + (14 - 12) * var(--ramp-390-1440) + (18 - 14) * var(--ramp-1440-1920)
   );
   text-align: center;
+  transition: color var(--transition-duration);
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--white);
+    }
+
+    &:hover .header__banner-icon {
+      transform: translate(2px, -2px);
+    }
+  }
 }
 
 .header__banner-extra {
@@ -45,6 +56,7 @@
   width: calc(20px + (24 - 20) * var(--ramp-1440-1920));
   height: calc(20px + (24 - 20) * var(--ramp-1440-1920));
   color: var(--yellow-55);
+  transition: transform var(--transition-duration);
 }
 
 .header__bar {
@@ -202,12 +214,22 @@
   color: var(--grey-50);
   font-size: var(--font-size-button);
   letter-spacing: 0;
+  transition:
+    border-color var(--transition-duration),
+    color var(--transition-duration);
 
   @media (width < 768px) {
     padding-block: var(--plate-padding-block);
     padding-inline: var(--plate-padding-inline);
     border: 1px solid transparent;
     border-radius: var(--plate-radius);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--dark-20);
+      color: var(--white);
+    }
   }
 
   &[aria-current='page'] {
