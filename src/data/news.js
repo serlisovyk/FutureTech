@@ -31,3 +31,11 @@ export const newsHub = {
   link: { href: '/#blogs', label: 'View All News' },
   placement: 'headlines',
 }
+
+export const featuredVideos = {
+  id: 'featured-videos',
+  titleId: 'featured-videos-title',
+  tag: 'Featured Videos',
+  title: 'Visual Insights for the Modern Viewer',
+  link: { href: '/podcasts', label: 'View All' },
+}

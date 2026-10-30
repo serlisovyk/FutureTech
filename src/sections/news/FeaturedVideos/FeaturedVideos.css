@@ -1,0 +1,29 @@
+.featured-videos__list {
+  --video-gap: calc(100px + (160 - 100) * var(--ramp-1440-1920));
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--video-gap);
+
+  @media (width < 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featured-videos__item {
+  position: relative;
+  padding-block: var(--space-section) calc(var(--space-section) - 1px);
+  border-bottom: var(--border);
+
+  &:nth-child(even)::before {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: calc(var(--video-gap) / -2);
+    border-inline-start: var(--border);
+
+    @media (width < 768px) {
+      display: none;
+    }
+  }
+}
