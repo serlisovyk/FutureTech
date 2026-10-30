@@ -1,0 +1,25 @@
+.testimonials__grid {
+  --testimonial-gap: calc(
+    40px + (80 - 40) * var(--ramp-390-1440) + (100 - 80) * var(--ramp-1440-1920)
+  );
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: var(--testimonial-gap);
+
+  @media (width < 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (width < 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.testimonials__more {
+  display: none;
+
+  @media (width < 768px) and (scripting: enabled) {
+    display: inline-flex;
+  }
+}

@@ -1,0 +1,83 @@
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  gap: calc(30px + (40 - 30) * var(--ramp-1440-1920));
+}
+
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(10px + (12 - 10) * var(--ramp-1440-1920));
+}
+
+.testimonial-card__avatar {
+  flex: none;
+  width: calc(50px + (60 - 50) * var(--ramp-1440-1920));
+  height: calc(50px + (60 - 50) * var(--ramp-1440-1920));
+  border-radius: 50%;
+  background-color: var(--dark-15);
+  object-fit: cover;
+}
+
+.testimonial-card__person {
+  min-width: 0;
+}
+
+.testimonial-card__name {
+  color: var(--white);
+  font-size: calc(18px + (20 - 18) * var(--ramp-1440-1920));
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.testimonial-card__place {
+  color: var(--dark-40);
+  font-size: calc(16px + (18 - 16) * var(--ramp-1440-1920));
+  letter-spacing: 0;
+}
+
+.testimonial-card__body {
+  --testimonial-overlap: calc(17px + (23 - 17) * var(--ramp-1440-1920));
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-card__rating {
+  position: relative;
+  display: flex;
+  gap: calc(4px + (7 - 4) * var(--ramp-1440-1920));
+  padding-block: calc(7px + (9 - 7) * var(--ramp-1440-1920));
+  padding-inline: calc(11px + (15 - 11) * var(--ramp-1440-1920));
+  border: var(--border);
+  border-radius: var(--radius-pill);
+  background-color: var(--dark-08);
+  color: var(--yellow-55);
+}
+
+.testimonial-card__star {
+  width: var(--size-icon);
+  height: var(--size-icon);
+}
+
+.testimonial-card__quote {
+  align-self: stretch;
+  margin-block-start: calc(var(--testimonial-overlap) * -1);
+  padding-block: calc(
+      29px + (39 - 29) * var(--ramp-390-1440) + (49 - 39) * var(--ramp-1440-1920)
+    )
+    calc(19px + (23 - 19) * var(--ramp-390-1440) + (29 - 23) * var(--ramp-1440-1920));
+  padding-inline: calc(
+    19px + (23 - 19) * var(--ramp-390-1440) + (29 - 23) * var(--ramp-1440-1920)
+  );
+  border: var(--border);
+  border-radius: calc(10px + (12 - 10) * var(--ramp-390-1440));
+  background-color: var(--dark-10);
+}
+
+.testimonial-card__text {
+  color: var(--white);
+  letter-spacing: 0;
+}

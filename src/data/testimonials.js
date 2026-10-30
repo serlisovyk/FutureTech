@@ -1,3 +1,13 @@
+export const testimonialsSection = {
+  id: 'testimonials',
+  titleId: 'testimonials-title',
+  moreId: 'testimonials-more',
+  tag: 'What Our Readers Say',
+  title: 'Real Words from Real Readers',
+  moreLabel: 'View All Testimonials',
+  initialCount: 3,
+}
+
 export const testimonials = [
   {
     id: 'sarah-thompson',
