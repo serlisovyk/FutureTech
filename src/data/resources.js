@@ -1,3 +1,16 @@
+export const resourcesIntro = {
+  titleId: 'resources-intro-title',
+  titleStart: 'Unlock a World of',
+  titleEnd: 'Knowledge',
+  text: 'Immerse yourself in the world of future technology. Explore our comprehensive resources.',
+}
+
+export const resourceStats = {
+  id: 'resource-stats',
+  titleId: 'resource-stats-title',
+  title: 'FutureTech Resources in numbers',
+}
+
 export const resourcesSection = {
   id: 'resources',
   titleId: 'resources-title',
