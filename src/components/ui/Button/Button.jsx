@@ -7,11 +7,14 @@ export function Button(props) {
     icon,
     href,
     ariaCurrent,
+    ariaControls,
+    ariaExpanded,
     videoId,
     videoTitle,
     className,
     children,
     isToggleDismiss = false,
+    isDisclosureTrigger = false,
     variant = 'primary',
     type = 'button',
     isSmall = false,
@@ -24,6 +27,7 @@ export function Button(props) {
     className,
   )
   const toggleDismiss = isToggleDismiss || undefined
+  const disclosureTrigger = isDisclosureTrigger || undefined
   const content = (
     <>
       {children}
@@ -48,7 +52,10 @@ export function Button(props) {
     <button
       className={classNames}
       type={type}
+      aria-controls={ariaControls}
+      aria-expanded={ariaExpanded}
       data-toggle-dismiss={toggleDismiss}
+      data-disclosure-trigger={disclosureTrigger}
       data-video-id={videoId}
       data-video-title={videoTitle}
     >
