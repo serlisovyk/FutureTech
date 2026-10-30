@@ -1,0 +1,23 @@
+.latest-podcasts__grid {
+  --episode-gap: calc(60px + (92 - 60) * var(--ramp-1440-1920));
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: var(--episode-gap);
+
+  @media (width < 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (width < 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.latest-podcasts__more {
+  display: none;
+
+  @media (width < 768px) and (scripting: enabled) {
+    display: inline-flex;
+  }
+}

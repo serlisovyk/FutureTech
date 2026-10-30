@@ -1,4 +1,4 @@
-import { PodcastsIntro, TopPodcasts } from '@sections'
+import { LatestPodcasts, PodcastsIntro, TopPodcasts } from '@sections'
 
 export const metadata = {
   title: 'Podcasts',
@@ -11,6 +11,7 @@ export default function PodcastsPage() {
     <>
       <PodcastsIntro />
       <TopPodcasts />
+      <LatestPodcasts />
     </>
   )
 }
