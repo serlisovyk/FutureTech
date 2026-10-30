@@ -63,6 +63,7 @@ each with the record that replaced it.
 - [The CSS and images limits are raised for the first Home sections](2026-10-28-home-wave-size-limits.md)
 - [The CSS and images limits are raised for the last Home sections and the News first screen](2026-10-30-home-news-wave-size-limits.md)
 - [The CSS and images limits are raised for the rest of News and the top of Podcasts](2026-10-30-news-podcasts-wave-size-limits.md)
+- [The JS, CSS and images limits are raised for the Podcasts episodes and the Resources page](2026-10-30-podcasts-resources-wave-size-limits.md)
 - [The design is a third-party template: a reference only, never published](2026-10-28-design-is-a-reference.md)
 
 ### Code
