@@ -1,4 +1,4 @@
-import { Blogs, Features, Hero } from '@sections'
+import { Blogs, Features, Hero, Resources } from '@sections'
 
 export const metadata = {
   description:
@@ -11,6 +11,7 @@ export default function HomePage() {
       <Hero />
       <Features />
       <Blogs />
+      <Resources />
     </>
   )
 }

@@ -1,3 +1,16 @@
+export const resourcesSection = {
+  id: 'resources',
+  titleId: 'resources-title',
+  tag: 'Your Gateway to In-Depth Information',
+  title: "Unlock Valuable Knowledge with FutureTech's Resources",
+  link: { href: '/resources', label: 'View All Resources' },
+  audienceLabel: 'Downloaded By',
+  previewLabel: 'Preview',
+  photoSizes:
+    '(width < 1024px) calc(100vw - 32px), (width < 1920px) calc(100vw - 653px), 917px',
+  photoBreakpoints: [720, 1080, 1380],
+}
+
 export const resourceShowcases = [
   {
     id: 'ebooks',
@@ -5,6 +18,7 @@ export const resourceShowcases = [
     title: 'Ebooks',
     lead: 'Explore our collection of ebooks covering a wide spectrum of future technology topics.',
     cta: 'Download Ebooks Now',
+    href: '/resources',
     overview: {
       title: 'Variety of Topics',
       text: 'Topics include AI in education (25%), renewable energy (20%), healthcare (15%), space exploration (25%), and biotechnology (15%).',
@@ -33,6 +47,7 @@ export const resourceShowcases = [
     title: 'Whitepapers',
     lead: 'Dive into comprehensive reports and analyses with our collection of whitepapers.',
     cta: 'Download Whitepapers Now',
+    href: '/resources',
     overview: {
       title: 'Topics Coverage',
       text: 'Whitepapers cover quantum computing (20%), AI ethics (15%), space mining prospects (20%), AI in healthcare (15%), and renewable energy strategies (30%).',
