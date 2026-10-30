@@ -29,7 +29,8 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - Home sections (`sections/home/`), in design order on `pages/index.jsx`: `Hero` (the page's `h1`, the eyebrow, three
   stats, the avatar capsule over the decor with the link to Resources, the strip of three feature links, `HeroFeature`),
   `Features` (id `features`: the heading band and two `FeatureGroup`s, each an icon, title and text beside a 2 x 2 grid
-  of `FeatureCard`s), `Blogs` (id `blogs`: `SectionHeading` and a `PostFeed` of the `blogs` posts).
+  of `FeatureCard`s), `Blogs` (id `blogs`: `SectionHeading` and a `PostFeed` of the `blogs` posts), `Resources` (id `resources`:
+  `SectionHeading` and two `ResourceShowcase`s, Ebooks and Whitepapers: download link and audience beside the photo and facts).
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
@@ -40,7 +41,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `PostRow` (cards: author, date, title, excerpt, counters, link to the article) and `PostFeed` (`components/feeds/`: the category
   tabs and the list of `PostRow`s, filtered in the browser by `PostFeedController`); both are on `/ui`.
 - `src/data/` — the texts and lists the components render, as plain exported values, one file per entity: `blogs` (the Home blog section's id, heading and limit), `posts` (each with
-  its article `body` sections), `categories`, `videos`, `podcasts`, `resources`, `testimonials`, `features`, `stats`, `faq`,
+  its article `body` sections), `categories`, `videos`, `podcasts`, `resources` (the Home section's heading, its showcases, the Resources page lists), `testimonials`, `features`, `stats`, `faq`,
   `navigation` (the header links, its action and the newsletter strip), `footer`, `socials`, `contacts`, `cta`, `site` (the site
   name), `hero` (the Home hero texts, decor and avatars), `video-modal` (its close label and title id), `card-photos` (the `sizes` and widths of the card and avatar photos), `post-feed` (its tab list label, empty text and announcements), `ui-kit` (the `/ui` demo lists).
 - `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, `format-count.js`, …), re-exported by
