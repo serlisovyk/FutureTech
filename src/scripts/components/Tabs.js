@@ -19,11 +19,13 @@ export class Tabs {
     const selectedTab = this.#tabs.find(
       (tab) => tab.getAttribute('aria-selected') === 'true',
     )
+    const hashTab = this.#findHashTab()
 
-    this.select(selectedTab ?? this.#tabs[0])
+    this.select(hashTab ?? selectedTab ?? this.#tabs[0])
 
     this.#tabList.addEventListener('click', (event) => this.#handleClick(event))
     this.#tabList.addEventListener('keydown', (event) => this.#handleKeydown(event))
+    window.addEventListener('hashchange', () => this.#handleHashChange())
   }
 
   onSelect(handler) {
@@ -45,6 +47,14 @@ export class Tabs {
     this.select(selectedTab)
   }
 
+  #handleHashChange() {
+    const hashTab = this.#findHashTab()
+    if (!hashTab) return
+
+    this.select(hashTab)
+    this.#findPanel(hashTab.dataset.tab).scrollIntoView()
+  }
+
   #handleKeydown(event) {
     const currentTab = event.target.closest('[data-tab]')
     if (!currentTab) return
@@ -55,6 +65,16 @@ export class Tabs {
 
     event.preventDefault()
     this.select(this.#tabs[targetIndex], true)
+  }
+
+  #findHashTab() {
+    const { hash } = window.location
+
+    return this.#tabs.find((tab) => `#${tab.getAttribute('aria-controls')}` === hash)
+  }
+
+  #findPanel(key) {
+    return this.#panels.find((panel) => panel.dataset.tabPanel === key)
   }
 
   #findIndexForKey(key, currentIndex) {
