@@ -15,7 +15,7 @@
   @media (width < 768px) {
     flex-direction: column;
     align-items: stretch;
-    gap: 30px;
+    gap: var(--section-heading-mobile-gap, 30px);
   }
 }
 

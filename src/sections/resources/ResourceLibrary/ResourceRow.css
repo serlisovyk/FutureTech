@@ -134,6 +134,9 @@
   --meta-item-value-size: calc(
     14px + (16 - 14) * var(--ramp-390-1440) + (20 - 16) * var(--ramp-1440-1920)
   );
+  --meta-item-gap: calc(
+    0px + (2 - 0) * var(--ramp-390-1440) + (4 - 2) * var(--ramp-1440-1920)
+  );
 
   gap: var(--resource-row-meta-gap);
 

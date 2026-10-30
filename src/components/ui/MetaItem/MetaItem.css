@@ -14,7 +14,7 @@
 
 .meta-item--card {
   flex: 1 1 0;
-  gap: calc(2px + (4 - 2) * var(--ramp-1440-1920));
+  gap: var(--meta-item-gap, calc(2px + (4 - 2) * var(--ramp-1440-1920)));
   min-width: 0;
   padding: calc(
     19px + (23 - 19) * var(--ramp-390-1440) + (29 - 23) * var(--ramp-1440-1920)

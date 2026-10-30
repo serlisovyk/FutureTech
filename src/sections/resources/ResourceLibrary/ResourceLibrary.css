@@ -1,3 +1,7 @@
+.resource-library {
+  --section-heading-mobile-gap: 16px;
+}
+
 .resource-library__tabs {
   display: flex;
   flex: none;
