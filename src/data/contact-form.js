@@ -1,0 +1,72 @@
+export const contactForm = {
+  id: 'contact-form',
+  titleId: 'contact-form-title',
+  icon: 'feature/contact',
+  title: 'Get in Touch with AI Podcasts',
+  submitLabel: 'Send',
+  successMessage:
+    'Thank you for reaching out! We have received your message and will reply soon.',
+}
+
+export const contactFields = {
+  firstName: {
+    id: 'contact-first-name',
+    errorId: 'contact-first-name-error',
+    name: 'firstName',
+    label: 'First Name',
+    placeholder: 'Enter First Name',
+    autoComplete: 'given-name',
+    errors: { valueMissing: 'Enter your first name.' },
+  },
+  lastName: {
+    id: 'contact-last-name',
+    errorId: 'contact-last-name-error',
+    name: 'lastName',
+    label: 'Last Name',
+    placeholder: 'Enter Last Name',
+    autoComplete: 'family-name',
+    errors: { valueMissing: 'Enter your last name.' },
+  },
+  email: {
+    id: 'contact-email',
+    errorId: 'contact-email-error',
+    name: 'email',
+    label: 'Email',
+    placeholder: 'Enter your Email',
+    autoComplete: 'email',
+    type: 'email',
+    pattern: '[^@\\s]+@[^@\\s]+\\.[^@\\s]+',
+    errors: {
+      valueMissing: 'Enter your email address.',
+      typeMismatch: 'Enter a valid email address, like name@example.com.',
+      patternMismatch: 'Enter a valid email address, like name@example.com.',
+    },
+  },
+  phone: {
+    id: 'contact-phone',
+    errorId: 'contact-phone-error',
+    name: 'phone',
+    label: 'Phone Number',
+    placeholder: 'Enter Phone Number',
+    autoComplete: 'tel-national',
+    countryName: 'countryCode',
+    countryLabel: 'Country code',
+    digitsError: 'Enter {digits} digits for {country}.',
+    errors: { valueMissing: 'Enter your phone number.' },
+  },
+  message: {
+    id: 'contact-message',
+    errorId: 'contact-message-error',
+    name: 'message',
+    label: 'Message',
+    placeholder: 'Enter your Message',
+    errors: { valueMissing: 'Enter your message.' },
+  },
+  consent: {
+    id: 'contact-consent',
+    errorId: 'contact-consent-error',
+    name: 'consent',
+    label: 'I agree with Terms of Use and Privacy Policy',
+    errors: { valueMissing: 'Agree to the terms to send your message.' },
+  },
+}
