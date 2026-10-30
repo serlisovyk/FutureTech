@@ -45,6 +45,12 @@ such a hash behaves as before. The rule in `ai/rules/oop.md` gets one clause.
 - Heading order: `h1`, `h2` of the section, `h3` per row. The title above the button is a paragraph: the same name is
   already the row's heading. The button's name is "Download PDF Now: <title>".
 
+## Kit changes
+
+`MetaItem` and `SectionHeading` read optional custom properties (`--meta-item-basis`, `--meta-item-value-size`,
+`--meta-item-gap` on the card, `--section-heading-mobile-gap`) with their old values as defaults, so the rows get the
+design's cell sizes (two cells then one at 390, value 14 / 16 / 20) and the band its 16 px gap at 390.
+
 ## Deviations from the design (reported)
 
 - The design draws only Whitepapers; the Ebooks and Reports rows use the data already in `resourceTabs`.
