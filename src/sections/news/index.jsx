@@ -1,2 +1,4 @@
 export * from './FeaturedNews/index.jsx'
+export * from './NewsHub/index.jsx'
 export * from './NewsIntro/index.jsx'
+export * from './TrendingStories/index.jsx'

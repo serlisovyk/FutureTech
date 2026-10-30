@@ -1,4 +1,4 @@
-import { FeaturedNews, NewsIntro } from '@sections'
+import { FeaturedNews, NewsHub, NewsIntro, TrendingStories } from '@sections'
 
 export const metadata = {
   title: 'News',
@@ -10,6 +10,8 @@ export default function NewsPage() {
     <>
       <NewsIntro />
       <FeaturedNews />
+      <TrendingStories />
+      <NewsHub />
     </>
   )
 }

@@ -14,3 +14,20 @@ export const featuredNews = {
     author: 'Author',
   },
 }
+
+export const trendingStories = {
+  id: 'trending-stories',
+  titleId: 'trending-stories-title',
+  title: 'Trending Stories',
+  placement: 'trending',
+}
+
+export const newsHub = {
+  id: 'news-hub',
+  titleId: 'news-hub-title',
+  feedId: 'news-hub-feed',
+  tag: 'Welcome to Our News Hub',
+  title: 'Discover the World of Headlines',
+  link: { href: '/#blogs', label: 'View All News' },
+  placement: 'headlines',
+}

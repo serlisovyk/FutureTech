@@ -1,0 +1,10 @@
+.trending-stories__inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding-block: var(--space-section);
+
+  @media (width < 768px) {
+    grid-template-columns: 1fr;
+  }
+}
