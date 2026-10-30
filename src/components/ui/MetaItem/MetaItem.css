@@ -24,10 +24,10 @@
   background-color: var(--dark-10);
 
   @media (width < 768px) {
-    flex-basis: 100%;
+    flex-basis: var(--meta-item-basis, 100%);
   }
 
   & .meta-item__value {
-    font-size: var(--font-size-subheading);
+    font-size: var(--meta-item-value-size, var(--font-size-subheading));
   }
 }

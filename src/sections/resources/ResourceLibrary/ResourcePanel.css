@@ -1,0 +1,9 @@
+.resource-panel__label {
+  display: none;
+  padding-block: var(--space-card);
+  border-block-start: var(--border);
+
+  @media (scripting: none) {
+    display: block;
+  }
+}
