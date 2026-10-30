@@ -21,7 +21,7 @@ build. Where the files are: `ai/map.md`. Why the site is static: decision
 - Photos go through minista's image plugin (`Photo`): AVIF with a WebP fallback and a `srcset` with
   `sizes` that match the layout at the three widths (formats and quality: decision `image-formats`).
   The source file in `assets/images/` is never shipped as it is: keep it near the largest size drawn.
-- Icons are SVG, a sprite per folder (`assets/icons/ui/`, `social/`, `feature/`), used through `Icon`; an SVG that must be inline
+- Icons are SVG, a sprite per folder (`assets/icons/ui/`, `social/`, `feature/`, `flag/`), used through `Icon`; an SVG that must be inline
   (the logo) goes through minista's SVG plugin (`assets/logos/`). A decor made of hundreds of vectors is a
   raster. An export from a design tool is cleaned before it is committed (no editor metadata, no embedded
   raster, no needless paths).

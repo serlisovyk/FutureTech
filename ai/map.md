@@ -53,6 +53,8 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `body` entry: an `h2` with the entry's `id`, the anchor of the future table of contents, and its paragraphs). Texts: `data/article.js`.
 - Contact sections (`sections/contact/`), in design order on `pages/contact.jsx`: `ContactInfo` (id `contact-info`: the page's
   hidden `h1` and four `ContactColumn`s of `contacts` split by lines, 2 x 2 below 1024px, one column below 768px),
+  `ContactForm` (the `<form id="contact-form">` beside the icon and `h2`: a field part per kind, `ContactFormController` checks it,
+  the phone field is a flag box over a native country `<select>`, then the number; countries in `data/countries.js`),
   `Faq` (id `faq`: icon, `h2`, text and the "Ask Question" link to the form, beside one `FaqItem` per question of `faq`, each
   its own `Disclosure`, the first open).
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),
@@ -67,7 +69,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `PostRow` (cards: author, date, title, excerpt, counters, link to the article) and `PostFeed` (`components/feeds/`: the category
   tabs and the list of `PostRow`s, filtered in the browser by `PostFeedController`); both are on `/ui`.
 - `src/data/` — the texts and lists the components render, as plain exported values, one file per entity: `blogs` (the Home blog section's id, heading and limit), `posts` (each with
-  its article `body` sections), `categories`, `videos`, `podcasts` (the Podcasts intro, the Top Podcasts section, the shows, the Latest Podcasts section and the episodes), `resources` (the Resources intro and counters strip, the Home section's heading, its showcases, the Resources page lists and cards), `testimonials`, `features`, `stats`, `faq`,
+  its article `body` sections), `categories`, `videos`, `podcasts` (the Podcasts intro, the Top Podcasts section, the shows, the Latest Podcasts section and the episodes), `resources` (the Resources intro and counters strip, the Home section's heading, its showcases, the Resources page lists and cards), `testimonials`, `features`, `stats`, `faq`, `contact-form` (ids, texts, the fields and their error texts), `countries`,
   `navigation` (the header links, its action and the newsletter strip), `footer`, `socials`, `contacts`, `cta`, `site` (the site
   name), `hero` (the Home hero texts, decor and avatars), `news` (the News intro, the featured story, the trending cards, the news hub and the videos section), `video-modal` (its close label and title id), `card-photos` (the `sizes` and widths of the card and avatar photos), `post-feed` (its tab list label, empty text and announcements), `ui-kit` (the `/ui` demo lists).
 - `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, `format-count.js`, …), re-exported by
@@ -76,13 +78,13 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `.container`, `.visually-hidden`, the `reveal` keyframes and the hidden start state), `fonts.css`; `global.css` imports them in that order, the layout imports it first.
   Components and sections import their own stylesheet; the build bundles all into one file.
 - `src/scripts/` — all browser JavaScript: `main.js` (the one entry, loaded by the layout: a table of root hook →
-  class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`, `VideoModal`, `CountUp`, `Reveal`: root `<html data-reveal-root>`,
+  class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`, `VideoModal`, `CountUp`, `FormField`, `Reveal`: root `<html data-reveal-root>`,
   fades in every `[data-reveal]` below the first screen once, cascading the ones that enter together),
-  `constants.js` (key names, the menu query, the video and post feed hooks, the video embed, the count-up and reveal settings, the no-index sentinel), `controllers/`
+  `constants.js` (key names, the menu query, the video and post feed hooks, the video embed, the count-up and reveal settings, the form hooks, the no-index sentinel), `controllers/`
   (one per section: `HeaderController`, which runs the menu; `VideoModalController`, which opens the modal from any play button;
-  `PostFeedController`, which filters a feed's rows by the selected tab).
+  `PostFeedController`, which filters a feed's rows by the selected tab; `ContactFormController`, which checks and completes the form).
 - `src/assets/` — referenced by the build and emitted hashed: `fonts/` (woff2), `icons/` (sprite icons in `ui/`, `social/`,
-  `feature/`; one sprite per folder), `logos/` (inline SVG: the logo and its mark), `images/` (`photos/`, `portraits/`, `decor/`).
+  `feature/`, `flag/`; one sprite per folder), `logos/` (inline SVG: the logo and its mark), `images/` (`photos/`, `portraits/`, `decor/`).
 - `AGENTS.md` — the entry point for agents; `CLAUDE.md` points to it.
 - `ai/` — agent docs: this map, `workflow.md`, `rules/`, `skills/`, `decisions/`, `prompts/`,
   `linear-task-template.md`, the archive `superpowers/`, `design-system.md`.
