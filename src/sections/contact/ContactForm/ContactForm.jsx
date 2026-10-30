@@ -13,7 +13,7 @@ export function ContactForm() {
   return (
     <section className="contact-form" aria-labelledby={titleId}>
       <div className="contact-form__inner container">
-        <div className="contact-form__intro">
+        <div className="contact-form__intro" data-reveal>
           <Icon name={icon} className="contact-form__icon" />
 
           <Heading level={2} id={titleId} className="contact-form__title">
@@ -21,7 +21,13 @@ export function ContactForm() {
           </Heading>
         </div>
 
-        <form className="contact-form__form" id={id} method="post" data-contact-form>
+        <form
+          className="contact-form__form"
+          id={id}
+          method="post"
+          data-contact-form
+          data-reveal
+        >
           <div className="contact-form__row">
             <TextField
               id={firstName.id}
