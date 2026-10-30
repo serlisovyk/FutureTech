@@ -73,6 +73,7 @@ each with the record that replaced it.
 
 - [Browser JavaScript in OOP style: a class per widget and per section](2026-10-28-oop-javascript.md)
 - [The layout builds the title and the head meta from the page's `metadata`; the site name lives in `data/site.js`](2026-10-28-shared-page-head.md)
+- [The sitemap, robots.txt and llms.txt are built from the built pages; JSON-LD is Organization and BlogPosting](2026-10-30-seo-files-and-structured-data.md)
 - [Imports across folders use one alias per folder (`@components`, `@scripts`, …), never `../`](2026-10-28-path-aliases.md)
 - [Components and sections are folders with barrels (`@components`, `@sections`, `@utils`); assets sit in subfolders](2026-10-28-folders-and-barrels.md)
 - [Styles live next to their JSX; `styles/` holds only global CSS](2026-10-28-styles-next-to-components.md)

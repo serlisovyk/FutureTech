@@ -4,7 +4,14 @@ import interRegular from '@assets/fonts/inter-latin-400.woff2'
 import kumbhSansMedium from '@assets/fonts/kumbh-sans-latin-500.woff2'
 import { CtaRevolution, Footer, Header, VideoModal } from '@sections'
 import { site } from '@data/site.js'
-import { getAbsoluteUrl, getPageTitle, getSocialMeta } from '@utils'
+import {
+  getAbsoluteUrl,
+  getArticleJsonLd,
+  getOrganizationJsonLd,
+  getPageTitle,
+  getSocialMeta,
+  serializeJsonLd,
+} from '@utils'
 
 export default function Layout(props) {
   const { url, title, description, robots, post, children } = props
@@ -61,6 +68,14 @@ export default function Layout(props) {
           <meta name="twitter:card" content="summary_large_image" />
           {post && <meta property="article:published_time" content={post.date} />}
           {post && <meta property="article:author" content={post.author.name} />}
+          <script type="application/ld+json">
+            {serializeJsonLd(getOrganizationJsonLd())}
+          </script>
+          {post && (
+            <script type="application/ld+json">
+              {serializeJsonLd(getArticleJsonLd(post, canonicalUrl, image.url))}
+            </script>
+          )}
         </Head>
       </head>
       <body>

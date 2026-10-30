@@ -9,7 +9,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `lint`, `lint:fix`, `lint:css`, `lint:css:fix` and `size` (size-limit);
   `vite.config.js` — only re-exports `vite/config.js`, which builds the config from `vite/parts/` (one `get…`
   per concern: `aliases`, `plugins`, `image`, `build`); `vite/paths.js` — the paths; `vite/constants.js` — the
-  constants the build plugins share; `vite/plugins/` — our own build plugins (`source-type`).
+  constants the build plugins share; `vite/plugins/` — our own build plugins (`source-type`; `site-files`, with its helpers in `vite/site-files/`, emits `robots.txt`, `sitemap.xml` and `llms.txt` into `dist/` from the built pages, decision `seo-files-and-structured-data`).
 - `.prettierrc`, `.prettierignore` — Prettier. `eslint.config.js`, `.stylelintrc.json` — ESLint and Stylelint.
   `.husky/pre-commit` and `.lintstagedrc.json` — the pre-commit hook that runs them on the staged files.
 - `.github/workflows/ci.yml` — the checks on every push. `.size-limit.json` — the budget of the built JS, CSS, fonts and images.
@@ -58,7 +58,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   the phone field is a flag box over a native country `<select>`, then the number; countries in `data/countries.js`),
   `Faq` (id `faq`: icon, `h2`, text and the "Ask Question" link to the form, beside one `FaqItem` per question of `faq`, each
   its own `Disclosure`, the first open).
-- `public/` — files that need a fixed URL, copied to `dist/` as they are: the favicon (`favicon.svg`, `favicon.png`), `apple-touch-icon.png` and the site's link-preview image `og-image.png` (1200 x 630); an article's `og:image` is its photo's hashed JPEG (`getSocialMeta`).
+- `public/` — files that need a fixed URL, copied to `dist/` as they are: the favicon (`favicon.svg`, `favicon.png`), `apple-touch-icon.png` and the site's link-preview image `og-image.png` (1200 x 630); an article's `og:image` is its photo's hashed JPEG (`getSocialMeta`). `robots.txt`, `sitemap.xml` and `llms.txt` are not in `public/`: the build generates them, so a new page or post is in them without an edit. The layout also prints the JSON-LD (`Organization` everywhere, `BlogPosting` on an article, `utils/get-*-json-ld.js`).
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
