@@ -10,7 +10,7 @@ export function ResourceRow(props) {
 
   return (
     <article className="resource-row" aria-labelledby={titleId}>
-      <div className="resource-row__inner container">
+      <div className="resource-row__inner container" data-reveal>
         <div className="resource-row__intro">
           <Icon name={icon} className="resource-row__icon" />
 

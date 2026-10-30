@@ -6,7 +6,7 @@ import './SectionHeading.css'
 export function SectionHeading({ tag, title, titleId, link, children }) {
   return (
     <div className="section-heading">
-      <div className="section-heading__inner container">
+      <div className="section-heading__inner container" data-reveal>
         <div className="section-heading__text">
           <Tag>{tag}</Tag>
           <Heading id={titleId} level={2} size="h2">

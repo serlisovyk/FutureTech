@@ -21,7 +21,7 @@ export function PodcastShow(props) {
 
   return (
     <article className="podcast-show" aria-labelledby={titleId}>
-      <div className="podcast-show__inner container">
+      <div className="podcast-show__inner container" data-reveal>
         <div className="podcast-show__intro">
           <Icon name={icon} className="podcast-show__icon" />
 

@@ -36,3 +36,23 @@ body {
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  .is-reveal-ready [data-reveal] {
+    &:not(.is-revealed) {
+      opacity: 0;
+    }
+
+    &.is-revealed {
+      animation: reveal calc(var(--transition-duration) * 3) ease-out backwards;
+      animation-delay: calc(var(--reveal-index, 0) * 80ms);
+    }
+  }
+}

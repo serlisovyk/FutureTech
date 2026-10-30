@@ -9,7 +9,7 @@ export default function Layout({ url, title, description, robots, children }) {
   const pageTitle = getPageTitle(title)
 
   return (
-    <html lang="en">
+    <html lang="en" data-reveal-root>
       <head>
         <title>{pageTitle}</title>
         <link

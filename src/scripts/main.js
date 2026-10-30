@@ -1,5 +1,6 @@
 import { CountUp } from './components/CountUp.js'
 import { Disclosure } from './components/Disclosure.js'
+import { Reveal } from './components/Reveal.js'
 import { Tabs } from './components/Tabs.js'
 import { Toggle } from './components/Toggle.js'
 import { HeaderController } from './controllers/HeaderController.js'
@@ -11,6 +12,7 @@ const ROOTS = [
   { selector: '[data-disclosure]', Component: Disclosure },
   { selector: '[data-toggle]', Component: Toggle },
   { selector: '[data-count-up]', Component: CountUp },
+  { selector: '[data-reveal-root]', Component: Reveal },
   { selector: '[data-header]', Component: HeaderController },
   { selector: '[data-post-feed]', Component: PostFeedController },
   { selector: '[data-video-modal]', Component: VideoModalController },

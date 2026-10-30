@@ -12,7 +12,7 @@ export function ResourceShowcase(props) {
   const [total, formats] = meta
 
   return (
-    <div className="resource-showcase container">
+    <div className="resource-showcase container" data-reveal>
       <div className="resource-showcase__main">
         <div className="resource-showcase__intro">
           <Icon name={icon} className="resource-showcase__icon" />

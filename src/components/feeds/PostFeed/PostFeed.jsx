@@ -11,7 +11,7 @@ export function PostFeed({ id, categories, posts, limit = posts.length }) {
   const initialTabId = getPostFeedTabId(id, allCategory.slug)
 
   return (
-    <div className="post-feed" data-post-feed>
+    <div className="post-feed" data-post-feed data-reveal>
       <div
         className="post-feed__tabs"
         role="tablist"

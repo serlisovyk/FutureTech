@@ -9,7 +9,7 @@ export function Faq() {
   return (
     <section className="faq" id={id} aria-labelledby={titleId}>
       <div className="faq__inner container">
-        <div className="faq__intro">
+        <div className="faq__intro" data-reveal>
           <Icon name={icon} className="faq__icon" />
 
           <div className="faq__summary">

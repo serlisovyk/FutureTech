@@ -6,7 +6,7 @@ import './FeatureGroup.css'
 export function FeatureGroup({ icon, title, text, cards, hasWideIcon = false }) {
   return (
     <div className="feature-group container">
-      <div className="feature-group__intro">
+      <div className="feature-group__intro" data-reveal>
         <Icon
           name={icon}
           className={clsx(

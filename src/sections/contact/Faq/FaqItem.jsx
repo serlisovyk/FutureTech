@@ -3,7 +3,7 @@ import './FaqItem.css'
 
 export function FaqItem({ answerId, question, answer, isOpen = false }) {
   return (
-    <li className="faq-item" data-disclosure>
+    <li className="faq-item" data-disclosure data-reveal>
       <button
         className="faq-item__button"
         type="button"

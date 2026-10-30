@@ -9,7 +9,7 @@ export function ResourceCard({ titleId, title, text, image, detailsHref }) {
   const { downloadLabel, downloadHref } = resourceLibrary
 
   return (
-    <article className="resource-card" aria-labelledby={titleId}>
+    <article className="resource-card" aria-labelledby={titleId} data-reveal>
       <Photo
         src={image}
         alt=""

@@ -9,7 +9,7 @@ export function TestimonialCard(props) {
   const { name, place, avatar, rating, ratingLabel, text } = props
 
   return (
-    <figure className="testimonial-card">
+    <figure className="testimonial-card" data-reveal>
       <figcaption className="testimonial-card__author">
         <Photo
           src={avatar}

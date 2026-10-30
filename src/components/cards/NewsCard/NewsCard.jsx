@@ -9,7 +9,7 @@ export function NewsCard(props) {
   const { slug, title, category, image, imageAlt, likes, comments } = props
 
   return (
-    <article className="news-card">
+    <article className="news-card" data-reveal>
       <Photo
         src={image}
         alt={imageAlt}

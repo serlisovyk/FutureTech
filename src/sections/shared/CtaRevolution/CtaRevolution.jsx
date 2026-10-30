@@ -7,7 +7,7 @@ export function CtaRevolution() {
   return (
     <section className="cta-revolution" aria-labelledby={cta.titleId}>
       <div className="cta-revolution__inner container">
-        <div className="cta-revolution__intro">
+        <div className="cta-revolution__intro" data-reveal>
           <Svg
             src="/src/assets/logos/logo-mark.svg"
             className="cta-revolution__logo"
@@ -25,7 +25,7 @@ export function CtaRevolution() {
         </div>
         <ul className="cta-revolution__cards">
           {cta.cards.map(({ id, href, title, text }) => (
-            <li key={id} className="cta-revolution__item">
+            <li key={id} className="cta-revolution__item" data-reveal>
               <a className="cta-revolution__card" href={href}>
                 <div className="cta-revolution__card-head">
                   <h3 className="cta-revolution__card-title">{title}</h3>

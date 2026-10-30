@@ -15,7 +15,10 @@ export function VideoCard(props) {
   const photoSizes = isEpisode ? episodeCardPhotoSizes : videoCardPhotoSizes
 
   return (
-    <article className={clsx('video-card', isEpisode && 'video-card--episode')}>
+    <article
+      className={clsx('video-card', isEpisode && 'video-card--episode')}
+      data-reveal
+    >
       <div className="video-card__preview">
         <Photo
           src={image}
