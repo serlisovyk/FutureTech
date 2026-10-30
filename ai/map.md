@@ -43,7 +43,9 @@ Navigation only: where things live and who owns what. How it works is in the cod
   beside the video preview, lead text and `MetaGrid` stats), `LatestPodcasts` (id `latest-podcasts`: `SectionHeading` with the "View All
   Episodes" button that drives `Disclosure` below 768px, and six episode `VideoCard`s in two `EpisodeGroup` lists, the second one the region).
 - Resources sections (`sections/resources/`), in design order on `pages/resources.jsx`: `ResourcesIntro` (the `PageIntro` of Resources),
-  `ResourceStats` (id `resource-stats`: the four large `Stat`s of `stats` split by lines, 2 x 2 below 768px, a hidden `h2`).
+  `ResourceStats` (id `resource-stats`: the four large `Stat`s of `stats` split by lines, 2 x 2 below 768px, a hidden `h2`),
+  `ResourceLibrary` (id `resource-library`: `SectionHeading` with the Whitepapers / Ebooks / Reports tabs, one `ResourcePanel`
+  per tab, a `ResourceRow` per resource: intro, photo, download, `MetaGrid`).
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.

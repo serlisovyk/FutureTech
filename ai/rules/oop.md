@@ -50,7 +50,7 @@ The JSX carries the roles, `aria-controls`, `aria-labelledby` and the initial `a
 `aria-selected`; the class reads them and sets states and `hidden` (`ai/rules/style.md`).
 
 - `Tabs`: root `data-tabs`, `data-tab-list`, buttons `data-tab="key"` paired with panels
-  `data-tab-panel="key"`; `onSelect(handler)` reports the selected tab after every selection, the first one in `start()` too.
+  `data-tab-panel="key"`; `onSelect(handler)` reports the selected tab after every selection, the first one in `start()` too. A tab whose `aria-controls` is the URL hash is selected on `start()` and on `hashchange`.
 - Post feed (`PostFeedController`): root `data-post-feed` (no `data-tabs`: the controller owns its `Tabs`), the bar `data-tab-list`,
   every tab `data-tab="<category>"` with its announcement in `data-status`, one `data-post-feed-panel` (a `tabpanel` every tab
   controls, without `data-tab-panel`), rows `data-category="<category>"`, `data-post-feed-empty` and a `role="status"` region
