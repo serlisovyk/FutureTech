@@ -45,7 +45,9 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - Resources sections (`sections/resources/`), in design order on `pages/resources.jsx`: `ResourcesIntro` (the `PageIntro` of Resources),
   `ResourceStats` (id `resource-stats`: the four large `Stat`s of `stats` split by lines, 2 x 2 below 768px, a hidden `h2`),
   `ResourceLibrary` (id `resource-library`: `SectionHeading` with the Whitepapers / Ebooks / Reports tabs, one `ResourcePanel`
-  per tab, a `ResourceRow` per resource: intro, photo, download, `MetaGrid`).
+  per tab, a `ResourceRow` per resource: intro, photo, download, `MetaGrid`),
+  `ResourceCards` (id `resource-cards`, the last section: a hidden `h2` and three `ResourceCard`s of `resourceCards` split by
+  lines, each photo, title, text, "View Details" to its tab and the download button).
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
@@ -58,7 +60,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `PostRow` (cards: author, date, title, excerpt, counters, link to the article) and `PostFeed` (`components/feeds/`: the category
   tabs and the list of `PostRow`s, filtered in the browser by `PostFeedController`); both are on `/ui`.
 - `src/data/` — the texts and lists the components render, as plain exported values, one file per entity: `blogs` (the Home blog section's id, heading and limit), `posts` (each with
-  its article `body` sections), `categories`, `videos`, `podcasts` (the Podcasts intro, the Top Podcasts section, the shows, the Latest Podcasts section and the episodes), `resources` (the Resources intro and counters strip, the Home section's heading, its showcases, the Resources page lists), `testimonials`, `features`, `stats`, `faq`,
+  its article `body` sections), `categories`, `videos`, `podcasts` (the Podcasts intro, the Top Podcasts section, the shows, the Latest Podcasts section and the episodes), `resources` (the Resources intro and counters strip, the Home section's heading, its showcases, the Resources page lists and cards), `testimonials`, `features`, `stats`, `faq`,
   `navigation` (the header links, its action and the newsletter strip), `footer`, `socials`, `contacts`, `cta`, `site` (the site
   name), `hero` (the Home hero texts, decor and avatars), `news` (the News intro, the featured story, the trending cards, the news hub and the videos section), `video-modal` (its close label and title id), `card-photos` (the `sizes` and widths of the card and avatar photos), `post-feed` (its tab list label, empty text and announcements), `ui-kit` (the `/ui` demo lists).
 - `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, `format-count.js`, …), re-exported by

@@ -1,6 +1,7 @@
 .resource-card {
   display: flex;
   flex-direction: column;
+  height: 100%;
   gap: calc(
     20px + (24 - 20) * var(--ramp-390-1440) + (30 - 24) * var(--ramp-1440-1920)
   );
@@ -29,6 +30,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: calc(10px + (20 - 10) * var(--ramp-1440-1920));
+  margin-block-start: auto;
 }
 
 .resource-card__button {

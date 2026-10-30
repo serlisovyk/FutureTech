@@ -223,7 +223,7 @@ export const resourceCards = [
     id: 'space-exploration-ebook',
     titleId: 'space-exploration-ebook-card-title',
     title: 'Space Exploration Ebook',
-    text: 'An ebook that follows the next decade of space exploration, from lunar bases to crewed missions to Mars.',
+    text: 'An ebook that follows the next decade of space exploration, from lunar bases to Mars.',
     image: '/src/assets/images/photos/astronaut-planet-vinyl.jpg',
     detailsHref: '/resources#ebooks',
   },
