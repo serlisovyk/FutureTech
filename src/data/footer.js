@@ -52,7 +52,7 @@ export const footer = {
         { label: 'Whitepapers', href: '/resources#whitepapers' },
         { label: 'Ebooks', href: '/resources#ebooks' },
         { label: 'Reports', href: '/resources#reports' },
-        { label: 'Research Papers', href: '/resources' },
+        { label: 'Research Papers', href: '/resources#whitepapers' },
       ],
     },
   ],

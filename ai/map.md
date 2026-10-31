@@ -28,37 +28,37 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `data-header` root; the layout passes it the current path). `shared/VideoModal` is the one `<dialog>` the layout renders on every
   page; any `[data-video-id]` button opens it.
 - Home sections (`sections/home/`), in design order on `pages/index.jsx`: `Hero` (the page's `h1`, the eyebrow, three
-  stats, the avatar capsule over the decor with the link to Resources, the strip of three feature links, `HeroFeature`),
-  `Features` (id `features`: the heading band and two `FeatureGroup`s, each an icon, title and text beside a 2 x 2 grid
+  stats, the avatar capsule with the link to Resources, three feature links, `HeroFeature`),
+  `Features` (id `features`: the heading band and two `FeatureGroup`s, each beside a 2 x 2 grid
   of `FeatureCard`s), `Blogs` (id `blogs`: `SectionHeading` and a `PostFeed` of the `blogs` posts), `Resources` (id `resources`:
-  `SectionHeading` and two `ResourceShowcase`s, Ebooks and Whitepapers: download link and audience beside the photo and facts),
+  `SectionHeading` and two `ResourceShowcase`s, Ebooks and Whitepapers),
   `Testimonials` (id `testimonials`, the last section: `SectionHeading` with the "View All Testimonials" button that
   drives `Disclosure` below 768px, and six `TestimonialCard`s in two `TestimonialGroup` lists, the second one the
   `Disclosure` region).
 - News sections (`sections/news/`), in design order on `pages/news.jsx`: `NewsIntro` (the `PageIntro` of News), `FeaturedNews` (the `featured`
   post: photo, title, text, `MetaGrid`, counters, Read More), `TrendingStories` (id `trending-stories`: three `NewsCard`s, a hidden `h2`),
-  `NewsHub` (id `news-hub`: `SectionHeading` and a `PostFeed` of the `headlines` posts),
-  `FeaturedVideos` (id `featured-videos`: `SectionHeading` and the `videos` as a 2 x 2 list of `VideoCard`s split by lines).
+  `NewsHub` (id `news-hub`: a `PostFeed` of the `headlines` posts),
+  `FeaturedVideos` (id `featured-videos`: the `videos` as a 2 x 2 list of `VideoCard`s split by lines).
 - Podcasts sections (`sections/podcasts/`), in design order on `pages/podcasts.jsx`: `PodcastsIntro` (the `PageIntro` of Podcasts),
-  `TopPodcasts` (id `top-podcasts`: one `PodcastShow` per show of `podcasts`: icon, title, stars, host plate with Listen Podcast
+  `TopPodcasts` (id `top-podcasts`: one `PodcastShow` per show of `podcasts`: host plate with Listen Podcast
   beside the video preview, lead text and `MetaGrid` stats), `LatestPodcasts` (id `latest-podcasts`: `SectionHeading` with the "View All
   Episodes" button that drives `Disclosure` below 768px, and six episode `VideoCard`s in two `EpisodeGroup` lists, the second one the region).
 - Resources sections (`sections/resources/`), in design order on `pages/resources.jsx`: `ResourcesIntro` (the `PageIntro` of Resources),
-  `ResourceStats` (id `resource-stats`: the four large `Stat`s of `stats` split by lines, 2 x 2 below 768px, a hidden `h2`),
+  `ResourceStats` (id `resource-stats`: the four large `Stat`s of `stats`, a hidden `h2`),
   `ResourceLibrary` (id `resource-library`: `SectionHeading` with the Whitepapers / Ebooks / Reports tabs, one `ResourcePanel`
   per tab, a `ResourceRow` per resource: intro, photo, download, `MetaGrid`),
   `ResourceCards` (id `resource-cards`, the last section: a hidden `h2` and three `ResourceCard`s of `resourceCards` split by
-  lines, each photo, title, text, "View Details" to its tab and the download button).
+  lines, each with "View Details" to its tab and the download button).
 - Blog sections (`sections/blog/`), on `pages/blog/[slug].jsx`: `Article` (root `data-article`): `ArticleHero` (the photo and the page's `h1`),
   then `ArticleBody`: one `ArticleSection` per `body` entry (its `id` is the anchor; the first is the lead), the sections after the first
   `previewCount` in a `Disclosure` region behind "Read Full Blog" over a fade. `ArticleController` owns it and the contents.
-  `ArticleSidebar` (the second grid column from 1024px, above the text below it): large `CounterPill`s (the like is a toggle), the 2 x 2 `MetaGrid`
+  `ArticleSidebar` (the second grid column from 1024px): large `CounterPill`s (the like is a toggle), the 2 x 2 `MetaGrid`
   with the reading time, and `TableOfContents` (a `nav` of the sections' links, sticky). Then `SimilarNews` (three `NewsCard`s from `getSimilarPosts`). Texts: `data/article.js`.
 - Contact sections (`sections/contact/`), in design order on `pages/contact.jsx`: `ContactInfo` (id `contact-info`: the page's
-  hidden `h1` and four `ContactColumn`s of `contacts` split by lines, 2 x 2 below 1024px, one column below 768px),
+  hidden `h1` and four `ContactColumn`s of `contacts`),
   `ContactForm` (the `<form id="contact-form">` beside the icon and `h2`: a field part per kind, `ContactFormController` checks it,
-  the phone field is a flag box over a native country `<select>`, then the number; countries in `data/countries.js`),
-  `Faq` (id `faq`: icon, `h2`, text and the "Ask Question" link to the form, beside one `FaqItem` per question of `faq`, each
+  the phone field is a flag box over a native country `<select>`; countries in `data/countries.js`),
+  `Faq` (id `faq`: the "Ask Question" link to the form, beside one `FaqItem` per question of `faq`, each
   its own `Disclosure`, the first open).
 - `public/` — fixed-URL files copied as they are: `favicon.svg`, `favicon.png`, `og-image.png` (with the author's name)
   (1200 x 630). An article's `og:image` is its photo's hashed JPEG (`getSocialMeta`); the build generates `robots.txt`,
@@ -67,11 +67,14 @@ Navigation only: where things live and who owns what. How it works is in the cod
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
 - UI kit (`components/ui/`): `Button`, `Tag`, `Badge`, `SectionHeading`, `Stat` (its number counts up from 0 in view), `MetaItem` and `MetaGrid`,
-  `CounterPill` (`isLarge`; `likeKey` makes it the like toggle), `AvatarGroup`, `PlayButton` (▶, opens the video modal), `Heading` (`level` is the tag, `size` the look; `hero` is the Home title, `minor` the grey one). `AvatarGroup` has a capsule variant. `/ui` shows each in every variant.
+  `CounterPill` (`isLarge`; `likeKey` makes it the like toggle), `AvatarGroup` (has a capsule variant), `PlayButton` (▶, opens the video modal), `Heading` (`level` is the tag, `size` the look; `hero` is the Home title, `minor` the grey one). `/ui` shows each in every variant.
 - Cards (`components/cards/`): `NewsCard` (photo, title, category, counters, link to the article) and `VideoCard` (preview with the
   `PlayButton`; `isEpisode` adds Listen Podcast, which opens the same video). Both are on `/ui`.
+- Where the key buttons lead: Download PDF Now, the newsletter strips and Community Forum to `/contact`; Home's Download Ebooks / Whitepapers
+  Now and Preview to that tab of `/resources`; View All to the page that lists more (News's "View All News" to the Home blog feed);
+  play, Listen Podcast and the article's like are buttons, card likes are counters.
 - `PageIntro` (`components/page/`): the page's `h1` over two lines with the text beside the second one (stacked at
-  390); a page renders it with its data. News uses it now; Podcasts and Resources reuse it.
+  390); News, Podcasts and Resources render it with their data.
 - `PostRow` (cards: author, date, title, excerpt, counters, link to the article) and `PostFeed` (`components/feeds/`: the category
   tabs and the list of `PostRow`s, filtered in the browser by `PostFeedController`); both are on `/ui`.
 - `src/data/` — the texts, ids and lists the components render, as plain exported values, one file per entity or
@@ -97,12 +100,12 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `AGENTS.md` — the entry point for agents; `CLAUDE.md` points to it.
 - `ai/` — agent docs: this map, `workflow.md`, `rules/`, `skills/`, `decisions/`, `prompts/`,
   `linear-task-template.md`, the archive `superpowers/`, `design-system.md`.
-- `.claude/worktrees/` — one git worktree per task when tasks run in parallel; ignored by git.
+- `.claude/worktrees/` — one git worktree per parallel task; ignored by git.
 
 ## Deployment
 
 - Live site: <https://futuretech-cyan.vercel.app>, deployed by Vercel's Git integration.
-- `main` is production; every other branch gets a preview. The config is `vercel.json` only.
+- `main` is production, other branches get a preview; the config is `vercel.json`.
 
 ## Where is the recipe
 

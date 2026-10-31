@@ -31,7 +31,7 @@ export const resourceShowcases = [
     title: 'Ebooks',
     lead: 'Explore our collection of ebooks covering a wide spectrum of future technology topics.',
     cta: 'Download Ebooks Now',
-    href: '/resources',
+    href: '/resources#ebooks',
     overview: {
       title: 'Variety of Topics',
       text: 'Topics include AI in education (25%), renewable energy (20%), healthcare (15%), space exploration (25%), and biotechnology (15%).',
@@ -60,7 +60,7 @@ export const resourceShowcases = [
     title: 'Whitepapers',
     lead: 'Dive into comprehensive reports and analyses with our collection of whitepapers.',
     cta: 'Download Whitepapers Now',
-    href: '/resources',
+    href: '/resources#whitepapers',
     overview: {
       title: 'Topics Coverage',
       text: 'Whitepapers cover quantum computing (20%), AI ethics (15%), space mining prospects (20%), AI in healthcare (15%), and renewable energy strategies (30%).',
