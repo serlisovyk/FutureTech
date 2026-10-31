@@ -66,6 +66,7 @@ each with the record that replaced it.
 - [The JS, CSS and images limits are raised for the Podcasts episodes and the Resources page](2026-10-30-podcasts-resources-wave-size-limits.md)
 - [The CSS and images limits are raised for the Resources cards and the first Contact sections](2026-10-30-resources-contact-wave-size-limits.md)
 - [The JS and CSS limits are raised for the article pages, the reveal and hover states, and the Contact form](2026-10-30-forms-reveal-wave-size-limits.md)
+- [The JS, CSS and images limits are raised for the article page and the SEO wave](2026-10-31-article-seo-wave-size-limits.md)
 - [The contact form validates in the browser and sends nothing](2026-10-30-contact-form-without-backend.md)
 - [The design is a third-party template: a reference only, never published](2026-10-28-design-is-a-reference.md)
 
