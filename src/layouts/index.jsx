@@ -79,7 +79,7 @@ export default function Layout(props) {
       </head>
       <body>
         <Header currentPath={url} />
-        <main id="main" tabIndex={-1}>
+        <main className="main" id="main" tabIndex={-1}>
           {children}
         </main>
         <CtaRevolution />

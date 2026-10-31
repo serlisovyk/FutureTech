@@ -20,6 +20,10 @@ body {
   outline-offset: 2px;
 }
 
+.main:focus-visible {
+  outline: none;
+}
+
 .container {
   width: 100%;
   padding-inline: var(--space-container);
