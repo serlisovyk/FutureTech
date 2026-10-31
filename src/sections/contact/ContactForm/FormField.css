@@ -16,14 +16,14 @@
   display: block;
   width: 100%;
   padding: calc(15px + (19 - 15) * var(--ramp-1440-1920));
-  border: var(--border);
+  border: var(--border-control);
   border-radius: var(--radius-control);
   background-color: var(--dark-10);
   font-size: calc(14px + (18 - 14) * var(--ramp-1440-1920));
   letter-spacing: 0;
 
   &::placeholder {
-    color: var(--dark-40);
+    color: var(--grey-50);
     opacity: 1;
   }
 

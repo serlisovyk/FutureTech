@@ -6,7 +6,7 @@
   --dark-20: #333;
   --dark-25: #404040;
   --dark-40: #666;
-  --grey-50: #7e7e81;
+  --grey-50: #828285;
   --grey-60: #98989a;
   --grey-80: #ccc;
   --yellow-55: #ffd11a;
@@ -50,4 +50,5 @@
   --radius-pill: 100px;
 
   --border: 1px solid var(--dark-15);
+  --border-control: 1px solid var(--dark-40);
 }

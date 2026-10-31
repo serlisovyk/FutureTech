@@ -34,7 +34,7 @@
   width: var(--consent-field-box);
   height: var(--consent-field-box);
   margin: 0;
-  border: var(--border);
+  border: var(--border-control);
   border-radius: 4px;
   background-color: var(--dark-10);
   cursor: pointer;

@@ -32,7 +32,7 @@
 }
 
 .testimonial-card__place {
-  color: var(--dark-40);
+  color: var(--grey-50);
   font-size: calc(16px + (18 - 16) * var(--ramp-1440-1920));
   letter-spacing: 0;
 }

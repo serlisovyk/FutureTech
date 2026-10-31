@@ -54,7 +54,7 @@ Page background `Dark/08`. The guide defines 26 styles; the pages use 11. Unused
 | Dark/20        | `#333333` | Tag pill fill; border of the active nav pill                                                                                                     |
 | Dark/25        | `#404040` | Second tone of the two-tone feature icons                                                                                                        |
 | Dark/40        | `#666666` | Muted text (eyebrow, footer links, places, placeholders), counter icons, avatar ring                                                             |
-| Grey/50        | `#7E7E81` | Muted body (nav links, "Stay Current", CTA text, FAQ answer, duration)                                                                           |
+| Grey/50        | `#7E7E81` | Muted body (nav links, "Stay Current", CTA text, FAQ answer); built as `#828285`                                                                 |
 | Grey/60        | `#98989A` | Secondary text (paragraphs, labels, button labels, counter numbers, dates)                                                                       |
 | Grey/80        | `#CCCCCC` | One heading ("Similar News")                                                                                                                     |
 | Yellow/55      | `#FFD11A` | The accent: Contact Us and Send buttons, arrow glyphs, round buttons, feature icons, logo mark, FAQ plus, contact icons, end of the "New" border |
@@ -73,20 +73,22 @@ Page background `Dark/08`. The guide defines 26 styles; the pages use 11. Unused
 
 ### Contrast (computed, WCAG 2.x)
 
-| Pair                                         | Ratio                    | Where                                                                                              |
-| -------------------------------------------- | ------------------------ | -------------------------------------------------------------------------------------------------- |
-| White on `Dark/08` / `Dark/10` / `Dark/20`   | 18.4 / 17.4 / 12.6       | Headings, tag, active tab                                                                          |
-| Grey/60 on `Dark/08` / `Dark/10` / `Dark/15` | 6.4 / 6.0 / 5.3          | Body, labels, buttons                                                                              |
-| Dark/08 on Yellow/55; Yellow/55 on Dark/08   | 12.6                     | Primary buttons; arrows, icons                                                                     |
-| Orange `#FF5500` on `Dark/08`                | 5.8                      | Liked heart (needs 3)                                                                              |
-| **Grey/50 on `Dark/10`**                     | **4.30 fails 4.5**       | Nav links (navbar is `Dark/10`), CTA paragraph on the band, FAQ answer                             |
-| Grey/50 on `Dark/08`                         | 4.55 passes barely       | Hero text, "Stay Current"                                                                          |
-| **Dark/40 on `Dark/08` / `Dark/10`**         | **3.21 / 3.03 fail 4.5** | Footer links (14 to 18), places (16 to 18), placeholders; the 30px eyebrow passes the large-text 3 |
-| **Dark/15 border on `Dark/08` / `Dark/10`**  | **1.22 / 1.15 fail 3**   | Every border: inputs, checkbox, outline buttons, tabs, pills                                       |
-| Dark/40 icon on `Dark/08` / `Dark/10`        | 3.21 / 3.03              | Counter icons (pass 3)                                                                             |
+| Pair                                                        | Ratio                 | Where                                                                 |
+| ----------------------------------------------------------- | --------------------- | --------------------------------------------------------------------- |
+| White on `Dark/08` / `Dark/10` / `Dark/20`                  | 18.4 / 17.4 / 12.6    | Headings, tag, active tab                                             |
+| Grey/60 on `Dark/08` / `Dark/10` / `Dark/15`                | 6.4 / 6.0 / 5.3       | Body, labels, buttons                                                 |
+| Dark/08 on Yellow/55; Yellow/55 on Dark/08                  | 12.6                  | Primary buttons; arrows, icons                                        |
+| Orange `#FF5500` on `Dark/08`                               | 5.8                   | Liked heart (needs 3)                                                 |
+| Dark/40 icon on `Dark/08` / `Dark/10`                       | 3.21 / 3.03           | Counter icons (pass 3)                                                |
+| **Drawn, failing:** Grey/50 on `Dark/10`                    | 4.30                  | Nav links, CTA paragraph on the band, FAQ answer                      |
+| **Drawn, failing:** Dark/40 text on `Dark/08` / `Dark/10`   | 3.21 / 3.03           | Footer, eyebrow, places, placeholders                                 |
+| **Drawn, failing:** Dark/15 border on `Dark/08` / `Dark/10` | 1.22 / 1.15           | Every border                                                          |
+| **Drawn, failing:** duration over a photo                   | 1.1 to 4.4 (measured) | Video and episode cards                                               |
+| Built: Grey/50 `#828285` on `Dark/08` / `Dark/10`           | 4.81 / 4.54           | All of the above grey text, Dark/40 text included                     |
+| Built: control border `Dark/40` on `Dark/08` / `Dark/10`    | 3.21 / 3.03           | Text fields, phone country box, checkbox; other borders stay as drawn |
+| Built: duration in white over a photo                       | 4.57 at worst         | Video and episode cards                                               |
 
-**Flag for the accessibility task** (the design is not changed here): the bold rows above; the duration over a
-photo cannot be computed; an input and a checkbox need a 3:1 boundary.
+The built values and why they differ from the drawn ones: `ai/decisions/2026-10-31-grey-text-and-control-borders.md`.
 
 ## 3. Typography
 
@@ -214,7 +216,7 @@ The values in use, as a scale: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 30, 3
 - **News card:** image 512x222 / 407x185 / 358x185 (radius 12 / 10 / 10), then title, category (Grey/60 20 / 16 /
   14), then counters beside a "Read More" outline button; gap 20 / 16 / 16.
 - **Video / episode card:** image with the bottom fade, a white play disc (70 / 50 / 50, a play triangle cut
-  out of it) bottom left, the duration ("2.30 min", Grey/50) right of it; below: title, text, and on episodes
+  out of it) bottom left, the duration ("2.30 min", Grey/50 as drawn, white as built) right of it; below: title, text, and on episodes
   an outline button. Sizes 718x412 / 590x331 / 358x210 (video), 471x290 / 387x244 / 358x208 (episode). The
   podcast lead video is 917x412 with the play disc centred.
 - **Resource card:** image 471x290 / 387x290 / 358x223, title (card title), text, two buttons ("View Details"

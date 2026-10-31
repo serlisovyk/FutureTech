@@ -80,6 +80,7 @@ each with the record that replaced it.
 - [Styles live next to their JSX; `styles/` holds only global CSS](2026-10-28-styles-next-to-components.md)
 - [Breakpoints and fluid values: two structural queries, ramps between the drawn widths](2026-10-28-fluid-ramps.md)
 - [Borders are drawn inside the design's size: padding is the design's value minus the border](2026-10-28-borders-inside.md)
+- [Grey text is raised to AA, form controls get a 3:1 border, other borders stay as drawn](2026-10-31-grey-text-and-control-borders.md)
 - [Photos ship as AVIF with a WebP fallback, through one component](2026-10-28-image-formats.md)
 - [Fonts are self-hosted static woff2 files, latin subset](2026-10-28-self-hosted-fonts.md)
 - [The Vite config is split into `vite/`, one module per concern](2026-10-28-vite-config-split.md)

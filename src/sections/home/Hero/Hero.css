@@ -30,7 +30,7 @@
 }
 
 .hero__eyebrow {
-  color: var(--dark-40);
+  color: var(--grey-50);
   font-family: var(--font-kumbh);
   font-size: calc(
     18px + (22 - 18) * var(--ramp-390-1440) + (30 - 22) * var(--ramp-1440-1920)

@@ -11,7 +11,7 @@
   justify-content: center;
   gap: calc(4px + (6 - 4) * var(--ramp-1440-1920));
   width: calc(78px + (100 - 78) * var(--ramp-1440-1920));
-  border: var(--border);
+  border: var(--border-control);
   border-radius: 7px;
   background-color: var(--dark-10);
 
