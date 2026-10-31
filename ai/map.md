@@ -8,7 +8,8 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `package.json` — the scripts (`check` is `minista check`, `size` is size-limit);
   `vite.config.js` — only re-exports `vite/config.js`, which builds the config from `vite/parts/` (one `get…`
   per concern: `aliases`, `plugins`, `image`, `build`); `vite/paths.js` — the paths; `vite/constants.js` — the
-  constants the build plugins share; `vite/plugins/` — our own build plugins (`source-type`; `site-files`, with its helpers in `vite/site-files/`, emits `robots.txt`, `sitemap.xml` and `llms.txt` into `dist/` from the built pages, decision `seo-files-and-structured-data`).
+  constants the build plugins share; `vite/plugins/` — our build plugins: `source-type`, and `site-files` (helpers in `vite/site-files/`) that emits
+  `robots.txt`, `sitemap.xml` and `llms.txt` from the built pages.
 - `.prettierrc`, `.prettierignore` — Prettier. `eslint.config.js`, `.stylelintrc.json` — ESLint and Stylelint.
   `.husky/pre-commit` and `.lintstagedrc.json` — the pre-commit hook that runs them on the staged files.
 - `.github/workflows/ci.yml` — the checks on every push. `.size-limit.json` — the budget of the built JS, CSS, fonts and images.
@@ -18,7 +19,8 @@ Navigation only: where things live and who owns what. How it works is in the cod
   A page exports `metadata` (a unique title and description, `robots` when needed) and its content, no head.
   `pages/blog/[slug].jsx` is the article route: `getStaticData` makes one page per entry of `data/posts.js` at `/blog/<slug>`
   (`getPostUrl`), built as `dist/blog/<slug>.html`; it passes the post's title and excerpt as the page's title and description.
-- `src/layouts/` — the page shell shared by every page: `<html>`, the head (the title, description, canonical, icons, Open Graph and Twitter meta from the page's `metadata`, `url` and, on an article, its `post`; the script), `<main>`;
+- `src/layouts/` — the page shell shared by every page: `<html>`, the head (title, description, canonical, icons, Open Graph and Twitter meta from the page's
+  `metadata`, `url` and an article's `post`; the script), `<main>`;
   the header, the CTA (`CtaRevolution`) and the footer join it from `sections/shared/`.
 - `src/sections/` — one folder per section (its JSX, its stylesheet, its parts, an `index.jsx`), by page group (`home/`, `news/`, …,
   `ui/`; `shared/` when two pages use it); `sections/index.jsx` re-exports the groups.
@@ -51,29 +53,32 @@ Navigation only: where things live and who owns what. How it works is in the cod
   then `ArticleBody`: one `ArticleSection` per `body` entry (its `id` is the anchor; the first is the lead), the sections after the first
   `previewCount` in a `Disclosure` region behind "Read Full Blog" over a fade. `ArticleController` owns it and the contents.
   `ArticleSidebar` (the second grid column from 1024px, above the text below it): large `CounterPill`s (the like is a toggle), the 2 x 2 `MetaGrid`
-  with the reading time, and `TableOfContents` (a `nav` of the sections' links, sticky). Then `SimilarNews` (the `minor` `Heading` with "View All News", and three `NewsCard`s chosen by `getSimilarPosts`). Texts: `data/article.js`.
+  with the reading time, and `TableOfContents` (a `nav` of the sections' links, sticky). Then `SimilarNews` (three `NewsCard`s from `getSimilarPosts`). Texts: `data/article.js`.
 - Contact sections (`sections/contact/`), in design order on `pages/contact.jsx`: `ContactInfo` (id `contact-info`: the page's
   hidden `h1` and four `ContactColumn`s of `contacts` split by lines, 2 x 2 below 1024px, one column below 768px),
   `ContactForm` (the `<form id="contact-form">` beside the icon and `h2`: a field part per kind, `ContactFormController` checks it,
   the phone field is a flag box over a native country `<select>`, then the number; countries in `data/countries.js`),
   `Faq` (id `faq`: icon, `h2`, text and the "Ask Question" link to the form, beside one `FaqItem` per question of `faq`, each
   its own `Disclosure`, the first open).
-- `public/` — files that need a fixed URL, copied to `dist/` as they are: the favicon (`favicon.svg`, `favicon.png`), `apple-touch-icon.png` and the site's link-preview image `og-image.png` (1200 x 630); an article's `og:image` is its photo's hashed JPEG (`getSocialMeta`). `robots.txt`, `sitemap.xml` and `llms.txt` are not in `public/`: the build generates them, so a new page or post is in them without an edit. The layout also prints the JSON-LD (`Organization` everywhere, `BlogPosting` on an article, `utils/get-*-json-ld.js`).
+- `public/` — fixed-URL files copied as they are: `favicon.svg`, `favicon.png`, `apple-touch-icon.png`, `og-image.png`
+  (1200 x 630). An article's `og:image` is its photo's hashed JPEG (`getSocialMeta`); the build generates `robots.txt`,
+  `sitemap.xml` and `llms.txt`; the layout prints the JSON-LD (`Organization`, `BlogPosting`; `utils/get-*-json-ld.js`).
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
 - UI kit (`components/ui/`): `Button`, `Tag`, `Badge`, `SectionHeading`, `Stat` (its number counts up from 0 in view), `MetaItem` and `MetaGrid`,
-  `CounterPill` (`isLarge`; `likeKey` makes it the like toggle), `AvatarGroup`, `PlayButton` (the ▶ that opens the video modal), `Heading` (`level` is the tag, `size` the look; `hero` is the Home title, `minor` the grey one). `AvatarGroup` has a capsule variant. `/ui` shows each in every variant.
+  `CounterPill` (`isLarge`; `likeKey` makes it the like toggle), `AvatarGroup`, `PlayButton` (▶, opens the video modal), `Heading` (`level` is the tag, `size` the look; `hero` is the Home title, `minor` the grey one). `AvatarGroup` has a capsule variant. `/ui` shows each in every variant.
 - Cards (`components/cards/`): `NewsCard` (photo, title, category, counters, link to the article) and `VideoCard` (preview with the
   `PlayButton`; `isEpisode` adds Listen Podcast, which opens the same video). Both are on `/ui`.
 - `PageIntro` (`components/page/`): the page's `h1` over two lines with the text beside the second one (stacked at
   390); a page renders it with its data. News uses it now; Podcasts and Resources reuse it.
 - `PostRow` (cards: author, date, title, excerpt, counters, link to the article) and `PostFeed` (`components/feeds/`: the category
   tabs and the list of `PostRow`s, filtered in the browser by `PostFeedController`); both are on `/ui`.
-- `src/data/` — the texts and lists the components render, as plain exported values, one file per entity: `blogs` (the Home blog section's id, heading and limit), `posts` (each with
-  its article `body` sections), `categories`, `videos`, `podcasts` (the Podcasts intro, the Top Podcasts section, the shows, the Latest Podcasts section and the episodes), `resources` (the Resources intro and counters strip, the Home section's heading, its showcases, the Resources page lists and cards), `testimonials`, `features`, `stats`, `faq`, `contact-form` (ids, texts, the fields and their error texts), `countries`,
-  `navigation` (the header links, its action and the newsletter strip), `footer`, `socials`, `contacts`, `cta`, `site` (the site
-  name, the production origin, the locale, the theme colour, the icons and the social image), `hero` (the Home hero texts, decor and avatars), `news` (the News intro, the featured story, the trending cards, the news hub and the videos section), `video-modal` (its close label and title id), `card-photos` (the `sizes` and widths of the card and avatar photos), `post-feed` (its tab list label, empty text and announcements), `ui-kit` (the `/ui` demo lists).
+- `src/data/` — the texts, ids and lists the components render, as plain exported values, one file per entity or
+  section: `posts` (with their article `body`), `categories`, `videos`, `podcasts`, `resources`, `testimonials`,
+  `features`, `stats`, `faq`, `navigation`, `footer`, `socials`, `contacts`, `contact-form`, `countries`, `cta`, `hero`,
+  `blogs`, `news`, `article`, `post-feed`, `video-modal`, `card-photos` (photo `sizes` and widths), `ui-kit` (`/ui` demo
+  lists) and `site` (the name, the production origin, the locale, the theme colour, the icons, the social image).
 - `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, `get-reading-time.js`, `format-count.js`, …), re-exported by
   `index.js` (plain JS, no JSX), imported by components, sections and the layout; `constants.js` holds their numbers.
   `getSimilarPosts(post, count)`: same-category posts first, then the newest, newest first, never `post`.
@@ -83,7 +88,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `src/scripts/` — all browser JavaScript: `main.js` (the one entry, loaded by the layout: a table of root hook →
   class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`, `VideoModal`, `CountUp`, `FormField`, `LikeButton`, `TableOfContents`, `Reveal`: root `<html data-reveal-root>`,
   fades in every `[data-reveal]` below the first screen once, cascading the ones that enter together),
-  `constants.js` (key names, the menu query, the video and post feed hooks, the video embed, the count-up and reveal settings, the form hooks, the no-index sentinel), `controllers/`
+  `constants.js` (keys, selectors, media queries and widget settings), `controllers/`
   (one per section: `HeaderController`, which runs the menu; `VideoModalController`, which opens the modal from any play button;
   `PostFeedController`, which filters a feed's rows by the selected tab; `ContactFormController`, which checks and completes the form;
   `ArticleController`, which runs "Read Full Blog" and the contents).

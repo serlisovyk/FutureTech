@@ -1,10 +1,14 @@
+.similar-news {
+  border-block-start: var(--border);
+}
+
 .similar-news__inner {
   display: flex;
   flex-direction: column;
   gap: calc(
     30px + (40 - 30) * var(--ramp-390-1440) + (60 - 40) * var(--ramp-1440-1920)
   );
-  padding-block: var(--space-section);
+  padding-block: calc(var(--space-section) - 1px) var(--space-section);
 }
 
 .similar-news__header {
