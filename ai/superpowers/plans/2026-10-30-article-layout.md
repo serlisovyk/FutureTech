@@ -23,7 +23,7 @@ new (`Photo` and `Icon` are the existing wrappers).
 - `ArticleController` (`scripts/controllers/`, root `data-article`) owns the `Disclosure`: the body is `data-article-body`, not
   `data-disclosure`, so `main.js` does not create a second one. It opens the region when the URL hash (on `start()` and on
   `hashchange`) names a section inside it and scrolls there, and moves focus to the first revealed section when the button
-  opens the text. `Disclosure` gains `onToggle(handler)` (reports the new state after `open()` and `close()`, like `Toggle`).
+  opens the text. `Disclosure` gains `onToggle(handler)` (reports the state after every render, `start()` included, like `Toggle`).
 - A post with at most `previewCount` sections renders no region, fade or button; the controller then has no `Disclosure`.
 
 ## Layout and type
