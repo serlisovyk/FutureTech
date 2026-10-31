@@ -1,15 +1,26 @@
-import { Heading } from '@components'
+import { clsx } from 'clsx'
 import './ArticleSection.css'
 
-export function ArticleSection({ id, title, paragraphs }) {
+export function ArticleSection({ id, title, paragraphs, isLead = false }) {
+  const headingId = `${id}-title`
+
   return (
-    <section className="article-section" aria-labelledby={id} data-reveal>
-      <Heading level={2} size="h3" id={id}>
+    <section
+      className={clsx('article-section', isLead && 'article-section--lead')}
+      id={id}
+      aria-labelledby={headingId}
+      tabIndex={-1}
+      data-article-section
+      data-reveal
+    >
+      <h2 className="article-section__title" id={headingId}>
         {title}
-      </Heading>
-      {paragraphs.map((paragraph) => (
-        <p key={paragraph}>{paragraph}</p>
-      ))}
+      </h2>
+      <div className="article-section__text">
+        {paragraphs.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </div>
     </section>
   )
 }

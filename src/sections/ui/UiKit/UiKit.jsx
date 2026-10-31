@@ -92,6 +92,20 @@ export function UiKit() {
               Whitepapers
             </Button>
           </div>
+          <p className="ui-kit__caption">Outline, compact: a link and a button</p>
+          <div className="ui-kit__row">
+            <Button
+              variant="outline"
+              href="/resources"
+              icon="ui/arrow-down"
+              isCompact
+            >
+              Read Full Blog
+            </Button>
+            <Button variant="outline" icon="ui/arrow-down" isCompact>
+              Read Full Blog
+            </Button>
+          </div>
           <p className="ui-kit__caption">Ghost: a link and a button</p>
           <div className="ui-kit__row">
             <Button variant="ghost" href="/resources" icon="ui/arrow-up-right">

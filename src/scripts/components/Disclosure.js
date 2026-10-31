@@ -4,6 +4,7 @@ export class Disclosure {
   #region
   #label
   #isOpen
+  #handleToggle
 
   constructor(root, options = {}) {
     this.#options = { labels: null, ...options }
@@ -11,6 +12,7 @@ export class Disclosure {
     this.#region = root.querySelector('[data-disclosure-region]')
     this.#label = root.querySelector('[data-disclosure-label]')
     this.#isOpen = this.#trigger.getAttribute('aria-expanded') === 'true'
+    this.#handleToggle = () => {}
   }
 
   get isOpen() {
@@ -21,6 +23,10 @@ export class Disclosure {
     this.#renderExpanded()
 
     this.#trigger.addEventListener('click', () => this.toggle())
+  }
+
+  onToggle(handler) {
+    this.#handleToggle = handler
   }
 
   open() {
@@ -47,6 +53,7 @@ export class Disclosure {
     this.#region.hidden = !this.#isOpen
 
     this.#renderLabel()
+    this.#handleToggle(this.#isOpen)
   }
 
   #renderLabel() {

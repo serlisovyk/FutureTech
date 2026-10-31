@@ -57,7 +57,11 @@ The JSX carries the roles, `aria-controls`, `aria-labelledby` and the initial `a
   `data-post-feed-status`. The controller shows the rows of the key, the empty text when none shows, repoints the
   panel's `aria-labelledby` and copies `data-status` into the region, except for the selection `start()` makes.
 - `Disclosure`: root `data-disclosure`, `data-disclosure-trigger`, `data-disclosure-region`, and an
-  optional `data-disclosure-label` whose text the option `labels` swaps.
+  optional `data-disclosure-label` whose text the option `labels` swaps; `onToggle` reports the state.
+- Article (`ArticleController`): root `<article data-article>`; the text is `data-article-body` (not `data-disclosure`: the controller owns
+  that `Disclosure`), its region the only `data-disclosure-region`, every section `data-article-section` with `tabindex="-1"` and its
+  anchor as `id`. A post with no region has no `Disclosure`. When the URL hash (on `start()` and on `hashchange`) names a section inside the
+  closed region, the controller opens it, scrolls there and focuses it; when the button opens it, focus goes to the first section of the region.
 - `Toggle`: root `data-toggle`, `data-toggle-button`, `data-toggle-target`, and `data-toggle-dismiss` on every
   element whose click closes the target (focus goes back to the button, as on `Escape`); `onToggle` reports the state.
 - `VideoModal`: root is a native `<dialog data-video-modal>`, with `data-video-modal-title`, `data-video-modal-player`

@@ -29,6 +29,9 @@ export const REVEAL = Object.freeze({
 })
 
 export const SELECTORS = Object.freeze({
+  articleBody: '[data-article-body]',
+  articleSection: '[data-article-section]',
+  disclosureRegion: '[data-disclosure-region]',
   videoTrigger: '[data-video-id]',
   postFeedRow: '[data-category]',
   postFeedPanel: '[data-post-feed-panel]',

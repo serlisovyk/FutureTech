@@ -77,6 +77,10 @@
   border-radius: calc(8px + (12 - 8) * var(--ramp-1440-1920));
   background-color: var(--dark-08);
 
+  &.button--compact {
+    padding-block: 13px;
+  }
+
   @media (hover: hover) {
     &:hover {
       background-color: var(--dark-10);

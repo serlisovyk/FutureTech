@@ -30,3 +30,7 @@ export const episodeCardPhotoSizes =
 export const testimonialAvatarSizes = '(width < 1920px) 50px, 60px'
 
 export const testimonialAvatarBreakpoints = [60, 120, 180]
+
+export const articleHeroPhotoSizes = '100vw'
+
+export const articleHeroPhotoBreakpoints = [720, 1080, 1440, 1920]

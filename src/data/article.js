@@ -1,5 +1,8 @@
 export const article = {
   titleId: 'article-title',
+  previewCount: 3,
+  moreId: 'article-more',
+  moreLabel: 'Read Full Blog',
   labels: {
     category: 'Category',
     date: 'Publication Date',
