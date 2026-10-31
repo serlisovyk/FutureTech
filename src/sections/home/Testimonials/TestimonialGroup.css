@@ -14,8 +14,19 @@
   );
 
   position: relative;
-  padding-block: var(--testimonial-padding) calc(var(--testimonial-padding) - 1px);
-  border-bottom: var(--border);
+  padding-block: var(--testimonial-padding);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline: -100vmax;
+    border-block-end: var(--border);
+
+    @media (width < 768px) {
+      inset-inline: 0;
+    }
+  }
 
   &::before {
     content: none;

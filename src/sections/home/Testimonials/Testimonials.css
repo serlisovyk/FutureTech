@@ -6,6 +6,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: var(--testimonial-gap);
+  overflow-x: clip;
 
   @media (width < 1024px) {
     grid-template-columns: repeat(2, 1fr);

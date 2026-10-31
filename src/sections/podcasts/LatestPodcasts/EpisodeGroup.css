@@ -10,8 +10,19 @@
 
 .episode-group__item {
   position: relative;
-  padding-block: var(--space-section) calc(var(--space-section) - 1px);
-  border-bottom: var(--border);
+  padding-block: var(--space-section);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline: -100vmax;
+    border-block-end: var(--border);
+
+    @media (width < 768px) {
+      inset-inline: 0;
+    }
+  }
 
   &::before {
     content: none;
