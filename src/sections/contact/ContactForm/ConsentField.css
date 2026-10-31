@@ -12,6 +12,10 @@
   color: var(--white);
   letter-spacing: 0;
 
+  @media (width < 768px) {
+    min-height: 42px;
+  }
+
   &::before {
     content: '';
     position: absolute;

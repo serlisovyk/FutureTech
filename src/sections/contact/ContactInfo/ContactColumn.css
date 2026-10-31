@@ -13,12 +13,6 @@
   line-height: 1.3;
 }
 
-.contact-column__body {
-  @media (width < 768px) {
-    padding-inline-start: 50px;
-  }
-}
-
 .contact-column__links,
 .contact-column__office {
   display: flex;
