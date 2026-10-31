@@ -13,7 +13,6 @@ export const posts = [
     image: '/src/assets/images/photos/light-waves-abstract.jpg',
     imageAlt: 'Streams of light bending through an abstract quantum landscape',
     counters: { likes: 24500, comments: 50, shares: 20, views: 61000 },
-    readingTime: 6,
     placement: 'blogs',
     body: [
       {
@@ -56,7 +55,6 @@ export const posts = [
     imageAlt:
       'A robotic hand and a human hand reaching toward a glowing digital brain',
     counters: { likes: 32000, comments: 72, shares: 18, views: 74000 },
-    readingTime: 7,
     placement: 'blogs',
     body: [
       {
@@ -98,7 +96,6 @@ export const posts = [
     image: '/src/assets/images/photos/mars-landscape.jpg',
     imageAlt: 'A rust-red Martian landscape under a pale sky',
     counters: { likes: 20000, comments: 31, shares: 12, views: 48000 },
-    readingTime: 6,
     placement: 'blogs',
     body: [
       {
@@ -139,7 +136,6 @@ export const posts = [
     image: '/src/assets/images/photos/wind-turbines-sunset.jpg',
     imageAlt: 'A row of wind turbines against a sunset sky',
     counters: { likes: 14000, comments: 204, shares: 380, views: 52000 },
-    readingTime: 5,
     placement: 'featured',
     body: [
       {
@@ -180,7 +176,6 @@ export const posts = [
     image: '/src/assets/images/photos/handshake-mountain-sunset.jpg',
     imageAlt: 'Two people shaking hands in front of a mountain at sunset',
     counters: { likes: 2200, comments: 60, shares: 45, views: 18000 },
-    readingTime: 4,
     placement: 'trending',
     body: [
       {
@@ -214,7 +209,6 @@ export const posts = [
     image: '/src/assets/images/photos/ai-woman-code-reflection.jpg',
     imageAlt: 'A woman looking at lines of code reflected in her glasses',
     counters: { likes: 6000, comments: 92, shares: 130, views: 41000 },
-    readingTime: 4,
     placement: 'trending',
     body: [
       {
@@ -254,7 +248,6 @@ export const posts = [
     image: '/src/assets/images/photos/covid-test-tube-gloves.jpg',
     imageAlt: 'A gloved hand holding a test tube for a COVID-19 sample',
     counters: { likes: 10000, comments: 124, shares: 210, views: 57000 },
-    readingTime: 5,
     placement: 'trending',
     body: [
       {
@@ -295,7 +288,6 @@ export const posts = [
     imageAlt:
       'A robotic arm assembling a device in a workshop seen through a headset',
     counters: { likes: 24500, comments: 50, shares: 20, views: 63000 },
-    readingTime: 4,
     placement: 'headlines',
     body: [
       {
@@ -335,7 +327,6 @@ export const posts = [
     image: '/src/assets/images/photos/ai-hand-circuit-board.jpg',
     imageAlt: 'A robotic hand touching a glowing circuit board',
     counters: { likes: 32000, comments: 72, shares: 18, views: 70000 },
-    readingTime: 5,
     placement: 'headlines',
     body: [
       {
@@ -376,7 +367,6 @@ export const posts = [
     image: '/src/assets/images/photos/vr-business-interface.jpg',
     imageAlt: 'A futuristic business dashboard floating in front of a user',
     counters: { likes: 20000, comments: 31, shares: 12, views: 45000 },
-    readingTime: 4,
     placement: 'headlines',
     body: [
       {
@@ -417,7 +407,6 @@ export const posts = [
     imageAlt:
       'A laboratory with medical equipment and a doctor working with AI software',
     counters: { likes: 24500, comments: 87, shares: 206, views: 50000 },
-    readingTime: 10,
     placement: 'article',
     body: [
       {

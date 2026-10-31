@@ -3,10 +3,15 @@ export const article = {
   previewCount: 3,
   moreId: 'article-more',
   moreLabel: 'Read Full Blog',
+  sidebarLabel: 'Article details',
+  contentsId: 'article-contents',
+  contentsTitle: 'Table of Contents',
   labels: {
-    category: 'Category',
     date: 'Publication Date',
-    author: 'Author',
+    category: 'Category',
+    readingTime: 'Reading Time',
+    minutes: 'Min',
+    author: 'Author Name',
   },
 }
 
