@@ -1,5 +1,7 @@
 .article-body {
   position: relative;
+  grid-area: body;
+  min-width: 0;
 }
 
 .article-body__sections,

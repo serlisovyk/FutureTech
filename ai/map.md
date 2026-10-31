@@ -49,7 +49,9 @@ Navigation only: where things live and who owns what. How it works is in the cod
   lines, each photo, title, text, "View Details" to its tab and the download button).
 - Blog sections (`sections/blog/`), on `pages/blog/[slug].jsx`: `Article` (root `data-article`): `ArticleHero` (the photo and the page's `h1`),
   then `ArticleBody`: one `ArticleSection` per `body` entry (its `id` is the anchor; the first is the lead), the sections after the first
-  `previewCount` in a `Disclosure` region behind "Read Full Blog" over a fade. `ArticleController` owns it. Then `SimilarNews` (the `minor` `Heading` with "View All News", and three `NewsCard`s chosen by `getSimilarPosts`). Texts: `data/article.js`.
+  `previewCount` in a `Disclosure` region behind "Read Full Blog" over a fade. `ArticleController` owns it and the contents.
+  `ArticleSidebar` (the second grid column from 1024px, above the text below it): large `CounterPill`s (the like is a toggle), the 2 x 2 `MetaGrid`
+  with the reading time, and `TableOfContents` (a `nav` of the sections' links, sticky). Then `SimilarNews` (the `minor` `Heading` with "View All News", and three `NewsCard`s chosen by `getSimilarPosts`). Texts: `data/article.js`.
 - Contact sections (`sections/contact/`), in design order on `pages/contact.jsx`: `ContactInfo` (id `contact-info`: the page's
   hidden `h1` and four `ContactColumn`s of `contacts` split by lines, 2 x 2 below 1024px, one column below 768px),
   `ContactForm` (the `<form id="contact-form">` beside the icon and `h2`: a field part per kind, `ContactFormController` checks it,
@@ -61,7 +63,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
 - UI kit (`components/ui/`): `Button`, `Tag`, `Badge`, `SectionHeading`, `Stat` (its number counts up from 0 in view), `MetaItem` and `MetaGrid`,
-  `CounterPill`, `AvatarGroup`, `PlayButton` (the ▶ that opens the video modal), `Heading` (`level` is the tag, `size` the look; `hero` is the Home title, `minor` the grey one). `AvatarGroup` has a capsule variant. `/ui` shows each in every variant.
+  `CounterPill` (`isLarge`; `likeKey` makes it the like toggle), `AvatarGroup`, `PlayButton` (the ▶ that opens the video modal), `Heading` (`level` is the tag, `size` the look; `hero` is the Home title, `minor` the grey one). `AvatarGroup` has a capsule variant. `/ui` shows each in every variant.
 - Cards (`components/cards/`): `NewsCard` (photo, title, category, counters, link to the article) and `VideoCard` (preview with the
   `PlayButton`; `isEpisode` adds Listen Podcast, which opens the same video). Both are on `/ui`.
 - `PageIntro` (`components/page/`): the page's `h1` over two lines with the text beside the second one (stacked at
@@ -72,18 +74,19 @@ Navigation only: where things live and who owns what. How it works is in the cod
   its article `body` sections), `categories`, `videos`, `podcasts` (the Podcasts intro, the Top Podcasts section, the shows, the Latest Podcasts section and the episodes), `resources` (the Resources intro and counters strip, the Home section's heading, its showcases, the Resources page lists and cards), `testimonials`, `features`, `stats`, `faq`, `contact-form` (ids, texts, the fields and their error texts), `countries`,
   `navigation` (the header links, its action and the newsletter strip), `footer`, `socials`, `contacts`, `cta`, `site` (the site
   name, the production origin, the locale, the theme colour, the icons and the social image), `hero` (the Home hero texts, decor and avatars), `news` (the News intro, the featured story, the trending cards, the news hub and the videos section), `video-modal` (its close label and title id), `card-photos` (the `sizes` and widths of the card and avatar photos), `post-feed` (its tab list label, empty text and announcements), `ui-kit` (the `/ui` demo lists).
-- `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, `format-count.js`, …), re-exported by
+- `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, `get-reading-time.js`, `format-count.js`, …), re-exported by
   `index.js` (plain JS, no JSX), imported by components, sections and the layout; `constants.js` holds their numbers.
   `getSimilarPosts(post, count)`: same-category posts first, then the newest, newest first, never `post`.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
   `.container`, `.visually-hidden`, the `reveal` keyframes and the hidden start state), `fonts.css`; `global.css` imports them in that order, the layout imports it first.
   Components and sections import their own stylesheet; the build bundles all into one file.
 - `src/scripts/` — all browser JavaScript: `main.js` (the one entry, loaded by the layout: a table of root hook →
-  class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`, `VideoModal`, `CountUp`, `FormField`, `Reveal`: root `<html data-reveal-root>`,
+  class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`, `VideoModal`, `CountUp`, `FormField`, `LikeButton`, `TableOfContents`, `Reveal`: root `<html data-reveal-root>`,
   fades in every `[data-reveal]` below the first screen once, cascading the ones that enter together),
   `constants.js` (key names, the menu query, the video and post feed hooks, the video embed, the count-up and reveal settings, the form hooks, the no-index sentinel), `controllers/`
   (one per section: `HeaderController`, which runs the menu; `VideoModalController`, which opens the modal from any play button;
-  `PostFeedController`, which filters a feed's rows by the selected tab; `ContactFormController`, which checks and completes the form).
+  `PostFeedController`, which filters a feed's rows by the selected tab; `ContactFormController`, which checks and completes the form;
+  `ArticleController`, which runs "Read Full Blog" and the contents).
 - `src/assets/` — referenced by the build and emitted hashed: `fonts/` (woff2), `icons/` (sprite icons in `ui/`, `social/`,
   `feature/`, `flag/`; one sprite per folder), `logos/` (inline SVG: the logo and its mark), `images/` (`photos/`, `portraits/`, `decor/`).
 - `AGENTS.md` — the entry point for agents; `CLAUDE.md` points to it.

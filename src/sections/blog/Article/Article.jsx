@@ -1,6 +1,7 @@
 import { article } from '@data/article.js'
 import { ArticleBody } from './ArticleBody.jsx'
 import { ArticleHero } from './ArticleHero.jsx'
+import { ArticleSidebar } from './ArticleSidebar.jsx'
 import './Article.css'
 
 export function Article({ post }) {
@@ -16,6 +17,8 @@ export function Article({ post }) {
       />
 
       <div className="article__layout">
+        <ArticleSidebar post={post} />
+
         <ArticleBody sections={body} />
       </div>
     </article>

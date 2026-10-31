@@ -1,15 +1,21 @@
 import { Disclosure } from '@scripts/components/Disclosure.js'
+import { TableOfContents } from '@scripts/components/TableOfContents.js'
 import { SELECTORS } from '@scripts/constants.js'
 
 export class ArticleController {
   #root
   #region
   #disclosure
+  #contents
 
   constructor(root) {
     this.#root = root
     this.#region = root.querySelector(SELECTORS.disclosureRegion)
     this.#disclosure = null
+    this.#contents = new TableOfContents(
+      root.querySelector(SELECTORS.tableOfContents),
+      { scope: root },
+    )
 
     const hasRegion = this.#region !== null
     if (hasRegion) {
@@ -19,6 +25,9 @@ export class ArticleController {
 
   start() {
     this.#startDisclosure()
+
+    this.#contents.onNavigate((target) => this.#openFor(target))
+    this.#contents.start()
   }
 
   #startDisclosure() {
@@ -41,13 +50,25 @@ export class ArticleController {
 
   #revealHashTarget() {
     const target = this.#findHashTarget()
-    const isCollapsed = target !== null && this.#region.contains(target)
-    const isClosed = !this.#disclosure.isOpen
-    if (!isCollapsed || !isClosed) return
+    if (!target || !this.#isCollapsed(target)) return
 
-    this.#disclosure.open()
+    this.#openFor(target)
     target.scrollIntoView()
     target.focus({ preventScroll: true })
+  }
+
+  #openFor(target) {
+    if (!this.#isCollapsed(target)) return
+
+    this.#disclosure.open()
+  }
+
+  #isCollapsed(target) {
+    if (!this.#disclosure) return false
+
+    const isInRegion = this.#region.contains(target)
+
+    return isInRegion && !this.#disclosure.isOpen
   }
 
   #findHashTarget() {

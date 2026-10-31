@@ -5,8 +5,20 @@
   --article-inset-narrow: calc(
     24px + (60 - 24) * var(--ramp-390-1440) + (80 - 60) * var(--ramp-1440-1920)
   );
+  --article-sidebar-width: calc(
+    330px + (570 - 330) * var(--ramp-390-1440) + (682 - 570) * var(--ramp-1440-1920)
+  );
 }
 
 .article__layout {
   display: grid;
+  grid-template-columns: 1fr var(--article-sidebar-width);
+  grid-template-areas: 'body sidebar';
+
+  @media (width < 1024px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'sidebar'
+      'body';
+  }
 }

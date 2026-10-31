@@ -58,6 +58,11 @@ The JSX carries the roles, `aria-controls`, `aria-labelledby` and the initial `a
   panel's `aria-labelledby` and copies `data-status` into the region, except for the selection `start()` makes.
 - `Disclosure`: root `data-disclosure`, `data-disclosure-trigger`, `data-disclosure-region`, and an
   optional `data-disclosure-label` whose text the option `labels` swaps; `onToggle` reports the state.
+- `LikeButton`: root the `<button data-like="<key>" data-liked-count="<text>" aria-pressed="false" disabled>` (disabled until `start()`: no
+  script, no control), the number in `data-like-count`. It remembers the state in `localStorage` under the key; every access is in `try`.
+- `TableOfContents`: root `data-table-of-contents`, links `data-table-of-contents-link` whose `hash` is the target's `id`; the option `scope`
+  is where the targets are looked up. A click scrolls to the target (smoothly unless reduced motion), focuses it and pushes the hash;
+  `onNavigate(handler)` reports the target first. The target in the top fifth of the screen gets `aria-current="location"` on its link.
 - Article (`ArticleController`): root `<article data-article>`; the text is `data-article-body` (not `data-disclosure`: the controller owns
   that `Disclosure`), its region the only `data-disclosure-region`, every section `data-article-section` with `tabindex="-1"` and its
   anchor as `id`. A post with no region has no `Disclosure`. When the URL hash (on `start()` and on `hashchange`) names a section inside the
