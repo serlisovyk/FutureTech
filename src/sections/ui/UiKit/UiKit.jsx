@@ -208,6 +208,19 @@ export function UiKit() {
             <CounterPill icon="ui/eye" label="views" count="1.2k" />
             <CounterPill icon="ui/send" label="shares" count="86" />
           </div>
+          <p className="ui-kit__caption">Large, with the like as a toggle button</p>
+          <div className="ui-kit__row">
+            <CounterPill
+              icon="ui/heart"
+              label="likes"
+              count="24.5k"
+              likedCount="24.5k"
+              likeKey="ui-kit"
+              isLarge
+            />
+            <CounterPill icon="ui/eye" label="views" count="50k" isLarge />
+            <CounterPill icon="ui/send" label="shares" count="206" isLarge />
+          </div>
         </div>
       </section>
 

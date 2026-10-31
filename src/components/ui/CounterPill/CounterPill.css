@@ -17,11 +17,48 @@
   color: var(--dark-40);
 }
 
-.counter-pill--liked {
+.counter-pill--large {
+  gap: 4px;
+  padding-block: calc(7px + (9 - 7) * var(--ramp-1440-1920));
+  padding-inline: calc(13px + (23 - 13) * var(--ramp-1440-1920));
+  background-color: var(--dark-08);
+
+  & .counter-pill__icon {
+    width: calc(26px + (34 - 26) * var(--ramp-1440-1920));
+    height: calc(26px + (34 - 26) * var(--ramp-1440-1920));
+  }
+}
+
+.counter-pill--toggle {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+  }
+
+  & .counter-pill__icon--on {
+    display: none;
+  }
+}
+
+.counter-pill--liked,
+.counter-pill[aria-pressed='true'] {
   border-color: transparent;
   background-color: transparent;
 
   & .counter-pill__icon {
     color: var(--color-like);
+  }
+}
+
+.counter-pill[aria-pressed='true'] {
+  & .counter-pill__icon--off {
+    display: none;
+  }
+
+  & .counter-pill__icon--on {
+    display: block;
   }
 }

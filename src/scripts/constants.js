@@ -28,9 +28,22 @@ export const REVEAL = Object.freeze({
   maxIndex: 5,
 })
 
+export const TABLE_OF_CONTENTS = Object.freeze({
+  rootMargin: '0px 0px -80% 0px',
+  currentValue: 'location',
+})
+
+export const STORAGE = Object.freeze({
+  likePrefix: 'futuretech:liked:',
+  likedValue: '1',
+})
+
 export const SELECTORS = Object.freeze({
   articleBody: '[data-article-body]',
   articleSection: '[data-article-section]',
+  tableOfContents: '[data-table-of-contents]',
+  tableOfContentsLink: '[data-table-of-contents-link]',
+  likeCount: '[data-like-count]',
   disclosureRegion: '[data-disclosure-region]',
   videoTrigger: '[data-video-id]',
   postFeedRow: '[data-category]',
