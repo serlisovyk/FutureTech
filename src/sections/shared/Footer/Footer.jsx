@@ -3,6 +3,7 @@ import { footer } from '@data/footer.js'
 import { socials } from '@data/socials.js'
 import { getCurrentYear } from '@utils'
 import { FooterColumn } from './FooterColumn.jsx'
+import { FooterCredits } from './FooterCredits.jsx'
 import './Footer.css'
 
 export function Footer() {
@@ -42,6 +43,8 @@ export function Footer() {
             © {currentYear} {footer.copyright}
           </p>
         </div>
+
+        <FooterCredits year={currentYear} />
       </div>
     </footer>
   )

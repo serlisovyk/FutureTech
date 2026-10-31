@@ -58,4 +58,10 @@ export const footer = {
   ],
   legal: [{ label: 'Terms & Conditions' }, { label: 'Privacy Policy' }],
   copyright: `${site.name}. All rights reserved.`,
+  author: 'Serhii Lisovyk',
+  sourceCode: {
+    href: 'https://github.com/serlisovyk/FutureTech',
+    label: 'Source code on GitHub (opens in a new tab)',
+    icon: 'social/github',
+  },
 }

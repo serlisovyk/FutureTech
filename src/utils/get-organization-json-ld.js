@@ -7,6 +7,6 @@ export function getOrganizationJsonLd() {
     '@type': 'Organization',
     name: site.name,
     url: getAbsoluteUrl('/'),
-    logo: getAbsoluteUrl(site.icons.apple),
+    logo: getAbsoluteUrl(site.icons.png),
   }
 }

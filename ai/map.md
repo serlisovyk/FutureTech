@@ -60,7 +60,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   the phone field is a flag box over a native country `<select>`, then the number; countries in `data/countries.js`),
   `Faq` (id `faq`: icon, `h2`, text and the "Ask Question" link to the form, beside one `FaqItem` per question of `faq`, each
   its own `Disclosure`, the first open).
-- `public/` — fixed-URL files copied as they are: `favicon.svg`, `favicon.png`, `apple-touch-icon.png`, `og-image.png`
+- `public/` — fixed-URL files copied as they are: `favicon.svg`, `favicon.png`, `og-image.png` (with the author's name)
   (1200 x 630). An article's `og:image` is its photo's hashed JPEG (`getSocialMeta`); the build generates `robots.txt`,
   `sitemap.xml` and `llms.txt`; the layout prints the JSON-LD (`Organization`, `BlogPosting`; `utils/get-*-json-ld.js`).
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),

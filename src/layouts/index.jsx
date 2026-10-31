@@ -52,7 +52,6 @@ export default function Layout(props) {
             type="image/png"
             sizes={site.icons.pngSize}
           />
-          <link rel="apple-touch-icon" href={site.icons.apple} />
           <meta property="og:site_name" content={site.name} />
           <meta property="og:locale" content={site.locale} />
           <meta property="og:type" content={type} />

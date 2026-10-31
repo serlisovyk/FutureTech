@@ -7,12 +7,11 @@ export const site = {
     svg: '/favicon.svg',
     png: '/favicon.png',
     pngSize: '48x48',
-    apple: '/apple-touch-icon.png',
   },
   socialImage: {
     src: '/og-image.png',
     width: 1200,
     height: 630,
-    alt: 'FutureTech: explore the frontiers of artificial intelligence',
+    alt: 'FutureTech: explore the frontiers of artificial intelligence, by Serhii Lisovyk',
   },
 }

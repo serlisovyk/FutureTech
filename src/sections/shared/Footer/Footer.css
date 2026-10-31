@@ -149,3 +149,41 @@
 .footer__copyright {
   justify-self: end;
 }
+
+.footer__credits {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-block-end: calc(24px + (40 - 24) * var(--ramp-1440-1920));
+  color: var(--dark-40);
+  font-size: var(--font-size-button);
+
+  @media (width < 768px) {
+    justify-content: center;
+  }
+}
+
+.footer__source {
+  position: relative;
+  display: flex;
+  color: var(--white);
+  transition: color var(--transition-duration);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -10px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--yellow-55);
+    }
+  }
+}
+
+.footer__source-icon {
+  width: var(--size-icon);
+  height: var(--size-icon);
+}

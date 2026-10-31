@@ -18,7 +18,7 @@ page, and `public/` is copied untouched.
 - **What is public.** `404.html` and `/ui` carry a `noindex` meta and are out of the sitemap and `llms.txt`; `robots.txt`
   allows everything, because a `Disallow` would stop a crawler from reading that `noindex`. The sitemap's `lastmod` is
   the post date for an article and absent for the other pages (no honest date to give).
-- **Fixed-URL files in `public/`.** The favicon (SVG and a 48 px PNG), the apple-touch icon and the 1200 x 630
+- **Fixed-URL files in `public/`.** The favicon (SVG and a 48 px PNG) and the 1200 x 630
   `og-image.png` are committed there: crawlers and browsers cache them by URL and an icon is asked for by a fixed path. They
   were rendered once from the logo and the site's fonts, not at every build. An article's `og:image` is its photo's source
   JPEG, resolved to its hashed URL with `import.meta.glob`; AVIF and WebP, which the site ships, are not read by every
