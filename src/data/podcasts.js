@@ -80,7 +80,7 @@ export const episodes = [
   {
     id: 'machine-learning-explained',
     title: 'Machine Learning Explained',
-    text: 'Dive into the intricacies of machine learning with AI expert Sarah Davis. In this episode, we break down how models learn from data.',
+    text: 'Dive into the intricacies of machine learning with AI expert Sarah Davis.',
     duration: '2.50 min',
     image: '/src/assets/images/photos/vr-robot-arm-workshop.jpg',
     videoId: 'znF2U_3Z210',
@@ -96,7 +96,7 @@ export const episodes = [
   {
     id: 'ai-in-education',
     title: 'AI in Education',
-    text: 'Explore the role of AI in education as Emily Turner discusses how AI is transforming the learning experience.',
+    text: 'Explore the role of AI in education as Emily Turner discusses how AI is transforming learning.',
     duration: '3.40 min',
     image: '/src/assets/images/photos/vr-library-students.jpg',
     videoId: 'hJP5GqnTrNo',

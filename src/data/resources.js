@@ -126,7 +126,7 @@ export const resourceTabs = [
         meta: [
           { label: 'Publication Date', value: 'September 2023' },
           { label: 'Category', value: 'Space Exploration' },
-          { label: 'Author', value: 'FutureTech Space Division' },
+          { label: 'Author', value: 'FutureTech Space Team' },
         ],
       },
     ],
@@ -182,7 +182,7 @@ export const resourceTabs = [
         meta: [
           { label: 'Publication Date', value: 'October 2023' },
           { label: 'Category', value: 'Healthcare' },
-          { label: 'Author', value: 'FutureTech Research Team' },
+          { label: 'Author', value: 'FutureTech Research Lab' },
         ],
       },
       {

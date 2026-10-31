@@ -25,7 +25,7 @@ export const testimonials = [
     avatar: '/src/assets/images/portraits/portrait-man-red-polo.jpg',
     rating: 5,
     ratingLabel: 'Rated 5 out of 5',
-    text: 'The whitepapers on renewable energy strategies have greatly influenced my work. They offer detailed data and analysis, helping me make informed decisions.',
+    text: 'The whitepapers on renewable energy strategies have greatly influenced my work. They offer detailed data and analysis.',
   },
   {
     id: 'emily-adams',
@@ -43,7 +43,7 @@ export const testimonials = [
     avatar: '/src/assets/images/portraits/portrait-man-grey-blazer.jpg',
     rating: 5,
     ratingLabel: 'Rated 5 out of 5',
-    text: 'The reports on space mining prospects have fueled my passion for space exploration. They provide a comprehensive view of what lies beyond Earth.',
+    text: 'The reports on space mining prospects have fueled my passion for space exploration. They give a comprehensive view.',
   },
   {
     id: 'jessica-miller',
