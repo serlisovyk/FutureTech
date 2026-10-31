@@ -74,7 +74,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   Now and Preview to that tab of `/resources`; View All to the page that lists more (News's "View All News" to the Home blog feed);
   play, Listen Podcast and the article's like are buttons, card likes are counters.
 - `PageIntro` (`components/page/`): the page's `h1` over two lines with the text beside the second one (stacked at
-  390); News, Podcasts and Resources render it with their data.
+  390); News, Podcasts and Resources render it with their data, News with the taller `isSpacious` bottom.
 - `PostRow` (cards: author, date, title, excerpt, counters, link to the article) and `PostFeed` (`components/feeds/`: the category
   tabs and the list of `PostRow`s, filtered in the browser by `PostFeedController`); both are on `/ui`.
 - `src/data/` — the texts, ids and lists the components render, as plain exported values, one file per entity or
