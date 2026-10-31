@@ -10,7 +10,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: calc(200px + (250 - 200) * var(--ramp-1440-1920));
+  gap: calc(
+    20px + (200 - 20) * var(--ramp-390-1440) + (250 - 200) * var(--ramp-1440-1920)
+  );
 
   @media (width < 768px) {
     flex-direction: column;

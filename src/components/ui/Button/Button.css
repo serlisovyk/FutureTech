@@ -6,6 +6,7 @@
   font-size: var(--font-size-button);
   line-height: 1.5;
   text-align: center;
+  white-space: nowrap;
   transition:
     background-color var(--transition-duration),
     border-color var(--transition-duration),

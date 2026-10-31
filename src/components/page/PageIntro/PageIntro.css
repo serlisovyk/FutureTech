@@ -8,13 +8,19 @@
       40px + (80 - 40) * var(--ramp-390-1440) + (130 - 80) * var(--ramp-1440-1920)
     )
     calc(
-      40px + (100 - 40) * var(--ramp-390-1440) + (150 - 100) * var(--ramp-1440-1920)
+      40px + (100 - 40) * var(--ramp-390-1440) + (130 - 100) * var(--ramp-1440-1920)
     );
 
   @media (width < 768px) {
     grid-template-columns: 1fr;
     row-gap: 14px;
   }
+}
+
+.page-intro--spacious {
+  padding-block-end: calc(
+    40px + (100 - 40) * var(--ramp-390-1440) + (150 - 100) * var(--ramp-1440-1920)
+  );
 }
 
 .page-intro__title {

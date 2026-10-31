@@ -8,6 +8,7 @@ export function NewsIntro() {
       titleStart={newsIntro.titleStart}
       titleEnd={newsIntro.titleEnd}
       text={newsIntro.text}
+      isSpacious
     />
   )
 }
