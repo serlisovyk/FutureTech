@@ -1,7 +1,6 @@
 # Plan: fragile spots (MY-324)
 
-Branch `my-324-fragile-spots`. No spec: the only visible changes are two honest captions, a different icon on the source
-link and native controls drawn dark; the rest keeps the built look. Two records are added: the zero-specificity layout
+Branch `my-324-fragile-spots`. No spec: the only visible changes are two honest captions and native controls drawn dark; the rest keeps the built look. Two records are added: the zero-specificity layout
 classes and the footer links built from data (a convention with an obvious alternative each).
 
 ## Causes found
@@ -37,9 +36,8 @@ classes and the footer links built from data (a convention with an obvious alter
 - **Newsletter.** The footer item goes (it only duplicated "Contact Us"). The banner is reworded to what it does,
   "Explore our New & latest Blogs and Resources", and leads to the Blogs section of Home (`blogs.id`); the data
   export `newsletter` becomes `banner` and holds `path` and `id` like a footer link.
-- **GitHub marks.** The credits' link to the repository gets a `</>` glyph (`ui/code`) instead of the GitHub mark, so the
-  profile (GitHub mark, in the bar) and the source code (code glyph, in the credits) differ at a glance; its label stays
-  "Source code on GitHub".
+- **GitHub marks.** Unchanged: the credits keep the GitHub icon from the design for the repository (an asset comes from the
+  design, not drawn by hand). The duplicate with the profile icon in the bar is left to the author.
 
 - **Docs.** `css.md` (zero-specificity globals, `color-scheme`), `architecture.md` (links from data ids), `map.md` (the banner strip now leads
   to Home's Blogs), and the records `zero-specificity-globals` and `links-from-data-ids`.
@@ -52,4 +50,4 @@ The checks under "Verification" in `AGENTS.md`. Computed styles of every element
 pages (Home, News, Podcasts, Resources, Contact, 404, `/ui`, one article) at 1920, 1440, 1024, 768 and 390 in headless
 Chrome against `minista preview`, three times: `main` and the build after the `:where()` commit (expected: no
 difference), then the final build (expected: `color-scheme` and the colours of native controls, the removed footer item,
-the reworded banner, the new icon). Every footer href checked against the ids of its built page.
+the reworded banner). Every footer href checked against the ids of its built page.

@@ -125,6 +125,6 @@ export const footer = {
   sourceCode: {
     href: 'https://github.com/serlisovyk/FutureTech',
     label: 'Source code on GitHub (opens in a new tab)',
-    icon: 'ui/code',
+    icon: 'social/github',
   },
 }
