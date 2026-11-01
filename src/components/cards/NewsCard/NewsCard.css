@@ -13,6 +13,7 @@
 
 .news-card__body {
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: calc(
     10px + (16 - 10) * var(--ramp-390-1440) + (20 - 16) * var(--ramp-1440-1920)
@@ -37,6 +38,7 @@
 
 .news-card__footer {
   display: flex;
+  margin-block-start: auto;
   flex-wrap: wrap;
   align-items: center;
   gap: 16px 50px;
