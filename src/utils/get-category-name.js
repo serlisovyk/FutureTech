@@ -1,4 +1,4 @@
-import { blogCategories, newsCategories } from '@data/categories.js'
+import { blogCategories, newsCategories } from '@data'
 
 export function getCategoryName(slug) {
   const category = [...blogCategories, ...newsCategories].find(

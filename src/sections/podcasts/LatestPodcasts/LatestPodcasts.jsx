@@ -1,5 +1,5 @@
 import { Button, SectionHeading } from '@components'
-import { episodes, latestPodcasts } from '@data/podcasts.js'
+import { episodes, latestPodcasts } from '@data'
 import { EpisodeGroup } from './EpisodeGroup.jsx'
 import './LatestPodcasts.css'
 

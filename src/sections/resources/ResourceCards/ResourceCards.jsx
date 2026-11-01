@@ -1,4 +1,4 @@
-import { resourceCardsSection, resourceCards } from '@data/resources.js'
+import { resourceCardsSection, resourceCards } from '@data'
 import { ResourceCard } from './ResourceCard.jsx'
 import './ResourceCards.css'
 

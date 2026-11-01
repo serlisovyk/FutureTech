@@ -1,5 +1,5 @@
 import { PageIntro } from '@components'
-import { newsIntro } from '@data/news.js'
+import { newsIntro } from '@data'
 
 export function NewsIntro() {
   return (

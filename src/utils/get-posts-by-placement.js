@@ -1,4 +1,4 @@
-import { posts } from '@data/posts.js'
+import { posts } from '@data'
 
 export function getPostsByPlacement(placement) {
   return posts.filter((post) => post.placement === placement)

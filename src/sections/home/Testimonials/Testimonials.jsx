@@ -1,5 +1,5 @@
 import { Button, SectionHeading } from '@components'
-import { testimonials, testimonialsSection } from '@data/testimonials.js'
+import { testimonials, testimonialsSection } from '@data'
 import { TestimonialGroup } from './TestimonialGroup.jsx'
 import './Testimonials.css'
 

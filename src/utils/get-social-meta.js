@@ -1,4 +1,4 @@
-import { site } from '@data/site.js'
+import { site } from '@data'
 import { getAbsoluteUrl } from './get-absolute-url.js'
 
 const photoUrls = import.meta.glob('/src/assets/images/photos/*.jpg', {

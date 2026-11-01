@@ -10,7 +10,7 @@ import {
 } from '@utils'
 import interRegular from '@assets/fonts/inter-latin-400.woff2'
 import kumbhSansMedium from '@assets/fonts/kumbh-sans-latin-500.woff2'
-import { site } from '@data/site.js'
+import { site } from '@data'
 import '@styles/global.css'
 
 export default function Layout(props) {

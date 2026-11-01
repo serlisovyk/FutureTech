@@ -1,4 +1,4 @@
-import { site } from '../../src/data/site.js'
+import { site } from '../../src/data/index.js'
 
 function toLink({ path, title, description }) {
   return `- [${title}](${site.url}${path}): ${description}`

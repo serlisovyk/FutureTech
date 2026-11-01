@@ -1,5 +1,5 @@
 import { Icon } from '@components'
-import { videoModal } from '@data/video-modal.js'
+import { videoModal } from '@data'
 import './VideoModal.css'
 
 export function VideoModal() {

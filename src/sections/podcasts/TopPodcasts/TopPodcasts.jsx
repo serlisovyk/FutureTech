@@ -1,5 +1,5 @@
 import { Heading } from '@components'
-import { podcasts, topPodcasts } from '@data/podcasts.js'
+import { podcasts, topPodcasts } from '@data'
 import { PodcastShow } from './PodcastShow.jsx'
 
 export function TopPodcasts() {

@@ -1,4 +1,4 @@
-import { site } from '../../src/data/site.js'
+import { site } from '../../src/data/index.js'
 import { SITE_FILES } from '../constants.js'
 
 export function buildRobots() {

@@ -1,8 +1,5 @@
 import { Photo } from '@components'
-import {
-  articleHeroPhotoBreakpoints,
-  articleHeroPhotoSizes,
-} from '@data/card-photos.js'
+import { articleHeroPhotoBreakpoints, articleHeroPhotoSizes } from '@data'
 import './ArticleHero.css'
 
 export function ArticleHero({ titleId, title, image, imageAlt }) {

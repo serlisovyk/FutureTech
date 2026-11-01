@@ -1,7 +1,7 @@
 import { Photo } from '@components/media/Photo'
 import { Button } from '@components/ui/Button'
 import { CounterPill } from '@components/ui/CounterPill'
-import { postRowAvatarBreakpoints, postRowAvatarSizes } from '@data/card-photos.js'
+import { postRowAvatarBreakpoints, postRowAvatarSizes } from '@data'
 import { formatCount, formatDate, getCategoryName, getPostUrl } from '@utils'
 import './PostRow.css'
 

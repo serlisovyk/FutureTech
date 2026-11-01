@@ -1,5 +1,5 @@
 import { SectionHeading } from '@components'
-import { resourceShowcases, resourcesSection } from '@data/resources.js'
+import { resourceShowcases, resourcesSection } from '@data'
 import { ResourceShowcase } from './ResourceShowcase.jsx'
 
 export function Resources() {

@@ -1,5 +1,5 @@
 import { AvatarGroup, Button, Heading, Icon, MetaGrid, Photo } from '@components'
-import { resourcesSection } from '@data/resources.js'
+import { resourcesSection } from '@data'
 import './ResourceShowcase.css'
 
 export function ResourceShowcase(props) {

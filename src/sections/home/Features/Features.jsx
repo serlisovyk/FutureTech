@@ -1,5 +1,5 @@
 import { SectionHeading } from '@components'
-import { featureGroups, featuresSection } from '@data/features.js'
+import { featureGroups, featuresSection } from '@data'
 import { FeatureGroup } from './FeatureGroup.jsx'
 
 export function Features() {

@@ -1,4 +1,4 @@
-import { posts } from '@data/posts.js'
+import { posts } from '@data'
 
 export function getSimilarPosts(post, count) {
   const { slug: currentSlug, category: currentCategory } = post

@@ -1,6 +1,6 @@
 import { Svg } from 'minista/assets'
 import { Heading, Icon, Tag } from '@components'
-import { cta } from '@data/cta.js'
+import { cta } from '@data'
 import './CtaRevolution.css'
 
 export function CtaRevolution() {

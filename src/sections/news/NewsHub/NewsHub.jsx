@@ -1,6 +1,5 @@
 import { PostFeed, SectionHeading } from '@components'
-import { newsCategories } from '@data/categories.js'
-import { newsHub } from '@data/news.js'
+import { newsCategories, newsHub } from '@data'
 import { getPostsByPlacement } from '@utils'
 
 export function NewsHub() {

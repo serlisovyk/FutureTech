@@ -1,6 +1,10 @@
 import { Button, Photo } from '@components'
-import { cardPhotoBreakpoints, resourceCardPhotoSizes } from '@data/card-photos.js'
-import { resourceCardsSection, resourceLibrary } from '@data/resources.js'
+import {
+  cardPhotoBreakpoints,
+  resourceCardPhotoSizes,
+  resourceCardsSection,
+  resourceLibrary,
+} from '@data'
 import './ResourceCard.css'
 
 export function ResourceCard({ titleId, title, text, image, detailsHref }) {

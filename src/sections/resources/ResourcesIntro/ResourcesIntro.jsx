@@ -1,5 +1,5 @@
 import { PageIntro } from '@components'
-import { resourcesIntro } from '@data/resources.js'
+import { resourcesIntro } from '@data'
 
 export function ResourcesIntro() {
   return (

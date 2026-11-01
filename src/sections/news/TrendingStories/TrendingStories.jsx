@@ -1,5 +1,5 @@
 import { NewsCard } from '@components'
-import { trendingStories } from '@data/news.js'
+import { trendingStories } from '@data'
 import { getPostsByPlacement } from '@utils'
 import './TrendingStories.css'
 

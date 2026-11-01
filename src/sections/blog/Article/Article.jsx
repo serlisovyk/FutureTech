@@ -1,4 +1,4 @@
-import { article } from '@data/article.js'
+import { article } from '@data'
 import { ArticleBody } from './ArticleBody.jsx'
 import { ArticleHero } from './ArticleHero.jsx'
 import { ArticleSidebar } from './ArticleSidebar.jsx'

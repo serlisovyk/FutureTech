@@ -1,6 +1,5 @@
 import { SectionHeading, VideoCard } from '@components'
-import { featuredVideos } from '@data/news.js'
-import { videos } from '@data/videos.js'
+import { featuredVideos, videos } from '@data'
 import './FeaturedVideos.css'
 
 export function FeaturedVideos() {

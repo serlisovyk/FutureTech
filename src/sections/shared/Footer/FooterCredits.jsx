@@ -1,5 +1,5 @@
 import { Icon } from '@components'
-import { footer } from '@data/footer.js'
+import { footer } from '@data'
 
 export function FooterCredits({ year }) {
   const { author, sourceCode } = footer

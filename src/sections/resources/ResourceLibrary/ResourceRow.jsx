@@ -1,6 +1,5 @@
 import { Button, Heading, Icon, MetaGrid, Photo } from '@components'
-import { cardPhotoBreakpoints, resourceRowPhotoSizes } from '@data/card-photos.js'
-import { resourceLibrary } from '@data/resources.js'
+import { cardPhotoBreakpoints, resourceRowPhotoSizes, resourceLibrary } from '@data'
 import './ResourceRow.css'
 
 export function ResourceRow(props) {

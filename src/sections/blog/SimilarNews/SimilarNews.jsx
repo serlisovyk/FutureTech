@@ -1,5 +1,5 @@
 import { Button, Heading, NewsCard } from '@components'
-import { similarNews } from '@data/article.js'
+import { similarNews } from '@data'
 import { getSimilarPosts } from '@utils'
 import './SimilarNews.css'
 

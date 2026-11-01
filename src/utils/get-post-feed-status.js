@@ -1,4 +1,4 @@
-import { postFeed } from '@data/post-feed.js'
+import { postFeed } from '@data'
 
 export function getPostFeedStatus(count, categoryName) {
   const { none, one, other } = postFeed.status

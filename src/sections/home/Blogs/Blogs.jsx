@@ -1,6 +1,5 @@
 import { PostFeed, SectionHeading } from '@components'
-import { blogs } from '@data/blogs.js'
-import { blogCategories } from '@data/categories.js'
+import { blogs, blogCategories } from '@data'
 import { getPostsByPlacement } from '@utils'
 
 export function Blogs() {

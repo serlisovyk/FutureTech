@@ -1,5 +1,5 @@
 import { PageIntro } from '@components'
-import { podcastsIntro } from '@data/podcasts.js'
+import { podcastsIntro } from '@data'
 
 export function PodcastsIntro() {
   return (

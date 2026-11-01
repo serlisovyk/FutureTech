@@ -1,5 +1,5 @@
 import { Article, SimilarNews } from '@sections'
-import { posts } from '@data/posts.js'
+import { posts } from '@data'
 
 export function getStaticData() {
   return posts.map((post) => ({

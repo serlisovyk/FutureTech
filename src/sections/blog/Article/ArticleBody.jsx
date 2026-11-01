@@ -1,5 +1,5 @@
 import { Button } from '@components'
-import { article } from '@data/article.js'
+import { article } from '@data'
 import { ArticleSection } from './ArticleSection.jsx'
 import './ArticleBody.css'
 

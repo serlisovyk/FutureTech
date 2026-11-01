@@ -2,8 +2,8 @@ import { Button, CounterPill, MetaGrid, Photo } from '@components'
 import {
   featuredNewsPhotoBreakpoints,
   featuredNewsPhotoSizes,
-} from '@data/card-photos.js'
-import { featuredNews } from '@data/news.js'
+  featuredNews,
+} from '@data'
 import { formatCount, getPostMeta, getPostsByPlacement, getPostUrl } from '@utils'
 import './FeaturedNews.css'
 

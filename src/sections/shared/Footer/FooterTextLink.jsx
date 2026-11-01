@@ -1,5 +1,5 @@
 import { Badge } from '@components'
-import { footer } from '@data/footer.js'
+import { footer } from '@data'
 
 export function FooterTextLink({ label, href, isNew = false }) {
   return (

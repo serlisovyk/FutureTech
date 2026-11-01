@@ -12,9 +12,9 @@ import {
   Tag,
   VideoCard,
 } from '@components'
-import { resourceShowcases } from '@data/resources.js'
-import { stats } from '@data/stats.js'
 import {
+  resourceShowcases,
+  stats,
   articleMeta,
   blogFeedDemo,
   episodeCardDemo,
@@ -22,7 +22,7 @@ import {
   podcastMeta,
   sectionHeadingDemo,
   videoCardDemo,
-} from '@data/ui-kit.js'
+} from '@data'
 import { getPostsByPlacement } from '@utils'
 import './UiKit.css'
 

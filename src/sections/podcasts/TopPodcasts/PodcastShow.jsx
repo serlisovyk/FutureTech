@@ -1,5 +1,5 @@
 import { Button, Heading, Icon, MetaGrid, Photo, PlayButton } from '@components'
-import { cardPhotoBreakpoints, podcastShowPhotoSizes } from '@data/card-photos.js'
+import { cardPhotoBreakpoints, podcastShowPhotoSizes } from '@data'
 import './PodcastShow.css'
 
 export function PodcastShow(props) {

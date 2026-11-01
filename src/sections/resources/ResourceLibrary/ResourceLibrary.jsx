@@ -1,5 +1,5 @@
 import { SectionHeading } from '@components'
-import { resourceLibrary, resourceTabs } from '@data/resources.js'
+import { resourceLibrary, resourceTabs } from '@data'
 import { ResourcePanel } from './ResourcePanel.jsx'
 import './ResourceLibrary.css'
 

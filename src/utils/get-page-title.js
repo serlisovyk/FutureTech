@@ -1,4 +1,4 @@
-import { site } from '@data/site.js'
+import { site } from '@data'
 
 export function getPageTitle(title) {
   if (!title) return site.name

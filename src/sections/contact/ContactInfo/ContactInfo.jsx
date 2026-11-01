@@ -1,4 +1,4 @@
-import { contactInfo, contacts } from '@data/contacts.js'
+import { contactInfo, contacts } from '@data'
 import { ContactColumn } from './ContactColumn.jsx'
 import './ContactInfo.css'
 

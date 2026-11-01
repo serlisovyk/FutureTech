@@ -1,6 +1,5 @@
 import { Stat } from '@components'
-import { resourceStats } from '@data/resources.js'
-import { stats } from '@data/stats.js'
+import { resourceStats, stats } from '@data'
 import './ResourceStats.css'
 
 export function ResourceStats() {

@@ -1,6 +1,5 @@
 import { Icon } from '@components'
-import { footer } from '@data/footer.js'
-import { socials } from '@data/socials.js'
+import { footer, socials } from '@data'
 import { getCurrentYear } from '@utils'
 import { FooterColumn } from './FooterColumn.jsx'
 import { FooterCredits } from './FooterCredits.jsx'

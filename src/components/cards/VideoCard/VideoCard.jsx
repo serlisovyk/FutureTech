@@ -6,7 +6,7 @@ import {
   cardPhotoBreakpoints,
   episodeCardPhotoSizes,
   videoCardPhotoSizes,
-} from '@data/card-photos.js'
+} from '@data'
 import './VideoCard.css'
 
 export function VideoCard(props) {

@@ -1,8 +1,5 @@
 import { Icon, Photo } from '@components'
-import {
-  testimonialAvatarBreakpoints,
-  testimonialAvatarSizes,
-} from '@data/card-photos.js'
+import { testimonialAvatarBreakpoints, testimonialAvatarSizes } from '@data'
 import './TestimonialCard.css'
 
 export function TestimonialCard(props) {

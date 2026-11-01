@@ -1,5 +1,5 @@
 import { Button, Heading, Icon } from '@components'
-import { faq, faqSection } from '@data/faq.js'
+import { faq, faqSection } from '@data'
 import { FaqItem } from './FaqItem.jsx'
 import './Faq.css'
 

@@ -1,4 +1,4 @@
-import { site } from '../../src/data/site.js'
+import { site } from '../../src/data/index.js'
 
 function toUrl({ path, publishedTime }) {
   const loc = `<loc>${site.url}${path}</loc>`
