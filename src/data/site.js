@@ -9,6 +9,7 @@ export const site = {
     png: '/favicon.png',
     pngSize: '48x48',
   },
+  logo: '/logo.png',
   socialImage: {
     src: '/og-image.png',
     width: 1200,
