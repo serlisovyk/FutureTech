@@ -73,7 +73,7 @@ each with the record that replaced it.
 
 ### Code
 
-- [Browser scripts are classes, with pure helper functions in `scripts/utils/`](2026-11-01-script-helpers.md)
+- [Browser scripts are all classes; browser-API wrappers are classes in `scripts/services/`](2026-11-01-script-helper-classes.md)
 - [The layout builds the title and the head meta from the page's `metadata`; the site name lives in `data/site.js`](2026-10-28-shared-page-head.md)
 - [The sitemap, robots.txt and llms.txt are built from the built pages; JSON-LD is Organization and BlogPosting](2026-10-30-seo-files-and-structured-data.md)
 - [Imports across folders use one alias per folder (`@components`, `@scripts`, …), never `../`](2026-10-28-path-aliases.md)
@@ -99,3 +99,4 @@ each with the record that replaced it.
 - [Pages set their head through minista's metadata and `Head`; CSS and one script entry are loaded by the layout](2026-10-28-page-head-and-entries.md) — replaced by `shared-page-head`
 - [Article bodies are JS sections in `data/`, no MDX](2026-10-28-article-data.md) — replaced by `article-without-contents`
 - [Browser JavaScript in OOP style: a class per widget and per section](2026-10-28-oop-javascript.md) — replaced by `script-helpers`
+- [Browser scripts are classes, with pure helper functions in `scripts/utils/`](2026-11-01-script-helpers.md) — replaced by `script-helper-classes`
