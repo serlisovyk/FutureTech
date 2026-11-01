@@ -66,6 +66,9 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
   is decided with the result in front of you.
 - The fonts are set once (headings and body) and inherited; form controls repeat them only
   because they do not inherit.
+- Letter spacing is the property `--letter-spacing` (-3%), read by the base `*` rule. A block that is `ls 0` in
+  `ai/design-system.md` sets `--letter-spacing: 0` on itself, never `letter-spacing: 0`, which its children would
+  not inherit (decision `letter-spacing-property`).
 - Text contrast is at least 4.5:1, large text, icons and control borders at least 3:1, in
   every state, hover and focus included — the design's grey text on dark is checked, not trusted.
 
@@ -107,9 +110,13 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
   white; a link with the ↗ arrow moves the arrow 2px up and right, and a link card does it for its arrow
   circle; a text link turns white, a social icon yellow. Transitions name `background-color`, `border-color`, `color` or
   `transform` and take `--transition-duration`. Focus is only the base ring: the hover look is not repeated on `:focus-visible`.
+- Press: a button, tab or toggle has a plain `&:active` (never wrapped, so a tap shows it) that carries the hover
+  look and the background one more level up; a disabled control has none.
 - One `:focus-visible` rule in the base styles draws the ring for every control; a hover look
   never sits on `:focus`, and never `outline: none` without a replacement.
-- A control drawn under 44 px keeps its drawn size and gets a larger invisible hit area.
+- A control drawn under 44 px keeps its drawn size and gets a larger invisible hit area, a `::before` or `::after` of
+  its own. Controls closer than 44 px share the gap: the later one in the DOM wins the overlap, the layout is not
+  stretched to make room.
 - Use `hidden` or `inert` to take an element out of the page; text for assistive technology
   only is a visually-hidden utility class, not `display: none`, which hides it from them too.
 - Every `@keyframes` lives in one stylesheet in the base styles.
