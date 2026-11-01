@@ -73,6 +73,7 @@ each with the record that replaced it.
 - [A data item made for a component's props is spread; the rest `...props` stays forbidden](2026-11-01-spread-of-a-data-item.md)
 - [Styles live next to their JSX; `styles/` holds only global CSS](2026-10-28-styles-next-to-components.md)
 - [Fluid values, hover and breakpoints are short notations that PostCSS plugins expand](2026-11-01-postcss-shorthands.md)
+- [VS Code learns `@tablet` and `@mobile` from a custom data file in `.vscode/`](2026-11-01-vscode-css-data.md)
 - [Borders are drawn inside the design's size: padding is the design's value minus the border](2026-10-28-borders-inside.md)
 - [Grey text is raised to AA, form controls get a 3:1 border, other borders stay as drawn](2026-10-31-grey-text-and-control-borders.md)
 - [Photos ship as AVIF with a WebP fallback, through one component](2026-10-28-image-formats.md)

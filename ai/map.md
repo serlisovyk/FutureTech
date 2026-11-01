@@ -13,6 +13,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `.prettierrc`, `.prettierignore` — Prettier. `eslint.config.js`, `.stylelintrc.json` — ESLint and Stylelint.
   `.husky/pre-commit` and `.lintstagedrc.json` — the pre-commit hook that runs them on the staged files.
 - `.github/workflows/ci.yml` — the checks on every push. `.size-limit.json` — the budget of the built JS, CSS, fonts and images.
+- `.vscode/` — `css-data.json` tells VS Code about `@tablet` and `@mobile` (decision `vscode-css-data`).
 - `jsconfig.json` — the editor's copy of the aliases `vite/parts/aliases.js` defines, `@<folder>` for each `src/` folder
   (`@components`, `@sections`, `@utils`, `@data`, `@constants` are barrels, imported bare).
 - `src/pages/` — one JSX file per page, its file name is its URL: Home (`/`), News, Podcasts, Resources, Contact, 404 (`sections/not-found/`), and `/ui`, the UI kit demo (noindex, linked from nowhere).
