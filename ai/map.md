@@ -19,8 +19,8 @@ Navigation only: where things live and who owns what. How it works is in the cod
   A page exports `metadata = pages.<name>` (from `data/pages.js`) and its content, no head.
   `pages/blog/[slug].jsx` is the article route: `getStaticData` makes one page per entry of `data/posts.js` at `/blog/<slug>`
   (`getPostUrl`), built as `dist/blog/<slug>.html`; it passes the post's title and excerpt as the page's title and description.
-- `src/layouts/` — the shell of every page: `<html>`, the head (title, script, the `components/head/` parts fed with the page's
-  `metadata`, `url` and an article's `post`), `<main>`;
+- `src/layouts/` — the shell of every page: `<html>`, the head (title, script, `components/head/` fed with the page's
+  `metadata`, `url` and `post`), `<main>`;
   the header, the CTA (`CtaRevolution`) and the footer join it from `sections/shared/`.
 - `src/sections/` — one folder per section (its JSX, its stylesheet, its parts, an `index.jsx`), by page group (`home/`, `news/`, …,
   `ui/`; `shared/` when two pages use it); `sections/index.jsx` re-exports the groups.
@@ -62,10 +62,10 @@ Navigation only: where things live and who owns what. How it works is in the cod
   its own `Disclosure`, the first open).
 - `public/` — fixed-URL files copied as they are: `favicon.svg`, `favicon.png`, `og-image.png` (with the author's name)
   (1200 x 630). An article's `og:image` is its photo's hashed JPEG (`getSocialMeta`); the build generates `robots.txt`,
-  `sitemap.xml` and `llms.txt`; `JsonLd` prints the JSON-LD (`Organization`, `BlogPosting`; `utils/get-*-json-ld.js`).
+  `sitemap.xml` and `llms.txt`; `JsonLd` prints `Organization` and `BlogPosting` (`utils/get-*-json-ld.js`).
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
-- `components/head/`: the head's parts: `FontPreloads`, `SeoMeta`, `BrowserMeta`, `SocialMeta` (+ `ArticleMeta`), `JsonLd`.
+- `components/head/`: the head's parts (`FontPreloads`, `SeoMeta`, `SocialMeta`, `JsonLd`, …).
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
 - UI kit (`components/ui/`): `Button`, `Tag`, `Badge`, `SectionHeading`, `Stat` (its number counts up from 0 in view), `MetaItem` and `MetaGrid`,
   `CounterPill` (`isLarge`; `likeKey` makes it the like toggle), `AvatarGroup` (has a capsule variant), `PlayButton` (▶, opens the video modal), `Heading` (`level` is the tag, `size` the look; `hero` is the Home title, `minor` the grey one). `/ui` shows each in every variant.
