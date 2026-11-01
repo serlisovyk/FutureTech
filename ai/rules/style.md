@@ -32,7 +32,7 @@ Prettier decides the formatting; these are the rules it does not. Markup and dat
 ## Hooks for scripts
 
 - A script finds its elements by `data-<block>-<role>` attributes (`data-tab-panel`,
-  `data-toggle-button`, `data-header-nav`), never by BEM classes. A class says how something
+  `data-toggle-button`, `data-header-link`), never by BEM classes. A class says how something
   looks, an attribute says what the code does with it, so renaming a class never breaks a
   script.
 - A state is shown to CSS by a native attribute (`aria-expanded`, `hidden`, `inert`) or a BEM
@@ -48,10 +48,12 @@ Roles, `aria-controls` and `aria-labelledby` are in the JSX; the script changes 
   drives a `tabpanel` (one shared panel that every tab controls counts, its `aria-labelledby` follows the
   selection) and announces the count in a live region; otherwise it is a group of `aria-pressed` buttons with one.
 - **Disclosure** — a button with `aria-expanded` and `aria-controls`; the hidden content is out
-  of the tab order (`inert` or `hidden`); a changed label is text, not only an icon.
-- **Menu** (the mobile navigation) — a button with `aria-expanded`, `aria-controls` and a label
-  that changes with the state; `Escape` closes it and returns focus to the button; a followed
-  link closes it.
+  of the tab order (`inert` or `hidden`); the label is the same open or closed, the state is
+  `aria-expanded`, and an icon that shows it is decoration.
+- **Menu** (the mobile navigation) — a button with `aria-expanded`, `aria-controls` and a static
+  label; while the menu is open everything outside it, the button too, is `inert` and focus moves
+  to the drawer's close button; `Escape`, the backdrop, the close button and a followed link close
+  it and return focus to the button.
 - **Dialog** (the video modal) — a native `<dialog>` opened with `showModal()`, named by
   `aria-labelledby`; `Escape` and the close button close it; focus returns to the opener.
 - Every control is reachable and usable by keyboard and shows a visible focus.
