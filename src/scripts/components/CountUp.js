@@ -1,10 +1,11 @@
 import { COUNT_UP } from '@constants'
-import { canObserveVisible, isReducedMotion, observeVisible } from '@scripts/utils'
+import { VisibilityObserver } from '@scripts/services'
 
 export class CountUp {
   #options
   #number
   #parts
+  #observer
 
   constructor(root, options = {}) {
     this.#options = {
@@ -14,18 +15,24 @@ export class CountUp {
     }
     this.#number = root.querySelector('[data-count-up-number]')
     this.#parts = COUNT_UP.numberPattern.exec(this.#number.textContent.trim())
+    this.#observer = new VisibilityObserver(
+      [this.#number],
+      () => this.#startCounting(),
+      {
+        threshold: this.#options.threshold,
+      },
+    )
   }
 
   start() {
     const isCountable = this.#parts !== null
-    const canAnimate = canObserveVisible() && !isReducedMotion()
+    const canAnimate =
+      VisibilityObserver.isSupported() && !VisibilityObserver.isReducedMotion()
     if (!isCountable || !canAnimate) return
 
     this.#renderValue(0)
 
-    observeVisible([this.#number], () => this.#startCounting(), {
-      threshold: this.#options.threshold,
-    })
+    this.#observer.start()
   }
 
   #startCounting() {

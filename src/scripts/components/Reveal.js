@@ -1,10 +1,11 @@
 import { REVEAL } from '@constants'
-import { canObserveVisible, isReducedMotion, observeVisible } from '@scripts/utils'
+import { VisibilityObserver } from '@scripts/services'
 
 export class Reveal {
   #root
   #options
   #items
+  #observer
 
   constructor(root, options = {}) {
     this.#root = root
@@ -14,10 +15,12 @@ export class Reveal {
       ...options,
     }
     this.#items = root.querySelectorAll(REVEAL.itemSelector)
+    this.#observer = null
   }
 
   start() {
-    const canAnimate = canObserveVisible() && !isReducedMotion()
+    const canAnimate =
+      VisibilityObserver.isSupported() && !VisibilityObserver.isReducedMotion()
     if (!canAnimate) return
 
     const belowItems = []
@@ -31,9 +34,14 @@ export class Reveal {
       belowItems.push(item)
     }
 
-    observeVisible(belowItems, (items) => this.#renderBatch(items), {
-      rootMargin: this.#options.rootMargin,
-    })
+    this.#observer = new VisibilityObserver(
+      belowItems,
+      (items) => this.#renderBatch(items),
+      {
+        rootMargin: this.#options.rootMargin,
+      },
+    )
+    this.#observer.start()
 
     this.#root.classList.add(REVEAL.readyClass)
   }

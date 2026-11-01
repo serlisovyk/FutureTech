@@ -1,20 +1,22 @@
 import { SELECTORS, STORAGE } from '@constants'
-import { readStorage, removeStorage, writeStorage } from '@scripts/utils'
+import { StorageItem } from '@scripts/services'
 
 export class LikeButton {
   #root
   #count
-  #storageKey
+  #storage
   #unlikedCount
   #likedCount
   #isLiked
 
   constructor(root) {
+    const { like, likedCount } = root.dataset
+
     this.#root = root
     this.#count = root.querySelector(SELECTORS.likeCount)
-    this.#storageKey = `${STORAGE.likePrefix}${root.dataset.like}`
+    this.#storage = new StorageItem(`${STORAGE.likePrefix}${like}`)
     this.#unlikedCount = this.#count.textContent
-    this.#likedCount = root.dataset.likedCount
+    this.#likedCount = likedCount
     this.#isLiked = false
   }
 
@@ -23,7 +25,7 @@ export class LikeButton {
   }
 
   start() {
-    const storedValue = readStorage(this.#storageKey)
+    const storedValue = this.#storage.read()
 
     this.#isLiked = storedValue === STORAGE.likedValue
     this.#renderLiked()
@@ -47,10 +49,10 @@ export class LikeButton {
 
   #storeLiked() {
     if (this.#isLiked) {
-      writeStorage(this.#storageKey, STORAGE.likedValue)
+      this.#storage.write(STORAGE.likedValue)
       return
     }
 
-    removeStorage(this.#storageKey)
+    this.#storage.remove()
   }
 }
