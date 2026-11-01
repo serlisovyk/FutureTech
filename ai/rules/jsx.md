@@ -53,7 +53,8 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
   each other, and sibling blocks in the JSX (a section's heading band and its main blocks, an element and the
   conditional block after it).
 - A nested field is destructured, not read by path: `author: { name: authorName }`, then `authorName`, not
-  `post.author.name` in the JSX.
+  `post.author.name` in the JSX; a `data/` object the same way, at the top of the component
+  (`const { id, titleId } = featuresSection`), not `featuresSection.id` in the JSX.
 - A data attribute that is only a hook gets `undefined` when off (`isToggleDismiss || undefined`): React writes
   `false` as the string `"false"`, and `[data-toggle-dismiss]` would still match.
 - The stylesheet import comes last.
