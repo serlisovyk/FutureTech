@@ -22,31 +22,19 @@
   --ramp-390-1440: clamp(0px, (100vw - 390px) / 1050, 1px);
   --ramp-1440-1920: clamp(0px, (100vw - 1440px) / 480, 1px);
 
-  --font-size-card-title: calc(
-    16px + (18 - 16) * var(--ramp-390-1440) + (22 - 18) * var(--ramp-1440-1920)
-  );
-  --font-size-lead: calc(
-    14px + (16 - 14) * var(--ramp-390-1440) + (20 - 16) * var(--ramp-1440-1920)
-  );
-  --font-size-subheading: calc(
-    16px + (18 - 16) * var(--ramp-390-1440) + (20 - 18) * var(--ramp-1440-1920)
-  );
-  --font-size-button: calc(14px + (18 - 14) * var(--ramp-1440-1920));
+  --font-size-card-title: fluid(16, 18, 22);
+  --font-size-lead: fluid(14, 16, 20);
+  --font-size-subheading: fluid(16, 18, 20);
+  --font-size-button: fluid(14, 14, 18);
 
-  --size-icon: round(calc(20px + (24 - 20) * var(--ramp-1440-1920)), 1px);
+  --size-icon: round(fluid(20, 20, 24), 1px);
 
-  --space-container: calc(
-    16px + (80 - 16) * var(--ramp-390-1440) + (162 - 80) * var(--ramp-1440-1920)
-  );
-  --space-section: calc(
-    40px + (60 - 40) * var(--ramp-390-1440) + (80 - 60) * var(--ramp-1440-1920)
-  );
-  --space-card: calc(
-    24px + (30 - 24) * var(--ramp-390-1440) + (40 - 30) * var(--ramp-1440-1920)
-  );
+  --space-container: fluid(16, 80, 162);
+  --space-section: fluid(40, 60, 80);
+  --space-card: fluid(24, 30, 40);
 
-  --radius-card: calc(10px + (12 - 10) * var(--ramp-1440-1920));
-  --radius-control: calc(6px + (8 - 6) * var(--ramp-1440-1920));
+  --radius-card: fluid(10, 10, 12);
+  --radius-control: fluid(6, 6, 8);
   --radius-pill: 100px;
 
   --border: 1px solid var(--dark-15);
