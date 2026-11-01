@@ -56,10 +56,10 @@ src/
     not-found/       The 404 intro
     ui/              The UI kit demo
   components/
-    ui/              Button, tag, badge, stat, meta grid, counter pill, heading
-    cards/           News card, video card, post row
+    ui/              Button, tag, badge, heading, stat, rating, meta grid, counter pill, social links
+    cards/           News card, video card, post row, link card, card group
     feeds/           The post feed with category tabs
-    page/            The page intro
+    page/            The page intro and a section with a "show the rest" disclosure
     media/           Icon and photo
     head/            Title, SEO and social meta, JSON-LD, font preloads
   data/              The content the pages render: posts, authors, podcasts, resources, FAQ, contacts, site
