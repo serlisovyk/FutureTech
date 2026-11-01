@@ -36,7 +36,7 @@ export function ContactInfo() {
                       <ContactOffice address={address} directions={directions} />
                     )}
 
-                    {socials && <SocialLinks socials={socials} variant="boxed" />}
+                    {socials && <SocialLinks socials={socials} />}
                   </ContactColumn>
                 </li>
               )

@@ -1,10 +1,9 @@
-import { clsx } from 'clsx'
 import { Icon } from '@components/media/Icon'
 import './SocialLinks.css'
 
-export function SocialLinks({ socials, className, variant = 'plain' }) {
+export function SocialLinks({ socials }) {
   return (
-    <ul className={clsx('social-links', `social-links--${variant}`, className)}>
+    <ul className="social-links">
       {socials.map(({ name, href, icon }) => (
         <li key={name}>
           <a className="social-links__link" href={href} aria-label={name}>

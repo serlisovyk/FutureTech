@@ -1,6 +1,5 @@
-import { SocialLinks } from '@components'
 import { getCurrentYear } from '@utils'
-import { footer, socials } from '@data'
+import { footer } from '@data'
 import { FooterColumn } from './FooterColumn'
 import { FooterCredits } from './FooterCredits'
 import './Footer.css'
@@ -29,8 +28,6 @@ export function Footer() {
               </li>
             ))}
           </ul>
-
-          <SocialLinks socials={socials} className="footer__socials" />
 
           <p className="footer__copyright">
             © {currentYear} {copyright}
