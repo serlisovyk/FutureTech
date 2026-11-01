@@ -1,4 +1,4 @@
-import { interRegular, kumbhSansMedium } from '@assets/fonts'
+import { interMedium, interRegular, kumbhSansMedium } from '@assets/fonts'
 
 export function FontPreloads() {
   return (
@@ -6,6 +6,14 @@ export function FontPreloads() {
       <link
         rel="preload"
         href={interRegular}
+        as="font"
+        type="font/woff2"
+        crossOrigin="anonymous"
+      />
+
+      <link
+        rel="preload"
+        href={interMedium}
         as="font"
         type="font/woff2"
         crossOrigin="anonymous"
