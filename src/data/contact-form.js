@@ -47,7 +47,7 @@ export const contactFields = {
     errorId: 'contact-phone-error',
     name: 'phone',
     label: 'Phone Number',
-    placeholder: 'Enter Phone Number',
+    placeholder: 'Enter Phone',
     autoComplete: 'tel-national',
     countryName: 'countryCode',
     countryLabel: 'Country code',

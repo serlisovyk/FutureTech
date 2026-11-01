@@ -18,6 +18,7 @@
 }
 
 .post-feed__tab {
+  scroll-margin-block-start: fluid(330, 330, 460);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -69,7 +69,8 @@ added. Everything else is structure, so the proof is a diff of the built HTML an
 6. `Rating`, `SocialLinks`, `ArrowCircle` + `LinkCard`, `CardGroup` + `DisclosureSection` (one commit each).
 7. `UiKit` in parts.
 8. CSS: tokens, `.split-layout`, inline one-off properties, logical `Header.css`.
-9. The two extra fixes (feed scroll margin, phone placeholder).
+9. The two extra fixes: a `scroll-margin-block-start` on the feed tabs, a shorter phone placeholder (no padding makes the
+   long text fit at 320 px).
 10. Docs: map, skill, rules, the records and their index.
 
 ## Verification

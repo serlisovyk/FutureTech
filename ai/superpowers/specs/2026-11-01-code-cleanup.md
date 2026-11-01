@@ -11,5 +11,6 @@ Branch `my-319-code-cleanup`. The cleanup itself changes no behavior; the build 
 
 ## Phone field
 
-- The placeholder of the phone field ("Enter Phone Number") is fully visible at 320 px wide; the field's width, padding and
-  the placeholder text at the other widths are as before.
+- The placeholder of the phone field reads "Enter Phone" at every width: the longer "Enter Phone Number" does not fit the
+  field at 320 px (about 111 px of text room for 138 px of text), and no padding change could make it. The field's width
+  and padding are as before.
