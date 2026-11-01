@@ -12,7 +12,7 @@ A tech blog of five pages and an article page for every post, built from a third
 
 - Home, News, Podcasts, Resources and Contact pages, a 404, and an article page for every post in `src/data/`, matching the 1920, 1440 and 390px design
 - A post feed with category tabs that filters the list in the browser, and Resources tabs (Whitepapers, Ebooks, Reports) that follow the URL hash
-- A video modal: any play button or Listen Podcast opens a YouTube player in a dialog, created only on a click
+- A video modal: any play button or Listen Now opens a YouTube player in a dialog, created only on a click
 - A contact form checked in the browser with its own messages and a country-aware phone field; nothing is sent
 - An article with a "Read Full Blog" expander, a like that is remembered in the browser, and similar news
 - Stat numbers that count up when they come into view, and a reveal on scroll

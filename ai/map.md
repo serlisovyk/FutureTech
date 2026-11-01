@@ -43,7 +43,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `NewsHub` (id `news-hub`: a `PostFeed` of every News post),
   `FeaturedVideos` (id `featured-videos`: the `videos` as a 2 x 2 list of `VideoCard`s split by lines).
 - Podcasts sections (`sections/podcasts/`), in design order on `pages/podcasts.jsx`: `PodcastsIntro` (the `PageIntro` of Podcasts),
-  `TopPodcasts` (id `top-podcasts`: one `PodcastShow` per show of `podcasts`: host plate with Listen Podcast
+  `TopPodcasts` (id `top-podcasts`: one `PodcastShow` per show of `podcasts`: host plate with Listen Now
   beside the video preview, lead text and `MetaGrid` stats), `LatestPodcasts` (id `latest-podcasts`: a `DisclosureSection`
   of six episode `VideoCard`s).
 - Resources sections (`sections/resources/`), in design order on `pages/resources.jsx`: `ResourcesIntro` (the `PageIntro` of Resources),
@@ -71,11 +71,11 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
 - UI kit (`components/ui/`): `Button`, `Tag`, `Badge`, `SectionHeading`, `Stat`, `MetaItem` and `MetaGrid`, `CounterPill`,
   `AvatarGroup`, `PlayButton` (opens the video modal), `Heading`, `Rating`, `SocialLinks`, `ArrowCircle`. `/ui` shows the kit.
-- Cards (`components/cards/`): `NewsCard` and `VideoCard` (`isEpisode` adds Listen Podcast, which opens the same video), `LinkCard`
+- Cards (`components/cards/`): `NewsCard` and `VideoCard` (`isEpisode` adds Listen Now, which opens the same video), `LinkCard`
   (the card link that moves its `ArrowCircle`), `CardGroup` (a list of cards split by lines).
-- Where the key buttons lead: Download PDF Now and Community Forum to `/contact`, the header strip to Home's Blogs; Home's Download Ebooks /
-  Whitepapers Now and Preview to that tab of `/resources`; View All to the page that lists more (News's to the Home blog feed);
-  play, Listen Podcast and the article's like are buttons, card likes are counters.
+- Where the key buttons lead: Request the PDF and Community Forum to `/contact`, the header strip to Home's Blogs; Home's Browse Ebooks /
+  Whitepapers and View Details to that tab of `/resources`; View All to the page that lists more (News's: View Blogs, to Home's feed);
+  play, Listen Now and the article's like are buttons, card likes are counters.
 - `PageIntro` (`components/page/`): the page's `h1` over two lines with the text beside the second one (stacked at
   390); News (with the taller `isSpacious` bottom), Podcasts and Resources render it from their data; 404 puts its button under the text.
   `DisclosureSection` there is a section whose cards after the first N sit behind a button below 768px.
