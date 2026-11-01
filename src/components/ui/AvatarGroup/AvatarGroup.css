@@ -1,6 +1,6 @@
 .avatar-group {
   display: inline-flex;
-  padding: fluid(8, 8, 10);
+  padding: var(--space-xs);
   border-radius: 12px;
   background-color: var(--dark-08);
 

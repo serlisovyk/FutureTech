@@ -1,13 +1,9 @@
-.post-feed {
-  --tabs-padding-block: fluid(20, 40, 50);
-}
-
 .post-feed__tabs {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(152px, 1fr);
   gap: fluid(14, 14, 20);
-  padding-block: var(--tabs-padding-block) calc(var(--tabs-padding-block) - 1px);
+  padding-block: var(--space-l) calc(var(--space-l) - 1px);
   padding-inline: var(--space-container);
   border-bottom: var(--border);
   overflow-x: auto;

@@ -92,7 +92,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: fluid(16, 16, 20);
+  gap: var(--space-s);
 }
 
 .cta-revolution__card-title {

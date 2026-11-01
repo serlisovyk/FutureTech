@@ -1,7 +1,7 @@
 .news-card {
   display: flex;
   flex-direction: column;
-  gap: fluid(16, 16, 20);
+  gap: var(--space-s);
 }
 
 .news-card__photo {
@@ -44,7 +44,7 @@
 
 .news-card__counters {
   display: flex;
-  gap: fluid(8, 8, 10);
+  gap: var(--space-xs);
 }
 
 .news-card__button {

@@ -41,7 +41,7 @@
 .faq__list {
   display: flex;
   flex-direction: column;
-  gap: fluid(20, 24, 30);
+  gap: var(--space-m);
   min-width: 0;
   padding-block: calc(var(--space-panel) - 1px) var(--space-panel);
   padding-inline: calc(var(--space-panel) - 1px) fluid(60, 60, 0);

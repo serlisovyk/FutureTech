@@ -67,7 +67,7 @@
 }
 
 .video-card--episode {
-  gap: fluid(20, 24, 30);
+  gap: var(--space-m);
 
   & .video-card__preview {
     height: fluid(208, 244, 290);

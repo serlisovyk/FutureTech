@@ -49,7 +49,7 @@
   display: flex;
   grid-area: body;
   flex-direction: column;
-  gap: fluid(20, 24, 30);
+  gap: var(--space-m);
 }
 
 .post-row__date {
@@ -71,7 +71,7 @@
 
 .post-row__counters {
   display: flex;
-  gap: fluid(8, 8, 10);
+  gap: var(--space-xs);
 }
 
 .post-row__button {

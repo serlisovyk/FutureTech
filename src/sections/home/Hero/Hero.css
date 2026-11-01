@@ -129,7 +129,6 @@
 
 .hero__features {
   --hero-features-gap: fluid(100, 100, 160);
-  --hero-feature-space: fluid(30, 40, 50);
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -145,7 +144,7 @@
 
   @tablet {
     & + & .hero__feature-card {
-      padding-block-start: var(--hero-feature-space);
+      padding-block-start: var(--space-xl);
     }
   }
 
@@ -167,7 +166,7 @@
 
 .hero__feature-card {
   gap: fluid(10, 20, 30);
-  padding-block: calc(var(--hero-feature-space) - 1px) var(--hero-feature-space);
+  padding-block: calc(var(--space-xl) - 1px) var(--space-xl);
   border-radius: var(--radius-card);
 }
 

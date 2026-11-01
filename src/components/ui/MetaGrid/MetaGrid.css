@@ -1,5 +1,5 @@
 .meta-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: fluid(16, 16, 20);
+  gap: var(--space-s);
 }

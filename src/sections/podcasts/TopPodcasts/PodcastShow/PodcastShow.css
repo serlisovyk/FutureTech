@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   align-self: center;
-  gap: fluid(30, 40, 50);
+  gap: var(--space-xl);
   min-width: 0;
 }
 
@@ -28,7 +28,7 @@
 .podcast-show__summary {
   display: flex;
   flex-direction: column;
-  gap: fluid(20, 24, 30);
+  gap: var(--space-m);
 }
 
 .podcast-show__heading {
@@ -74,7 +74,7 @@
 .podcast-show__panel {
   display: flex;
   flex-direction: column;
-  gap: fluid(20, 40, 50);
+  gap: var(--space-l);
   min-width: 0;
   padding-block: calc(var(--space-panel) - 1px) var(--space-panel);
   padding-inline-start: calc(var(--space-panel) - 1px);
@@ -90,7 +90,7 @@
 .podcast-show__lead {
   display: flex;
   flex-direction: column;
-  gap: fluid(20, 24, 30);
+  gap: var(--space-m);
 }
 
 .podcast-show__preview {

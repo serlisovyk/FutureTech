@@ -25,7 +25,7 @@
 .featured-news__body {
   display: flex;
   flex-direction: column;
-  gap: fluid(20, 40, 50);
+  gap: var(--space-l);
   min-width: 0;
 }
 
@@ -60,5 +60,5 @@
 
 .featured-news__counters {
   display: flex;
-  gap: fluid(8, 8, 10);
+  gap: var(--space-xs);
 }

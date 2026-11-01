@@ -96,7 +96,7 @@
 .resource-showcase__overview {
   display: flex;
   align-items: center;
-  gap: fluid(16, 16, 20);
+  gap: var(--space-s);
 
   @mobile {
     flex-direction: column;
@@ -132,7 +132,7 @@
 
 .resource-showcase__facts {
   display: flex;
-  gap: fluid(16, 16, 20);
+  gap: var(--space-s);
 
   @mobile {
     flex-direction: column;
