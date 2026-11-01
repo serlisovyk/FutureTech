@@ -83,7 +83,10 @@ export class Tabs {
   #findHashTab() {
     const { hash } = window.location
 
-    return this.#tabs.find((tab) => `#${tab.getAttribute(ARIA.controls)}` === hash)
+    return this.#tabs.find(
+      (tab) =>
+        hash === `#${tab.id}` || hash === `#${tab.getAttribute(ARIA.controls)}`,
+    )
   }
 
   #findPanel(key) {
