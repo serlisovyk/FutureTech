@@ -41,6 +41,11 @@ classes and the footer links built from data (a convention with an obvious alter
   profile (GitHub mark, in the bar) and the source code (code glyph, in the credits) differ at a glance; its label stays
   "Source code on GitHub".
 
+- **Docs.** `css.md` (zero-specificity globals, `color-scheme`), `architecture.md` (links from data ids), `map.md` (the banner strip now leads
+  to Home's Blogs), and the records `zero-specificity-globals` and `links-from-data-ids`.
+- **Known side effect.** Lightning CSS turns `color-scheme` on `html` into two helper custom properties
+  (`--lightningcss-light`, `--lightningcss-dark`) for its `light-dark()` support; nothing reads them, the CSS gets smaller overall.
+
 ## Verification
 
 The checks under "Verification" in `AGENTS.md`. Computed styles of every element and its `::before` / `::after` on the 8

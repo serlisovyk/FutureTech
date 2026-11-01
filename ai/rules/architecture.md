@@ -26,6 +26,8 @@ sit beside it. Each folder has one job:
 - Everything interactive is a class in `scripts/` that finds its markup by `data-*` hooks
   after the page loads (`ai/rules/oop.md`). React never reaches the browser; minista's
   `pluginIsland` is not used (decision `minista-jsx-static-html`).
+- A link into a section or a feed tab is a descriptor of data ids, never a string typed with a `#`; the component
+  builds the href with `getLinkHref` (decision `links-from-data-ids`).
 - A page is complete without JavaScript: content is in the HTML, a script only adds behavior
   (filtering, expanding, opening).
 
