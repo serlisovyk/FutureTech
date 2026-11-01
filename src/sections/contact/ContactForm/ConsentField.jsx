@@ -1,5 +1,6 @@
 import { Icon } from '@components'
 import { FormError } from './FormError.jsx'
+import { RequiredMark } from './RequiredMark.jsx'
 import './ConsentField.css'
 
 export function ConsentField({ id, errorId, name, label, errors }) {
@@ -22,7 +23,10 @@ export function ConsentField({ id, errorId, name, label, errors }) {
           <Icon name="ui/check" className="consent-field__check" />
         </span>
 
-        <span>{label}</span>
+        <span>
+          {label}
+          <RequiredMark />
+        </span>
       </label>
 
       <FormError id={errorId} isFloating />

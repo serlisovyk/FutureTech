@@ -1,0 +1,4 @@
+.required-mark {
+  margin-inline-start: 0.2em;
+  color: var(--color-error);
+}

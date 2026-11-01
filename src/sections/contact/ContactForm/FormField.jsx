@@ -1,4 +1,5 @@
 import { FormError } from './FormError.jsx'
+import { RequiredMark } from './RequiredMark.jsx'
 import './FormField.css'
 
 export function FormField({ id, errorId, label, children }) {
@@ -6,6 +7,7 @@ export function FormField({ id, errorId, label, children }) {
     <div className="form-field" data-form-field>
       <label className="form-field__label" htmlFor={id}>
         {label}
+        <RequiredMark />
       </label>
 
       {children}
