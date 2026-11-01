@@ -73,10 +73,7 @@
 }
 
 .cta-revolution__card {
-  display: flex;
-  flex-direction: column;
   gap: fluid(10, 16, 20);
-  height: 100%;
   padding: calc(var(--space-card) - 1px);
   border: var(--border);
   border-radius: var(--radius-card);
@@ -88,14 +85,6 @@
   &:hover {
     border-color: var(--dark-40);
     background-color: var(--dark-15);
-  }
-
-  &:hover .cta-revolution__arrow {
-    background-color: color-mix(in srgb, var(--yellow-55), var(--white) 15%);
-  }
-
-  &:hover .cta-revolution__arrow-icon {
-    transform: translate(2px, -2px);
   }
 }
 
@@ -111,23 +100,4 @@
   color: var(--white);
   font-size: var(--font-size-card-title);
   font-weight: 600;
-}
-
-.cta-revolution__arrow {
-  display: flex;
-  flex: none;
-  align-items: center;
-  justify-content: center;
-  width: fluid(40, 44, 52);
-  height: fluid(40, 44, 52);
-  border-radius: var(--radius-pill);
-  background-color: var(--yellow-55);
-  color: var(--dark-08);
-  transition: background-color var(--transition-duration);
-}
-
-.cta-revolution__arrow-icon {
-  width: fluid(20, 20, 24);
-  height: fluid(20, 20, 24);
-  transition: transform var(--transition-duration);
 }

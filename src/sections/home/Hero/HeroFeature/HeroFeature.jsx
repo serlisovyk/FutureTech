@@ -1,9 +1,9 @@
-import { Icon } from '@components'
+import { ArrowCircle, Icon, LinkCard } from '@components'
 
 export function HeroFeature({ href, icon, title, subtitle, text }) {
   return (
     <li className="hero__feature">
-      <a className="hero__feature-card" href={href}>
+      <LinkCard href={href} className="hero__feature-card">
         <div className="hero__feature-body">
           <Icon name={icon} className="hero__feature-icon" />
           <div className="hero__feature-head">
@@ -11,13 +11,11 @@ export function HeroFeature({ href, icon, title, subtitle, text }) {
               <p className="hero__feature-title">{title}</p>
               <p className="hero__feature-subtitle">{subtitle}</p>
             </div>
-            <span className="hero__feature-arrow">
-              <Icon name="ui/arrow-up-right" className="hero__feature-arrow-icon" />
-            </span>
+            <ArrowCircle />
           </div>
         </div>
         <p className="hero__feature-text">{text}</p>
-      </a>
+      </LinkCard>
     </li>
   )
 }

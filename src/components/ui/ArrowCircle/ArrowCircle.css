@@ -1,0 +1,18 @@
+.arrow-circle {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: fluid(40, 44, 52);
+  height: fluid(40, 44, 52);
+  border-radius: var(--radius-pill);
+  background-color: var(--yellow-55);
+  color: var(--dark-08);
+  transition: background-color var(--transition-duration);
+}
+
+.arrow-circle__icon {
+  width: var(--size-icon);
+  height: var(--size-icon);
+  transition: transform var(--transition-duration);
+}

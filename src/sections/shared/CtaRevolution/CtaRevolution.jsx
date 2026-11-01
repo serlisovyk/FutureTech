@@ -1,5 +1,5 @@
 import { Svg } from 'minista/assets'
-import { Heading, Icon, Tag } from '@components'
+import { ArrowCircle, Heading, LinkCard, Tag } from '@components'
 import { cta } from '@data'
 import './CtaRevolution.css'
 
@@ -28,18 +28,13 @@ export function CtaRevolution() {
         <ul className="cta-revolution__cards">
           {cards.map(({ id, href, title: cardTitle, text: cardText }) => (
             <li key={id} className="cta-revolution__item" data-reveal>
-              <a className="cta-revolution__card" href={href}>
+              <LinkCard href={href} className="cta-revolution__card">
                 <div className="cta-revolution__card-head">
                   <h3 className="cta-revolution__card-title">{cardTitle}</h3>
-                  <span className="cta-revolution__arrow">
-                    <Icon
-                      name="ui/arrow-up-right"
-                      className="cta-revolution__arrow-icon"
-                    />
-                  </span>
+                  <ArrowCircle />
                 </div>
                 <p>{cardText}</p>
-              </a>
+              </LinkCard>
             </li>
           ))}
         </ul>

@@ -166,20 +166,9 @@
 }
 
 .hero__feature-card {
-  display: flex;
-  flex-direction: column;
   gap: fluid(10, 20, 30);
-  height: 100%;
   padding-block: calc(var(--hero-feature-space) - 1px) var(--hero-feature-space);
   border-radius: var(--radius-card);
-
-  &:hover .hero__feature-arrow {
-    background-color: color-mix(in srgb, var(--yellow-55), var(--white) 15%);
-  }
-
-  &:hover .hero__feature-arrow-icon {
-    transform: translate(2px, -2px);
-  }
 }
 
 .hero__feature-body {
@@ -216,25 +205,6 @@
 
 .hero__feature-subtitle {
   color: var(--grey-50);
-}
-
-.hero__feature-arrow {
-  display: flex;
-  flex: none;
-  align-items: center;
-  justify-content: center;
-  width: fluid(40, 44, 52);
-  height: fluid(40, 44, 52);
-  border-radius: var(--radius-pill);
-  background-color: var(--yellow-55);
-  color: var(--dark-08);
-  transition: background-color var(--transition-duration);
-}
-
-.hero__feature-arrow-icon {
-  width: var(--size-icon);
-  height: var(--size-icon);
-  transition: transform var(--transition-duration);
 }
 
 .hero__feature-text {

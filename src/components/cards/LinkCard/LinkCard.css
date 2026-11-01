@@ -1,0 +1,13 @@
+.link-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &:hover .arrow-circle {
+    background-color: var(--color-yellow-hover);
+  }
+
+  &:hover .arrow-circle__icon {
+    transform: translate(2px, -2px);
+  }
+}

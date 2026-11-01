@@ -1,3 +1,4 @@
+export * from './ArrowCircle/index.jsx'
 export * from './AvatarGroup/index.jsx'
 export * from './Badge/index.jsx'
 export * from './Button/index.jsx'

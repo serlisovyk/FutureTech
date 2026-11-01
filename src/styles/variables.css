@@ -13,6 +13,7 @@
   --color-like: #f50;
   --color-error: #ff5c5c;
   --color-backdrop: color-mix(in srgb, var(--dark-08) 70%, transparent);
+  --color-yellow-hover: color-mix(in srgb, var(--yellow-55), var(--white) 15%);
 
   --font-kumbh: 'Kumbh Sans', system-ui, sans-serif;
   --font-inter: 'Inter', system-ui, sans-serif;
