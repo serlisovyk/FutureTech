@@ -28,13 +28,16 @@
   --font-size-card-title: fluid(16, 18, 22);
   --font-size-lead: fluid(14, 16, 20);
   --font-size-subheading: fluid(16, 18, 20);
+  --font-size-title: fluid(18, 20, 24);
   --font-size-button: fluid(14, 14, 18);
 
   --size-icon: round(fluid(20, 20, 24), 1px);
+  --size-icon-feature: fluid(50, 60, 80);
 
   --space-container: fluid(16, 80, 162);
   --space-section: fluid(40, 60, 80);
   --space-card: fluid(24, 30, 40);
+  --space-panel: fluid(60, 60, 80);
 
   --radius-card: fluid(10, 10, 12);
   --radius-control: fluid(6, 6, 8);

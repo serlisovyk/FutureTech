@@ -28,7 +28,7 @@
   align-items: center;
   justify-content: center;
   height: 215px;
-  padding-block: fluid(60, 60, 80) 30px;
+  padding-block: var(--space-panel) 30px;
   background-image: linear-gradient(to bottom, transparent, var(--dark-08) 77%);
   pointer-events: none;
 

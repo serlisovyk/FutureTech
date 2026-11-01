@@ -41,7 +41,7 @@
   }
 
   &:hover {
-    background-color: color-mix(in srgb, var(--yellow-55), var(--white) 15%);
+    background-color: var(--color-yellow-hover);
   }
 
   &:active {

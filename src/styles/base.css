@@ -42,6 +42,16 @@ body {
   animation-duration: var(--transition-duration);
 }
 
+.split-layout {
+  display: grid;
+  grid-template-columns: min(var(--split-intro-width, fluid(413, 413, 519)), 34%) 1fr;
+  column-gap: var(--space-panel);
+
+  @tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;

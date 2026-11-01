@@ -1,12 +1,11 @@
 .article {
   --article-inset-wide: fluid(24, 80, 162);
   --article-inset-narrow: fluid(24, 60, 80);
-  --article-sidebar-width: fluid(330, 570, 682);
 }
 
 .article__layout {
   display: grid;
-  grid-template-columns: 1fr var(--article-sidebar-width);
+  grid-template-columns: 1fr fluid(330, 570, 682);
   grid-template-areas: 'body sidebar';
 
   @tablet {

@@ -1,20 +1,11 @@
 .contact-form {
-  --contact-form-padding: fluid(60, 60, 80);
   --contact-form-gap: fluid(20, 30, 50);
 
   border-block-start: var(--border);
 }
 
 .contact-form__inner {
-  display: grid;
-  grid-template-columns:
-    min(fluid(412, 412, 519), 34%)
-    1fr;
-  column-gap: fluid(60, 60, 80);
-
-  @tablet {
-    grid-template-columns: 1fr;
-  }
+  --split-intro-width: fluid(412, 412, 519);
 }
 
 .contact-form__intro {
@@ -35,16 +26,16 @@
   --icon-accent: var(--yellow-55);
   --icon-base: var(--dark-25);
 
-  width: fluid(50, 60, 80);
-  height: fluid(50, 60, 80);
+  width: var(--size-icon-feature);
+  height: var(--size-icon-feature);
 }
 
 .contact-form__form {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding-block: calc(var(--contact-form-padding) - 1px) var(--contact-form-padding);
-  padding-inline-start: calc(var(--contact-form-padding) - 1px);
+  padding-block: calc(var(--space-panel) - 1px) var(--space-panel);
+  padding-inline-start: calc(var(--space-panel) - 1px);
   border-inline-start: var(--border);
 
   @tablet {

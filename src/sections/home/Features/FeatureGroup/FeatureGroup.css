@@ -1,12 +1,5 @@
 .feature-group {
-  --feature-icon-size: fluid(50, 60, 80);
-  --feature-intro-width: fluid(413, 413, 519);
-  --feature-panel-padding: fluid(60, 60, 80);
-
   position: relative;
-  display: grid;
-  grid-template-columns: min(var(--feature-intro-width), 34%) 1fr;
-  column-gap: fluid(60, 60, 80);
 
   & + &::before {
     content: '';
@@ -14,10 +7,6 @@
     inset-block-start: 0;
     inset-inline: 0;
     border-block-start: var(--border);
-  }
-
-  @tablet {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -37,12 +26,12 @@
   --icon-accent: var(--yellow-55);
   --icon-base: var(--dark-25);
 
-  width: var(--feature-icon-size);
-  height: var(--feature-icon-size);
+  width: var(--size-icon-feature);
+  height: var(--size-icon-feature);
 }
 
 .feature-group__icon--wide {
-  width: calc(var(--feature-icon-size) * 69.29 / 60);
+  width: calc(var(--size-icon-feature) * 69.29 / 60);
 }
 
 .feature-group__text {
@@ -55,8 +44,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: fluid(10, 20, 30);
-  padding-block: var(--feature-panel-padding);
-  padding-inline-start: calc(var(--feature-panel-padding) - 1px);
+  padding-block: var(--space-panel);
+  padding-inline-start: calc(var(--space-panel) - 1px);
   border-inline-start: var(--border);
 
   @tablet {
@@ -83,6 +72,6 @@
 
 .feature-group__card-title {
   color: var(--white);
-  font-size: fluid(18, 20, 24);
+  font-size: var(--font-size-title);
   font-weight: 500;
 }

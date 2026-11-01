@@ -1,19 +1,5 @@
 .resource-row {
-  --resource-row-padding: fluid(60, 60, 80);
-
   border-block-start: var(--border);
-}
-
-.resource-row__inner {
-  display: grid;
-  grid-template-columns:
-    min(fluid(413, 413, 519), 34%)
-    1fr;
-  column-gap: fluid(60, 60, 80);
-
-  @tablet {
-    grid-template-columns: 1fr;
-  }
 }
 
 .resource-row__intro {
@@ -33,8 +19,8 @@
   --icon-accent: var(--yellow-55);
   --icon-base: var(--dark-25);
 
-  width: fluid(50, 60, 80);
-  height: fluid(50, 60, 80);
+  width: var(--size-icon-feature);
+  height: var(--size-icon-feature);
 }
 
 .resource-row__summary {
@@ -52,8 +38,8 @@
   flex-direction: column;
   gap: fluid(30, 40, 50);
   min-width: 0;
-  padding-block: calc(var(--resource-row-padding) - 1px) var(--resource-row-padding);
-  padding-inline-start: calc(var(--resource-row-padding) - 1px);
+  padding-block: calc(var(--space-panel) - 1px) var(--space-panel);
+  padding-inline-start: calc(var(--space-panel) - 1px);
   border-inline-start: var(--border);
 
   @tablet {

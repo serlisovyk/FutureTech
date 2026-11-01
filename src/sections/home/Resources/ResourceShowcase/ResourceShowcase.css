@@ -1,8 +1,4 @@
 .resource-showcase {
-  --showcase-icon-size: fluid(50, 60, 80);
-  --showcase-intro-width: fluid(413, 413, 519);
-  --showcase-panel-padding: fluid(60, 60, 80);
-  --showcase-title-size: fluid(18, 20, 24);
   --showcase-cell-radius: fluid(8, 8, 13);
 
   position: relative;
@@ -17,12 +13,7 @@
 }
 
 .resource-showcase__layout {
-  display: grid;
-  grid-template-columns: min(var(--showcase-intro-width), 34%) 1fr;
-  column-gap: fluid(60, 60, 80);
-
   @tablet {
-    grid-template-columns: 1fr;
     row-gap: 40px;
     padding-block-start: 40px;
   }
@@ -46,8 +37,8 @@
   --icon-accent: var(--yellow-55);
   --icon-base: var(--dark-25);
 
-  width: var(--showcase-icon-size);
-  height: var(--showcase-icon-size);
+  width: var(--size-icon-feature);
+  height: var(--size-icon-feature);
 }
 
 .resource-showcase__text {
@@ -81,7 +72,7 @@
 
 .resource-showcase__users-count {
   color: var(--white);
-  font-size: var(--showcase-title-size);
+  font-size: var(--font-size-title);
   font-weight: 600;
 }
 
@@ -90,8 +81,8 @@
   flex-direction: column;
   gap: fluid(24, 24, 30);
   min-width: 0;
-  padding-block: var(--showcase-panel-padding);
-  padding-inline-start: calc(var(--showcase-panel-padding) - 1px);
+  padding-block: var(--space-panel);
+  padding-inline-start: calc(var(--space-panel) - 1px);
   border-inline-start: var(--border);
 
   @tablet {
@@ -118,7 +109,7 @@
   flex: none;
   width: fluid(203, 203, 243);
   color: var(--white);
-  font-size: var(--showcase-title-size);
+  font-size: var(--font-size-title);
   font-weight: 600;
 
   @mobile {

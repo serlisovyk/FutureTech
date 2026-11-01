@@ -1,18 +1,9 @@
 .podcast-show {
-  --podcast-show-padding: fluid(60, 60, 80);
-
   border-block-start: var(--border);
 }
 
 .podcast-show__inner {
-  display: grid;
-  grid-template-columns:
-    min(fluid(413, 413, 519), 34%)
-    1fr;
-  column-gap: fluid(60, 60, 80);
-
   @tablet {
-    grid-template-columns: 1fr;
     row-gap: 40px;
     padding-block-start: 39px;
   }
@@ -30,8 +21,8 @@
   --icon-accent: var(--yellow-55);
   --icon-base: var(--dark-25);
 
-  width: fluid(50, 60, 80);
-  height: fluid(50, 60, 80);
+  width: var(--size-icon-feature);
+  height: var(--size-icon-feature);
 }
 
 .podcast-show__summary {
@@ -85,8 +76,8 @@
   flex-direction: column;
   gap: fluid(20, 40, 50);
   min-width: 0;
-  padding-block: calc(var(--podcast-show-padding) - 1px) var(--podcast-show-padding);
-  padding-inline-start: calc(var(--podcast-show-padding) - 1px);
+  padding-block: calc(var(--space-panel) - 1px) var(--space-panel);
+  padding-inline-start: calc(var(--space-panel) - 1px);
   border-inline-start: var(--border);
 
   @tablet {

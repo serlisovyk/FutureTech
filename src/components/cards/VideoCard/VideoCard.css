@@ -50,7 +50,7 @@
 
 .video-card__title {
   color: var(--white);
-  font-size: fluid(18, 20, 24);
+  font-size: var(--font-size-title);
   font-weight: 600;
 }
 

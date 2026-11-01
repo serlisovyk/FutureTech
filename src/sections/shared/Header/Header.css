@@ -29,10 +29,9 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding-top: var(--banner-padding);
-  padding-bottom: calc(var(--banner-padding) - 1px);
+  padding-block: var(--banner-padding) calc(var(--banner-padding) - 1px);
   padding-inline: 24px;
-  border-bottom: var(--border);
+  border-block-end: var(--border);
   background-color: var(--dark-08);
   color: var(--grey-60);
   font-size: fluid(12, 14, 18);
@@ -68,9 +67,8 @@
 .header__bar {
   --bar-padding: fluid(20, 20, 24);
 
-  padding-top: var(--bar-padding);
-  padding-bottom: calc(var(--bar-padding) - 1px);
-  border-bottom: var(--border);
+  padding-block: var(--bar-padding) calc(var(--bar-padding) - 1px);
+  border-block-end: var(--border);
   background-color: var(--dark-10);
 }
 
@@ -171,9 +169,8 @@
     gap: 20px;
     width: min(320px, 85%);
     padding-block: 20px;
-    padding-right: 16px;
-    padding-left: 15px;
-    border-left: var(--border);
+    padding-inline: 15px 16px;
+    border-inline-start: var(--border);
     background-color: var(--dark-10);
     overflow-y: auto;
     transition: transform var(--transition-duration);
@@ -218,18 +215,15 @@
 }
 
 .header__link {
-  --plate-padding-block: fluid(9, 9, 13);
-  --plate-padding-inline: fluid(17, 17, 23);
-  --plate-radius: fluid(6, 6, 10);
   --letter-spacing: 0;
 
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-block: var(--plate-padding-block);
-  padding-inline: var(--plate-padding-inline);
+  padding-block: fluid(9, 9, 13);
+  padding-inline: fluid(17, 17, 23);
   border: 1px solid transparent;
-  border-radius: var(--plate-radius);
+  border-radius: fluid(6, 6, 10);
   color: var(--grey-50);
   font-size: var(--font-size-button);
   transition:

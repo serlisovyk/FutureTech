@@ -1,9 +1,8 @@
 .faq-item {
-  --faq-item-padding: calc(fluid(24, 24, 34) - 1px);
   --faq-item-icon-gap: 20px;
   --faq-item-gap: fluid(16, 20, 24);
 
-  padding: var(--faq-item-padding);
+  padding: calc(fluid(24, 24, 34) - 1px);
   border: var(--border);
   border-radius: fluid(8, 8, 12);
   background-color: var(--dark-10);

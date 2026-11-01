@@ -25,7 +25,7 @@ export function ResourceShowcase(props) {
 
   return (
     <div className="resource-showcase">
-      <div className="resource-showcase__layout container" data-reveal>
+      <div className="resource-showcase__layout split-layout container" data-reveal>
         <div className="resource-showcase__main">
           <div className="resource-showcase__intro">
             <Icon name={icon} className="resource-showcase__icon" />

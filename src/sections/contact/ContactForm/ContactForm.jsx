@@ -13,7 +13,7 @@ export function ContactForm() {
 
   return (
     <section className="contact-form" aria-labelledby={titleId}>
-      <div className="contact-form__inner container">
+      <div className="contact-form__inner split-layout container">
         <div className="contact-form__intro" data-reveal>
           <Icon name={icon} className="contact-form__icon" />
 

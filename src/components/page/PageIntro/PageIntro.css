@@ -3,7 +3,7 @@
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto;
   align-items: center;
-  gap: 20px fluid(60, 60, 80);
+  gap: 20px var(--space-panel);
   padding-block: fluid(40, 80, 130) fluid(40, 100, 130);
 
   @mobile {

@@ -1,19 +1,5 @@
 .faq {
-  --faq-padding: fluid(60, 60, 80);
-
   border-block-start: var(--border);
-}
-
-.faq__inner {
-  display: grid;
-  grid-template-columns:
-    min(fluid(413, 413, 519), 34%)
-    1fr;
-  column-gap: fluid(60, 60, 80);
-
-  @tablet {
-    grid-template-columns: 1fr;
-  }
 }
 
 .faq__intro {
@@ -38,8 +24,8 @@
   --icon-accent: var(--yellow-55);
   --icon-base: var(--dark-25);
 
-  width: fluid(50, 60, 80);
-  height: fluid(50, 60, 80);
+  width: var(--size-icon-feature);
+  height: var(--size-icon-feature);
 }
 
 .faq__summary {
@@ -57,8 +43,8 @@
   flex-direction: column;
   gap: fluid(20, 24, 30);
   min-width: 0;
-  padding-block: calc(var(--faq-padding) - 1px) var(--faq-padding);
-  padding-inline: calc(var(--faq-padding) - 1px) fluid(60, 60, 0);
+  padding-block: calc(var(--space-panel) - 1px) var(--space-panel);
+  padding-inline: calc(var(--space-panel) - 1px) fluid(60, 60, 0);
   border-inline-start: var(--border);
 
   @tablet {
