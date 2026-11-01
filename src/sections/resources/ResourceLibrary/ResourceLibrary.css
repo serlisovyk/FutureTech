@@ -38,6 +38,15 @@
     color: var(--white);
   }
 
+  &:active {
+    background-color: var(--dark-15);
+    color: var(--white);
+  }
+
+  &[aria-selected='true']:active {
+    background-color: var(--dark-20);
+  }
+
   @mobile {
     flex: 1;
     min-width: 0;

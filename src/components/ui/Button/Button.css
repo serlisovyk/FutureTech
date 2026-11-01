@@ -43,6 +43,10 @@
   &:hover {
     background-color: color-mix(in srgb, var(--yellow-55), var(--white) 15%);
   }
+
+  &:active {
+    background-color: color-mix(in srgb, var(--yellow-55), var(--dark-08) 12%);
+  }
 }
 
 .button--large {
@@ -62,7 +66,8 @@
     color: var(--yellow-55);
   }
 
-  &:hover {
+  &:hover,
+  &:active {
     border-color: var(--dark-40);
     color: var(--white);
   }
@@ -80,6 +85,10 @@
   &:hover {
     background-color: var(--dark-10);
   }
+
+  &:active {
+    background-color: var(--dark-15);
+  }
 }
 
 .button--ghost {
@@ -89,6 +98,10 @@
 
   &:hover {
     background-color: var(--dark-15);
+  }
+
+  &:active {
+    background-color: var(--dark-20);
   }
 
   &.button--compact {

@@ -41,6 +41,10 @@
   & .counter-pill__icon--on {
     display: none;
   }
+
+  &:active:enabled {
+    background-color: var(--dark-15);
+  }
 }
 
 .counter-pill--liked,
