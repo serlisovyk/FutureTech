@@ -1,6 +1,6 @@
 import { Icon } from '@components'
-import { countries, defaultDialCode } from '@data'
 import { getPhoneError, getPhonePattern } from '@utils'
+import { countries, defaultDialCode } from '@data'
 import { FormField } from '../FormField'
 import './PhoneField.css'
 

@@ -1,5 +1,5 @@
-import { REVEAL } from '@constants'
 import { VisibilityObserver } from '@scripts/services'
+import { REVEAL } from '@constants'
 
 export class Reveal {
   #root

@@ -1,6 +1,6 @@
 import { PostFeed, SectionHeading } from '@components'
-import { newsCategories, newsHub } from '@data'
 import { getPostsByPlacement } from '@utils'
+import { newsCategories, newsHub } from '@data'
 
 export function NewsHub() {
   const { id, titleId, feedId, tag, title, link, placements } = newsHub

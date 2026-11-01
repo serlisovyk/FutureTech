@@ -1,6 +1,6 @@
 import { NewsCard } from '@components'
-import { trendingStories } from '@data'
 import { getPostsByPlacement } from '@utils'
+import { trendingStories } from '@data'
 import './TrendingStories.css'
 
 export function TrendingStories() {

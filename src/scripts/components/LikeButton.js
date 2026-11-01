@@ -1,5 +1,5 @@
-import { ARIA, SELECTORS, STORAGE } from '@constants'
 import { StorageItem } from '@scripts/services'
+import { ARIA, SELECTORS, STORAGE } from '@constants'
 
 export class LikeButton {
   #root

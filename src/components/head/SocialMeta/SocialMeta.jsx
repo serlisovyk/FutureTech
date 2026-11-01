@@ -1,7 +1,7 @@
 import { Head } from 'minista/head'
+import { ArticleMeta } from '@components/head/ArticleMeta'
 import { getSocialMeta } from '@utils'
 import { site } from '@data'
-import { ArticleMeta } from '@components/head/ArticleMeta'
 
 export function SocialMeta(props) {
   const { title, description, canonicalUrl, post } = props

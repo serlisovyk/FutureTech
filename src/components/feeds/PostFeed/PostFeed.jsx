@@ -1,6 +1,6 @@
 import { PostRow } from '@components/cards/PostRow'
-import { allCategory, postFeed } from '@data'
 import { getPostFeedStatus, getPostFeedTabId, getPostsInCategory } from '@utils'
+import { allCategory, postFeed } from '@data'
 import './PostFeed.css'
 
 export function PostFeed({ id, categories, posts, limit = posts.length }) {

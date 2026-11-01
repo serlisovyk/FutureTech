@@ -1,7 +1,7 @@
 import { Svg } from 'minista/assets'
 import { Button, Icon } from '@components'
-import { navigationAction, navigationLinks, newsletter, site } from '@data'
 import { getAriaCurrent } from '@utils'
+import { navigationAction, navigationLinks, newsletter, site } from '@data'
 import './Header.css'
 
 export function Header({ currentPath }) {

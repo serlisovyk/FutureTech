@@ -1,6 +1,6 @@
 import { PostFeed, SectionHeading } from '@components'
-import { blogs, blogCategories } from '@data'
 import { getPostsByPlacement } from '@utils'
+import { blogs, blogCategories } from '@data'
 
 export function Blogs() {
   const { id, placement, titleId, feedId, limit, tag, title, link } = blogs

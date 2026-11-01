@@ -11,7 +11,8 @@ classes and follow `ai/rules/jsx.md`.
 - Named exports only, no default exports; imports carry the `.js` extension, except the barrels
   (`from '@constants'`, `from '@scripts/services'`).
 - An import from another folder of `scripts/` uses the alias (`@scripts/components/Tabs.js`), never `../`;
-  an import inside the same folder stays `./` (`main.js` → `./components/Tabs.js`).
+  an import inside the same folder stays `./` (`main.js` → `./components/Tabs.js`). Imports are in the order of
+  `ai/rules/jsx.md`: `@scripts` stands with `@components`, then `@constants`, then `./`.
 - Folders by role: `scripts/components/` — reusable widgets (`Tabs`, `Toggle`, `Disclosure`,
   a dialog, a reveal); `scripts/controllers/` — one controller per section that needs more
   than one widget or its own logic (a post feed, the contact form); `scripts/services/` — wrappers

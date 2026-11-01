@@ -71,6 +71,7 @@ each with the record that replaced it.
 - [The Organization logo is a 512 px PNG, an article has dateModified, noindex pages have no canonical](2026-11-01-seo-markup-and-logo.md)
 - [Aliases cover the `src/` folders others import from; `vite/` reads the `src/` barrels by relative path](2026-11-01-path-aliases-imported-folders.md)
 - [Components and sections are folders with barrels (`@components`, `@sections`, `@utils`); assets sit in subfolders](2026-10-28-folders-and-barrels.md)
+- [Imports have one order in every file; the order is documented, not enforced by a linter](2026-11-01-import-order.md)
 - [Constants live in one folder (`@constants`), data is a barrel (`@data`), page metadata is data](2026-11-01-constants-folder-data-barrel.md)
 - [The parts of a section are folders, like components; a part imports a sibling part as `../<Part>`](2026-11-01-part-imports-by-parent-folder.md)
 - [A data item made for a component's props is spread; the rest `...props` stays forbidden](2026-11-01-spread-of-a-data-item.md)

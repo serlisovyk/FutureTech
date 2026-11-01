@@ -12,6 +12,7 @@ import {
   Tag,
   VideoCard,
 } from '@components'
+import { getPostsByPlacement } from '@utils'
 import {
   resourceShowcases,
   stats,
@@ -23,7 +24,6 @@ import {
   sectionHeadingDemo,
   videoCardDemo,
 } from '@data'
-import { getPostsByPlacement } from '@utils'
 import './UiKit.css'
 
 export function UiKit() {

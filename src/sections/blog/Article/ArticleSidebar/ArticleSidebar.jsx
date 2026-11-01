@@ -1,6 +1,6 @@
 import { CounterPill, MetaGrid } from '@components'
-import { article } from '@data'
 import { formatCount, getArticleMeta } from '@utils'
+import { article } from '@data'
 import './ArticleSidebar.css'
 
 export function ArticleSidebar({ post }) {

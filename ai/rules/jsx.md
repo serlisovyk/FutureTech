@@ -55,7 +55,9 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
   (`const { id, titleId } = featuresSection`), not `featuresSection.id` in the JSX.
 - A data attribute that is only a hook gets `undefined` when off (`isToggleDismiss || undefined`): React writes
   `false` as the string `"false"`, and `[data-toggle-dismiss]` would still match.
-- The stylesheet import comes last.
+- Imports come in one order, with no blank line between groups: packages (`clsx`, `minista/…`), `@components` and
+  `@sections`, `@utils`, `@constants`, `@data`, `@assets`, `../`, `./`, and the stylesheet last; inside a group by path,
+  a barrel before its subpaths (decision `import-order`).
 - A `map` callback destructures its item (`({ label, href }) =>`); when that does not fit on one line, the callback
   takes the item and destructures it in a block body the same way.
 - No ternary in a `return` and none for an optional attribute (`ai/rules/style.md`, "A clean `return`").

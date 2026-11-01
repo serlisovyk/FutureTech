@@ -1,5 +1,5 @@
-import { COUNT_UP, SELECTORS } from '@constants'
 import { VisibilityObserver } from '@scripts/services'
+import { COUNT_UP, SELECTORS } from '@constants'
 
 export class CountUp {
   #options

@@ -1,10 +1,10 @@
 import { Button, CounterPill, MetaGrid, Photo } from '@components'
+import { formatCount, getPostMeta, getPostsByPlacement, getPostUrl } from '@utils'
 import {
   featuredNewsPhotoBreakpoints,
   featuredNewsPhotoSizes,
   featuredNews,
 } from '@data'
-import { formatCount, getPostMeta, getPostsByPlacement, getPostUrl } from '@utils'
 import './FeaturedNews.css'
 
 export function FeaturedNews() {

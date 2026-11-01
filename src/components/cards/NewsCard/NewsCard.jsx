@@ -1,8 +1,8 @@
 import { Photo } from '@components/media/Photo'
 import { Button } from '@components/ui/Button'
 import { CounterPill } from '@components/ui/CounterPill'
-import { cardPhotoBreakpoints, newsCardPhotoSizes } from '@data'
 import { formatCount, getCategoryName, getPostUrl } from '@utils'
+import { cardPhotoBreakpoints, newsCardPhotoSizes } from '@data'
 import './NewsCard.css'
 
 export function NewsCard(props) {

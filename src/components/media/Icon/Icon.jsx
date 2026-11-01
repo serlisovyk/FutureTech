@@ -1,5 +1,5 @@
-import { Sprite } from 'minista/assets'
 import { clsx } from 'clsx'
+import { Sprite } from 'minista/assets'
 import './Icon.css'
 
 export function Icon({ name, title, className, size = 24 }) {
