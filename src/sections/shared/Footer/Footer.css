@@ -166,6 +166,7 @@
 
 .footer__source {
   position: relative;
+  inset-block-start: calc(var(--size-icon) / 40);
   display: flex;
   color: var(--white);
   transition: color var(--transition-duration);
