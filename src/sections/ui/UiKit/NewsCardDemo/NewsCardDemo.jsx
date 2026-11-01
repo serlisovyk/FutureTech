@@ -1,5 +1,5 @@
 import { Heading, NewsCard } from '@components'
-import { getNewsCardProps, getPostsByPlacement } from '@utils'
+import { getPostsByPlacement } from '@utils'
 import { newsCardDemo } from '@data'
 
 export function NewsCardDemo() {
@@ -18,9 +18,27 @@ export function NewsCardDemo() {
 
         <div className="ui-kit__grid ui-kit__grid--news">
           {posts.map((post) => {
-            const { slug } = post
+            const {
+              slug,
+              title,
+              category,
+              image,
+              imageAlt,
+              counters: { likes, comments },
+            } = post
 
-            return <NewsCard key={slug} {...getNewsCardProps(post)} />
+            return (
+              <NewsCard
+                key={slug}
+                slug={slug}
+                title={title}
+                category={category}
+                image={image}
+                imageAlt={imageAlt}
+                likes={likes}
+                comments={comments}
+              />
+            )
           })}
         </div>
       </div>

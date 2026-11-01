@@ -1,5 +1,5 @@
 import { Button, Heading, NewsCard } from '@components'
-import { getNewsCardProps, getSimilarPosts } from '@utils'
+import { getSimilarPosts } from '@utils'
 import { similarNews } from '@data'
 import './SimilarNews.css'
 
@@ -28,9 +28,27 @@ export function SimilarNews({ post }) {
 
         <div className="similar-news__list">
           {posts.map((similarPost) => {
-            const { slug } = similarPost
+            const {
+              slug,
+              title,
+              category,
+              image,
+              imageAlt,
+              counters: { likes, comments },
+            } = similarPost
 
-            return <NewsCard key={slug} {...getNewsCardProps(similarPost)} />
+            return (
+              <NewsCard
+                key={slug}
+                slug={slug}
+                title={title}
+                category={category}
+                image={image}
+                imageAlt={imageAlt}
+                likes={likes}
+                comments={comments}
+              />
+            )
           })}
         </div>
       </div>
