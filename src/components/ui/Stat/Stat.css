@@ -8,6 +8,7 @@
   color: var(--white);
   font-size: fluid(24, 30, 40);
   font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
 
 .stat__plus {
