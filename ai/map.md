@@ -84,7 +84,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   lists), `pages` (each page's metadata) and `site` (the name, origin, locale, theme colour, icons, social image).
 - `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, …), re-exported by
   `index.js` (plain JS, no JSX), imported by components, sections and the layout.
-- `src/constants/` — what utils and scripts share (formats, keys, selectors, media queries, storage keys, widget
+- `src/constants/` — what utils and scripts share (formats, keys, hook selectors, `aria-*` names, media queries, storage keys, widget
   settings), one file per meaning, re-exported by `index.js`.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
   `.container`, `.visually-hidden`), `reveal.css` (the scroll-reveal keyframes and hidden start state), `fonts.css`; `global.css` imports them, the layout imports it first.

@@ -20,7 +20,7 @@ classes and follow `ai/rules/jsx.md`.
   refusing browser itself (`try` / `catch` with a returned fallback); a class outside it never calls `localStorage` or
   `new IntersectionObserver`.
 - `src/constants/` (`@constants`) — what scripts share: the media queries (equal to the CSS
-  breakpoints), key names, storage keys, state classes, sentinels (`NO_INDEX`); a class file declares no constant of its own.
+  breakpoints), hook selectors (`SELECTORS`), `aria-*` names (`ARIA`), key names, storage keys, state classes, sentinels (`NO_INDEX`); a class file declares no constant of its own.
 
 ## Encapsulation
 
@@ -54,14 +54,13 @@ The JSX carries the roles, `aria-controls`, `aria-labelledby` and the initial `a
 `aria-selected`; the class reads them and sets states and `hidden` (`ai/rules/style.md`).
 
 - `Tabs`: root `data-tabs`, `data-tab-list`, buttons `data-tab="key"` paired with panels
-  `data-tab-panel="key"`; `onSelect(handler)` reports the selected tab after every selection, the first one in `start()` too. A tab whose `aria-controls` is the URL hash is selected on `start()` and on `hashchange`.
+  `data-tab-panel="key"`; `onSelect(handler)` reports the selected tab after every selection, the first one in `start()` too. A tab whose `aria-controls` is the URL hash is selected on `start()` and on `hashchange`; a click or key selection writes the panel id to the hash (`replaceState`) when the tab has a panel of its own. Arrows, `Home` and `End` ignore `Alt`, `Ctrl`, `Meta` and `Shift`.
 - Post feed (`PostFeedController`): root `data-post-feed` (no `data-tabs`: the controller owns its `Tabs`), the bar `data-tab-list`,
   every tab `data-tab="<category>"` with its announcement in `data-status`, one `data-post-feed-panel` (a `tabpanel` every tab
   controls, without `data-tab-panel`), rows `data-category="<category>"`, `data-post-feed-empty` and a `role="status"` region
   `data-post-feed-status`. The controller shows the rows of the key, the empty text when none shows, repoints the
   panel's `aria-labelledby` and copies `data-status` into the region, except for the selection `start()` makes.
-- `Disclosure`: root `data-disclosure`, `data-disclosure-trigger`, `data-disclosure-region`, and an
-  optional `data-disclosure-label` whose text the option `labels` swaps; `onToggle` reports the state.
+- `Disclosure`: root `data-disclosure`, `data-disclosure-trigger`, `data-disclosure-region`; `onToggle` reports the state.
 - `LikeButton`: root the `<button data-like="<key>" data-liked-count="<text>" aria-pressed="false" disabled>` (disabled until `start()`: no
   script, no control), the number in `data-like-count`. It remembers the state under the key in a `StorageItem`.
 - Article (`ArticleController`): root `<article data-article>`; the text is `data-article-body` (not `data-disclosure`: the controller owns
@@ -69,9 +68,10 @@ The JSX carries the roles, `aria-controls`, `aria-labelledby` and the initial `a
   anchor as `id`. A post with no region has no `Disclosure`. When the URL hash (on `start()` and on `hashchange`) names a section inside the
   closed region, the controller opens it, scrolls there and focuses it; when the button opens it, focus goes to the first section of the region.
 - `Toggle`: root `data-toggle`, `data-toggle-button`, `data-toggle-target`, and `data-toggle-dismiss` on every
-  element whose click closes the target (focus goes back to the button, as on `Escape`); `onToggle` reports the state.
+  element whose click closes the target (focus goes back to the button, as on `Escape`, which is heard on the `document` while it is open); `onToggle` reports the state. `HeaderController` focuses the
+  first `data-header-link` when the viewport leaves the mobile query with the drawer open.
 - `VideoModal`: root is a native `<dialog data-video-modal>`, with `data-video-modal-title`, `data-video-modal-player`
-  and `data-video-modal-close`; its controller opens it from any `[data-video-id]` element (the title in `data-video-title`).
+  and `data-video-modal-close`; its controller opens it from any `[data-video-id]` element (the title in `data-video-title`); the backdrop closes it only when the press and the click both hit the dialog itself.
 - `CountUp`: root `data-count-up`, holding `data-count-up-number` (the final digits and an optional suffix, nothing else) inside an
   `aria-hidden` wrapper next to a visually hidden twin with the final value. `start()` renders 0 and the count runs when the number
   enters the viewport; reduced motion or no `IntersectionObserver` leave the final value in place.
@@ -80,12 +80,12 @@ The JSX carries the roles, `aria-controls`, `aria-labelledby` and the initial `a
   `is-reveal-ready` on the root; an item that enters gets `--reveal-index` (its place in the batch that entered with it) and `is-revealed`, once.
 - Contact form (`ContactFormController`): root is the `<form data-contact-form>` (no `novalidate` in the markup: `start()` sets it). Every
   field is `data-form-field` around one `data-form-control` (the native constraint attributes are the rule) and a `data-form-error`
-  (always in the layout and empty until an error, so showing one moves nothing; named by the control's `aria-describedby`); a `FormField` owns one, checks it on `blur`, and while it shows an
+  (`aria-live="polite"`, always in the layout and empty until an error, so showing one moves nothing; named by the control's `aria-describedby`); a `FormField` owns one, checks it on `blur`, and while it shows an
   error on `input` / `change`, and writes `aria-invalid` and the text. The text of a failed `validity` key is the control's
   `data-error-value-missing`, `-type-mismatch` or `-pattern-mismatch`: no text in the script. The phone: a `data-form-country`
   select whose options carry `data-country`, `data-pattern` and `data-error`, which the controller copies to the number
   (`pattern`, `data-error-pattern-mismatch`), and one `data-form-flag` per country, shown when it matches. `data-form-status` is a
-  `role="status"` region whose text comes from its `data-message`.
+  `role="status"` region whose text comes from its `data-message`; a submit clears it first.
 - Content that must show without JavaScript carries no `hidden` in the JSX: `start()` hides
   what the state says is closed.
 - A new widget or controller is one more row in the table of `main.js`.

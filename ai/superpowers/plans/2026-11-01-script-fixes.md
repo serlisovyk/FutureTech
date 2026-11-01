@@ -10,13 +10,16 @@ Headless Chrome over the DevTools protocol against `minista preview`, a real mou
 
 1. A click on empty drawer space puts focus on `body`; `Escape` then leaves the menu open (focus on the close button works).
 2. Widening 390 to 1000 with the drawer open closes it and leaves focus on `body`.
-3. `/resources#reports`, a manual switch to Whitepapers, then "View Details" does nothing: the hash is still `#reports`.
+3. `/resources#ebooks`, a manual switch to Whitepapers, then the "View Details" link to `#ebooks` does nothing: the hash
+   is still `#ebooks`, so no `hashchange` fires.
 4. `Alt`, `Ctrl`, `Meta`, `Shift` plus `ArrowRight` select the next tab and `preventDefault` the key.
 5. `location.hash = '#news-hub-feed-panel'` throws `Cannot read properties of undefined (reading 'scrollIntoView')`.
 6. After a successful send, a second submit with empty fields shows the six errors and the success text together.
 7. Press on the modal title, release on the backdrop: the dialog closes.
 8. Under print media a below-the-fold `[data-reveal]` item has `opacity: 0`.
 9. No `[data-form-error]` carries `aria-live`.
+10. Opening the video modal logs Chrome's "Allow attribute will take precedence over 'allowfullscreen'" (added by the
+    orchestrator).
 
 ## Changes
 
@@ -33,6 +36,7 @@ Headless Chrome over the DevTools protocol against `minista preview`, a real mou
 - `ContactFormController`: `#handleSubmit` clears the status first.
 - `VideoModal`: a `pointerdown` records whether it began on the dialog itself; the backdrop closes only when it did and the
   click is also on the dialog.
+- `VideoModal`: `frame.allowFullscreen` goes; `fullscreen` stays in `VIDEO_EMBED.allow`.
 - `reveal.css`: the media query starts with `screen and`, so print shows everything.
 - `FormError.jsx`: `aria-live="polite"`, so every field's error is read, not only the focused first one.
 - Dead code: `labels` and `#label` / `#renderLabel` of `Toggle` and `Disclosure` (and their `options`), `LikeButton.isLiked`,
@@ -54,6 +58,6 @@ constants line needs a word. No record: nothing durable is reversed.
 
 ## Verification
 
-The checks under "Verification" in `AGENTS.md`; the nine scenarios above repeated on the built bundle (each must be gone),
+The checks under "Verification" in `AGENTS.md`; the ten scenarios above repeated on the built bundle (each must be gone),
 plus the controls: `Escape` and the close button with focus in the drawer, a plain backdrop click closes the modal, the
 close button closes it, arrows without modifiers still move the tabs, a first visit to `/resources` keeps a clean URL.
