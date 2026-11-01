@@ -1,6 +1,6 @@
 # The sitemap, robots.txt and llms.txt are built from the built pages; JSON-LD is Organization and BlogPosting
 
-Date: 2026-10-30 · Status: accepted
+Date: 2026-10-30 · Status: superseded by 2026-11-01-seo-markup-and-logo.md
 
 ## Context
 

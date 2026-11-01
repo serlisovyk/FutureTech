@@ -36,7 +36,7 @@ build. Where the files are: `ai/map.md`. Why the site is static: decision
 - Every page and every article has a unique `<title>` and meta `description`, both set in its `metadata` (`data/pages.js`) and printed by the layout, the viewport
   meta, and `lang` equal to the language of its content.
 - Absolute URLs (canonical, `og:url`, `og:image`) are built from one site origin constant,
-  never written out per page.
+  never written out per page. A `noindex` page has no canonical.
 - The head holds only what the page needs: the stylesheets, the script entry, the metadata.
 
 ## Bundle and third parties
@@ -44,6 +44,9 @@ build. Where the files are: `ai/map.md`. Why the site is static: decision
 - No third-party runtime scripts, no analytics, no font or icon CDN. React and minista's island
   runtime never reach the browser (`ai/rules/architecture.md`).
 - No source maps in the production build.
+- The Content-Security-Policy in `vercel.json` allows the site's own origin and the YouTube privacy domain
+  for frames only (decision `security-headers`): no inline style or script, no `data:` URL and no new
+  origin without a new record.
 - A dependency is added only with the author's yes; the browser runtime has none.
 - The size budget (`npm run size`, run by CI on every push) holds the built JS, CSS, fonts and
   images to their limits (decision `size-limits`); a change that comes near them is questioned

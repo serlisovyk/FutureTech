@@ -61,8 +61,8 @@ Navigation only: where things live and who owns what. How it works is in the cod
   the phone field is a flag box over a native country `<select>`; countries in `data/countries.js`),
   `Faq` (id `faq`: the "Ask Question" link to the form, beside one `FaqItem` per question of `faq`, each
   its own `Disclosure`, the first open).
-- `public/` — fixed-URL files copied as they are: `favicon.svg`, `favicon.png`, `og-image.png` (1200 x 630); the build
-  adds `robots.txt`, `sitemap.xml` and `llms.txt` (decision `seo-files-and-structured-data`).
+- `public/` — fixed-URL files copied as they are: `favicon.svg`, `favicon.png`, `logo.png` (512 x 512, the Organization's logo),
+  `og-image.png` (1200 x 630); the build adds `robots.txt`, `sitemap.xml` and `llms.txt` (decision `seo-markup-and-logo`).
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/`: `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/head/`: the head's parts (`FontPreloads`, `SeoMeta`, `SocialMeta`, `JsonLd` with `utils/get-*-json-ld.js`, …).
@@ -105,7 +105,8 @@ Navigation only: where things live and who owns what. How it works is in the cod
 ## Deployment
 
 - Live site: <https://futuretech-cyan.vercel.app>, deployed by Vercel's Git integration.
-- `main` is production, other branches get a preview; the config is `vercel.json`.
+- `main` is production, other branches get a preview; the config is `vercel.json`: clean URLs, the security headers and
+  the CSP (decision `security-headers`), the caching.
 
 ## Where is the recipe
 

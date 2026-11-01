@@ -55,6 +55,7 @@ each with the record that replaced it.
 - [Line endings: Prettier `endOfLine: auto`, no `.gitattributes`](2026-10-28-line-endings-auto.md)
 - [ESLint (with the JSX plugins), Stylelint and a Husky pre-commit hook; no more rule sets](2026-10-28-linters.md)
 - [Deployed on Vercel](2026-10-28-vercel-deploy.md)
+- [Every response carries four security headers, with a strict Content-Security-Policy](2026-11-01-security-headers.md)
 - [CI on every push, and a size budget with limits by fact](2026-10-28-ci-size-limit.md)
 - [`/ui` ships, noindex and unlinked; the CSS limit is raised and an images limit added](2026-10-28-ui-page-and-size-limits.md)
 - [The size limits: the current budget, set by fact, with one record to read](2026-11-01-size-limits.md)
@@ -65,7 +66,7 @@ each with the record that replaced it.
 
 - [Browser scripts are all classes; browser-API wrappers are classes in `scripts/services/`](2026-11-01-script-helper-classes.md)
 - [The layout builds the title and the head meta from the page's `metadata`; the site name lives in `data/site.js`](2026-10-28-shared-page-head.md)
-- [The sitemap, robots.txt and llms.txt are built from the built pages; JSON-LD is Organization and BlogPosting](2026-10-30-seo-files-and-structured-data.md)
+- [The Organization logo is a 512 px PNG, an article has dateModified, noindex pages have no canonical](2026-11-01-seo-markup-and-logo.md)
 - [Imports across folders use one alias per folder (`@components`, `@scripts`, …), never `../`](2026-10-28-path-aliases.md)
 - [Components and sections are folders with barrels (`@components`, `@sections`, `@utils`); assets sit in subfolders](2026-10-28-folders-and-barrels.md)
 - [Constants live in one folder (`@constants`), data is a barrel (`@data`), page metadata is data](2026-11-01-constants-folder-data-barrel.md)
@@ -88,6 +89,7 @@ each with the record that replaced it.
 ### Superseded
 
 - [Pages set their head through minista's metadata and `Head`; CSS and one script entry are loaded by the layout](2026-10-28-page-head-and-entries.md) — replaced by `shared-page-head`
+- [The sitemap, robots.txt and llms.txt are built from the built pages; JSON-LD is Organization and BlogPosting](2026-10-30-seo-files-and-structured-data.md) — replaced by `seo-markup-and-logo`
 - [Article bodies are JS sections in `data/`, no MDX](2026-10-28-article-data.md) — replaced by `article-without-contents`
 - [Browser JavaScript in OOP style: a class per widget and per section](2026-10-28-oop-javascript.md) — replaced by `script-helpers`
 - [Browser scripts are classes, with pure helper functions in `scripts/utils/`](2026-11-01-script-helpers.md) — replaced by `script-helper-classes`
