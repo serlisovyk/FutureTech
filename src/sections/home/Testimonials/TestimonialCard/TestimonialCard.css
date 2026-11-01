@@ -25,16 +25,18 @@
 }
 
 .testimonial-card__name {
+  --letter-spacing: 0;
+
   color: var(--white);
   font-size: fluid(18, 18, 20);
   font-weight: 500;
-  letter-spacing: 0;
 }
 
 .testimonial-card__place {
+  --letter-spacing: 0;
+
   color: var(--grey-50);
   font-size: fluid(16, 16, 18);
-  letter-spacing: 0;
 }
 
 .testimonial-card__body {
@@ -73,6 +75,7 @@
 }
 
 .testimonial-card__text {
+  --letter-spacing: 0;
+
   color: var(--white);
-  letter-spacing: 0;
 }

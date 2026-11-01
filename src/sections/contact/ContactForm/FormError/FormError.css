@@ -1,9 +1,10 @@
 .form-error {
+  --letter-spacing: 0;
+
   min-height: var(--contact-form-gap);
   padding-block-start: fluid(2, 6, 8);
   color: var(--color-error);
   font-size: fluid(14, 14, 16);
-  letter-spacing: 0;
   line-height: 1.2;
 }
 

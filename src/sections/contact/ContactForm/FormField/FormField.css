@@ -5,14 +5,17 @@
 }
 
 .form-field__label {
+  --letter-spacing: 0;
+
   margin-block-end: fluid(12, 12, 16);
   color: var(--white);
   font-size: fluid(16, 16, 18);
   font-weight: 500;
-  letter-spacing: 0;
 }
 
 .form-field__control {
+  --letter-spacing: 0;
+
   display: block;
   width: 100%;
   padding: fluid(15, 15, 19);
@@ -20,7 +23,6 @@
   border-radius: var(--radius-control);
   background-color: var(--dark-10);
   font-size: fluid(14, 14, 18);
-  letter-spacing: 0;
 
   &::placeholder {
     color: var(--grey-50);

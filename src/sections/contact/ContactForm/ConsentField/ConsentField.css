@@ -5,12 +5,13 @@
 }
 
 .consent-field__label {
+  --letter-spacing: 0;
+
   position: relative;
   display: flex;
   align-items: center;
   gap: fluid(6, 6, 10);
   color: var(--white);
-  letter-spacing: 0;
 
   @mobile {
     min-height: 42px;

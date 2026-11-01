@@ -19,6 +19,8 @@
 
   --transition-duration: 0.2s;
 
+  --letter-spacing: -0.03em;
+
   --ramp-390-1440: clamp(0px, (100vw - 390px) / 1050, 1px);
   --ramp-1440-1920: clamp(0px, (100vw - 1440px) / 480, 1px);
 

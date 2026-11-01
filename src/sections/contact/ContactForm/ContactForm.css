@@ -84,12 +84,13 @@
 }
 
 .contact-form__status {
+  --letter-spacing: 0;
+
   position: absolute;
   inset-block-start: 100%;
   inset-inline: 0;
   padding-block-start: 12px;
   color: var(--yellow-55);
-  letter-spacing: 0;
 
   @tablet {
     position: static;

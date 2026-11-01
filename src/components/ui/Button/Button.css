@@ -24,6 +24,8 @@
 }
 
 .button--primary {
+  --letter-spacing: 0;
+
   position: relative;
   padding-block: fluid(10, 10, 14);
   padding-inline: fluid(14, 14, 20);
@@ -31,7 +33,6 @@
   background-color: var(--yellow-55);
   color: var(--dark-08);
   font-weight: 500;
-  letter-spacing: 0;
 
   &::after {
     content: '';

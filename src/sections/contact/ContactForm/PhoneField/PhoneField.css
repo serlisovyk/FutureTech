@@ -41,6 +41,8 @@
 }
 
 .phone-field__select {
+  --letter-spacing: 0;
+
   position: absolute;
   inset: 0;
   width: 100%;
