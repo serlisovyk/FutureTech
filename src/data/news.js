@@ -28,7 +28,7 @@ export const newsHub = {
   feedId: 'news-hub-feed',
   tag: 'Welcome to Our News Hub',
   title: 'Discover the World of Headlines',
-  link: { href: '/#blogs', label: 'View All News' },
+  link: { href: '/#blogs', label: 'View Blogs' },
   placements: ['featured', 'trending', 'headlines'],
 }
 
@@ -37,5 +37,5 @@ export const featuredVideos = {
   titleId: 'featured-videos-title',
   tag: 'Featured Videos',
   title: 'Visual Insights for the Modern Viewer',
-  link: { href: '/podcasts', label: 'View All' },
+  link: { href: '/podcasts', label: 'View All Podcasts' },
 }

@@ -4,7 +4,7 @@ export const blogs = {
   feedId: 'blogs-feed',
   tag: 'Learn, Connect, and Innovate',
   title: "Explore FutureTech's In-Depth Blog Posts",
-  link: { href: '/news', label: 'View All Blogs' },
+  link: { href: '/news', label: 'View All News' },
   placement: 'blogs',
   limit: 4,
 }

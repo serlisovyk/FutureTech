@@ -1,7 +1,6 @@
 export const uiLabels = {
   readMore: 'Read More',
-  viewBlog: 'View Blog',
-  listenPodcast: 'Listen Podcast',
+  listenPodcast: 'Listen Now',
   host: 'Host',
   play: 'Play',
   about: 'about',

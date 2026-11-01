@@ -1,7 +1,7 @@
 export const cta = {
   titleId: 'cta-revolution-title',
   tag: 'Learn, Connect, and Innovate',
-  title: 'Be Part of the Future Tech Revolution',
+  title: 'Be Part of the FutureTech Revolution',
   text: 'Immerse yourself in the world of future technology. Explore our comprehensive resources, connect with fellow tech enthusiasts, and drive innovation in the industry. Join a dynamic community of forward-thinkers.',
   cards: [
     {

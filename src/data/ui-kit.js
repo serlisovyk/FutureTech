@@ -28,7 +28,7 @@ export const buttonDemo = {
           href: '/contact',
           icon: 'ui/arrow-up-right',
         },
-        { id: 'button-icon', label: 'Download', icon: 'ui/arrow-down' },
+        { id: 'button-icon', label: 'Contact Us', icon: 'ui/arrow-down' },
       ],
     },
     {
@@ -51,7 +51,7 @@ export const buttonDemo = {
         },
         {
           id: 'button-icon',
-          label: 'Download',
+          label: 'Read Full Blog',
           variant: 'outline',
           icon: 'ui/arrow-down',
         },
@@ -105,14 +105,14 @@ export const buttonDemo = {
       buttons: [
         {
           id: 'link',
-          label: 'Download Ebooks Now',
+          label: 'Browse Ebooks',
           variant: 'ghost',
           href: '/resources',
           icon: 'ui/arrow-up-right',
         },
         {
           id: 'button',
-          label: 'Download Ebooks Now',
+          label: 'Browse Ebooks',
           variant: 'ghost',
           icon: 'ui/arrow-up-right',
         },
@@ -153,7 +153,7 @@ export const sectionHeadingDemo = {
   heading: {
     tag: demoTag,
     title: "Explore FutureTech's In-Depth Blog Posts",
-    link: { href: '/news', label: 'View All Blogs' },
+    link: { href: '/news', label: 'View All News' },
   },
 }
 
@@ -261,8 +261,7 @@ export const videoCardDemo = {
   videoCaption:
     'The video, two across: the play button, the duration, the title and the text',
   videos: videos.slice(0, 2),
-  episodeCaption:
-    'The episode, three across: the same with the Listen Podcast button',
+  episodeCaption: 'The episode, three across: the same with the Listen Now button',
   episodes: episodes.slice(0, 3),
 }
 

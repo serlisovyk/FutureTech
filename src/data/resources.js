@@ -18,7 +18,7 @@ export const resourcesSection = {
   title: "Unlock Valuable Knowledge with FutureTech's Resources",
   link: { href: '/resources', label: 'View All Resources' },
   audienceLabel: 'Downloaded By',
-  previewLabel: 'Preview',
+  previewLabel: 'View Details',
   photoSizes:
     '(width < 1024px) calc(100vw - 32px), (width < 1920px) calc(100vw - 653px), 917px',
   photoBreakpoints: [720, 1080, 1380],
@@ -30,7 +30,7 @@ export const resourceShowcases = [
     icon: 'feature/ebooks',
     title: 'Ebooks',
     lead: 'Explore our collection of ebooks covering a wide spectrum of future technology topics.',
-    cta: 'Download Ebooks Now',
+    cta: 'Browse Ebooks',
     href: '/resources#ebooks',
     overview: {
       title: 'Variety of Topics',
@@ -59,7 +59,7 @@ export const resourceShowcases = [
     icon: 'feature/whitepapers',
     title: 'Whitepapers',
     lead: 'Dive into comprehensive reports and analyses with our collection of whitepapers.',
-    cta: 'Download Whitepapers Now',
+    cta: 'Browse Whitepapers',
     href: '/resources#whitepapers',
     overview: {
       title: 'Topics Coverage',
@@ -91,7 +91,7 @@ export const resourceLibrary = {
   tag: 'Dive into the Details',
   title: 'In-Depth Reports and Analysis',
   tabListLabel: 'Resource types',
-  downloadLabel: 'Download PDF Now',
+  downloadLabel: 'Request the PDF',
   downloadHref: '/contact',
 }
 

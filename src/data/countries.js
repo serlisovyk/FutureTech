@@ -1,8 +1,8 @@
-export const defaultDialCode = '+91'
+export const defaultDialCode = '+1'
 
 export const countries = [
-  { code: 'in', name: 'India', dialCode: '+91', digits: 10 },
   { code: 'us', name: 'United States', dialCode: '+1', digits: 10 },
+  { code: 'in', name: 'India', dialCode: '+91', digits: 10 },
   { code: 'gb', name: 'United Kingdom', dialCode: '+44', digits: 10 },
   { code: 'fr', name: 'France', dialCode: '+33', digits: 9 },
   { code: 'es', name: 'Spain', dialCode: '+34', digits: 9 },

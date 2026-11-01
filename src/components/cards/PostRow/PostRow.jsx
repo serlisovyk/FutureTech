@@ -19,7 +19,7 @@ export function PostRow(props) {
     shares,
   } = props
 
-  const { viewBlog, about } = uiLabels
+  const { readMore, about } = uiLabels
 
   const hiddenLabel = ` ${about} ${title}`
 
@@ -63,7 +63,7 @@ export function PostRow(props) {
         href={getPostUrl(slug)}
         className="post-row__button"
       >
-        {viewBlog}
+        {readMore}
         <span className="visually-hidden">{hiddenLabel}</span>
       </Button>
     </article>

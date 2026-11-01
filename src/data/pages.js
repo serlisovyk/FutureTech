@@ -17,7 +17,7 @@ export const pages = {
   resources: {
     title: 'Tech Ebooks, Whitepapers and Reports',
     description:
-      'Download FutureTech ebooks, whitepapers and reports on future technology, with previews and the figures behind each resource.',
+      'Explore FutureTech ebooks, whitepapers and reports on future technology, with the details and the figures behind each resource.',
   },
   contact: {
     title: 'Contact Us: Support, Feedback and Story Tips',
@@ -25,7 +25,7 @@ export const pages = {
       'Contact the FutureTech team: general inquiries, technical support and our office, or send a question, feedback or a story tip through the form.',
   },
   notFound: {
-    title: 'Page not found',
+    title: 'Page Not Found',
     description: 'The page you are looking for does not exist on FutureTech.',
     robots: 'noindex',
   },

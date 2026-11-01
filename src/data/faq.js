@@ -21,7 +21,7 @@ export const faq = [
     answerId: 'how-to-listen-answer',
     question: 'How can I listen to your podcasts?',
     answer:
-      'Open the Podcasts page, choose a show or an episode, and press Listen Podcast. Everything plays in your browser, and no account is needed.',
+      'Open the Podcasts page, choose a show or an episode, and press Listen Now. Everything plays in your browser, and no account is needed.',
   },
   {
     id: 'are-podcasts-free',
