@@ -1,5 +1,8 @@
 import { contactInfo, contacts } from '@data'
 import { ContactColumn } from './ContactColumn'
+import { ContactLinks } from './ContactLinks'
+import { ContactOffice } from './ContactOffice'
+import { ContactSocials } from './ContactSocials'
 import './ContactInfo.css'
 
 export function ContactInfo() {
@@ -23,13 +26,15 @@ export function ContactInfo() {
 
               return (
                 <li key={id} className="contact-info__item">
-                  <ContactColumn
-                    title={title}
-                    links={links}
-                    address={address}
-                    directions={directions}
-                    socials={socials}
-                  />
+                  <ContactColumn title={title}>
+                    {links && <ContactLinks links={links} />}
+
+                    {address && (
+                      <ContactOffice address={address} directions={directions} />
+                    )}
+
+                    {socials && <ContactSocials socials={socials} />}
+                  </ContactColumn>
                 </li>
               )
             })}
