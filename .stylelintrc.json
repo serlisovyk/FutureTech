@@ -10,6 +10,17 @@
       }
     ],
     "color-no-hex": true,
+    "function-disallowed-list": ["rgb", "rgba", "hsl", "hsla"],
+    "declaration-no-important": true,
+    "property-disallowed-list": ["background"],
+    "declaration-property-value-disallowed-list": {
+      "/^transition/": [
+        "/(^|[\\s,])all([\\s,]|$)/",
+        "/(?<![\\w-])background(?![\\w-])/"
+      ]
+    },
+    "max-nesting-depth": 2,
+    "selector-max-compound-selectors": 3,
     "custom-property-empty-line-before": null,
     "declaration-empty-line-before": null,
     "value-keyword-case": "lower",
@@ -39,7 +50,8 @@
     {
       "files": ["src/styles/variables.css"],
       "rules": {
-        "color-no-hex": null
+        "color-no-hex": null,
+        "function-disallowed-list": null
       }
     }
   ]
