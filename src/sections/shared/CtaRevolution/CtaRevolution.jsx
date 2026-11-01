@@ -4,8 +4,10 @@ import { cta } from '@data'
 import './CtaRevolution.css'
 
 export function CtaRevolution() {
+  const { titleId, tag, title, text, cards } = cta
+
   return (
-    <section className="cta-revolution" aria-labelledby={cta.titleId}>
+    <section className="cta-revolution" aria-labelledby={titleId}>
       <div className="cta-revolution__inner container">
         <div className="cta-revolution__intro" data-reveal>
           <Svg
@@ -14,21 +16,21 @@ export function CtaRevolution() {
             aria-hidden="true"
           />
           <div className="cta-revolution__tag">
-            <Tag>{cta.tag}</Tag>
+            <Tag>{tag}</Tag>
           </div>
           <div className="cta-revolution__text">
-            <Heading level={2} size="h2" id={cta.titleId}>
-              {cta.title}
+            <Heading level={2} size="h2" id={titleId}>
+              {title}
             </Heading>
-            <p className="cta-revolution__lead">{cta.text}</p>
+            <p className="cta-revolution__lead">{text}</p>
           </div>
         </div>
         <ul className="cta-revolution__cards">
-          {cta.cards.map(({ id, href, title, text }) => (
+          {cards.map(({ id, href, title: cardTitle, text: cardText }) => (
             <li key={id} className="cta-revolution__item" data-reveal>
               <a className="cta-revolution__card" href={href}>
                 <div className="cta-revolution__card-head">
-                  <h3 className="cta-revolution__card-title">{title}</h3>
+                  <h3 className="cta-revolution__card-title">{cardTitle}</h3>
                   <span className="cta-revolution__arrow">
                     <Icon
                       name="ui/arrow-up-right"
@@ -36,7 +38,7 @@ export function CtaRevolution() {
                     />
                   </span>
                 </div>
-                <p>{text}</p>
+                <p>{cardText}</p>
               </a>
             </li>
           ))}

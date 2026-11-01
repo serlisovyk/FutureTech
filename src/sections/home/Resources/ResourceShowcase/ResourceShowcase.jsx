@@ -3,13 +3,24 @@ import { resourcesSection } from '@data'
 import './ResourceShowcase.css'
 
 export function ResourceShowcase(props) {
-  const { icon, title, lead, cta, href, overview, meta, expertise, users, avatars } =
-    props
+  const {
+    icon,
+    title,
+    lead,
+    cta,
+    href,
+    overview: { title: overviewTitle, text: overviewText, image: overviewImage },
+    meta,
+    expertise,
+    users,
+    avatars,
+  } = props
 
   const { audienceLabel, previewLabel, photoSizes, photoBreakpoints } =
     resourcesSection
 
   const [total, formats] = meta
+  const { label: formatsLabel, value: formatsValue } = formats
 
   return (
     <div className="resource-showcase">
@@ -39,12 +50,12 @@ export function ResourceShowcase(props) {
 
         <div className="resource-showcase__panel">
           <div className="resource-showcase__overview">
-            <h4 className="resource-showcase__overview-title">{overview.title}</h4>
-            <p className="resource-showcase__overview-text">{overview.text}</p>
+            <h4 className="resource-showcase__overview-title">{overviewTitle}</h4>
+            <p className="resource-showcase__overview-text">{overviewText}</p>
           </div>
 
           <Photo
-            src={overview.image}
+            src={overviewImage}
             alt=""
             ariaHidden="true"
             sizes={photoSizes}
@@ -59,10 +70,8 @@ export function ResourceShowcase(props) {
               </div>
               <div className="resource-showcase__formats">
                 <dl className="resource-showcase__format">
-                  <dt>{formats.label}</dt>
-                  <dd className="resource-showcase__format-value">
-                    {formats.value}
-                  </dd>
+                  <dt>{formatsLabel}</dt>
+                  <dd className="resource-showcase__format-value">{formatsValue}</dd>
                 </dl>
                 <Button variant="outline" icon="ui/eye" href={href}>
                   {previewLabel}

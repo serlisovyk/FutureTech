@@ -3,21 +3,14 @@ import { resourceShowcases, resourcesSection } from '@data'
 import { ResourceShowcase } from './ResourceShowcase'
 
 export function Resources() {
-  return (
-    <section
-      className="resources"
-      id={resourcesSection.id}
-      aria-labelledby={resourcesSection.titleId}
-    >
-      <SectionHeading
-        tag={resourcesSection.tag}
-        title={resourcesSection.title}
-        titleId={resourcesSection.titleId}
-        link={resourcesSection.link}
-      />
+  const { id, titleId, tag, title, link } = resourcesSection
 
-      {resourceShowcases.map(({ id, ...showcase }) => (
-        <ResourceShowcase key={id} {...showcase} />
+  return (
+    <section className="resources" id={id} aria-labelledby={titleId}>
+      <SectionHeading tag={tag} title={title} titleId={titleId} link={link} />
+
+      {resourceShowcases.map(({ id: showcaseId, ...showcase }) => (
+        <ResourceShowcase key={showcaseId} {...showcase} />
       ))}
     </section>
   )

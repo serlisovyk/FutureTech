@@ -8,13 +8,22 @@ import { formatCount, getPostMeta, getPostsByPlacement, getPostUrl } from '@util
 import './FeaturedNews.css'
 
 export function FeaturedNews() {
-  const [post] = getPostsByPlacement(featuredNews.placement)
-  const { slug, title, excerpt, image, imageAlt, counters } = post
+  const { titleId, placement, labels } = featuredNews
 
-  const meta = getPostMeta(post, featuredNews.labels)
+  const [post] = getPostsByPlacement(placement)
+  const {
+    slug,
+    title,
+    excerpt,
+    image,
+    imageAlt,
+    counters: { likes, comments },
+  } = post
+
+  const meta = getPostMeta(post, labels)
 
   return (
-    <section className="featured-news" aria-labelledby={featuredNews.titleId}>
+    <section className="featured-news" aria-labelledby={titleId}>
       <div className="featured-news__inner container">
         <Photo
           src={image}
@@ -27,7 +36,7 @@ export function FeaturedNews() {
         />
         <div className="featured-news__body">
           <div className="featured-news__text">
-            <h2 className="featured-news__title" id={featuredNews.titleId}>
+            <h2 className="featured-news__title" id={titleId}>
               {title}
             </h2>
             <p className="featured-news__excerpt">{excerpt}</p>
@@ -40,12 +49,12 @@ export function FeaturedNews() {
               <CounterPill
                 icon="ui/heart"
                 label="likes"
-                count={formatCount(counters.likes)}
+                count={formatCount(likes)}
               />
               <CounterPill
                 icon="ui/comment"
                 label="comments"
-                count={formatCount(counters.comments)}
+                count={formatCount(comments)}
               />
             </div>
             <Button

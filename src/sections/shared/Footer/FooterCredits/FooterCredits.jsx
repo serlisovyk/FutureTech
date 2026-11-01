@@ -2,7 +2,10 @@ import { Icon } from '@components'
 import { footer } from '@data'
 
 export function FooterCredits({ year }) {
-  const { author, sourceCode } = footer
+  const {
+    author,
+    sourceCode: { href, label, icon },
+  } = footer
 
   return (
     <div className="footer__credits">
@@ -11,13 +14,13 @@ export function FooterCredits({ year }) {
       </p>
       <a
         className="footer__source"
-        href={sourceCode.href}
-        aria-label={sourceCode.label}
-        title={sourceCode.label}
+        href={href}
+        aria-label={label}
+        title={label}
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Icon name={sourceCode.icon} className="footer__source-icon" />
+        <Icon name={icon} className="footer__source-icon" />
       </a>
     </div>
   )

@@ -3,20 +3,14 @@ import { featureGroups, featuresSection } from '@data'
 import { FeatureGroup } from './FeatureGroup'
 
 export function Features() {
-  return (
-    <section
-      className="features"
-      id={featuresSection.id}
-      aria-labelledby={featuresSection.titleId}
-    >
-      <SectionHeading
-        tag={featuresSection.tag}
-        title={featuresSection.title}
-        titleId={featuresSection.titleId}
-      />
+  const { id, titleId, tag, title } = featuresSection
 
-      {featureGroups.map(({ id, ...group }) => (
-        <FeatureGroup key={id} {...group} />
+  return (
+    <section className="features" id={id} aria-labelledby={titleId}>
+      <SectionHeading tag={tag} title={title} titleId={titleId} />
+
+      {featureGroups.map(({ id: groupId, ...group }) => (
+        <FeatureGroup key={groupId} {...group} />
       ))}
     </section>
   )

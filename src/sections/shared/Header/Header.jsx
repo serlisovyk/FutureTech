@@ -5,17 +5,20 @@ import { getAriaCurrent } from '@utils'
 import './Header.css'
 
 export function Header({ currentPath }) {
+  const { href: bannerHref, lead, extra, tail } = newsletter
+  const { name: siteName } = site
+  const { href: actionHref, label: actionLabel } = navigationAction
+
   return (
     <header className="header" data-header>
       <Button className="header__skip" href="#main">
         Skip to content
       </Button>
 
-      <a className="header__banner" href={newsletter.href}>
+      <a className="header__banner" href={bannerHref}>
         <span>
-          {newsletter.lead}{' '}
-          <span className="header__banner-extra">{newsletter.extra} </span>
-          {newsletter.tail}
+          {lead} <span className="header__banner-extra">{extra} </span>
+          {tail}
         </span>
         <Icon name="ui/arrow-up-right" className="header__banner-icon" />
       </a>
@@ -26,7 +29,7 @@ export function Header({ currentPath }) {
             <Svg
               className="header__logo-image"
               src="/src/assets/logos/logo.svg"
-              title={site.name}
+              title={siteName}
             />
           </a>
 
@@ -75,11 +78,11 @@ export function Header({ currentPath }) {
 
               <Button
                 className="header__action"
-                href={navigationAction.href}
-                ariaCurrent={getAriaCurrent(navigationAction.href, currentPath)}
+                href={actionHref}
+                ariaCurrent={getAriaCurrent(actionHref, currentPath)}
                 isToggleDismiss
               >
-                {navigationAction.label}
+                {actionLabel}
               </Button>
             </div>
           </div>

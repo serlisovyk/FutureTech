@@ -28,9 +28,26 @@ import './UiKit.css'
 
 export function UiKit() {
   const { meta: ebookMeta, avatars } = resourceShowcases[0]
+  const {
+    tag: headingTag,
+    title: headingTitle,
+    link: headingLink,
+  } = sectionHeadingDemo
+  const {
+    id: blogFeedId,
+    categories: blogFeedCategories,
+    placement: blogFeedPlacement,
+  } = blogFeedDemo
+  const {
+    id: newsFeedId,
+    categories: newsFeedCategories,
+    placement: newsFeedPlacement,
+    limit: newsFeedLimit,
+  } = newsFeedDemo
+
   const trendingPosts = getPostsByPlacement('trending')
-  const blogPosts = getPostsByPlacement(blogFeedDemo.placement)
-  const headlinePosts = getPostsByPlacement(newsFeedDemo.placement)
+  const blogPosts = getPostsByPlacement(blogFeedPlacement)
+  const headlinePosts = getPostsByPlacement(newsFeedPlacement)
 
   return (
     <div className="ui-kit">
@@ -150,15 +167,8 @@ export function UiKit() {
           </Heading>
           <p className="ui-kit__caption">With the View All link, then without it</p>
         </div>
-        <SectionHeading
-          tag={sectionHeadingDemo.tag}
-          title={sectionHeadingDemo.title}
-          link={sectionHeadingDemo.link}
-        />
-        <SectionHeading
-          tag={sectionHeadingDemo.tag}
-          title={sectionHeadingDemo.title}
-        />
+        <SectionHeading tag={headingTag} title={headingTitle} link={headingLink} />
+        <SectionHeading tag={headingTag} title={headingTitle} />
       </section>
 
       <section className="ui-kit__group">
@@ -261,7 +271,14 @@ export function UiKit() {
           </p>
           <div className="ui-kit__grid ui-kit__grid--news">
             {trendingPosts.map((post) => {
-              const { slug, title, category, image, imageAlt, counters } = post
+              const {
+                slug,
+                title,
+                category,
+                image,
+                imageAlt,
+                counters: { likes, comments },
+              } = post
 
               return (
                 <NewsCard
@@ -271,8 +288,8 @@ export function UiKit() {
                   category={category}
                   image={image}
                   imageAlt={imageAlt}
-                  likes={counters.likes}
-                  comments={counters.comments}
+                  likes={likes}
+                  comments={comments}
                 />
               )
             })}
@@ -316,8 +333,8 @@ export function UiKit() {
           </p>
         </div>
         <PostFeed
-          id={blogFeedDemo.id}
-          categories={blogFeedDemo.categories}
+          id={blogFeedId}
+          categories={blogFeedCategories}
           posts={blogPosts}
         />
         <div className="container ui-kit__body">
@@ -326,10 +343,10 @@ export function UiKit() {
           </p>
         </div>
         <PostFeed
-          id={newsFeedDemo.id}
-          categories={newsFeedDemo.categories}
+          id={newsFeedId}
+          categories={newsFeedCategories}
           posts={headlinePosts}
-          limit={newsFeedDemo.limit}
+          limit={newsFeedLimit}
         />
       </section>
     </div>

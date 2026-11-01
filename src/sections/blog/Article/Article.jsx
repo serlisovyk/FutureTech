@@ -6,11 +6,12 @@ import './Article.css'
 
 export function Article({ post }) {
   const { title, image, imageAlt, body } = post
+  const { titleId } = article
 
   return (
-    <article className="article" aria-labelledby={article.titleId} data-article>
+    <article className="article" aria-labelledby={titleId} data-article>
       <ArticleHero
-        titleId={article.titleId}
+        titleId={titleId}
         title={title}
         image={image}
         imageAlt={imageAlt}

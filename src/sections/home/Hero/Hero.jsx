@@ -4,21 +4,33 @@ import { HeroFeature } from './HeroFeature'
 import './Hero.css'
 
 export function Hero() {
-  const { decor, aside } = hero
+  const {
+    titleId,
+    eyebrow,
+    title,
+    text,
+    decor: { src, sizes, breakpoints },
+    aside: {
+      title: asideTitle,
+      text: asideText,
+      link: { label, href },
+      avatars,
+    },
+  } = hero
 
   const heroStats = stats.slice(0, 3)
 
   return (
-    <section className="hero" aria-labelledby={hero.titleId}>
+    <section className="hero" aria-labelledby={titleId}>
       <div className="hero__main">
         <div className="hero__content">
           <div className="hero__intro">
-            <p className="hero__eyebrow">{hero.eyebrow}</p>
+            <p className="hero__eyebrow">{eyebrow}</p>
             <div className="hero__text">
-              <Heading level={1} size="hero" id={hero.titleId}>
-                {hero.title}
+              <Heading level={1} size="hero" id={titleId}>
+                {title}
               </Heading>
-              <p className="hero__lead">{hero.text}</p>
+              <p className="hero__lead">{text}</p>
             </div>
           </div>
           <ul className="hero__stats">
@@ -32,28 +44,28 @@ export function Hero() {
         <div className="hero__aside">
           <div className="hero__decor">
             <Photo
-              src={decor.src}
+              src={src}
               alt=""
               ariaHidden="true"
-              sizes={decor.sizes}
-              breakpoints={decor.breakpoints}
+              sizes={sizes}
+              breakpoints={breakpoints}
               loading="eager"
               fetchPriority="high"
               className="hero__decor-image"
             />
           </div>
-          <AvatarGroup avatars={aside.avatars} isCapsule />
+          <AvatarGroup avatars={avatars} isCapsule />
           <div className="hero__aside-text">
-            <h2 className="hero__aside-title">{aside.title}</h2>
-            <p>{aside.text}</p>
+            <h2 className="hero__aside-title">{asideTitle}</h2>
+            <p>{asideText}</p>
           </div>
           <Button
             variant="outline"
             icon="ui/arrow-up-right"
-            href={aside.link.href}
+            href={href}
             className="hero__aside-button"
           >
-            {aside.link.label}
+            {label}
           </Button>
         </div>
       </div>

@@ -3,22 +3,15 @@ import { featuredVideos, videos } from '@data'
 import './FeaturedVideos.css'
 
 export function FeaturedVideos() {
+  const { id, titleId, tag, title, link } = featuredVideos
+
   return (
-    <section
-      className="featured-videos"
-      id={featuredVideos.id}
-      aria-labelledby={featuredVideos.titleId}
-    >
-      <SectionHeading
-        tag={featuredVideos.tag}
-        title={featuredVideos.title}
-        titleId={featuredVideos.titleId}
-        link={featuredVideos.link}
-      />
+    <section className="featured-videos" id={id} aria-labelledby={titleId}>
+      <SectionHeading tag={tag} title={title} titleId={titleId} link={link} />
 
       <ul className="featured-videos__list container">
-        {videos.map(({ id, ...video }) => (
-          <li key={id} className="featured-videos__item">
+        {videos.map(({ id: videoItemId, ...video }) => (
+          <li key={videoItemId} className="featured-videos__item">
             <VideoCard {...video} />
           </li>
         ))}

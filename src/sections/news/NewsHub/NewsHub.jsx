@@ -3,18 +3,15 @@ import { newsCategories, newsHub } from '@data'
 import { getPostsByPlacement } from '@utils'
 
 export function NewsHub() {
-  const posts = getPostsByPlacement(newsHub.placement)
+  const { id, titleId, feedId, tag, title, link, placement } = newsHub
+
+  const posts = getPostsByPlacement(placement)
 
   return (
-    <section className="news-hub" id={newsHub.id} aria-labelledby={newsHub.titleId}>
-      <SectionHeading
-        tag={newsHub.tag}
-        title={newsHub.title}
-        titleId={newsHub.titleId}
-        link={newsHub.link}
-      />
+    <section className="news-hub" id={id} aria-labelledby={titleId}>
+      <SectionHeading tag={tag} title={title} titleId={titleId} link={link} />
 
-      <PostFeed id={newsHub.feedId} categories={newsCategories} posts={posts} />
+      <PostFeed id={feedId} categories={newsCategories} posts={posts} />
     </section>
   )
 }

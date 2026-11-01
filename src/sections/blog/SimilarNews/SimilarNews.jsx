@@ -4,22 +4,25 @@ import { getSimilarPosts } from '@utils'
 import './SimilarNews.css'
 
 export function SimilarNews({ post }) {
-  const posts = getSimilarPosts(post, similarNews.count)
+  const {
+    count,
+    titleId,
+    title,
+    link: { href, label },
+  } = similarNews
+
+  const posts = getSimilarPosts(post, count)
 
   return (
-    <section className="similar-news" aria-labelledby={similarNews.titleId}>
+    <section className="similar-news" aria-labelledby={titleId}>
       <div className="similar-news__inner container">
         <div className="similar-news__header" data-reveal>
-          <Heading level={2} size="minor" id={similarNews.titleId}>
-            {similarNews.title}
+          <Heading level={2} size="minor" id={titleId}>
+            {title}
           </Heading>
 
-          <Button
-            variant="outline"
-            icon="ui/arrow-up-right"
-            href={similarNews.link.href}
-          >
-            {similarNews.link.label}
+          <Button variant="outline" icon="ui/arrow-up-right" href={href}>
+            {label}
           </Button>
         </div>
 
@@ -27,7 +30,7 @@ export function SimilarNews({ post }) {
           {posts.map((similarPost) => {
             const {
               slug,
-              title,
+              title: postTitle,
               category,
               image,
               imageAlt,
@@ -38,7 +41,7 @@ export function SimilarNews({ post }) {
               <NewsCard
                 key={slug}
                 slug={slug}
-                title={title}
+                title={postTitle}
                 category={category}
                 image={image}
                 imageAlt={imageAlt}

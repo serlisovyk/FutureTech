@@ -6,11 +6,12 @@ import './ArticleSidebar.css'
 export function ArticleSidebar({ post }) {
   const { slug, counters } = post
   const { likes, views, shares } = counters
+  const { labels, sidebarLabel } = article
 
-  const meta = getArticleMeta(post, article.labels)
+  const meta = getArticleMeta(post, labels)
 
   return (
-    <aside className="article-sidebar" aria-label={article.sidebarLabel}>
+    <aside className="article-sidebar" aria-label={sidebarLabel}>
       <div className="article-sidebar__counters">
         <CounterPill
           icon="ui/heart"
