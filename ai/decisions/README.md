@@ -58,7 +58,7 @@ each with the record that replaced it.
 - [Every response carries four security headers, with a strict Content-Security-Policy](2026-11-01-security-headers.md)
 - [CI on every push, and a size budget with limits by fact](2026-10-28-ci-size-limit.md)
 - [`/ui` ships, noindex and unlinked; the CSS limit is raised and an images limit added](2026-10-28-ui-page-and-size-limits.md)
-- [The size limits: the current budget, set by fact, after the avatars and the fluid() change](2026-11-01-size-budget.md)
+- [The size limits: the current budget, set by fact, after the avatars, the fluid() change and the script fixes](2026-11-01-size-budget.md)
 - [The contact form validates in the browser and sends nothing](2026-10-30-contact-form-without-backend.md)
 - [The design is a third-party template: a reference only, never published](2026-10-28-design-is-a-reference.md)
 

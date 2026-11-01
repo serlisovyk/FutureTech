@@ -1,4 +1,4 @@
-# The size limits: the current budget, set by fact, after the avatars and the fluid() change
+# The size limits: the current budget, set by fact, after the avatars, the fluid() change and the script fixes
 
 Date: 2026-11-01 · Status: accepted
 
@@ -6,7 +6,7 @@ Date: 2026-11-01 · Status: accepted
 
 `size-limits` is the one record of the budget. The CSS is 0.6 kB lighter since `fluid()` writes a number
 (`postcss-notations`), and the avatars are asked for 1.5 times wider (their source is a 3:2 photo cropped square), which
-adds 0.07 MB of images; the unused JPG originals leave `dist/` but were never in a limit. The numbers move, so this record
+adds 0.07 MB of images; the script fixes (menu, tabs, form, modal) and their constants add 0.17 kB of JavaScript; the unused JPG originals leave `dist/` but were never in a limit. The numbers move, so this record
 replaces it.
 
 ## Decision
@@ -15,7 +15,7 @@ replaces it.
 
   | Entry      | Files                              | Limit  | Measured  |
   | ---------- | ---------------------------------- | ------ | --------- |
-  | JavaScript | `*.js`, gzipped                    | 4 kB   | 3.79 kB   |
+  | JavaScript | `*.js`, gzipped                    | 4.5 kB | 3.96 kB   |
   | CSS        | `*.css`, gzipped                   | 11 kB  | 10.71 kB  |
   | Fonts      | `*.woff2`, as they are             | 120 kB | 111.63 kB |
   | Images     | `*.avif` and `*.webp`, as they are | 3.8 MB | 3.65 MB   |

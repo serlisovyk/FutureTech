@@ -6,7 +6,7 @@ export const hero = {
   decor: {
     src: '/src/assets/images/decor/hero-decor.png',
     sizes:
-      'calc(423px + 199 * clamp(0px, (100vw - 390px) / 1050, 1px) + 272 * clamp(0px, (100vw - 1440px) / 480, 1px))',
+      '(width < 390px) 423px, (width < 1440px) calc(423px + (100vw - 390px) * 199 / 1050), (width < 1920px) calc(622px + (100vw - 1440px) * 272 / 480), 894px',
     breakpoints: [423, 622, 894, 1788],
   },
   aside: {
