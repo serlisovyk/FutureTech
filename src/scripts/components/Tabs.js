@@ -1,4 +1,4 @@
-import { KEYS, NO_INDEX } from '@scripts/constants.js'
+import { KEYS, NO_INDEX } from '@constants'
 
 export class Tabs {
   #options

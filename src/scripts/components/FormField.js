@@ -1,4 +1,4 @@
-import { VALIDITY_ERRORS } from '@scripts/constants.js'
+import { VALIDITY_ERRORS } from '@constants'
 
 export class FormField {
   #control

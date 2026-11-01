@@ -1,5 +1,5 @@
 import { VideoModal } from '@scripts/components/VideoModal.js'
-import { SELECTORS } from '@scripts/constants.js'
+import { SELECTORS } from '@constants'
 
 export class VideoModalController {
   #modal

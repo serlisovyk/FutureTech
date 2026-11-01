@@ -1,4 +1,4 @@
-import { VIDEO_EMBED } from '@scripts/constants.js'
+import { VIDEO_EMBED } from '@constants'
 
 export class VideoModal {
   #root

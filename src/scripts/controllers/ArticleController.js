@@ -1,5 +1,5 @@
 import { Disclosure } from '@scripts/components/Disclosure.js'
-import { SELECTORS } from '@scripts/constants.js'
+import { SELECTORS } from '@constants'
 
 export class ArticleController {
   #root

@@ -1,4 +1,4 @@
-import { PHONE_PATTERN } from './constants.js'
+import { PHONE_PATTERN } from '@constants'
 
 export function getPhonePattern(digits) {
   const { separators } = PHONE_PATTERN

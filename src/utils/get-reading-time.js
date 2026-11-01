@@ -1,4 +1,4 @@
-import { READING_SPEED } from './constants.js'
+import { READING_SPEED } from '@constants'
 
 export function getReadingTime(body) {
   const text = body.flatMap(({ paragraphs }) => paragraphs).join(' ')

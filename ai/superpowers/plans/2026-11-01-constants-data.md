@@ -39,6 +39,11 @@ The browser scripts now import constants through a barrel with build-time consta
 only what the scripts use: the built `main-*.js` is checked for `READING_SPEED`'s and `COUNT_FORMAT`'s values and
 `npm run size` is compared with the 3.61 kB baseline (limit 4 kB).
 
+Found while building: rolldown does not treat `Object.freeze(...)` as pure, so every unused frozen constant of the barrel
+stayed in `main-*.js` (+0.2 kB). `vite/parts/build.js` sets `rolldownOptions.treeshake.manualPureFunctions` to
+`['Object.freeze']` (rolldown's option, typed in `rolldown/dist`); the bundle is then byte-for-byte the size it was.
+Rejected: `sideEffects` in `package.json` (it must then list every CSS import) and a comment annotation (no comments).
+
 ## Verification
 
 The checks under "Verification" in `AGENTS.md`. `dist/` is built on `main` before the change and after it, and every

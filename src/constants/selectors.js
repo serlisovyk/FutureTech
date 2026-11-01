@@ -1,0 +1,16 @@
+export const SELECTORS = Object.freeze({
+  articleBody: '[data-article-body]',
+  articleSection: '[data-article-section]',
+  likeCount: '[data-like-count]',
+  disclosureRegion: '[data-disclosure-region]',
+  videoTrigger: '[data-video-id]',
+  postFeedRow: '[data-category]',
+  postFeedPanel: '[data-post-feed-panel]',
+  postFeedEmpty: '[data-post-feed-empty]',
+  postFeedStatus: '[data-post-feed-status]',
+  formField: '[data-form-field]',
+  formControl: '[data-form-control]',
+  formCountry: '[data-form-country]',
+  formFlag: '[data-form-flag]',
+  formStatus: '[data-form-status]',
+})

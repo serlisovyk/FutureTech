@@ -1,5 +1,5 @@
 import { Toggle } from '@scripts/components/Toggle.js'
-import { MEDIA } from '@scripts/constants.js'
+import { MEDIA } from '@constants'
 
 export class HeaderController {
   #toggle

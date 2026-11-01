@@ -1,4 +1,4 @@
-import { DATE_FORMAT } from './constants.js'
+import { DATE_FORMAT } from '@constants'
 
 export function formatDate(isoDate) {
   const formatter = new Intl.DateTimeFormat(DATE_FORMAT.locale, DATE_FORMAT.options)

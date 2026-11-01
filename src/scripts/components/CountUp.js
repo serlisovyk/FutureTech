@@ -1,4 +1,4 @@
-import { COUNT_UP, MEDIA } from '@scripts/constants.js'
+import { COUNT_UP, MEDIA } from '@constants'
 
 export class CountUp {
   #options

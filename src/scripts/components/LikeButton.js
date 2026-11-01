@@ -1,4 +1,4 @@
-import { SELECTORS, STORAGE } from '@scripts/constants.js'
+import { SELECTORS, STORAGE } from '@constants'
 
 export class LikeButton {
   #root

@@ -3,10 +3,6 @@ export const COUNT_FORMAT = Object.freeze({
   decimals: 1,
 })
 
-export const PHONE_PATTERN = Object.freeze({
-  separators: '[\\s\\(\\)\\-.]',
-})
-
 export const DATE_FORMAT = Object.freeze({
   locale: 'en-US',
   options: Object.freeze({ dateStyle: 'long', timeZone: 'UTC' }),

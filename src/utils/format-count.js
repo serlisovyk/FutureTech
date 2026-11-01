@@ -1,4 +1,4 @@
-import { COUNT_FORMAT } from './constants.js'
+import { COUNT_FORMAT } from '@constants'
 
 export function formatCount(count) {
   if (count < COUNT_FORMAT.thousand) return String(count)

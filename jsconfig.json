@@ -11,7 +11,8 @@
       "@scripts/*": ["./src/scripts/*"],
       "@assets/*": ["./src/assets/*"],
       "@utils": ["./src/utils"],
-      "@utils/*": ["./src/utils/*"]
+      "@utils/*": ["./src/utils/*"],
+      "@constants": ["./src/constants"]
     }
   }
 }

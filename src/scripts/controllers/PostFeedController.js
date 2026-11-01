@@ -1,5 +1,5 @@
 import { Tabs } from '@scripts/components/Tabs.js'
-import { ALL_CATEGORY, SELECTORS } from '@scripts/constants.js'
+import { ALL_CATEGORY, SELECTORS } from '@constants'
 
 export class PostFeedController {
   #tabs

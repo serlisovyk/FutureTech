@@ -1,5 +1,5 @@
 import { FormField } from '@scripts/components/FormField.js'
-import { SELECTORS } from '@scripts/constants.js'
+import { SELECTORS } from '@constants'
 
 export class ContactFormController {
   #root

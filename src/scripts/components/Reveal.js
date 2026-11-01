@@ -1,4 +1,4 @@
-import { MEDIA, REVEAL } from '@scripts/constants.js'
+import { MEDIA, REVEAL } from '@constants'
 
 export class Reveal {
   #root
