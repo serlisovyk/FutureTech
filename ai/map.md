@@ -15,7 +15,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `.github/workflows/ci.yml` — the checks on every push. `.size-limit.json` — the budget of the built JS, CSS, fonts and images.
 - `jsconfig.json` — the editor's copy of the aliases `vite/parts/aliases.js` defines, `@<folder>` for each `src/` folder
   (`@components`, `@sections`, `@utils`, `@data`, `@constants` are barrels, imported bare).
-- `src/pages/` — one JSX file per page, its file name is its URL: Home (`/`), News, Podcasts, Resources, Contact, 404, and `/ui`, the UI kit demo (noindex, linked from nowhere).
+- `src/pages/` — one JSX file per page, its file name is its URL: Home (`/`), News, Podcasts, Resources, Contact, 404 (`sections/not-found/`), and `/ui`, the UI kit demo (noindex, linked from nowhere).
   A page exports `metadata = pages.<name>` (from `data/pages.js`) and its content, no head.
   `pages/blog/[slug].jsx` is the article route: `getStaticData` makes one page per entry of `data/posts.js` at `/blog/<slug>`
   (`getPostUrl`), built as `dist/blog/<slug>.html`; it passes the post's title and excerpt as the page's title and description.
@@ -75,7 +75,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   Now and Preview to that tab of `/resources`; View All to the page that lists more (News's "View All News" to the Home blog feed);
   play, Listen Podcast and the article's like are buttons, card likes are counters.
 - `PageIntro` (`components/page/`): the page's `h1` over two lines with the text beside the second one (stacked at
-  390); News (with the taller `isSpacious` bottom), Podcasts and Resources render it from their data.
+  390); News (with the taller `isSpacious` bottom), Podcasts and Resources render it from their data; 404 puts its button under the text.
 - `PostRow` (cards: author, date, title, excerpt, counters, link to the article) and `PostFeed` (`components/feeds/`: the category
   tabs and the list of `PostRow`s, filtered in the browser by `PostFeedController`); both are on `/ui`.
 - `src/data/` — the texts, ids and lists the components render, as plain exported values, one file per entity or
