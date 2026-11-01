@@ -8,7 +8,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `package.json` — the scripts (`check` is `minista check`, `size` is size-limit);
   `vite.config.js` — only re-exports `vite/config.js`, which builds the config from `vite/parts/` (one `get…`
   per concern: `aliases`, `plugins`, `image`, `build`); `vite/paths.js` — the paths; `vite/constants.js` — the
-  constants the build plugins share; `vite/plugins/` — our build plugins: `source-type`, and `site-files` (helpers in `vite/site-files/`) that emits
+  constants the build plugins share; `vite/plugins/` — build plugins: `source-type`, and `site-files` (helpers in `vite/site-files/`) that emits
   `robots.txt`, `sitemap.xml` and `llms.txt` from the built pages.
 - `.prettierrc`, `.prettierignore` — Prettier. `eslint.config.js`, `.stylelintrc.json` — ESLint and Stylelint.
   `.husky/pre-commit` and `.lintstagedrc.json` — the pre-commit hook that runs them on the staged files.
@@ -22,7 +22,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `src/layouts/` — the shell of every page: `<html>`, the head (title, script, `components/head/` fed with the page's
   `metadata`, `url` and `post`), `<main>`;
   the header, the CTA (`CtaRevolution`) and the footer join it from `sections/shared/`.
-- `src/sections/` — one folder per section (its JSX, its stylesheet, an `index.jsx`, a folder per part), by page group (`home/`, `news/`, …,
+- `src/sections/` — one folder per section (JSX, stylesheet, `index.jsx`, a folder per part), by page group (`home/`, `news/`, …,
   `ui/`; `shared/` when two pages use it); `sections/index.jsx` re-exports the groups.
   `shared/Header` is on every page: the skip link, the newsletter strip, the navbar and the mobile menu (a drawer, one
   `data-header` root; the layout passes it the current path). `shared/VideoModal` is the one `<dialog>` the layout renders on every
@@ -63,7 +63,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `public/` — fixed-URL files copied as they are: `favicon.svg`, `favicon.png`, `og-image.png` (with the author's name)
   (1200 x 630). An article's `og:image` is its photo's hashed JPEG (`getSocialMeta`); the build generates `robots.txt`,
   `sitemap.xml` and `llms.txt`; `JsonLd` prints `Organization` and `BlogPosting` (`utils/get-*-json-ld.js`).
-- `src/components/` — repeated elements as JSX, one folder each (`ui/Button/` with `Button.jsx`, `Button.css`, `index.jsx`),
+- `src/components/` — repeated elements as JSX, one folder each (`ui/Button/`: `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
 - `components/head/`: the head's parts (`FontPreloads`, `SeoMeta`, `SocialMeta`, `JsonLd`, …).
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
@@ -85,7 +85,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   lists), `pages` (each page's metadata) and `site` (the name, origin, locale, theme colour, icons, social image).
 - `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, `get-reading-time.js`, `format-count.js`, …), re-exported by
   `index.js` (plain JS, no JSX), imported by components, sections and the layout.
-  `getSimilarPosts(post, count)`: same-category posts first, then the newest, newest first, never `post`.
+  `getSimilarPosts(post, count)`: the same category first, then the newest, never `post`.
 - `src/constants/` — what utils and scripts share (formats, keys, selectors, media queries, storage keys, widget
   settings), one file per meaning, re-exported by `index.js`.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
