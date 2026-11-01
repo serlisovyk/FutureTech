@@ -42,7 +42,7 @@ export class Tabs {
     const selectedTab = event.target.closest(SELECTORS.tab)
     if (!selectedTab) return
 
-    this.select(selectedTab)
+    this.#choose(selectedTab)
   }
 
   #handleHashChange() {
@@ -50,19 +50,34 @@ export class Tabs {
     if (!hashTab) return
 
     this.select(hashTab)
-    this.#findPanel(hashTab.dataset.tab).scrollIntoView()
+    this.#findPanel(hashTab.dataset.tab)?.scrollIntoView()
   }
 
   #handleKeydown(event) {
+    const { key, altKey, ctrlKey, metaKey, shiftKey } = event
+
+    const hasModifier = altKey || ctrlKey || metaKey || shiftKey
     const currentTab = event.target.closest(SELECTORS.tab)
-    if (!currentTab) return
+    if (hasModifier || !currentTab) return
 
     const currentIndex = this.#tabs.indexOf(currentTab)
-    const targetIndex = this.#findIndexForKey(event.key, currentIndex)
+    const targetIndex = this.#findIndexForKey(key, currentIndex)
     if (targetIndex === NO_INDEX) return
 
     event.preventDefault()
-    this.select(this.#tabs[targetIndex], true)
+    this.#choose(this.#tabs[targetIndex], true)
+  }
+
+  #choose(selectedTab, shouldFocus = false) {
+    this.select(selectedTab, shouldFocus)
+    this.#renderHash(selectedTab)
+  }
+
+  #renderHash(selectedTab) {
+    const panel = this.#findPanel(selectedTab.dataset.tab)
+    if (!panel) return
+
+    window.history.replaceState(window.history.state, '', `#${panel.id}`)
   }
 
   #findHashTab() {
