@@ -89,12 +89,12 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `src/constants/` — what utils and scripts share (formats, keys, selectors, media queries, storage keys, widget
   settings), one file per meaning, re-exported by `index.js`.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
-  `.container`, `.visually-hidden`, the `reveal` keyframes and the hidden start state), `fonts.css`; `global.css` imports them in that order, the layout imports it first.
+  `.container`, `.visually-hidden`), `reveal.css` (the scroll-reveal keyframes and hidden start state), `fonts.css`; `global.css` imports them, the layout imports it first.
   Components and sections import their own stylesheet; the build bundles all into one file.
 - `src/scripts/` — all browser JavaScript: `main.js` (the one entry, loaded by the layout: a table of root hook →
-  class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`, `VideoModal`, `CountUp`, `FormField`, `LikeButton`, `Reveal`: root `<html data-reveal-root>`,
-  fades in every `[data-reveal]` below the first screen once, cascading the ones that enter together),
-  `controllers/` (one per section: `HeaderController`, which runs the menu; `VideoModalController`, which opens the modal from any play button;
+  class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`, `VideoModal`, `CountUp`, `FormField`, `LikeButton`, `Reveal`: root `<html data-reveal-root>`),
+  `utils/` (helpers: `storage`, `observe-visible`, `can-observe-visible`, `is-reduced-motion`), `controllers/`
+  (one per section: `HeaderController`, which runs the menu; `VideoModalController`, which opens the modal from any play button;
   `PostFeedController`, which filters a feed's rows by the selected tab; `ContactFormController`, which checks and completes the form;
   `ArticleController`, which runs "Read Full Blog").
 - `src/assets/` — referenced by the build and emitted hashed: `fonts/` (woff2, `index.js`), `icons/` (sprite icons in `ui/`, `social/`,

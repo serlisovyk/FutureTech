@@ -1,20 +1,23 @@
 # OOP Rules
 
 The browser JavaScript is object-oriented: a class per widget and per section. These rules
-apply to every file in `scripts/`. Why: decision `oop-javascript`. JSX components are not
+apply to every file in `scripts/`. Why: decision `script-helpers`. JSX components are not
 classes and follow `ai/rules/jsx.md`.
 
 ## Files and modules
 
 - One class per file, the file named after the class in PascalCase: `Tabs.js` exports `Tabs`.
-- The only non-class module is `main.js`, the composition root.
+- The only non-class module is `main.js`, the composition root; the helpers in `utils/` are functions in kebab-case.
 - Named exports only, no default exports; imports carry the `.js` extension, except the barrels
-  (`from '@constants'`).
+  (`from '@constants'`, `from '@scripts/utils'`).
 - An import from another folder of `scripts/` uses the alias (`@scripts/components/Tabs.js`), never `../`;
   an import inside the same folder stays `./` (`main.js` → `./components/Tabs.js`).
 - Folders by role: `scripts/components/` — reusable widgets (`Tabs`, `Toggle`, `Disclosure`,
   a dialog, a reveal); `scripts/controllers/` — one controller per section that needs more
-  than one widget or its own logic (a post feed, the contact form).
+  than one widget or its own logic (a post feed, the contact form); `scripts/utils/` — helper
+  functions behind a barrel (`storage`, `observe-visible`, `is-reduced-motion`): a wrapper over a browser API or a check
+  that two or more classes share. A helper keeps no state, knows no widget's markup, and handles a refusing browser
+  itself (`try` / `catch` with a returned fallback); a class never calls `localStorage` or `new IntersectionObserver`.
 - `src/constants/` (`@constants`) — what scripts share: the media queries (equal to the CSS
   breakpoints), key names, storage keys, state classes, sentinels (`NO_INDEX`); a class file declares no constant of its own.
 
@@ -59,7 +62,7 @@ The JSX carries the roles, `aria-controls`, `aria-labelledby` and the initial `a
 - `Disclosure`: root `data-disclosure`, `data-disclosure-trigger`, `data-disclosure-region`, and an
   optional `data-disclosure-label` whose text the option `labels` swaps; `onToggle` reports the state.
 - `LikeButton`: root the `<button data-like="<key>" data-liked-count="<text>" aria-pressed="false" disabled>` (disabled until `start()`: no
-  script, no control), the number in `data-like-count`. It remembers the state in `localStorage` under the key; every access is in `try`.
+  script, no control), the number in `data-like-count`. It remembers the state under the key through the `storage` helper.
 - Article (`ArticleController`): root `<article data-article>`; the text is `data-article-body` (not `data-disclosure`: the controller owns
   that `Disclosure`), its region the only `data-disclosure-region`, every section `data-article-section` with `tabindex="-1"` and its
   anchor as `id`. A post with no region has no `Disclosure`. When the URL hash (on `start()` and on `hashchange`) names a section inside the

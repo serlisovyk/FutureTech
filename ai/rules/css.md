@@ -96,7 +96,7 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
 - Reveal on scroll: mark a block with `data-reveal` in the component that owns it, a block below the first screen and
   never the header, the Home hero, a `PageIntro` or the photo that is the first screen's largest image. Mark the
   content, not a full-width band with lines. Each card of a grid is marked itself: the cascade is the order in which
-  they enter, not markup. The look lives in the base styles (opacity and a short shift, only under
+  they enter, not markup. The look lives in `reveal.css` (opacity and a short shift, only under
   `(scripting: enabled)` and `(prefers-reduced-motion: no-preference)`); a block never styles `[data-reveal]` itself.
 - Hover: `:hover` only inside `@media (hover: hover)`, a step that fits the block and never a jump. A control steps its
   background one level up (Dark/08 to Dark/10, Dark/10 to Dark/15), brightens its border to `--dark-40` and turns its text
