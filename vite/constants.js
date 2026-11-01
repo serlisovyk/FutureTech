@@ -38,6 +38,8 @@ export const RAMP_PROPERTIES = {
   laptopToDesktop: '--ramp-1440-1920',
 }
 
+export const RAMP_STEP_DIGITS = 4
+
 export const HOVER_QUERY = '(hover: hover)'
 
 export const FLUID_NAME = 'fluid('

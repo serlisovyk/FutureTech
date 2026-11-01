@@ -1,7 +1,12 @@
-import { FLUID_CALL, FLUID_NAME, RAMP_PROPERTIES } from '../constants.js'
+import {
+  FLUID_CALL,
+  FLUID_NAME,
+  RAMP_PROPERTIES,
+  RAMP_STEP_DIGITS,
+} from '../constants.js'
 
 function getRampTerm(from, to, property) {
-  const step = Number((to - from).toFixed(4))
+  const step = Number((to - from).toFixed(RAMP_STEP_DIGITS))
 
   if (step < 0) return `- ${-step} * var(${property})`
 
