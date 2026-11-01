@@ -16,6 +16,7 @@
 .faq-item__button {
   --letter-spacing: 0;
 
+  position: relative;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -26,6 +27,13 @@
   font-weight: 500;
   line-height: 1.21;
   text-align: start;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset-block: -13px;
+    inset-inline: 0;
+  }
 }
 
 .faq-item__question {

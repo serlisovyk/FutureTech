@@ -97,9 +97,17 @@
 }
 
 .button--small {
+  position: relative;
   padding-block: fluid(7, 7, 9);
   padding-inline: fluid(13, 13, 15);
   border-radius: var(--radius-control);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset-block: -4px;
+    inset-inline: 0;
+  }
 
   & .button__icon {
     width: fluid(18, 18, 20);
