@@ -1,7 +1,9 @@
 import { site } from '@data'
 
 export function getPageTitle(title) {
-  if (!title) return site.name
+  const { name } = site
 
-  return `${title} | ${site.name}`
+  if (!title) return name
+
+  return `${title} | ${name}`
 }

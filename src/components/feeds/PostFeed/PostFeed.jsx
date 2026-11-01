@@ -11,6 +11,8 @@ import './PostFeed.css'
 export function PostFeed({ id, categories, posts, limit = posts.length }) {
   const { slug: allSlug } = allCategory
 
+  const { tabListLabel, emptyText } = postFeed
+
   const shownPosts = posts.slice(0, limit)
 
   const hasPosts = shownPosts.length > 0
@@ -24,7 +26,7 @@ export function PostFeed({ id, categories, posts, limit = posts.length }) {
       <div
         className="post-feed__tabs"
         role="tablist"
-        aria-label={postFeed.tabListLabel}
+        aria-label={tabListLabel}
         data-tab-list
       >
         {categories.map(({ slug, name }) => {
@@ -92,7 +94,7 @@ export function PostFeed({ id, categories, posts, limit = posts.length }) {
           })}
         </ul>
         <p className="post-feed__empty" data-post-feed-empty hidden={hasPosts}>
-          {postFeed.emptyText}
+          {emptyText}
         </p>
       </div>
     </div>

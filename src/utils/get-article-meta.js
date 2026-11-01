@@ -3,14 +3,27 @@ import { getCategoryName } from './get-category-name.js'
 import { getReadingTime } from './get-reading-time.js'
 
 export function getArticleMeta(post, labels) {
-  const { category, date, author, body } = post
+  const {
+    category,
+    date,
+    author: { name: authorName },
+    body,
+  } = post
 
-  const readingTime = `${getReadingTime(body)} ${labels.minutes}`
+  const {
+    date: dateLabel,
+    category: categoryLabel,
+    readingTime: readingTimeLabel,
+    minutes: minutesLabel,
+    author: authorLabel,
+  } = labels
+
+  const readingTime = `${getReadingTime(body)} ${minutesLabel}`
 
   return [
-    { label: labels.date, value: formatDate(date) },
-    { label: labels.category, value: getCategoryName(category) },
-    { label: labels.readingTime, value: readingTime },
-    { label: labels.author, value: author.name },
+    { label: dateLabel, value: formatDate(date) },
+    { label: categoryLabel, value: getCategoryName(category) },
+    { label: readingTimeLabel, value: readingTime },
+    { label: authorLabel, value: authorName },
   ]
 }

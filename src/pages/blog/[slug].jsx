@@ -2,10 +2,14 @@ import { Article, SimilarNews } from '@sections'
 import { posts } from '@data'
 
 export function getStaticData() {
-  return posts.map((post) => ({
-    paths: { slug: post.slug },
-    props: { title: post.title, description: post.excerpt, post },
-  }))
+  return posts.map((post) => {
+    const { slug, title, excerpt } = post
+
+    return {
+      paths: { slug },
+      props: { title, description: excerpt, post },
+    }
+  })
 }
 
 export default function ArticlePage({ post }) {

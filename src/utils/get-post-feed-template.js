@@ -1,7 +1,9 @@
 import { postFeed } from '@data'
 
 export function getPostFeedTemplate(count) {
-  const { none, one, other } = postFeed.status
+  const {
+    status: { none, one, other },
+  } = postFeed
 
   if (count === 0) return none
   if (count === 1) return one

@@ -1,5 +1,7 @@
 import { site } from '@data'
 
 export function getAbsoluteUrl(path) {
-  return `${site.url}${path}`
+  const { url } = site
+
+  return `${url}${path}`
 }

@@ -5,7 +5,9 @@ export function getSimilarPosts(post, count) {
 
   const others = posts
     .filter(({ slug }) => slug !== currentSlug)
-    .sort((a, b) => b.date.localeCompare(a.date))
+    .sort(({ date: firstDate }, { date: secondDate }) =>
+      secondDate.localeCompare(firstDate),
+    )
 
   const sameCategory = others.filter(({ category }) => category === currentCategory)
 

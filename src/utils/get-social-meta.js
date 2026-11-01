@@ -3,6 +3,8 @@ import { getAbsoluteUrl } from './get-absolute-url.js'
 
 export function getSocialMeta(post) {
   if (post) {
+    const { image: postImage, imageAlt } = post
+
     const photoUrls = import.meta.glob('/src/assets/images/photos/*.jpg', {
       eager: true,
       query: '?url',
@@ -11,11 +13,13 @@ export function getSocialMeta(post) {
 
     return {
       type: 'article',
-      image: { url: getAbsoluteUrl(photoUrls[post.image]), alt: post.imageAlt },
+      image: { url: getAbsoluteUrl(photoUrls[postImage]), alt: imageAlt },
     }
   }
 
-  const { src, width, height, alt } = site.socialImage
+  const {
+    socialImage: { src, width, height, alt },
+  } = site
 
   return {
     type: 'website',
