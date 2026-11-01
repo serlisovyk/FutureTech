@@ -1,6 +1,6 @@
 # The CSS and images limits are raised for the last Home sections and the News first screen
 
-Date: 2026-10-30 · Status: accepted
+Date: 2026-10-30 · Status: superseded by 2026-11-01-size-limits.md
 
 ## Context
 

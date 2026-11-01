@@ -1,6 +1,6 @@
 # The JS and CSS limits are raised for the article pages, the reveal and hover states, and the Contact form
 
-Date: 2026-10-30 · Status: accepted
+Date: 2026-10-30 · Status: superseded by 2026-11-01-size-limits.md
 
 ## Context
 

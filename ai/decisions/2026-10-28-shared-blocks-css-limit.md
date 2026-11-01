@@ -1,6 +1,6 @@
 # The CSS limit is raised to 4 kB for the header, the CTA and the footer
 
-Date: 2026-10-28 · Status: accepted
+Date: 2026-10-28 · Status: superseded by 2026-11-01-size-limits.md
 
 ## Context
 

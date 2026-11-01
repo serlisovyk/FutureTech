@@ -1,6 +1,6 @@
 # The limits are raised for the cards and the video modal; images are measured as a total
 
-Date: 2026-10-28 · Status: accepted
+Date: 2026-10-28 · Status: superseded by 2026-11-01-size-limits.md
 
 ## Context
 

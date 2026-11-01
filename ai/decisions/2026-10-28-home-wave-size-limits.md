@@ -1,6 +1,6 @@
 # The CSS and images limits are raised for the first Home sections
 
-Date: 2026-10-28 · Status: accepted
+Date: 2026-10-28 · Status: superseded by 2026-11-01-size-limits.md
 
 ## Context
 

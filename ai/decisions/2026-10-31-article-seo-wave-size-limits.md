@@ -1,6 +1,6 @@
 # The JS, CSS and images limits are raised for the article page and the SEO wave
 
-Date: 2026-10-31 · Status: accepted
+Date: 2026-10-31 · Status: superseded by 2026-11-01-size-limits.md
 
 ## Context
 
