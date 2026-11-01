@@ -3,7 +3,7 @@
     "name": "JavaScript",
     "path": "dist/assets/*.js",
     "gzip": true,
-    "limit": "4.5 kB"
+    "limit": "4 kB"
   },
   {
     "name": "CSS",
@@ -23,6 +23,6 @@
     "path": "dist/assets/*.{avif,webp}",
     "gzip": false,
     "brotli": false,
-    "limit": "4.5 MB"
+    "limit": "3.7 MB"
   }
 ]
