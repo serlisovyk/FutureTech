@@ -3,7 +3,7 @@ import { Heading } from '@components/ui/Heading'
 import './PageIntro.css'
 
 export function PageIntro(props) {
-  const { titleId, titleStart, titleEnd, text, isSpacious = false } = props
+  const { titleId, titleStart, titleEnd, text, children, isSpacious = false } = props
 
   return (
     <section
@@ -15,6 +15,8 @@ export function PageIntro(props) {
         <span className="page-intro__title-end">{titleEnd}</span>
       </Heading>
       <p className="page-intro__text">{text}</p>
+
+      {children && <div className="page-intro__action">{children}</div>}
     </section>
   )
 }

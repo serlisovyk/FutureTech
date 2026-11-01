@@ -56,3 +56,13 @@
     grid-column: 1;
   }
 }
+
+.page-intro__action {
+  grid-column: 2;
+  grid-row: 3;
+  justify-self: start;
+
+  @media (width < 768px) {
+    grid-column: 1;
+  }
+}
