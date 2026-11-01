@@ -9,6 +9,18 @@
   );
   --showcase-cell-radius: calc(8px + (13 - 8) * var(--ramp-1440-1920));
 
+  position: relative;
+
+  & + &::before {
+    content: '';
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline: 0;
+    border-block-start: var(--border);
+  }
+}
+
+.resource-showcase__layout {
   display: grid;
   grid-template-columns: min(var(--showcase-intro-width), 34%) 1fr;
   column-gap: calc(60px + (80 - 60) * var(--ramp-1440-1920));
