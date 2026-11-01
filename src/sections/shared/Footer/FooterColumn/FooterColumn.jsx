@@ -10,7 +10,7 @@ export function FooterColumn({ title, links, isButtons = false }) {
       className={clsx('footer__column', isButtons && 'footer__column--buttons')}
       data-reveal
     >
-      <h2 className="footer__title">{title}</h2>
+      <p className="footer__title">{title}</p>
       <ul className={clsx('footer__list', isButtons && 'footer__list--buttons')}>
         {links.map((link) => {
           const { label } = link

@@ -56,7 +56,7 @@ export function Hero() {
           </div>
           <AvatarGroup avatars={avatars} isCapsule />
           <div className="hero__aside-text">
-            <h2 className="hero__aside-title">{asideTitle}</h2>
+            <p className="hero__aside-title">{asideTitle}</p>
             <p>{asideText}</p>
           </div>
           <Button

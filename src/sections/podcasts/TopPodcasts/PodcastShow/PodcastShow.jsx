@@ -75,7 +75,7 @@ export function PodcastShow(props) {
               </div>
             </div>
             <div className="podcast-show__text">
-              <h4 className="podcast-show__lead-title">{tagline}</h4>
+              <p className="podcast-show__lead-title">{tagline}</p>
               <p>{text}</p>
             </div>
           </div>

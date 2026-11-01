@@ -39,7 +39,9 @@ export function ResourceRow(props) {
 
             <div className="resource-row__details">
               <div className="resource-row__text">
-                <p className="resource-row__name">{title}</p>
+                <p className="resource-row__name" aria-hidden="true">
+                  {title}
+                </p>
                 <p>{text}</p>
               </div>
               <Button
