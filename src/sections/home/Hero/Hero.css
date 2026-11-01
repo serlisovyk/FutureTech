@@ -108,13 +108,28 @@
   position: absolute;
   inset: 0;
   z-index: -1;
+  overflow: hidden;
 }
 
 .hero__decor-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: left top;
+  position: absolute;
+  inset-block-start: calc(
+    -1 *
+      (
+        104px + (159 - 104) * var(--ramp-390-1440) + (234 - 159) *
+          var(--ramp-1440-1920)
+      )
+  );
+  inset-inline-start: calc(
+    51px + (90 - 51) * var(--ramp-390-1440) + (143 - 90) * var(--ramp-1440-1920)
+  );
+  width: calc(
+    423px + (622 - 423) * var(--ramp-390-1440) + (894 - 622) * var(--ramp-1440-1920)
+  );
+  max-width: none;
+  height: auto;
+  transform: rotate(35.4deg);
+  transform-origin: 0 0;
 }
 
 .hero__aside-button {

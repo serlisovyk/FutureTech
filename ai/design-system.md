@@ -325,10 +325,11 @@ Section names are the design's sitemap. A page is the header, its sections, the 
 - **Logo:** a yellow mark of four turning pieces (`Yellow/55`) and a white wordmark. Sizes 179x50 / 143x40 /
   125x35 in the header (mark 50 / 40 / 35); the mark alone is 150 / 120 / 60 in the CTA band. Inline SVG through
   the SVG plugin, two colours from tokens; the mark also serves as the icon of the site.
-- **Hero decor:** a ray burst of about 440 groups of vectors (gradient black to `#9C9C9C`, varied opacities),
-  894x606 / 622x422 / 423x287 before a 35 degree rotation, clipped by the hero's right column (653x755 / 523x568 /
-  390x358). Recommended as one raster of the clipped result (WebP or AVIF through the image plugin, `alt=""`), not
-  inline SVG (hundreds of paths). The author may overrule.
+- **Hero decor:** a ray burst of about 440 groups of vectors (gradient black to `#9C9C9C`, varied opacities) in the
+  blend mode `color-dodge`: over `Dark/08` only the grey end of each ray shows, soft light rays, not black ones.
+  894x606 / 622x422 / 423x287, rotated 35.4 degrees about its top left corner placed at (143, -234) / (90, -159) /
+  (51, -104) in the hero's right column (653x755 / 523x568 / 390x358), which clips it. One opaque raster of the
+  unrotated burst on `Dark/08` (`alt=""`), placed and rotated by CSS through the ramps; not inline SVG.
 - **Feature icons:** two-tone, `Yellow/55` + `Dark/25`, 80 / 60 / 50 (rows) and 50 / 40 / 30 (Home strip). About
   13 pieces: Home Future Technology Blog, Research Insights Blogs, Ebooks, Whitepapers, strip Latest News, Expert
   Contributors, Global Readership; Podcasts AI Revolution, AI Conversations; Resources, 2 whitepapers; Contact,
