@@ -25,7 +25,7 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
   exports the section only, and a folder per part. Each group has an `index.jsx`, and the root `index.jsx` of
   `components/` and `sections/` re-exports the groups (decisions `folders-and-barrels`, `part-imports-by-parent-folder`).
 - One file holds one component and nothing else: a part of a section is a folder built like a component
-  (`FooterColumn/` with `FooterColumn.jsx`, `FooterColumn.css` when it has styles, `index.jsx`), a helper goes to
+  (`FeatureGroup/` with `FeatureGroup.jsx`, `FeatureGroup.css` when it has styles, `index.jsx`), a helper goes to
   `utils/`, a text or an id to `data/`.
 - One root element per component, with the block's class. A component is used by sections
   only; a section does not render another section.
