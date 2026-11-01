@@ -58,7 +58,6 @@ export class VideoModal {
     frame.src = `${VIDEO_EMBED.baseUrl}${encodeURIComponent(videoId)}${VIDEO_EMBED.query}`
     frame.title = videoTitle
     frame.allow = VIDEO_EMBED.allow
-    frame.allowFullscreen = true
 
     return frame
   }
