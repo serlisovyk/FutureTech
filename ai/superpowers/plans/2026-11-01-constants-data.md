@@ -26,7 +26,7 @@ build output confirms it (head compared byte for byte).
    or the plugin run shows a problem, they keep `site.js` and the reason goes into the report.
 3. **`src/data/pages.js`.** `pages` holds the `title` / `description` (and `robots`) of Home (no title), News, Podcasts,
    Resources, Contact, the 404 page (`notFound`) and `/ui`. Each page is `export const metadata = pages.<name>`. The
-   article route keeps its metadata from `getStaticData`.
+   article route keeps its metadata from `getStaticData`. The 404 page keeps its `h1` and line: page content, not metadata.
 4. **`get-social-meta.js`.** `import.meta.glob` moves into the post branch of the function; Vite still hoists the
    eager imports, the output is the same.
 5. **Docs.** `ai/map.md` (constants folder, data barrel, `pages.js`, aliases; trimmed to stay under 12288 bytes as stored

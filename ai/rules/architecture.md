@@ -31,14 +31,14 @@ sit beside it. Each folder has one job:
 
 ## Pages and routes
 
-- A page file exports its metadata (title, description) and renders its sections, nothing else;
+- A page file exports its metadata (from `data/pages.js`) and renders its sections, nothing else;
   the layout builds the head from the metadata (decision `shared-page-head`). The same section on two pages is one file in `sections/shared/`, not a copy.
 - A page generated per item (the article route) gets its list of paths and its data from
   `data/` through minista's static-data API, so a new post needs no new page file.
 - Links between pages are root-relative clean URLs without `.html` (`/news`, `/blog/<slug>`);
   a link to a post is built by one helper, never written out by hand.
 - A new page needs the author's request (`ai/rules/scope.md`), an entry in the navigation data
-  when it is in the menu, and its metadata.
+  when it is in the menu, and its entry in `data/pages.js`.
 
 ## Behavior
 

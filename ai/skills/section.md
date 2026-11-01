@@ -13,8 +13,9 @@ order of the work.
 
 ## Path of a section
 
-1. **Data** — if the section has a list or repeated text: a named export in `data/`. No JSX,
-   classes or styles in the data; a computed value is a pure helper beside it.
+1. **Data** — if the section has a list or repeated text: a named export in `data/`, one more line in
+   `data/index.js`, imported as `from '@data'`. No JSX, classes or styles in the data; a computed value is a pure helper
+   beside it.
 2. **Components first** — reuse what `components/` already has (button, tag, section heading,
    cards, counters; `import { Button } from '@components'`) before writing markup. A new repeated part is a
    component: a folder `components/<group>/<Name>/` with `<Name>.jsx`, `<Name>.css` and `index.jsx`, plus a line in

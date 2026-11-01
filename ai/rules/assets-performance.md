@@ -33,7 +33,7 @@ build. Where the files are: `ai/map.md`. Why the site is static: decision
 
 ## Page metadata
 
-- Every page and every article has a unique `<title>` and meta `description`, both set in its `metadata` and printed by the layout, the viewport
+- Every page and every article has a unique `<title>` and meta `description`, both set in its `metadata` (`data/pages.js`) and printed by the layout, the viewport
   meta, and `lang` equal to the language of its content.
 - Absolute URLs (canonical, `og:url`, `og:image`) are built from one site origin constant,
   never written out per page.

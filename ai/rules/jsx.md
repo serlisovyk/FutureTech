@@ -19,8 +19,9 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
 - A component or section file is named in PascalCase after its function (`NewsCard.jsx`
   exports `NewsCard`); its root element carries the kebab-case BEM block (`.news-card`).
 - Named exports only; a page exports what minista requires of a page (check the docs:
-  `ai/rules/minista.md`): its component and `metadata = { title, description }`, both unique on the site (a new page always gives them), plus `robots` when the page needs
-  it. The page has no `Head` and no site name: the layout builds the head (decision `shared-page-head`).
+  `ai/rules/minista.md`): its component and `metadata = pages.<name>`: the title and description (both unique on the site;
+  a new page adds them to `data/pages.js`), plus `robots` when the page needs it. The page has no `Head`, no site name and no
+  text of its metadata: the layout builds the head (decision `shared-page-head`).
 - A component is a folder: `components/<group>/<Component>/` holds `<Component>.jsx`, `<Component>.css` and an
   `index.jsx`; a section is `sections/<group>/<Section>/` with its parts. Each group has an `index.jsx`, and the root
   `index.jsx` of `components/` and `sections/` re-exports the groups (decision `folders-and-barrels`).
@@ -29,7 +30,7 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
 - One root element per component, with the block's class. A component is used by sections
   only; a section does not render another section.
 - An import that crosses folders uses the folder alias (list in `ai/map.md`): `import { Button, Tag } from '@components'`,
-  `from '@sections'`, `from '@utils'` (the barrels); one inside the same folder stays `./`; never `../`. A component of
+  `from '@sections'`, `from '@utils'`, `from '@data'`, `from '@constants'` (the barrels, never a file of them); one inside the same folder stays `./`; never `../`. A component of
   `components/` imports another by its folder (`@components/media/Icon`), never the root barrel: that is a cycle.
   The one exception is a root path (`/src/assets/…`, `/src/scripts/main.js`): minista's `Sprite`, `Svg`
   and `Picture` read their `src` from the project root, not through Vite's aliases.

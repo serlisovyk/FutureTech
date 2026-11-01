@@ -14,9 +14,9 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `.husky/pre-commit` and `.lintstagedrc.json` — the pre-commit hook that runs them on the staged files.
 - `.github/workflows/ci.yml` — the checks on every push. `.size-limit.json` — the budget of the built JS, CSS, fonts and images.
 - `jsconfig.json` — the editor's copy of the aliases `vite/parts/aliases.js` defines, `@<folder>` for each `src/` folder
-  (`@components`, `@sections`, `@utils` are barrels, imported bare; `utils/` has `index.js`, no JSX).
+  (`@components`, `@sections`, `@utils`, `@data`, `@constants` are barrels, imported bare).
 - `src/pages/` — one JSX file per page, its file name is its URL: Home (`/`), News, Podcasts, Resources, Contact, 404, and `/ui`, the UI kit demo (noindex, linked from nowhere).
-  A page exports `metadata` (a unique title and description, `robots` when needed) and its content, no head.
+  A page exports `metadata = pages.<name>` (from `data/pages.js`) and its content, no head.
   `pages/blog/[slug].jsx` is the article route: `getStaticData` makes one page per entry of `data/posts.js` at `/blog/<slug>`
   (`getPostUrl`), built as `dist/blog/<slug>.html`; it passes the post's title and excerpt as the page's title and description.
 - `src/layouts/` — the page shell shared by every page: `<html>`, the head (title, description, canonical, icons, Open Graph and Twitter meta from the page's
@@ -81,18 +81,19 @@ Navigation only: where things live and who owns what. How it works is in the cod
   section: `posts` (with their article `body`), `categories`, `videos`, `podcasts`, `resources`, `testimonials`,
   `features`, `stats`, `faq`, `navigation`, `footer`, `socials`, `contacts`, `contact-form`, `countries`, `cta`, `hero`,
   `blogs`, `news`, `article`, `post-feed`, `video-modal`, `card-photos` (photo `sizes` and widths), `ui-kit` (`/ui` demo
-  lists) and `site` (the name, the production origin, the locale, the theme colour, the icons, the social image).
+  lists), `pages` (each page's title, description, `robots`) and `site` (the name, origin, locale, theme colour, icons, social image).
 - `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, `get-reading-time.js`, `format-count.js`, …), re-exported by
-  `index.js` (plain JS, no JSX), imported by components, sections and the layout; `constants.js` holds their numbers.
+  `index.js` (plain JS, no JSX), imported by components, sections and the layout.
   `getSimilarPosts(post, count)`: same-category posts first, then the newest, newest first, never `post`.
+- `src/constants/` — what utils and scripts share (formats, keys, selectors, media queries, storage keys, widget
+  settings), one file per meaning, re-exported by `index.js`.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
   `.container`, `.visually-hidden`, the `reveal` keyframes and the hidden start state), `fonts.css`; `global.css` imports them in that order, the layout imports it first.
   Components and sections import their own stylesheet; the build bundles all into one file.
 - `src/scripts/` — all browser JavaScript: `main.js` (the one entry, loaded by the layout: a table of root hook →
   class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`, `VideoModal`, `CountUp`, `FormField`, `LikeButton`, `Reveal`: root `<html data-reveal-root>`,
   fades in every `[data-reveal]` below the first screen once, cascading the ones that enter together),
-  `constants.js` (keys, selectors, media queries and widget settings), `controllers/`
-  (one per section: `HeaderController`, which runs the menu; `VideoModalController`, which opens the modal from any play button;
+  `controllers/` (one per section: `HeaderController`, which runs the menu; `VideoModalController`, which opens the modal from any play button;
   `PostFeedController`, which filters a feed's rows by the selected tab; `ContactFormController`, which checks and completes the form;
   `ArticleController`, which runs "Read Full Blog").
 - `src/assets/` — referenced by the build and emitted hashed: `fonts/` (woff2), `icons/` (sprite icons in `ui/`, `social/`,

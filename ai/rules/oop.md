@@ -7,15 +7,15 @@ classes and follow `ai/rules/jsx.md`.
 ## Files and modules
 
 - One class per file, the file named after the class in PascalCase: `Tabs.js` exports `Tabs`.
-- The only non-class modules are `main.js`, the composition root, and `constants.js`, in
-  camelCase.
-- Named exports only, no default exports; imports carry the `.js` extension.
-- An import from another folder of `scripts/` uses the alias (`@scripts/constants.js`), never `../`;
+- The only non-class module is `main.js`, the composition root.
+- Named exports only, no default exports; imports carry the `.js` extension, except the barrels
+  (`from '@constants'`).
+- An import from another folder of `scripts/` uses the alias (`@scripts/components/Tabs.js`), never `../`;
   an import inside the same folder stays `./` (`main.js` → `./components/Tabs.js`).
 - Folders by role: `scripts/components/` — reusable widgets (`Tabs`, `Toggle`, `Disclosure`,
   a dialog, a reveal); `scripts/controllers/` — one controller per section that needs more
   than one widget or its own logic (a post feed, the contact form).
-- `scripts/constants.js` — what scripts share: the media queries (equal to the CSS
+- `src/constants/` (`@constants`) — what scripts share: the media queries (equal to the CSS
   breakpoints), key names, storage keys, state classes, sentinels (`NO_INDEX`); a class file declares no constant of its own.
 
 ## Encapsulation
