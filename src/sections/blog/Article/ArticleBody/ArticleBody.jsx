@@ -7,9 +7,13 @@ export function ArticleBody({ sections }) {
   const { previewCount, moreId, moreLabel } = article
 
   const [lead, ...others] = sections
+
   const previewSections = others.slice(0, previewCount - 1)
+
   const hiddenSections = others.slice(previewCount - 1)
+
   const hasOthers = others.length > 0
+
   const hasHidden = hiddenSections.length > 0
 
   return (

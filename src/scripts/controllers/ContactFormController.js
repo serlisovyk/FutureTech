@@ -17,6 +17,7 @@ export class ContactFormController {
     this.#status = root.querySelector(SELECTORS.formStatus)
 
     const fieldRoots = [...root.querySelectorAll(SELECTORS.formField)]
+
     const phoneRoot = this.#country.closest(SELECTORS.formField)
 
     this.#fields = fieldRoots.map((fieldRoot) => new FormField(fieldRoot))
@@ -73,6 +74,7 @@ export class ContactFormController {
 
   #renderCountry() {
     const selectedOption = this.#country.selectedOptions[0]
+
     const { country, pattern, error } = selectedOption.dataset
 
     this.#number.pattern = pattern

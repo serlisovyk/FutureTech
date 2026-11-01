@@ -5,7 +5,9 @@ import './ArticleSidebar.css'
 
 export function ArticleSidebar({ post }) {
   const { slug, counters } = post
+
   const { likes, views, shares } = counters
+
   const { labels, sidebarLabel } = article
 
   const meta = getArticleMeta(post, labels)

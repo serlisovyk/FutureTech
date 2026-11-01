@@ -6,6 +6,7 @@ import './Article.css'
 
 export function Article({ post }) {
   const { title, image, imageAlt, body } = post
+
   const { titleId } = article
 
   return (

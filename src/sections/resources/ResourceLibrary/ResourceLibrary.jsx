@@ -22,7 +22,9 @@ export function ResourceLibrary() {
         >
           {resourceTabs.map((resourceTab, index) => {
             const { id: panelId, tabId, label } = resourceTab
+
             const isSelected = index === 0
+
             const tabIndex = isSelected ? 0 : -1
 
             return (

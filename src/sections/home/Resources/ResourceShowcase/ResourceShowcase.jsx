@@ -20,6 +20,7 @@ export function ResourceShowcase(props) {
     resourcesSection
 
   const [total, formats] = meta
+
   const { label: formatsLabel, value: formatsValue } = formats
 
   return (

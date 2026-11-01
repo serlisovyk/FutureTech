@@ -8,6 +8,7 @@ import './ContactForm.css'
 
 export function ContactForm() {
   const { id, titleId, icon, title, submitLabel, successMessage } = contactForm
+
   const { firstName, lastName, email, phone, message, consent } = contactFields
 
   return (

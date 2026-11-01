@@ -11,6 +11,7 @@ export function FeaturedNews() {
   const { titleId, placement, labels } = featuredNews
 
   const [post] = getPostsByPlacement(placement)
+
   const {
     slug,
     title,

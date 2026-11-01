@@ -26,6 +26,7 @@ export class CountUp {
 
   start() {
     const isCountable = this.#parts !== null
+
     const canAnimate =
       VisibilityObserver.isSupported() && !VisibilityObserver.isReducedMotion()
     if (!isCountable || !canAnimate) return
@@ -41,7 +42,9 @@ export class CountUp {
 
   #renderFrame(startTime, now) {
     const [, digits] = this.#parts
+
     const progress = Math.min((now - startTime) / this.#options.duration, 1)
+
     const easedProgress = 1 - (1 - progress) ** COUNT_UP.easingPower
 
     this.#renderValue(Math.round(Number(digits) * easedProgress))

@@ -5,8 +5,11 @@ import './PostFeed.css'
 
 export function PostFeed({ id, categories, posts, limit = posts.length }) {
   const shownPosts = posts.slice(0, limit)
+
   const hasPosts = shownPosts.length > 0
+
   const panelId = `${id}-panel`
+
   const initialTabId = getPostFeedTabId(id, allCategory.slug)
 
   return (
@@ -19,7 +22,9 @@ export function PostFeed({ id, categories, posts, limit = posts.length }) {
       >
         {categories.map(({ slug, name }) => {
           const isSelected = slug === allCategory.slug
+
           const tabIndex = isSelected ? 0 : -1
+
           const postCount = getPostsInCategory(shownPosts, slug).length
 
           return (

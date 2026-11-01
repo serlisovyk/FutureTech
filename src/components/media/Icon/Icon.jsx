@@ -4,6 +4,7 @@ import './Icon.css'
 
 export function Icon({ name, title, className, size = 24 }) {
   const isDecorative = !title
+
   const role = title && 'img'
 
   return (

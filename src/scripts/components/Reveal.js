@@ -59,7 +59,9 @@ export class Reveal {
 
   static #isOnFirstScreen(item) {
     const { top, height } = item.getBoundingClientRect()
+
     const isRendered = height > 0
+
     const isAboveFold = top < window.innerHeight
 
     return isRendered && isAboveFold

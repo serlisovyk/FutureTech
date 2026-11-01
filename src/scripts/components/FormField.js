@@ -68,8 +68,11 @@ export class FormField {
 
   #getMessage() {
     const { validity, dataset, validationMessage } = this.#control
+
     const failedKey = Object.keys(VALIDITY_ERRORS).find((key) => validity[key])
+
     const text = dataset[VALIDITY_ERRORS[failedKey]]
+
     const message = text || validationMessage
 
     return message

@@ -6,7 +6,9 @@ import './Header.css'
 
 export function Header({ currentPath }) {
   const { href: bannerHref, lead, extra, tail } = newsletter
+
   const { name: siteName } = site
+
   const { href: actionHref, label: actionLabel } = navigationAction
 
   return (

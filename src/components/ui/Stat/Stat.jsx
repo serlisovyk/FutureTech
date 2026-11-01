@@ -3,6 +3,7 @@ import './Stat.css'
 
 export function Stat({ value, label, isLarge = false }) {
   const number = value.replace(/\+$/, '')
+
   const hasPlus = number !== value
 
   return (

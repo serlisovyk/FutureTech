@@ -17,6 +17,7 @@ export class Tabs {
     const selectedTab = this.#tabs.find(
       (tab) => tab.getAttribute(ARIA.selected) === 'true',
     )
+
     const hashTab = this.#findHashTab()
 
     this.select(hashTab ?? selectedTab ?? this.#tabs[0])
@@ -57,10 +58,12 @@ export class Tabs {
     const { key, altKey, ctrlKey, metaKey, shiftKey } = event
 
     const hasModifier = altKey || ctrlKey || metaKey || shiftKey
+
     const currentTab = event.target.closest(SELECTORS.tab)
     if (hasModifier || !currentTab) return
 
     const currentIndex = this.#tabs.indexOf(currentTab)
+
     const targetIndex = this.#findIndexForKey(key, currentIndex)
     if (targetIndex === NO_INDEX) return
 

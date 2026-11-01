@@ -28,16 +28,19 @@ import './UiKit.css'
 
 export function UiKit() {
   const { meta: ebookMeta, avatars } = resourceShowcases[0]
+
   const {
     tag: headingTag,
     title: headingTitle,
     link: headingLink,
   } = sectionHeadingDemo
+
   const {
     id: blogFeedId,
     categories: blogFeedCategories,
     placement: blogFeedPlacement,
   } = blogFeedDemo
+
   const {
     id: newsFeedId,
     categories: newsFeedCategories,
@@ -46,7 +49,9 @@ export function UiKit() {
   } = newsFeedDemo
 
   const trendingPosts = getPostsByPlacement('trending')
+
   const blogPosts = getPostsByPlacement(blogFeedPlacement)
+
   const headlinePosts = getPostsByPlacement(newsFeedPlacement)
 
   return (

@@ -41,6 +41,7 @@ export class VideoModal {
 
   #handleClick(event) {
     const isBackdrop = this.#isPressOnRoot && event.target === this.#root
+
     const isCloseButton = event.target.closest(SELECTORS.videoModalClose)
     if (!isBackdrop && !isCloseButton) return
 

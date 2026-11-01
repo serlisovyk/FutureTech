@@ -32,6 +32,7 @@ export function Button(props) {
   )
 
   const toggleDismiss = isToggleDismiss || undefined
+
   const disclosureTrigger = isDisclosureTrigger || undefined
 
   const content = (

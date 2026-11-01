@@ -23,6 +23,7 @@ export function CounterPill(props) {
   )
 
   const iconName = isLiked ? 'ui/heart-filled' : icon
+
   const iconClassNames = clsx(
     'counter-pill__icon',
     isToggle && 'counter-pill__icon--off',

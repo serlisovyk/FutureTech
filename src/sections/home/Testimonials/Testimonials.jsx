@@ -8,6 +8,7 @@ export function Testimonials() {
     testimonialsSection
 
   const firstItems = testimonials.slice(0, initialCount)
+
   const moreItems = testimonials.slice(initialCount)
 
   return (
