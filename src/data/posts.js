@@ -1,3 +1,5 @@
+import { authors } from './authors.js'
+
 export const posts = [
   {
     slug: 'the-quantum-leap-in-computing',
@@ -6,10 +8,7 @@ export const posts = [
       'Explore the revolution in quantum computing, its applications, and its potential impact on various industries.',
     category: 'quantum-computing',
     date: '2023-10-15',
-    author: {
-      name: 'John Techson',
-      avatar: '/src/assets/images/portraits/portrait-man-yellow-tshirt.png',
-    },
+    author: authors.johnTechson,
     image: '/src/assets/images/photos/light-waves-abstract.jpg',
     imageAlt: 'Streams of light bending through an abstract quantum landscape',
     counters: { likes: 24500, comments: 50, shares: 20, views: 61000 },
@@ -47,10 +46,7 @@ export const posts = [
       'A deep dive into ethical challenges posed by AI, including bias, privacy, and transparency.',
     category: 'ai-ethics',
     date: '2023-11-05',
-    author: {
-      name: 'Sarah Ethicist',
-      avatar: '/src/assets/images/portraits/portrait-woman-striped-top.png',
-    },
+    author: authors.sarahEthicist,
     image: '/src/assets/images/photos/ai-brain-robot-hands.jpg',
     imageAlt:
       'A robotic hand and a human hand reaching toward a glowing digital brain',
@@ -89,10 +85,7 @@ export const posts = [
       'Exploring the technical and logistical challenges of human colonization on Mars.',
     category: 'space-exploration',
     date: '2023-12-10',
-    author: {
-      name: 'Astronomer X',
-      avatar: '/src/assets/images/portraits/portrait-man-white-shirt.jpg',
-    },
+    author: authors.astronomerX,
     image: '/src/assets/images/photos/mars-landscape.jpg',
     imageAlt: 'A rust-red Martian landscape under a pale sky',
     counters: { likes: 20000, comments: 31, shares: 12, views: 48000 },
@@ -129,10 +122,7 @@ export const posts = [
       'World leaders gathered at the Global Climate Summit to discuss urgent climate action, emissions reductions, and renewable energy targets.',
     category: 'environment',
     date: '2023-10-10',
-    author: {
-      name: 'Jane Smith',
-      avatar: '/src/assets/images/portraits/portrait-woman-long-hair.jpg',
-    },
+    author: authors.janeSmith,
     image: '/src/assets/images/photos/wind-turbines-sunset.jpg',
     imageAlt: 'A row of wind turbines against a sunset sky',
     counters: { likes: 14000, comments: 204, shares: 380, views: 52000 },
@@ -169,10 +159,7 @@ export const posts = [
       'A landslide result gives the reform coalition a clear mandate on climate, education and digital rights.',
     category: 'politics',
     date: '2023-11-02',
-    author: {
-      name: 'Daniel Brooks',
-      avatar: '/src/assets/images/portraits/portrait-man-grey-blazer.jpg',
-    },
+    author: authors.danielBrooks,
     image: '/src/assets/images/photos/handshake-mountain-sunset.jpg',
     imageAlt: 'Two people shaking hands in front of a mountain at sunset',
     counters: { likes: 2200, comments: 60, shares: 45, views: 18000 },
@@ -202,10 +189,7 @@ export const posts = [
       'The biggest names in tech showed new AI assistants, chips and tools built to run models on everyday devices.',
     category: 'technology',
     date: '2023-10-18',
-    author: {
-      name: 'Marcus Chen',
-      avatar: '/src/assets/images/portraits/portrait-man-grey-tshirt.jpg',
-    },
+    author: authors.marcusChen,
     image: '/src/assets/images/photos/ai-woman-code-reflection.jpg',
     imageAlt: 'A woman looking at lines of code reflected in her glasses',
     counters: { likes: 6000, comments: 92, shares: 130, views: 41000 },
@@ -241,10 +225,7 @@ export const posts = [
       'Researchers track how new COVID-19 variants spread and what updated vaccines and tests mean for public health.',
     category: 'health',
     date: '2023-11-20',
-    author: {
-      name: 'Dr. Priya Nair',
-      avatar: '/src/assets/images/portraits/portrait-woman-striped-glasses.jpg',
-    },
+    author: authors.priyaNair,
     image: '/src/assets/images/photos/covid-test-tube-gloves.jpg',
     imageAlt: 'A gloved hand holding a test tube for a COVID-19 sample',
     counters: { likes: 10000, comments: 124, shares: 210, views: 57000 },
@@ -280,10 +261,7 @@ export const posts = [
       'Explore the latest innovations from tech industry leaders, unveiling new products that promise to transform the digital landscape.',
     category: 'technology',
     date: '2023-10-15',
-    author: {
-      name: 'John Techson',
-      avatar: '/src/assets/images/portraits/portrait-man-denim-shirt.png',
-    },
+    author: authors.johnTechson,
     image: '/src/assets/images/photos/vr-robot-arm-workshop.jpg',
     imageAlt:
       'A robotic arm assembling a device in a workshop seen through a headset',
@@ -320,10 +298,7 @@ export const posts = [
       'An in-depth analysis of the rapid advancements in autonomous vehicle technology and their impact on transportation.',
     category: 'technology',
     date: '2023-10-11',
-    author: {
-      name: 'Sarah Ethicist',
-      avatar: '/src/assets/images/portraits/portrait-woman-striped-top.png',
-    },
+    author: authors.sarahEthicist,
     image: '/src/assets/images/photos/ai-hand-circuit-board.jpg',
     imageAlt: 'A robotic hand touching a glowing circuit board',
     counters: { likes: 32000, comments: 72, shares: 18, views: 70000 },
@@ -360,10 +335,7 @@ export const posts = [
       'An overview of the recent surge in funding for tech startups, shaping the entrepreneurial landscape.',
     category: 'technology',
     date: '2023-12-10',
-    author: {
-      name: 'Astronomer X',
-      avatar: '/src/assets/images/portraits/portrait-man-white-shirt.jpg',
-    },
+    author: authors.marcusChen,
     image: '/src/assets/images/photos/vr-business-interface.jpg',
     imageAlt: 'A futuristic business dashboard floating in front of a user',
     counters: { likes: 20000, comments: 31, shares: 12, views: 45000 },
@@ -397,17 +369,14 @@ export const posts = [
     title: 'The Rise of Artificial Intelligence in Healthcare',
     excerpt:
       'Artificial Intelligence (AI) has emerged as a transformative force in the healthcare industry, reshaping patient care, diagnostics, and research.',
-    category: 'health',
+    category: 'biotechnology',
     date: '2023-10-15',
-    author: {
-      name: 'Dr. Emily Walker',
-      avatar: '/src/assets/images/portraits/portrait-woman-glasses-beige.jpg',
-    },
+    author: authors.emilyWalker,
     image: '/src/assets/images/photos/healthcare-lab-hero.jpg',
     imageAlt:
       'A laboratory with medical equipment and a doctor working with AI software',
     counters: { likes: 24500, comments: 87, shares: 206, views: 50000 },
-    placement: 'article',
+    placement: 'blogs',
     body: [
       {
         id: 'introduction',
