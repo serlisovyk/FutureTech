@@ -20,16 +20,16 @@ export const resourceRowPhotoSizes =
 export const resourceCardPhotoSizes =
   '(width < 768px) calc(100vw - 32px), (width < 1920px) calc((100vw - 280px) / 3), calc((100vw - 508px) / 3)'
 
-export const postRowAvatarSizes = '(width < 1920px) 60px, 80px'
+export const postRowAvatarSizes = '(width < 1920px) 90px, 120px'
 
-export const postRowAvatarBreakpoints = [80, 120, 160]
+export const postRowAvatarBreakpoints = [120, 180, 240]
 
 export const episodeCardPhotoSizes =
   '(width < 768px) calc(100vw - 32px), (width < 1024px) calc((100vw - 140px) / 2), (width < 1920px) calc((100vw - 280px) / 3), calc((100vw - 508px) / 3)'
 
-export const testimonialAvatarSizes = '(width < 1920px) 50px, 60px'
+export const testimonialAvatarSizes = '(width < 1920px) 75px, 90px'
 
-export const testimonialAvatarBreakpoints = [60, 120, 180]
+export const testimonialAvatarBreakpoints = [90, 180, 270]
 
 export const articleHeroPhotoSizes = '100vw'
 
