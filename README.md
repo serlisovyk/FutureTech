@@ -4,6 +4,8 @@
 
 **[▶ Open the demo](https://futuretech-cyan.vercel.app)**
 
+![FutureTech demo: the Home page with its count-up and reveal, a blog feed tab, an article with Read Full Blog and a like, the News page and another article](assets/demo.gif)
+
 A tech blog of five pages and an article page for every post, built from a third-party design template. The pages, layouts and components are JSX that minista 5 renders into plain HTML at build time, so React never reaches the browser: it gets HTML, one stylesheet and one small script of vanilla JavaScript classes. The content lives in `src/data/`, and every article page is generated from it. It keeps production habits from larger projects: a Vite build with optimised images, size budgets, CI, linting hooks, accessibility, and search and link-preview metadata.
 
 ## ✨ Features
@@ -74,6 +76,7 @@ src/
     icons/           Sprite icons: ui, social, feature, flag
     images/          Photos, portraits and decor
     logos/           The logo and its mark
+assets/demo.gif      The demo GIF of this README
 public/              Files with a fixed URL, copied as they are: favicon, logo, link preview image
 vite/                Vite config in parts: aliases, plugins, images, CSS, build; the PostCSS plugins and the site files plugin
 vercel.json          Clean URLs, security headers and the cache headers
