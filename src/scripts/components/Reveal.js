@@ -1,10 +1,12 @@
-import { MEDIA, REVEAL } from '@constants'
+import { REVEAL } from '@constants'
+import { canObserveVisible } from '@scripts/utils/canObserveVisible.js'
+import { isReducedMotion } from '@scripts/utils/isReducedMotion.js'
+import { observeVisible } from '@scripts/utils/observeVisible.js'
 
 export class Reveal {
   #root
   #options
   #items
-  #observer
 
   constructor(root, options = {}) {
     this.#root = root
@@ -14,18 +16,13 @@ export class Reveal {
       ...options,
     }
     this.#items = root.querySelectorAll(REVEAL.itemSelector)
-    this.#observer = null
   }
 
   start() {
-    const isReducedMotion = window.matchMedia(MEDIA.reducedMotion).matches
-    const canObserve = 'IntersectionObserver' in window
-    if (isReducedMotion || !canObserve) return
+    const canAnimate = canObserveVisible() && !isReducedMotion()
+    if (!canAnimate) return
 
-    this.#observer = new IntersectionObserver(
-      (entries) => this.#handleIntersect(entries),
-      { rootMargin: this.#options.rootMargin },
-    )
+    const belowItems = []
 
     for (const item of this.#items) {
       if (Reveal.#isOnFirstScreen(item)) {
@@ -33,18 +30,17 @@ export class Reveal {
         continue
       }
 
-      this.#observer.observe(item)
+      belowItems.push(item)
     }
 
+    observeVisible(belowItems, (items) => this.#renderBatch(items), {
+      rootMargin: this.#options.rootMargin,
+    })
     this.#root.classList.add(REVEAL.readyClass)
   }
 
-  #handleIntersect(entries) {
-    const visibleEntries = entries.filter((entry) => entry.isIntersecting)
-
-    visibleEntries.forEach(({ target }, index) => {
-      this.#renderRevealed(target, index)
-    })
+  #renderBatch(items) {
+    items.forEach((item, index) => this.#renderRevealed(item, index))
   }
 
   #renderRevealed(item, index) {
@@ -52,7 +48,6 @@ export class Reveal {
 
     item.style.setProperty(REVEAL.indexProperty, staggerIndex)
     item.classList.add(REVEAL.shownClass)
-    this.#observer.unobserve(item)
   }
 
   static #isOnFirstScreen(item) {

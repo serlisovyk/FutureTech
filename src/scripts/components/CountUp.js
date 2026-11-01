@@ -1,10 +1,12 @@
-import { COUNT_UP, MEDIA } from '@constants'
+import { COUNT_UP } from '@constants'
+import { canObserveVisible } from '@scripts/utils/canObserveVisible.js'
+import { isReducedMotion } from '@scripts/utils/isReducedMotion.js'
+import { observeVisible } from '@scripts/utils/observeVisible.js'
 
 export class CountUp {
   #options
   #number
   #parts
-  #observer
 
   constructor(root, options = {}) {
     this.#options = {
@@ -14,29 +16,21 @@ export class CountUp {
     }
     this.#number = root.querySelector('[data-count-up-number]')
     this.#parts = COUNT_UP.numberPattern.exec(this.#number.textContent.trim())
-    this.#observer = null
   }
 
   start() {
     const isCountable = this.#parts !== null
-    const isReducedMotion = window.matchMedia(MEDIA.reducedMotion).matches
-    const canObserve = 'IntersectionObserver' in window
-    if (!isCountable || isReducedMotion || !canObserve) return
+    const canAnimate = canObserveVisible() && !isReducedMotion()
+    if (!isCountable || !canAnimate) return
 
     this.#renderValue(0)
 
-    this.#observer = new IntersectionObserver(
-      (entries) => this.#handleIntersect(entries),
-      { threshold: this.#options.threshold },
-    )
-    this.#observer.observe(this.#number)
+    observeVisible([this.#number], () => this.#startCounting(), {
+      threshold: this.#options.threshold,
+    })
   }
 
-  #handleIntersect(entries) {
-    const isVisible = entries.some((entry) => entry.isIntersecting)
-    if (!isVisible) return
-
-    this.#observer.disconnect()
+  #startCounting() {
     requestAnimationFrame((startTime) => this.#renderFrame(startTime, startTime))
   }
 
