@@ -2,7 +2,7 @@ export const contactForm = {
   id: 'contact-form',
   titleId: 'contact-form-title',
   icon: 'feature/contact',
-  title: 'Get in Touch with AI Podcasts',
+  title: 'Get in Touch with FutureTech',
   submitLabel: 'Send',
   successMessage:
     'Thank you for reaching out! We have received your message and will reply soon.',
