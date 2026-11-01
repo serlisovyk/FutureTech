@@ -2,6 +2,14 @@
   overflow: hidden;
 }
 
+.header {
+  view-transition-name: header;
+}
+
+::view-transition-group(header) {
+  animation: none;
+}
+
 .header__skip {
   position: fixed;
   inset-block-start: 10px;

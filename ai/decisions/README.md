@@ -87,6 +87,7 @@ each with the record that replaced it.
 - [Article bodies are JS sections in `data/`, no MDX](2026-10-28-article-data.md)
 - [The mobile menu is a drawer on `Toggle` and `inert`, with a `scripting: none` fallback](2026-10-28-mobile-menu-drawer.md)
 - [Videos are real public YouTube videos, played in a modal from the privacy-enhanced embed](2026-10-28-video-sources.md)
+- [Page changes use the browser's cross-document view transition, in CSS only](2026-11-01-page-view-transitions.md)
 
 ### Superseded
 

@@ -4,6 +4,11 @@
   letter-spacing: -0.03em;
 }
 
+html {
+  scrollbar-gutter: stable;
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   background-color: var(--dark-08);
   color: var(--grey-60);
@@ -27,6 +32,16 @@ body {
 .container {
   width: 100%;
   padding-inline: var(--space-container);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}
+
+::view-transition-group(*) {
+  animation-duration: var(--transition-duration);
 }
 
 .visually-hidden {
