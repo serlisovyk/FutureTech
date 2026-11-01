@@ -5,6 +5,7 @@
 }
 
 html {
+  color-scheme: dark;
   scrollbar-gutter: stable;
   -webkit-tap-highlight-color: transparent;
 }

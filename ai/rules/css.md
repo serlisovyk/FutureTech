@@ -20,6 +20,7 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
   `:where()` (specificity 0), so a block's own rule on the same element wins whatever the bundle order, and
   `global.css` stays the last style import of the layout. `.visually-hidden` keeps its specificity: it is the one
   global class that must win, no block rule may un-hide it (decision `zero-specificity-globals`).
+- `html` sets `color-scheme: dark`, so the scrollbar and native controls are drawn dark; a component never repeats it.
 - A heading is never styled by its tag: the reset zeroes `h1`–`h6`, and the look comes from the
   `Heading` component's class (`heading--display`, `heading--h2`, `heading--h3`) or the block's
   own class.
