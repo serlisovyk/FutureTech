@@ -1,4 +1,5 @@
 import { SELECTORS, STORAGE } from '@constants'
+import { readStorage, removeStorage, writeStorage } from '@scripts/utils/storage.js'
 
 export class LikeButton {
   #root
@@ -22,7 +23,9 @@ export class LikeButton {
   }
 
   start() {
-    this.#isLiked = this.#readStorage()
+    const storedValue = readStorage(this.#storageKey)
+
+    this.#isLiked = storedValue === STORAGE.likedValue
     this.#renderLiked()
     this.#root.disabled = false
 
@@ -32,7 +35,7 @@ export class LikeButton {
   toggle() {
     this.#isLiked = !this.#isLiked
     this.#renderLiked()
-    this.#writeStorage()
+    this.#storeLiked()
   }
 
   #renderLiked() {
@@ -42,24 +45,12 @@ export class LikeButton {
     this.#count.textContent = count
   }
 
-  #readStorage() {
-    try {
-      return window.localStorage.getItem(this.#storageKey) === STORAGE.likedValue
-    } catch {
-      return false
-    }
-  }
-
-  #writeStorage() {
-    try {
-      if (this.#isLiked) {
-        window.localStorage.setItem(this.#storageKey, STORAGE.likedValue)
-        return
-      }
-
-      window.localStorage.removeItem(this.#storageKey)
-    } catch {
+  #storeLiked() {
+    if (this.#isLiked) {
+      writeStorage(this.#storageKey, STORAGE.likedValue)
       return
     }
+
+    removeStorage(this.#storageKey)
   }
 }
