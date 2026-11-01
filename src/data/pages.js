@@ -1,25 +1,28 @@
 export const pages = {
   home: {
+    title: 'Tech News, AI and the Future of Science',
     description:
-      'FutureTech is a blog about technology, the future of science and the people building it.',
+      'FutureTech is a technology blog on artificial intelligence, science and the people building the future: news, podcasts and in-depth resources.',
   },
   news: {
-    title: 'News',
-    description: 'The latest technology news and articles from FutureTech.',
+    title: 'Latest Technology News and Analysis',
+    description:
+      "Today's headlines from FutureTech: trending stories, news and videos on AI, science, health and the environment.",
   },
   podcasts: {
-    title: 'Podcasts',
+    title: 'Tech Podcasts and Latest Episodes',
     description:
-      'Conversations about technology and the future from the FutureTech podcast.',
+      'Listen to FutureTech podcasts on artificial intelligence and the future of technology: top shows, their hosts and the latest episodes.',
   },
   resources: {
-    title: 'Resources',
-    description: 'Tools, guides and reading picked by the FutureTech team.',
+    title: 'Tech Ebooks, Whitepapers and Reports',
+    description:
+      'Download FutureTech ebooks, whitepapers and reports on future technology, with previews and the figures behind each resource.',
   },
   contact: {
-    title: 'Contact',
+    title: 'Contact Us: Support, Feedback and Story Tips',
     description:
-      'Get in touch with the FutureTech team: ask a question, send feedback or suggest a story.',
+      'Contact the FutureTech team: general inquiries, technical support and our office, or send a question, feedback or a story tip through the form.',
   },
   notFound: {
     title: 'Page not found',
