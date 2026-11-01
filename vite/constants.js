@@ -28,10 +28,14 @@ export const HTML_ENTITIES = {
   '&#x27;': "'",
 }
 
-export const BREAKPOINTS = {
-  tablet: 1024,
-  mobile: 768,
-}
+export const AT_RULE_NODE = 'atrule'
+
+export const MEDIA_AT_RULE = 'media'
+
+export const NAME_LIST_TAIL = /,.*$/s
+
+export const BREAKPOINT_CONDITIONS =
+  /^and\s+\((?:[^()]|\([^()]*\))+\)(?:\s+and\s+\((?:[^()]|\([^()]*\))+\))*$/i
 
 export const RAMP_PROPERTIES = {
   mobileToLaptop: '--ramp-390-1440',
@@ -47,8 +51,13 @@ export const FLUID_NAME = 'fluid('
 export const FLUID_CALL =
   /(?<![\w-])fluid\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)\s*\)/g
 
-export const HOVER_PSEUDO = /:hover\b/
+export const HOVER_CONDITION = /\(\s*hover\s*:\s*hover\s*\)/i
 
-export const NEGATED_HOVER = /:not\(\s*:hover\s*\)/g
+export const NON_AND_QUERY = /,|\bnot\b|\bor\b/i
 
-export const WHITESPACE = /\s/g
+export const HOVER_PSEUDO = /:hover\b/i
+
+export const NEGATED_HOVER = /:not\(\s*:hover\s*\)/gi
+
+export const HOVER_IN_LOGICAL_PSEUDO =
+  /:(?:is|where|not|matches)\((?:[^()]|\([^()]*\))*:hover\b/i
