@@ -51,11 +51,11 @@ Navigation only: where things live and who owns what. How it works is in the cod
   lines, each with "View Details" to its tab and the download button).
 - Blog sections (`sections/blog/`), on `pages/blog/[slug].jsx`: `Article` (root `data-article`): `ArticleHero` (the photo and the page's `h1`),
   then `ArticleBody`: one `ArticleSection` per `body` entry (its `id` is the anchor; the first is the lead), the sections after the first
-  `previewCount` in a `Disclosure` region behind "Read Full Blog" over a fade. `ArticleController` owns it and the contents.
+  `previewCount` in a `Disclosure` region behind "Read Full Blog" over a fade. `ArticleController` owns it.
   `ArticleSidebar` (the second grid column from 1024px): large `CounterPill`s (the like is a toggle), the 2 x 2 `MetaGrid`
-  with the reading time, and `TableOfContents` (a `nav` of the sections' links, sticky). Then `SimilarNews` (three `NewsCard`s from `getSimilarPosts`). Texts: `data/article.js`.
+  with the reading time. Then `SimilarNews` (three `NewsCard`s from `getSimilarPosts`). Texts: `data/article.js`.
 - Contact sections (`sections/contact/`), in design order on `pages/contact.jsx`: `ContactInfo` (id `contact-info`: the page's
-  hidden `h1` and four `ContactColumn`s of `contacts`),
+  hidden `h1` and four `ContactColumn`s of `contacts`, two groups of two that wrap by fit),
   `ContactForm` (the `<form id="contact-form">` beside the icon and `h2`: a field part per kind, `ContactFormController` checks it,
   the phone field is a flag box over a native country `<select>`; countries in `data/countries.js`),
   `Faq` (id `faq`: the "Ask Question" link to the form, beside one `FaqItem` per question of `faq`, each
@@ -89,12 +89,12 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `.container`, `.visually-hidden`, the `reveal` keyframes and the hidden start state), `fonts.css`; `global.css` imports them in that order, the layout imports it first.
   Components and sections import their own stylesheet; the build bundles all into one file.
 - `src/scripts/` — all browser JavaScript: `main.js` (the one entry, loaded by the layout: a table of root hook →
-  class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`, `VideoModal`, `CountUp`, `FormField`, `LikeButton`, `TableOfContents`, `Reveal`: root `<html data-reveal-root>`,
+  class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`, `VideoModal`, `CountUp`, `FormField`, `LikeButton`, `Reveal`: root `<html data-reveal-root>`,
   fades in every `[data-reveal]` below the first screen once, cascading the ones that enter together),
   `constants.js` (keys, selectors, media queries and widget settings), `controllers/`
   (one per section: `HeaderController`, which runs the menu; `VideoModalController`, which opens the modal from any play button;
   `PostFeedController`, which filters a feed's rows by the selected tab; `ContactFormController`, which checks and completes the form;
-  `ArticleController`, which runs "Read Full Blog" and the contents).
+  `ArticleController`, which runs "Read Full Blog").
 - `src/assets/` — referenced by the build and emitted hashed: `fonts/` (woff2), `icons/` (sprite icons in `ui/`, `social/`,
   `feature/`, `flag/`; one sprite per folder), `logos/` (inline SVG: the logo and its mark), `images/` (`photos/`, `portraits/`, `decor/`).
 - `AGENTS.md` — the entry point for agents; `CLAUDE.md` points to it.

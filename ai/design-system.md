@@ -308,7 +308,7 @@ Section names are the design's sitemap. A page is the header, its sections, the 
   centred box 1335 / 918 / 390 wide, in the lower part.
 - Information: article column 1238 / 870 (Introduction, sections with article h2 and `body` text, then "Read Full
   Blog" over a fade) and a sidebar 682 / 570 with a left line: counter pills (3), Publication Date / Category /
-  Author cells, Table of Contents (a `Dark/10` list, radius 12, padding 20, 9 items). 390: the sidebar blocks come
+  Author cells (the design's Table of Contents is not built). 390: the sidebar blocks come
   first, the text after.
 - Similar Blogs: "Similar News" title with "View All News", then 3 news cards (gap 30). 390: one column.
 

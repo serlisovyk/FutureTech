@@ -1,6 +1,6 @@
 # Article bodies are JS sections in `data/`, no MDX
 
-Date: 2026-10-28 · Status: accepted
+Date: 2026-10-28 · Status: superseded by 2026-11-01-article-without-contents.md
 
 ## Context
 

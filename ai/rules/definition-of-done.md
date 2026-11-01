@@ -47,7 +47,7 @@ For a change to markup, colour or a widget; the ratios and patterns are in `ai/d
   only the modal and the open menu hold focus.
 - Landmarks `header`, `nav`, `main`, `footer`, a name on every repeated one; one `h1`, no skipped level.
 - A widget's role, name and state are right in the accessibility tree (`Accessibility.getFullAXTree`): tabs, accordion,
-  fields with `aria-invalid` and their error as the description, the dialog's name, the table of contents.
+  fields with `aria-invalid` and their error as the description, the dialog's name.
 
 ## Docs (in the same change, within `ai/rules/docs.md`)
 

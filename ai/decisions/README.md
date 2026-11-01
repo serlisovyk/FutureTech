@@ -84,7 +84,7 @@ each with the record that replaced it.
 - [Photos ship as AVIF with a WebP fallback, through one component](2026-10-28-image-formats.md)
 - [Fonts are self-hosted static woff2 files, latin subset](2026-10-28-self-hosted-fonts.md)
 - [The Vite config is split into `vite/`, one module per concern](2026-10-28-vite-config-split.md)
-- [Article bodies are JS sections in `data/`, no MDX](2026-10-28-article-data.md)
+- [Article bodies are JS sections in `data/`, and an article has no table of contents](2026-11-01-article-without-contents.md)
 - [The mobile menu is a drawer on `Toggle` and `inert`, with a `scripting: none` fallback](2026-10-28-mobile-menu-drawer.md)
 - [Videos are real public YouTube videos, played in a modal from the privacy-enhanced embed](2026-10-28-video-sources.md)
 - [Page changes use the browser's cross-document view transition, in CSS only](2026-11-01-page-view-transitions.md)
@@ -92,3 +92,4 @@ each with the record that replaced it.
 ### Superseded
 
 - [Pages set their head through minista's metadata and `Head`; CSS and one script entry are loaded by the layout](2026-10-28-page-head-and-entries.md) — replaced by `shared-page-head`
+- [Article bodies are JS sections in `data/`, no MDX](2026-10-28-article-data.md) — replaced by `article-without-contents`
