@@ -4,7 +4,7 @@ export const heroFeatures = [
     icon: 'feature/news',
     title: 'Latest News Updates',
     subtitle: 'Stay Current',
-    text: 'Over 1,000 articles published monthly',
+    text: 'Over 1,000 articles in our archive',
     href: '/news',
   },
   {

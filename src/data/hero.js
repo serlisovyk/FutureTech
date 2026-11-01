@@ -10,8 +10,8 @@ export const hero = {
     breakpoints: [423, 622, 894, 1788],
   },
   aside: {
-    title: 'Explore 1000+ resources',
-    text: 'Over 1,000 articles on emerging tech trends and breakthroughs.',
+    title: 'Explore 150+ resources',
+    text: 'Ebooks and whitepapers on emerging tech trends and breakthroughs.',
     link: { label: 'Explore Resources', href: '/resources' },
     avatars: [
       '/src/assets/images/portraits/portrait-man-denim-shirt.png',
