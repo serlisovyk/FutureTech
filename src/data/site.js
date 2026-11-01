@@ -2,6 +2,7 @@ export const site = {
   name: 'FutureTech',
   url: 'https://futuretech-cyan.vercel.app',
   locale: 'en_US',
+  viewport: 'width=device-width, initial-scale=1',
   themeColor: '#141414',
   icons: {
     svg: '/favicon.svg',

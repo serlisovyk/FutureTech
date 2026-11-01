@@ -9,7 +9,7 @@ export function SeoMeta(props) {
 
       {robots && <meta name="robots" content={robots} />}
 
-      <link rel="canonical" href={canonicalUrl} />
+      {!robots && <link rel="canonical" href={canonicalUrl} />}
     </Head>
   )
 }
