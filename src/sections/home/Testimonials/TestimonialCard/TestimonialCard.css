@@ -49,19 +49,6 @@
 
 .testimonial-card__rating {
   position: relative;
-  display: flex;
-  gap: fluid(4, 4, 7);
-  padding-block: fluid(7, 7, 9);
-  padding-inline: fluid(11, 11, 15);
-  border: var(--border);
-  border-radius: var(--radius-pill);
-  background-color: var(--dark-08);
-  color: var(--yellow-55);
-}
-
-.testimonial-card__star {
-  width: var(--size-icon);
-  height: var(--size-icon);
 }
 
 .testimonial-card__quote {

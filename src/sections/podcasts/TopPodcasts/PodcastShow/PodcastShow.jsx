@@ -1,4 +1,12 @@
-import { Button, Heading, Icon, MetaGrid, Photo, PlayButton } from '@components'
+import {
+  Button,
+  Heading,
+  Icon,
+  MetaGrid,
+  Photo,
+  PlayButton,
+  Rating,
+} from '@components'
 import { cardPhotoBreakpoints, podcastShowPhotoSizes, uiLabels } from '@data'
 import './PodcastShow.css'
 
@@ -8,7 +16,6 @@ export function PodcastShow(props) {
     icon,
     title,
     rating,
-    ratingLabel,
     host,
     tagline,
     text,
@@ -39,12 +46,7 @@ export function PodcastShow(props) {
               >
                 {title}
               </Heading>
-              <p className="podcast-show__rating">
-                {Array.from({ length: rating }, (_, index) => (
-                  <Icon key={index} name="ui/star" className="podcast-show__star" />
-                ))}
-                <span className="visually-hidden">{ratingLabel}</span>
-              </p>
+              <Rating value={rating} className="podcast-show__rating" isCompact />
             </div>
 
             <div className="podcast-show__host">

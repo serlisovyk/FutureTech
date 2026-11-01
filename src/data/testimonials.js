@@ -15,7 +15,6 @@ export const testimonials = [
     place: 'San Francisco, USA',
     avatar: '/src/assets/images/portraits/portrait-woman-beanie-denim.png',
     rating: 5,
-    ratingLabel: 'Rated 5 out of 5',
     text: 'The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case studies that are invaluable for staying updated.',
   },
   {
@@ -24,7 +23,6 @@ export const testimonials = [
     place: 'Mumbai, India',
     avatar: '/src/assets/images/portraits/portrait-man-red-polo.jpg',
     rating: 5,
-    ratingLabel: 'Rated 5 out of 5',
     text: 'The whitepapers on renewable energy strategies have greatly influenced my work. They offer detailed data and analysis.',
   },
   {
@@ -33,7 +31,6 @@ export const testimonials = [
     place: 'London, UK',
     avatar: '/src/assets/images/portraits/portrait-woman-white-tee.png',
     rating: 5,
-    ratingLabel: 'Rated 5 out of 5',
     text: 'The AI in healthcare reports have been an essential resource for our hospital. They highlight the latest innovations and best practices, improving patient care.',
   },
   {
@@ -42,7 +39,6 @@ export const testimonials = [
     place: 'Houston, USA',
     avatar: '/src/assets/images/portraits/portrait-man-black-blazer.png',
     rating: 5,
-    ratingLabel: 'Rated 5 out of 5',
     text: 'The reports on space mining prospects have fueled my passion for space exploration. They give a comprehensive view.',
   },
   {
@@ -51,7 +47,6 @@ export const testimonials = [
     place: 'Boston, USA',
     avatar: '/src/assets/images/portraits/portrait-man-beard-green-sweater.png',
     rating: 5,
-    ratingLabel: 'Rated 5 out of 5',
     text: "The whitepapers on genomic breakthroughs have been a goldmine of information. They've shaped the direction of my research in genomics.",
   },
   {
@@ -60,7 +55,6 @@ export const testimonials = [
     place: 'Barcelona, Spain',
     avatar: '/src/assets/images/portraits/portrait-man-denim-shirt.png',
     rating: 5,
-    ratingLabel: 'Rated 5 out of 5',
     text: 'The ebooks on renewable energy strategies have given me the insights I needed to pivot our startup toward sustainability.',
   },
 ]
