@@ -5,15 +5,20 @@ export class VideoModal {
   #title
   #player
   #opener
+  #isPressOnRoot
 
   constructor(root) {
     this.#root = root
     this.#title = root.querySelector(SELECTORS.videoModalTitle)
     this.#player = root.querySelector(SELECTORS.videoModalPlayer)
     this.#opener = null
+    this.#isPressOnRoot = false
   }
 
   start() {
+    this.#root.addEventListener('pointerdown', (event) =>
+      this.#handlePointerDown(event),
+    )
     this.#root.addEventListener('click', (event) => this.#handleClick(event))
     this.#root.addEventListener('close', () => this.#handleClose())
   }
@@ -30,8 +35,12 @@ export class VideoModal {
     this.#root.close()
   }
 
+  #handlePointerDown(event) {
+    this.#isPressOnRoot = event.target === this.#root
+  }
+
   #handleClick(event) {
-    const isBackdrop = event.target === this.#root
+    const isBackdrop = this.#isPressOnRoot && event.target === this.#root
     const isCloseButton = event.target.closest(SELECTORS.videoModalClose)
     if (!isBackdrop && !isCloseButton) return
 
