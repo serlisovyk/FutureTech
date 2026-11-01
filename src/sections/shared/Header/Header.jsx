@@ -1,7 +1,13 @@
 import { Svg } from 'minista/assets'
 import { Button, Icon } from '@components'
 import { getAriaCurrent } from '@utils'
-import { navigationAction, navigationLinks, newsletter, site } from '@data'
+import {
+  menuIconSize,
+  navigationAction,
+  navigationLinks,
+  newsletter,
+  site,
+} from '@data'
 import './Header.css'
 
 export function Header({ currentPath }) {
@@ -43,7 +49,7 @@ export function Header({ currentPath }) {
             aria-controls="header-menu"
             data-toggle-button
           >
-            <Icon name="ui/menu" size={34} />
+            <Icon name="ui/menu" size={menuIconSize} />
           </button>
 
           <div className="header__menu" id="header-menu" data-toggle-target hidden>
@@ -57,7 +63,7 @@ export function Header({ currentPath }) {
                 data-toggle-dismiss
                 data-header-close
               >
-                <Icon name="ui/close" size={34} />
+                <Icon name="ui/close" size={menuIconSize} />
               </button>
 
               <nav className="header__nav" aria-label="Main">

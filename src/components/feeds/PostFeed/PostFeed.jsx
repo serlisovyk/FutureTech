@@ -1,16 +1,23 @@
 import { PostRow } from '@components/cards/PostRow'
-import { getPostFeedStatus, getPostFeedTabId, getPostsInCategory } from '@utils'
+import {
+  getPostFeedStatus,
+  getPostFeedTabId,
+  getPostsInCategory,
+  getTabIndex,
+} from '@utils'
 import { allCategory, postFeed } from '@data'
 import './PostFeed.css'
 
 export function PostFeed({ id, categories, posts, limit = posts.length }) {
+  const { slug: allSlug } = allCategory
+
   const shownPosts = posts.slice(0, limit)
 
   const hasPosts = shownPosts.length > 0
 
   const panelId = `${id}-panel`
 
-  const initialTabId = getPostFeedTabId(id, allCategory.slug)
+  const initialTabId = getPostFeedTabId(id, allSlug)
 
   return (
     <div className="post-feed" data-post-feed data-reveal>
@@ -21,9 +28,9 @@ export function PostFeed({ id, categories, posts, limit = posts.length }) {
         data-tab-list
       >
         {categories.map(({ slug, name }) => {
-          const isSelected = slug === allCategory.slug
+          const isAll = slug === allSlug
 
-          const tabIndex = isSelected ? 0 : -1
+          const tabIndex = getTabIndex(isAll)
 
           const postCount = getPostsInCategory(shownPosts, slug).length
 
@@ -34,10 +41,11 @@ export function PostFeed({ id, categories, posts, limit = posts.length }) {
               type="button"
               role="tab"
               id={getPostFeedTabId(id, slug)}
-              aria-selected={isSelected}
+              aria-selected={isAll}
               aria-controls={panelId}
               tabIndex={tabIndex}
               data-tab={slug}
+              data-tab-all={isAll || undefined}
               data-status={getPostFeedStatus(postCount, name)}
             >
               {name}

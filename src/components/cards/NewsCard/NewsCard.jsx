@@ -2,11 +2,15 @@ import { Photo } from '@components/media/Photo'
 import { Button } from '@components/ui/Button'
 import { CounterPill } from '@components/ui/CounterPill'
 import { formatCount, getCategoryName, getPostUrl } from '@utils'
-import { cardPhotoBreakpoints, newsCardPhotoSizes } from '@data'
+import { cardPhotoBreakpoints, newsCardPhotoSizes, uiLabels } from '@data'
 import './NewsCard.css'
 
 export function NewsCard(props) {
   const { slug, title, category, image, imageAlt, likes, comments } = props
+
+  const { readMore, about } = uiLabels
+
+  const hiddenLabel = ` ${about} ${title}`
 
   return (
     <article className="news-card" data-reveal>
@@ -37,8 +41,8 @@ export function NewsCard(props) {
             href={getPostUrl(slug)}
             className="news-card__button"
           >
-            Read More
-            <span className="visually-hidden"> about {title}</span>
+            {readMore}
+            <span className="visually-hidden">{hiddenLabel}</span>
           </Button>
         </div>
       </div>

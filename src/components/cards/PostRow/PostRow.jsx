@@ -2,7 +2,7 @@ import { Photo } from '@components/media/Photo'
 import { Button } from '@components/ui/Button'
 import { CounterPill } from '@components/ui/CounterPill'
 import { formatCount, formatDate, getCategoryName, getPostUrl } from '@utils'
-import { postRowAvatarBreakpoints, postRowAvatarSizes } from '@data'
+import { postRowAvatarBreakpoints, postRowAvatarSizes, uiLabels } from '@data'
 import './PostRow.css'
 
 export function PostRow(props) {
@@ -18,6 +18,10 @@ export function PostRow(props) {
     comments,
     shares,
   } = props
+
+  const { viewBlog, about } = uiLabels
+
+  const hiddenLabel = ` ${about} ${title}`
 
   return (
     <article className="post-row">
@@ -59,8 +63,8 @@ export function PostRow(props) {
         href={getPostUrl(slug)}
         className="post-row__button"
       >
-        View Blog
-        <span className="visually-hidden"> about {title}</span>
+        {viewBlog}
+        <span className="visually-hidden">{hiddenLabel}</span>
       </Button>
     </article>
   )

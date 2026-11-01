@@ -12,6 +12,8 @@ export function ArticleSidebar({ post }) {
 
   const meta = getArticleMeta(post, labels)
 
+  const likedCount = formatCount(likes + 1)
+
   return (
     <aside className="article-sidebar" aria-label={sidebarLabel}>
       <div className="article-sidebar__counters">
@@ -19,7 +21,7 @@ export function ArticleSidebar({ post }) {
           icon="ui/heart"
           label="likes"
           count={formatCount(likes)}
-          likedCount={formatCount(likes + 1)}
+          likedCount={likedCount}
           likeKey={slug}
           isLarge
         />

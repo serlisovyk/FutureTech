@@ -1,4 +1,4 @@
-import { ARIA, KEYS, NO_INDEX, SELECTORS } from '@constants'
+import { ARIA, KEYS, NO_INDEX, SELECTORS, TAB_INDEX } from '@constants'
 
 export class Tabs {
   #tabList
@@ -116,7 +116,7 @@ export class Tabs {
       const isSelected = tab === selectedTab
 
       tab.setAttribute(ARIA.selected, String(isSelected))
-      tab.tabIndex = isSelected ? 0 : -1
+      tab.tabIndex = isSelected ? TAB_INDEX.selected : TAB_INDEX.unselected
     }
   }
 

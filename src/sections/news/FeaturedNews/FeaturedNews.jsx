@@ -4,11 +4,14 @@ import {
   featuredNewsPhotoBreakpoints,
   featuredNewsPhotoSizes,
   featuredNews,
+  uiLabels,
 } from '@data'
 import './FeaturedNews.css'
 
 export function FeaturedNews() {
   const { titleId, placement, labels } = featuredNews
+
+  const { readMore, about } = uiLabels
 
   const [post] = getPostsByPlacement(placement)
 
@@ -22,6 +25,8 @@ export function FeaturedNews() {
   } = post
 
   const meta = getPostMeta(post, labels)
+
+  const hiddenLabel = ` ${about} ${title}`
 
   return (
     <section className="featured-news" aria-labelledby={titleId}>
@@ -63,8 +68,8 @@ export function FeaturedNews() {
               icon="ui/arrow-up-right"
               href={getPostUrl(slug)}
             >
-              Read More
-              <span className="visually-hidden"> about {title}</span>
+              {readMore}
+              <span className="visually-hidden">{hiddenLabel}</span>
             </Button>
           </div>
         </div>

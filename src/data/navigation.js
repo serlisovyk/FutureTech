@@ -7,6 +7,8 @@ export const navigationLinks = [
 
 export const navigationAction = { label: 'Contact Us', href: '/contact' }
 
+export const menuIconSize = 34
+
 export const newsletter = {
   href: '/contact',
   lead: 'Subscribe to our Newsletter For',

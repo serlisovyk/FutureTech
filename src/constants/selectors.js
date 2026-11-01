@@ -1,6 +1,7 @@
 export const SELECTORS = Object.freeze({
   tabList: '[data-tab-list]',
   tab: '[data-tab]',
+  tabAll: '[data-tab-all]',
   tabPanel: '[data-tab-panel]',
   disclosureTrigger: '[data-disclosure-trigger]',
   disclosureRegion: '[data-disclosure-region]',

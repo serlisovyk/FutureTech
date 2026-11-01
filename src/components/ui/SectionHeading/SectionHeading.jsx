@@ -3,7 +3,11 @@ import { Heading } from '@components/ui/Heading'
 import { Tag } from '@components/ui/Tag'
 import './SectionHeading.css'
 
-export function SectionHeading({ tag, title, titleId, link, children }) {
+export function SectionHeading({ tag, title, titleId, children, link = {} }) {
+  const { href, label } = link
+
+  const hasLink = Boolean(href)
+
   return (
     <div className="section-heading">
       <div className="section-heading__inner container" data-reveal>
@@ -14,9 +18,9 @@ export function SectionHeading({ tag, title, titleId, link, children }) {
           </Heading>
         </div>
 
-        {link && (
-          <Button variant="outline" icon="ui/arrow-up-right" href={link.href}>
-            {link.label}
+        {hasLink && (
+          <Button variant="outline" icon="ui/arrow-up-right" href={href}>
+            {label}
           </Button>
         )}
 

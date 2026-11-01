@@ -11,3 +11,7 @@ export const DATE_FORMAT = Object.freeze({
 export const READING_SPEED = Object.freeze({
   wordsPerMinute: 200,
 })
+
+export const STAT_FORMAT = Object.freeze({
+  plus: '+',
+})

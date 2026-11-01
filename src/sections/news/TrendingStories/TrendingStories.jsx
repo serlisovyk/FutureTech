@@ -1,5 +1,5 @@
 import { NewsCard } from '@components'
-import { getPostsByPlacement } from '@utils'
+import { getNewsCardProps, getPostsByPlacement } from '@utils'
 import { trendingStories } from '@data'
 import './TrendingStories.css'
 
@@ -16,27 +16,9 @@ export function TrendingStories() {
         </h2>
 
         {posts.map((post) => {
-          const {
-            slug,
-            title: postTitle,
-            category,
-            image,
-            imageAlt,
-            counters: { likes, comments },
-          } = post
+          const { slug } = post
 
-          return (
-            <NewsCard
-              key={slug}
-              slug={slug}
-              title={postTitle}
-              category={category}
-              image={image}
-              imageAlt={imageAlt}
-              likes={likes}
-              comments={comments}
-            />
-          )
+          return <NewsCard key={slug} {...getNewsCardProps(post)} />
         })}
       </div>
     </section>

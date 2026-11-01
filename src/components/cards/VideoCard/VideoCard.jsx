@@ -5,6 +5,7 @@ import { PlayButton } from '@components/ui/PlayButton'
 import {
   cardPhotoBreakpoints,
   episodeCardPhotoSizes,
+  uiLabels,
   videoCardPhotoSizes,
 } from '@data'
 import './VideoCard.css'
@@ -12,7 +13,11 @@ import './VideoCard.css'
 export function VideoCard(props) {
   const { title, text, duration, image, videoId, isEpisode = false } = props
 
+  const { listenPodcast } = uiLabels
+
   const photoSizes = isEpisode ? episodeCardPhotoSizes : videoCardPhotoSizes
+
+  const hiddenLabel = `: ${title}`
 
   return (
     <article
@@ -45,8 +50,8 @@ export function VideoCard(props) {
           videoId={videoId}
           videoTitle={title}
         >
-          Listen Podcast
-          <span className="visually-hidden">: {title}</span>
+          {listenPodcast}
+          <span className="visually-hidden">{hiddenLabel}</span>
         </Button>
       )}
     </article>

@@ -1,4 +1,5 @@
 import { SectionHeading } from '@components'
+import { getTabIndex } from '@utils'
 import { resourceLibrary, resourceTabs } from '@data'
 import { ResourcePanel } from './ResourcePanel'
 import './ResourceLibrary.css'
@@ -25,7 +26,7 @@ export function ResourceLibrary() {
 
             const isSelected = index === 0
 
-            const tabIndex = isSelected ? 0 : -1
+            const tabIndex = getTabIndex(isSelected)
 
             return (
               <button

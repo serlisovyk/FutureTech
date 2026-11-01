@@ -1,18 +1,9 @@
-import { postFeed } from '@data'
+import { getPostFeedTemplate } from './get-post-feed-template.js'
 
 export function getPostFeedStatus(count, categoryName) {
-  const { none, one, other } = postFeed.status
+  const template = getPostFeedTemplate(count)
 
-  const isEmpty = count === 0
+  const withCategory = template.replace('{category}', categoryName)
 
-  const isSingle = count === 1
-
-  let template = other
-
-  if (isEmpty) template = none
-  if (isSingle) template = one
-
-  return template
-    .replace('{category}', categoryName)
-    .replace('{count}', String(count))
+  return withCategory.replace('{count}', String(count))
 }

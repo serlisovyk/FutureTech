@@ -1,5 +1,5 @@
 import { Button, Heading, Icon, MetaGrid, Photo, PlayButton } from '@components'
-import { cardPhotoBreakpoints, podcastShowPhotoSizes } from '@data'
+import { cardPhotoBreakpoints, podcastShowPhotoSizes, uiLabels } from '@data'
 import './PodcastShow.css'
 
 export function PodcastShow(props) {
@@ -17,7 +17,11 @@ export function PodcastShow(props) {
     stats,
   } = props
 
-  const hostItems = [{ label: 'Host', value: host }]
+  const { host: hostLabel, listenPodcast } = uiLabels
+
+  const hostItems = [{ label: hostLabel, value: host }]
+
+  const hiddenLabel = `: ${title}`
 
   return (
     <article className="podcast-show" aria-labelledby={titleId}>
@@ -52,8 +56,8 @@ export function PodcastShow(props) {
                 videoId={videoId}
                 videoTitle={title}
               >
-                Listen Podcast
-                <span className="visually-hidden">: {title}</span>
+                {listenPodcast}
+                <span className="visually-hidden">{hiddenLabel}</span>
               </Button>
             </div>
           </div>

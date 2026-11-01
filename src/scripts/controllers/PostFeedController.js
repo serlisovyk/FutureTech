@@ -1,5 +1,5 @@
 import { Tabs } from '@scripts/components/Tabs.js'
-import { ALL_CATEGORY, ARIA, SELECTORS } from '@constants'
+import { ARIA, SELECTORS } from '@constants'
 
 export class PostFeedController {
   #tabs
@@ -26,15 +26,18 @@ export class PostFeedController {
   }
 
   #handleSelect(selectedTab) {
-    this.#renderRows(selectedTab.dataset.tab)
+    this.#renderRows(selectedTab)
     this.#renderPanelLabel(selectedTab.id)
     this.#renderStatus(selectedTab.dataset.status)
   }
 
-  #renderRows(selectedKey) {
+  #renderRows(selectedTab) {
+    const { tab: selectedKey } = selectedTab.dataset
+
+    const isAll = selectedTab.matches(SELECTORS.tabAll)
+
     for (const row of this.#rows) {
-      const isShown =
-        selectedKey === ALL_CATEGORY || row.dataset.category === selectedKey
+      const isShown = isAll || row.dataset.category === selectedKey
 
       row.hidden = !isShown
     }

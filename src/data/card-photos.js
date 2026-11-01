@@ -31,6 +31,10 @@ export const testimonialAvatarSizes = '(width < 1920px) 75px, 90px'
 
 export const testimonialAvatarBreakpoints = [90, 180, 270]
 
+export const avatarGroupPhotoSizes = '50px'
+
+export const avatarGroupPhotoBreakpoints = [150, 225]
+
 export const articleHeroPhotoSizes = '100vw'
 
 export const articleHeroPhotoBreakpoints = [720, 1080, 1440, 1920]
