@@ -17,6 +17,7 @@ export function getArticleJsonLd(post, canonicalUrl, imageUrl) {
     headline: title,
     description: excerpt,
     datePublished: date,
+    dateModified: date,
     author: { '@type': 'Person', name: authorName },
     image: [imageUrl],
     publisher,
