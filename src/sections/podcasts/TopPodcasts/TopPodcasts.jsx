@@ -1,6 +1,6 @@
 import { Heading } from '@components'
 import { podcasts, topPodcasts } from '@data'
-import { PodcastShow } from './PodcastShow.jsx'
+import { PodcastShow } from './PodcastShow'
 
 export function TopPodcasts() {
   const { id, titleId, title } = topPodcasts

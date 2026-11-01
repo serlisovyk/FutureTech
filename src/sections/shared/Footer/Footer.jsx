@@ -1,8 +1,8 @@
 import { Icon } from '@components'
 import { footer, socials } from '@data'
 import { getCurrentYear } from '@utils'
-import { FooterColumn } from './FooterColumn.jsx'
-import { FooterCredits } from './FooterCredits.jsx'
+import { FooterColumn } from './FooterColumn'
+import { FooterCredits } from './FooterCredits'
 import './Footer.css'
 
 export function Footer() {

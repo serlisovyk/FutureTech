@@ -1,6 +1,6 @@
 import { Button, Heading, Icon } from '@components'
 import { faq, faqSection } from '@data'
-import { FaqItem } from './FaqItem.jsx'
+import { FaqItem } from './FaqItem'
 import './Faq.css'
 
 export function Faq() {

@@ -1,5 +1,5 @@
 import { Tag } from '@components'
-import { ResourceRow } from './ResourceRow.jsx'
+import { ResourceRow } from '@sections/resources/ResourceLibrary/ResourceRow'
 import './ResourcePanel.css'
 
 export function ResourcePanel({ id, tabId, label, items }) {

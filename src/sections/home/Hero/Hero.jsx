@@ -1,6 +1,6 @@
 import { AvatarGroup, Button, Heading, Photo, Stat } from '@components'
 import { heroFeatures, hero, stats } from '@data'
-import { HeroFeature } from './HeroFeature.jsx'
+import { HeroFeature } from './HeroFeature'
 import './Hero.css'
 
 export function Hero() {

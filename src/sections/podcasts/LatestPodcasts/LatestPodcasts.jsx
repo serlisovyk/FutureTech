@@ -1,6 +1,6 @@
 import { Button, SectionHeading } from '@components'
 import { episodes, latestPodcasts } from '@data'
-import { EpisodeGroup } from './EpisodeGroup.jsx'
+import { EpisodeGroup } from './EpisodeGroup'
 import './LatestPodcasts.css'
 
 export function LatestPodcasts() {

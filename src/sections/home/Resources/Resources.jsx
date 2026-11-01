@@ -1,6 +1,6 @@
 import { SectionHeading } from '@components'
 import { resourceShowcases, resourcesSection } from '@data'
-import { ResourceShowcase } from './ResourceShowcase.jsx'
+import { ResourceShowcase } from './ResourceShowcase'
 
 export function Resources() {
   return (

@@ -1,7 +1,7 @@
 import { article } from '@data'
-import { ArticleBody } from './ArticleBody.jsx'
-import { ArticleHero } from './ArticleHero.jsx'
-import { ArticleSidebar } from './ArticleSidebar.jsx'
+import { ArticleBody } from './ArticleBody'
+import { ArticleHero } from './ArticleHero'
+import { ArticleSidebar } from './ArticleSidebar'
 import './Article.css'
 
 export function Article({ post }) {

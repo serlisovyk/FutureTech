@@ -1,5 +1,5 @@
 import { contactInfo, contacts } from '@data'
-import { ContactColumn } from './ContactColumn.jsx'
+import { ContactColumn } from './ContactColumn'
 import './ContactInfo.css'
 
 export function ContactInfo() {

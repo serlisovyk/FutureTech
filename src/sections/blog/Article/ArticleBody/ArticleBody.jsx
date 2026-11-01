@@ -1,6 +1,6 @@
 import { Button } from '@components'
 import { article } from '@data'
-import { ArticleSection } from './ArticleSection.jsx'
+import { ArticleSection } from '@sections/blog/Article/ArticleSection'
 import './ArticleBody.css'
 
 export function ArticleBody({ sections }) {

@@ -1,7 +1,7 @@
 import { Icon } from '@components'
 import { countries, defaultDialCode } from '@data'
 import { getPhoneError, getPhonePattern } from '@utils'
-import { FormField } from './FormField.jsx'
+import { FormField } from '@sections/contact/ContactForm/FormField'
 import './PhoneField.css'
 
 export function PhoneField(props) {

@@ -1,6 +1,6 @@
 import { Button, SectionHeading } from '@components'
 import { testimonials, testimonialsSection } from '@data'
-import { TestimonialGroup } from './TestimonialGroup.jsx'
+import { TestimonialGroup } from './TestimonialGroup'
 import './Testimonials.css'
 
 export function Testimonials() {

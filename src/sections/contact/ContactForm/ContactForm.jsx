@@ -1,9 +1,9 @@
 import { Button, Heading, Icon } from '@components'
 import { contactFields, contactForm } from '@data'
-import { ConsentField } from './ConsentField.jsx'
-import { MessageField } from './MessageField.jsx'
-import { PhoneField } from './PhoneField.jsx'
-import { TextField } from './TextField.jsx'
+import { ConsentField } from './ConsentField'
+import { MessageField } from './MessageField'
+import { PhoneField } from './PhoneField'
+import { TextField } from './TextField'
 import './ContactForm.css'
 
 export function ContactForm() {

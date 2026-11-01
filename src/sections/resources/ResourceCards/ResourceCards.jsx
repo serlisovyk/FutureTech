@@ -1,5 +1,5 @@
 import { resourceCardsSection, resourceCards } from '@data'
-import { ResourceCard } from './ResourceCard.jsx'
+import { ResourceCard } from './ResourceCard'
 import './ResourceCards.css'
 
 export function ResourceCards() {

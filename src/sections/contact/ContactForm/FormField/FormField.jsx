@@ -1,5 +1,5 @@
-import { FormError } from './FormError.jsx'
-import { RequiredMark } from './RequiredMark.jsx'
+import { FormError } from '@sections/contact/ContactForm/FormError'
+import { RequiredMark } from '@sections/contact/ContactForm/RequiredMark'
 import './FormField.css'
 
 export function FormField({ id, errorId, label, children }) {
