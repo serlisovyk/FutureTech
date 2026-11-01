@@ -8,6 +8,8 @@ export const IMAGE_TYPES = {
 export const UNTYPED_SOURCE =
   /<source(?![^>]*\stype=)([^>]*\.(avif|webp)[\s"][^>]*)>/g
 
+export const ORIGINAL_PHOTO = /^assets\/.+\.jpg$/
+
 export const NOT_FOUND_PAGE = '404.html'
 
 export const NO_INDEX = 'noindex'
