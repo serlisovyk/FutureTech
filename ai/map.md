@@ -8,13 +8,13 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `package.json` — the scripts (`check` is `minista check`, `size` is size-limit);
   `vite.config.js` — only re-exports `vite/config.js`, which builds the config from `vite/parts/` (one `get…`
   per concern: `aliases`, `plugins`, `image`, `css`, `build`); `vite/paths.js` — the paths; `vite/constants.js` — the
-  constants the build plugins share; `vite/plugins/` — build plugins: `source-type`, `unused-originals` (drops the JPGs no page names), and `site-files` (helpers in `vite/site-files/`) that emits
+  constants the build plugins share (the breakpoints are in `src/constants`, read by a relative path); `vite/plugins/` — build plugins: `source-type`, `unused-originals` (drops the JPGs no page names), and `site-files` (helpers in `vite/site-files/`) that emits
   `robots.txt`, `sitemap.xml` and `llms.txt` from the built pages; `vite/postcss/` — the PostCSS plugins `fluid`, `hover`, `breakpoints`.
 - `.prettierrc`, `.prettierignore` — Prettier. `eslint.config.js`, `.stylelintrc.json` — ESLint and Stylelint.
   `.husky/pre-commit` and `.lintstagedrc.json` — the pre-commit hook that runs them on the staged files.
 - `.github/workflows/ci.yml` — the checks on every push. `.size-limit.json` — the budget of the built JS, CSS, fonts and images.
 - `.vscode/` — `css-data.json` tells VS Code about `@tablet` and `@mobile` (decision `vscode-css-data`).
-- `jsconfig.json` — the editor's copy of the aliases `vite/parts/aliases.js` defines, `@<folder>` for each `src/` folder
+- `jsconfig.json` — the editor's copy of the aliases `vite/parts/aliases.js` defines, `@<folder>` for each `src/` folder others import from
   (`@components`, `@sections`, `@utils`, `@data`, `@constants` are barrels, imported bare).
 - `src/pages/` — one JSX file per page, its file name is its URL: Home (`/`), News, Podcasts, Resources, Contact, 404 (`sections/not-found/`), and `/ui`, the UI kit demo (noindex, linked from nowhere).
   A page exports `metadata = pages.<name>` (from `data/pages.js`) and its content, no head.

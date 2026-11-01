@@ -1,6 +1,6 @@
 # Imports across folders use one alias per folder
 
-Date: 2026-10-28 · Status: accepted
+Date: 2026-10-28 · Status: superseded by 2026-11-01-path-aliases-imported-folders.md
 
 ## Context
 

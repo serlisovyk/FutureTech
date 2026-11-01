@@ -53,7 +53,7 @@ each with the record that replaced it.
 - [Dependency versions are pinned exactly](2026-10-28-pinned-dependency-versions.md)
 - [The MIT license is declared in `package.json` only, no `LICENSE` file](2026-10-28-license-in-package-json.md)
 - [Line endings: Prettier `endOfLine: auto`, no `.gitattributes`](2026-10-28-line-endings-auto.md)
-- [ESLint (with the JSX plugins), Stylelint and a Husky pre-commit hook; no more rule sets](2026-10-28-linters.md)
+- [ESLint 9 with the JSX plugins, Stylelint with guards for the CSS rules, lint-staged 17 on Node 22.22.1](2026-11-01-linters-guards.md)
 - [Deployed on Vercel](2026-10-28-vercel-deploy.md)
 - [Every response carries four security headers, with a strict Content-Security-Policy](2026-11-01-security-headers.md)
 - [CI on every push, and a size budget with limits by fact](2026-10-28-ci-size-limit.md)
@@ -67,7 +67,7 @@ each with the record that replaced it.
 - [Browser scripts are all classes; browser-API wrappers are classes in `scripts/services/`](2026-11-01-script-helper-classes.md)
 - [The layout builds the title and the head meta from the page's `metadata`; the site name lives in `data/site.js`](2026-10-28-shared-page-head.md)
 - [The Organization logo is a 512 px PNG, an article has dateModified, noindex pages have no canonical](2026-11-01-seo-markup-and-logo.md)
-- [Imports across folders use one alias per folder (`@components`, `@scripts`, …), never `../`](2026-10-28-path-aliases.md)
+- [Aliases cover the `src/` folders others import from; `vite/` reads the `src/` barrels by relative path](2026-11-01-path-aliases-imported-folders.md)
 - [Components and sections are folders with barrels (`@components`, `@sections`, `@utils`); assets sit in subfolders](2026-10-28-folders-and-barrels.md)
 - [Constants live in one folder (`@constants`), data is a barrel (`@data`), page metadata is data](2026-11-01-constants-folder-data-barrel.md)
 - [The parts of a section are folders, like components; a part imports a sibling by its folder path](2026-11-01-section-parts-in-folders.md)
@@ -109,3 +109,5 @@ each with the record that replaced it.
 - [The size limits: the current budget, set by fact, with one record to read](2026-11-01-size-limits.md) — replaced by `size-budget`
 - [Fluid values, hover and breakpoints are short notations that PostCSS plugins expand](2026-11-01-postcss-shorthands.md) — replaced by `postcss-notations`
 - [Fonts are self-hosted static woff2 files, latin subset](2026-10-28-self-hosted-fonts.md) — replaced by `font-preloads`
+- [ESLint (with the JSX plugins), Stylelint and a Husky pre-commit hook; no more rule sets](2026-10-28-linters.md) — replaced by `linters-guards`
+- [Imports across folders use one alias per folder (`@components`, `@scripts`, …), never `../`](2026-10-28-path-aliases.md) — replaced by `path-aliases-imported-folders`

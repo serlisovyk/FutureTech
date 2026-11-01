@@ -34,7 +34,8 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
 - Nesting adds the parent's specificity: stay at two levels, and let order or a more
   specific selector win, never `!important`.
 - `:hover` is written plain (`&:hover`), never inside `@media (hover: hover)`: the build wraps it, so a tap
-  leaves no hover look. A selector list is split, so `:focus-visible` is never wrapped.
+  leaves no hover look. A selector list is split, so `:focus-visible` is never wrapped; `:hover` inside `:is()`,
+  `:where()` or `:not()` fails the build (list it as its own selector), only `:not(:hover)` is left as it is.
 
 ## Longhands and plain grids
 
@@ -74,7 +75,8 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
   are in `ai/design-system.md`, in that order). The scheme is decision `postcss-notations`.
 - Media queries change structure only: `@tablet` (`width < 1024px`) stacks side-by-side
   compositions, `@mobile` (`width < 768px`) makes grids one column and the header a menu button; more
-  conditions follow the name (`@mobile and (scripting: enabled)`). The widths live in the build config;
+  conditions follow the name as `and (…)` (`@mobile and (scripting: enabled)`), any other form or a query list
+  fails the build. The widths are the constant `BREAKPOINTS` in `src/constants`, shared with the scripts;
   there is no query at 1440, no `@desktop` (the base rule is Desktop) and no other breakpoint.
 - Type, spacing and radii are fluid: the size at 390 plus the growth of each segment, from the
   design numbers, written `fluid(28, 44, 58)`: always three unitless numbers, the px at 390, 1440 and
