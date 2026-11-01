@@ -5,11 +5,9 @@ import {
   NewsIntro,
   TrendingStories,
 } from '@sections'
+import { pages } from '@data'
 
-export const metadata = {
-  title: 'News',
-  description: 'The latest technology news and articles from FutureTech.',
-}
+export const metadata = pages.news
 
 export default function NewsPage() {
   return (

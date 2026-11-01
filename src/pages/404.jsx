@@ -1,8 +1,6 @@
-export const metadata = {
-  title: 'Page not found',
-  description: 'The page you are looking for does not exist on FutureTech.',
-  robots: 'noindex',
-}
+import { pages } from '@data'
+
+export const metadata = pages.notFound
 
 export default function NotFoundPage() {
   return (

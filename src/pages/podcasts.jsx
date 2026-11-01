@@ -1,10 +1,7 @@
 import { LatestPodcasts, PodcastsIntro, TopPodcasts } from '@sections'
+import { pages } from '@data'
 
-export const metadata = {
-  title: 'Podcasts',
-  description:
-    'Conversations about technology and the future from the FutureTech podcast.',
-}
+export const metadata = pages.podcasts
 
 export default function PodcastsPage() {
   return (

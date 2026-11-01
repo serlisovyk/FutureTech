@@ -1,10 +1,7 @@
 import { ContactForm, ContactInfo, Faq } from '@sections'
+import { pages } from '@data'
 
-export const metadata = {
-  title: 'Contact',
-  description:
-    'Get in touch with the FutureTech team: ask a question, send feedback or suggest a story.',
-}
+export const metadata = pages.contact
 
 export default function ContactPage() {
   return (

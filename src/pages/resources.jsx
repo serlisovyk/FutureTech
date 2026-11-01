@@ -4,11 +4,9 @@ import {
   ResourceStats,
   ResourcesIntro,
 } from '@sections'
+import { pages } from '@data'
 
-export const metadata = {
-  title: 'Resources',
-  description: 'Tools, guides and reading picked by the FutureTech team.',
-}
+export const metadata = pages.resources
 
 export default function ResourcesPage() {
   return (

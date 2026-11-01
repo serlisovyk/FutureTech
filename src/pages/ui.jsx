@@ -1,10 +1,7 @@
 import { UiKit } from '@sections'
+import { pages } from '@data'
 
-export const metadata = {
-  title: 'UI kit',
-  description: 'Every FutureTech UI component in each of its variants.',
-  robots: 'noindex',
-}
+export const metadata = pages.ui
 
 export default function UiPage() {
   return <UiKit />

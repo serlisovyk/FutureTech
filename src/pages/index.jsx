@@ -1,9 +1,7 @@
 import { Blogs, Features, Hero, Resources, Testimonials } from '@sections'
+import { pages } from '@data'
 
-export const metadata = {
-  description:
-    'FutureTech is a blog about technology, the future of science and the people building it.',
-}
+export const metadata = pages.home
 
 export default function HomePage() {
   return (
