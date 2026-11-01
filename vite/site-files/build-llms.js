@@ -6,6 +6,7 @@ function toLink({ path, title, description }) {
 
 export function buildLlms(pages) {
   const indexable = pages.filter(({ isIndexable }) => isIndexable)
+
   const home = indexable.find(({ path }) => path === '/')
   const articles = indexable.filter(({ publishedTime }) => publishedTime)
   const sections = indexable.filter(({ publishedTime }) => !publishedTime)

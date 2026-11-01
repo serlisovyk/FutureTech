@@ -12,7 +12,6 @@ export default function ArticlePage({ post }) {
   return (
     <>
       <Article post={post} />
-
       <SimilarNews post={post} />
     </>
   )

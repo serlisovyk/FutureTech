@@ -30,8 +30,10 @@ export function Button(props) {
     isLarge && 'button--large',
     className,
   )
+
   const toggleDismiss = isToggleDismiss || undefined
   const disclosureTrigger = isDisclosureTrigger || undefined
+
   const content = (
     <>
       {children}

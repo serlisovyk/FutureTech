@@ -23,11 +23,19 @@ export function PhoneField(props) {
   const initialCountry = countries.find(
     ({ dialCode }) => dialCode === defaultDialCode,
   )
-  const initialPattern = getPhonePattern(initialCountry.digits)
+
+  const {
+    code: initialCountryCode,
+    name: initialCountryName,
+    digits: initialCountryDigits,
+  } = initialCountry
+
+  const initialPattern = getPhonePattern(initialCountryDigits)
+
   const initialError = getPhoneError(
     digitsError,
-    initialCountry.name,
-    initialCountry.digits,
+    initialCountryName,
+    initialCountryDigits,
   )
 
   return (
@@ -35,7 +43,7 @@ export function PhoneField(props) {
       <div className="phone-field">
         <div className="phone-field__code">
           {countries.map(({ code }) => {
-            const isHidden = code !== initialCountry.code
+            const isHidden = code !== initialCountryCode
 
             return (
               <div

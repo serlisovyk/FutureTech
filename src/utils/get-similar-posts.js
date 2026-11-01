@@ -6,7 +6,9 @@ export function getSimilarPosts(post, count) {
   const others = posts
     .filter(({ slug }) => slug !== currentSlug)
     .sort((a, b) => b.date.localeCompare(a.date))
+
   const sameCategory = others.filter(({ category }) => category === currentCategory)
+
   const rest = others.filter(({ category }) => category !== currentCategory)
 
   return [...sameCategory, ...rest].slice(0, count)

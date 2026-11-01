@@ -13,11 +13,13 @@ export function SectionHeading({ tag, title, titleId, link, children }) {
             {title}
           </Heading>
         </div>
+
         {link && (
           <Button variant="outline" icon="ui/arrow-up-right" href={link.href}>
             {link.label}
           </Button>
         )}
+
         {children}
       </div>
     </div>

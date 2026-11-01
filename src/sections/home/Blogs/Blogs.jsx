@@ -4,22 +4,19 @@ import { blogCategories } from '@data/categories.js'
 import { getPostsByPlacement } from '@utils'
 
 export function Blogs() {
-  const blogPosts = getPostsByPlacement(blogs.placement)
+  const { id, placement, titleId, feedId, limit, tag, title, link } = blogs
+
+  const blogPosts = getPostsByPlacement(placement)
 
   return (
-    <section className="blogs" id={blogs.id} aria-labelledby={blogs.titleId}>
-      <SectionHeading
-        tag={blogs.tag}
-        title={blogs.title}
-        titleId={blogs.titleId}
-        link={blogs.link}
-      />
+    <section className="blogs" id={id} aria-labelledby={titleId}>
+      <SectionHeading tag={tag} title={title} titleId={titleId} link={link} />
 
       <PostFeed
-        id={blogs.feedId}
+        id={feedId}
         categories={blogCategories}
         posts={blogPosts}
-        limit={blogs.limit}
+        limit={limit}
       />
     </section>
   )

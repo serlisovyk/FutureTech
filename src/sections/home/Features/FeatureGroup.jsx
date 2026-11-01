@@ -14,6 +14,7 @@ export function FeatureGroup({ icon, title, text, cards, hasWideIcon = false }) 
             hasWideIcon && 'feature-group__icon--wide',
           )}
         />
+
         <div className="feature-group__text">
           <Heading level={3} size="h3">
             {title}
@@ -21,6 +22,7 @@ export function FeatureGroup({ icon, title, text, cards, hasWideIcon = false }) 
           <p>{text}</p>
         </div>
       </div>
+
       <ul className="feature-group__cards">
         {cards.map(({ title: cardTitle, text: cardText }) => (
           <FeatureCard key={cardTitle} title={cardTitle} text={cardText} />

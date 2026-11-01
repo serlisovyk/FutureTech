@@ -17,6 +17,7 @@ export function ArticleHero({ titleId, title, image, imageAlt }) {
         fetchPriority="high"
         className="article-hero__photo"
       />
+
       <h1 className="article-hero__title" id={titleId}>
         {title}
       </h1>

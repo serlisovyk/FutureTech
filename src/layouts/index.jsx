@@ -1,9 +1,5 @@
 import { Head } from 'minista/head'
-import '@styles/global.css'
-import interRegular from '@assets/fonts/inter-latin-400.woff2'
-import kumbhSansMedium from '@assets/fonts/kumbh-sans-latin-500.woff2'
 import { CtaRevolution, Footer, Header, VideoModal } from '@sections'
-import { site } from '@data/site.js'
 import {
   getAbsoluteUrl,
   getArticleJsonLd,
@@ -12,13 +8,20 @@ import {
   getSocialMeta,
   serializeJsonLd,
 } from '@utils'
+import interRegular from '@assets/fonts/inter-latin-400.woff2'
+import kumbhSansMedium from '@assets/fonts/kumbh-sans-latin-500.woff2'
+import { site } from '@data/site.js'
+import '@styles/global.css'
 
 export default function Layout(props) {
   const { url, title, description, robots, post, children } = props
 
   const pageTitle = getPageTitle(title)
+
   const socialTitle = title || site.name
+
   const canonicalUrl = getAbsoluteUrl(url)
+
   const { type, image } = getSocialMeta(post)
 
   return (

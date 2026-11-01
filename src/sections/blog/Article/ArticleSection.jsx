@@ -16,6 +16,7 @@ export function ArticleSection({ id, title, paragraphs, isLead = false }) {
       <h2 className="article-section__title" id={headingId}>
         {title}
       </h2>
+
       <div className="article-section__text">
         {paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>

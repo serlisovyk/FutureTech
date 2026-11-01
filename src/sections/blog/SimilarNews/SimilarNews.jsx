@@ -13,6 +13,7 @@ export function SimilarNews({ post }) {
           <Heading level={2} size="minor" id={similarNews.titleId}>
             {similarNews.title}
           </Heading>
+
           <Button
             variant="outline"
             icon="ui/arrow-up-right"
@@ -24,7 +25,14 @@ export function SimilarNews({ post }) {
 
         <div className="similar-news__list">
           {posts.map((similarPost) => {
-            const { slug, title, category, image, imageAlt, counters } = similarPost
+            const {
+              slug,
+              title,
+              category,
+              image,
+              imageAlt,
+              counters: { likes, comments },
+            } = similarPost
 
             return (
               <NewsCard
@@ -34,8 +42,8 @@ export function SimilarNews({ post }) {
                 category={category}
                 image={image}
                 imageAlt={imageAlt}
-                likes={counters.likes}
-                comments={counters.comments}
+                likes={likes}
+                comments={comments}
               />
             )
           })}

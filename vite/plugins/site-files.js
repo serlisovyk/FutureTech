@@ -21,11 +21,13 @@ export function siteFiles() {
           fileName: SITE_FILES.robots,
           source: buildRobots(),
         })
+
         this.emitFile({
           type: 'asset',
           fileName: SITE_FILES.sitemap,
           source: buildSitemap(pages),
         })
+
         this.emitFile({
           type: 'asset',
           fileName: SITE_FILES.llms,

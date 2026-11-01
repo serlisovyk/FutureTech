@@ -14,18 +14,22 @@ export function CounterPill(props) {
   } = props
 
   const isToggle = Boolean(likeKey)
+
   const classNames = clsx(
     'counter-pill',
     isLarge && 'counter-pill--large',
     isLiked && 'counter-pill--liked',
     isToggle && 'counter-pill--toggle',
   )
+
   const iconName = isLiked ? 'ui/heart-filled' : icon
   const iconClassNames = clsx(
     'counter-pill__icon',
     isToggle && 'counter-pill__icon--off',
   )
+
   const countHook = isToggle || undefined
+
   const content = (
     <>
       <Icon name={iconName} className={iconClassNames} />

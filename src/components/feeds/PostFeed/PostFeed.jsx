@@ -51,7 +51,15 @@ export function PostFeed({ id, categories, posts, limit = posts.length }) {
       >
         <ul className="post-feed__list">
           {shownPosts.map((post) => {
-            const { slug, title, excerpt, date, category, author, counters } = post
+            const {
+              slug,
+              title,
+              excerpt,
+              date,
+              category,
+              author: { name: authorName, avatar: authorAvatar },
+              counters: { likes, comments, shares },
+            } = post
 
             return (
               <li key={slug} data-category={category}>
@@ -61,11 +69,11 @@ export function PostFeed({ id, categories, posts, limit = posts.length }) {
                   excerpt={excerpt}
                   date={date}
                   category={category}
-                  authorName={author.name}
-                  authorAvatar={author.avatar}
-                  likes={counters.likes}
-                  comments={counters.comments}
-                  shares={counters.shares}
+                  authorName={authorName}
+                  authorAvatar={authorAvatar}
+                  likes={likes}
+                  comments={comments}
+                  shares={shares}
                 />
               </li>
             )

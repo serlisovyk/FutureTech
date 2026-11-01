@@ -41,8 +41,14 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
 - Props with a default come last in the destructuring list (`{ icon, children, variant = 'primary' }`).
 - A signature whose props do not fit on one line takes `props` and destructures them on the next line, followed
   by a blank line: `function NewsCard(props)`, then `const { slug, title, … } = props`.
-- Blank lines split the blocks: a destructuring line from the statements after it, and a section's heading band
-  (`SectionHeading`) and its main blocks from each other in the JSX.
+- Blank lines split the blocks: a destructuring line from the statements after it, the computed `const`s from
+  each other, and sibling blocks in the JSX (a section's heading band and its main blocks, an element and the
+  conditional block after it).
+- A nested field is destructured, not read by path: `author: { name: authorName }`, then `authorName`, not
+  `post.author.name` in the JSX.
+- A data attribute that is only a hook gets `undefined` when off (`isToggleDismiss || undefined`): React writes
+  `false` as the string `"false"`, and `[data-toggle-dismiss]` would still match.
+- The stylesheet import comes last.
 - A `map` callback destructures its item (`({ label, href }) =>`); when that does not fit on one line, the callback
   takes the item and destructures it in a block body the same way.
 - No ternary in a `return` and none for an optional attribute: compute a named `const` above the `return`, or
