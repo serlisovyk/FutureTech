@@ -40,6 +40,7 @@ export class ContactFormController {
 
   #handleSubmit(event) {
     event.preventDefault()
+    this.#clearStatus()
 
     for (const field of this.#fields) {
       field.validate()
