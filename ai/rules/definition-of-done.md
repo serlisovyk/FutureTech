@@ -65,6 +65,9 @@ For a change to markup, colour or a widget; the ratios and patterns are in `ai/d
   named as skipped. The commit went through the pre-commit hook, never `--no-verify`.
 - A change to a page was used in the browser (`npm run dev`) — keyboard and mouse, the three
   widths — not just built.
+- A new page, or a change to images, fonts, scripts or the page head, scores 100 in all four
+  Lighthouse categories, mobile and desktop, on PageSpeed Insights after it is deployed
+  (`ai/decisions/2026-11-01-lighthouse-on-pagespeed.md`).
 - Reported: what changed, which commands were run, whether they passed, and anything that could
   not be verified. Never claim the project builds or is formatted unless the command was run
   and passed.

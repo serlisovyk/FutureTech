@@ -84,6 +84,7 @@ each with the record that replaced it.
 - [Grey text is raised to AA, form controls get a 3:1 border, other borders stay as drawn](2026-10-31-grey-text-and-control-borders.md)
 - [Photos ship as AVIF with a WebP fallback, through one component](2026-10-28-image-formats.md)
 - [Fonts are self-hosted static woff2 files, latin subset](2026-10-28-self-hosted-fonts.md)
+- [Lighthouse is measured with PageSpeed Insights on the deployed site](2026-11-01-lighthouse-on-pagespeed.md)
 - [The Vite config is split into `vite/`, one module per concern](2026-10-28-vite-config-split.md)
 - [Article bodies are JS sections in `data/`, and an article has no table of contents](2026-11-01-article-without-contents.md)
 - [The mobile menu is a drawer on `Toggle` and `inert`, with a `scripting: none` fallback](2026-10-28-mobile-menu-drawer.md)
