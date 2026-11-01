@@ -168,13 +168,13 @@ export function UiKit() {
           </Heading>
           <p className="ui-kit__caption">Regular, then large</p>
           <div className="ui-kit__row ui-kit__row--wide">
-            {stats.map(({ id, value, label }) => (
-              <Stat key={id} value={value} label={label} />
+            {stats.map(({ id, ...stat }) => (
+              <Stat key={id} {...stat} />
             ))}
           </div>
           <div className="ui-kit__row ui-kit__row--wide">
-            {stats.map(({ id, value, label }) => (
-              <Stat key={id} value={value} label={label} isLarge />
+            {stats.map(({ id, ...stat }) => (
+              <Stat key={id} {...stat} isLarge />
             ))}
           </div>
         </div>
@@ -290,31 +290,16 @@ export function UiKit() {
             text
           </p>
           <div className="ui-kit__grid ui-kit__grid--video">
-            {videoCardDemo.map(({ id, title, text, duration, poster, videoId }) => (
-              <VideoCard
-                key={id}
-                title={title}
-                text={text}
-                duration={duration}
-                image={poster}
-                videoId={videoId}
-              />
+            {videoCardDemo.map(({ id, ...video }) => (
+              <VideoCard key={id} {...video} />
             ))}
           </div>
           <p className="ui-kit__caption">
             The episode, three across: the same with the Listen Podcast button
           </p>
           <div className="ui-kit__grid ui-kit__grid--episode">
-            {episodeCardDemo.map(({ id, title, text, duration, image, videoId }) => (
-              <VideoCard
-                key={id}
-                title={title}
-                text={text}
-                duration={duration}
-                image={image}
-                videoId={videoId}
-                isEpisode
-              />
+            {episodeCardDemo.map(({ id, ...episode }) => (
+              <VideoCard key={id} {...episode} isEpisode />
             ))}
           </div>
         </div>

@@ -12,11 +12,15 @@ export function FooterColumn({ title, links, isButtons = false }) {
     >
       <h2 className="footer__title">{title}</h2>
       <ul className={clsx('footer__list', isButtons && 'footer__list--buttons')}>
-        {links.map(({ label, href, isNew }) => (
-          <li key={label}>
-            <LinkItem label={label} href={href} isNew={isNew} />
-          </li>
-        ))}
+        {links.map((link) => {
+          const { label } = link
+
+          return (
+            <li key={label}>
+              <LinkItem {...link} />
+            </li>
+          )
+        })}
       </ul>
     </div>
   )

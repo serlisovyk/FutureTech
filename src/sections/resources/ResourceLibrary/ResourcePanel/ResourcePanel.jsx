@@ -15,22 +15,9 @@ export function ResourcePanel({ id, tabId, label, items }) {
         <Tag>{label}</Tag>
       </p>
 
-      {items.map((item) => {
-        const { id: itemId, titleId, icon, title, lead, text, image, meta } = item
-
-        return (
-          <ResourceRow
-            key={itemId}
-            titleId={titleId}
-            icon={icon}
-            title={title}
-            lead={lead}
-            text={text}
-            image={image}
-            meta={meta}
-          />
-        )
-      })}
+      {items.map(({ id: itemId, ...item }) => (
+        <ResourceRow key={itemId} {...item} />
+      ))}
     </div>
   )
 }

@@ -17,15 +17,9 @@ export function FeaturedVideos() {
       />
 
       <ul className="featured-videos__list container">
-        {videos.map(({ id, title, text, duration, poster, videoId }) => (
+        {videos.map(({ id, ...video }) => (
           <li key={id} className="featured-videos__item">
-            <VideoCard
-              title={title}
-              text={text}
-              duration={duration}
-              image={poster}
-              videoId={videoId}
-            />
+            <VideoCard {...video} />
           </li>
         ))}
       </ul>

@@ -44,15 +44,11 @@ export function ResourceLibrary() {
         </div>
       </SectionHeading>
 
-      {resourceTabs.map(({ id: panelId, tabId, label, items }) => (
-        <ResourcePanel
-          key={panelId}
-          id={panelId}
-          tabId={tabId}
-          label={label}
-          items={items}
-        />
-      ))}
+      {resourceTabs.map((resourceTab) => {
+        const { id: panelId } = resourceTab
+
+        return <ResourcePanel key={panelId} {...resourceTab} />
+      })}
     </section>
   )
 }

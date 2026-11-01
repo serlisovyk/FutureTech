@@ -29,71 +29,21 @@ export function ContactForm() {
           data-reveal
         >
           <div className="contact-form__row">
-            <TextField
-              id={firstName.id}
-              errorId={firstName.errorId}
-              name={firstName.name}
-              label={firstName.label}
-              placeholder={firstName.placeholder}
-              autoComplete={firstName.autoComplete}
-              errors={firstName.errors}
-            />
-            <TextField
-              id={lastName.id}
-              errorId={lastName.errorId}
-              name={lastName.name}
-              label={lastName.label}
-              placeholder={lastName.placeholder}
-              autoComplete={lastName.autoComplete}
-              errors={lastName.errors}
-            />
+            <TextField {...firstName} />
+            <TextField {...lastName} />
           </div>
 
           <div className="contact-form__row">
-            <TextField
-              id={email.id}
-              errorId={email.errorId}
-              name={email.name}
-              label={email.label}
-              placeholder={email.placeholder}
-              autoComplete={email.autoComplete}
-              errors={email.errors}
-              pattern={email.pattern}
-              type={email.type}
-            />
-            <PhoneField
-              id={phone.id}
-              errorId={phone.errorId}
-              name={phone.name}
-              label={phone.label}
-              placeholder={phone.placeholder}
-              autoComplete={phone.autoComplete}
-              countryName={phone.countryName}
-              countryLabel={phone.countryLabel}
-              digitsError={phone.digitsError}
-              errors={phone.errors}
-            />
+            <TextField {...email} />
+            <PhoneField {...phone} />
           </div>
 
-          <MessageField
-            id={message.id}
-            errorId={message.errorId}
-            name={message.name}
-            label={message.label}
-            placeholder={message.placeholder}
-            errors={message.errors}
-          />
+          <MessageField {...message} />
 
           <div className="contact-form__actions">
             <div className="contact-form__footer">
               <div className="contact-form__consent">
-                <ConsentField
-                  id={consent.id}
-                  errorId={consent.errorId}
-                  name={consent.name}
-                  label={consent.label}
-                  errors={consent.errors}
-                />
+                <ConsentField {...consent} />
               </div>
 
               <Button type="submit" isLarge>

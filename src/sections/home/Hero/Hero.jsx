@@ -22,9 +22,9 @@ export function Hero() {
             </div>
           </div>
           <ul className="hero__stats">
-            {heroStats.map(({ id, value, label }) => (
+            {heroStats.map(({ id, ...stat }) => (
               <li key={id} className="hero__stat">
-                <Stat value={value} label={label} />
+                <Stat {...stat} />
               </li>
             ))}
           </ul>
@@ -60,15 +60,8 @@ export function Hero() {
 
       <div className="hero__strip">
         <ul className="hero__features container">
-          {heroFeatures.map(({ id, href, icon, title, subtitle, text }) => (
-            <HeroFeature
-              key={id}
-              href={href}
-              icon={icon}
-              title={title}
-              subtitle={subtitle}
-              text={text}
-            />
+          {heroFeatures.map(({ id, ...feature }) => (
+            <HeroFeature key={id} {...feature} />
           ))}
         </ul>
       </div>

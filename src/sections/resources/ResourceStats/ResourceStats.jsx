@@ -14,9 +14,9 @@ export function ResourceStats() {
       </h2>
 
       <ul className="resource-stats__list container">
-        {stats.map(({ id, value, label }) => (
+        {stats.map(({ id, ...stat }) => (
           <li key={id} className="resource-stats__item" data-reveal>
-            <Stat value={value} label={label} isLarge />
+            <Stat {...stat} isLarge />
           </li>
         ))}
       </ul>

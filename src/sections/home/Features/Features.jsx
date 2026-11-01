@@ -15,15 +15,8 @@ export function Features() {
         titleId={featuresSection.titleId}
       />
 
-      {featureGroups.map(({ id, icon, title, text, cards, hasWideIcon }) => (
-        <FeatureGroup
-          key={id}
-          icon={icon}
-          title={title}
-          text={text}
-          cards={cards}
-          hasWideIcon={hasWideIcon}
-        />
+      {featureGroups.map(({ id, ...group }) => (
+        <FeatureGroup key={id} {...group} />
       ))}
     </section>
   )

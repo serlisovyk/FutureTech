@@ -16,37 +16,9 @@ export function Resources() {
         link={resourcesSection.link}
       />
 
-      {resourceShowcases.map((showcase) => {
-        const {
-          id,
-          icon,
-          title,
-          lead,
-          cta,
-          href,
-          overview,
-          meta,
-          expertise,
-          users,
-          avatars,
-        } = showcase
-
-        return (
-          <ResourceShowcase
-            key={id}
-            icon={icon}
-            title={title}
-            lead={lead}
-            cta={cta}
-            href={href}
-            overview={overview}
-            meta={meta}
-            expertise={expertise}
-            users={users}
-            avatars={avatars}
-          />
-        )
-      })}
+      {resourceShowcases.map(({ id, ...showcase }) => (
+        <ResourceShowcase key={id} {...showcase} />
+      ))}
     </section>
   )
 }

@@ -14,29 +14,23 @@ export function ArticleBody({ sections }) {
 
   return (
     <div className="article-body" data-article-body>
-      <ArticleSection
-        id={lead.id}
-        title={lead.title}
-        paragraphs={lead.paragraphs}
-        isLead
-      />
+      <ArticleSection {...lead} isLead />
 
       {hasOthers && (
         <div className="article-body__sections">
-          {previewSections.map(({ id, title, paragraphs }) => (
-            <ArticleSection key={id} id={id} title={title} paragraphs={paragraphs} />
-          ))}
+          {previewSections.map((section) => {
+            const { id } = section
+
+            return <ArticleSection key={id} {...section} />
+          })}
 
           {hasHidden && (
             <div className="article-body__region" id={moreId} data-disclosure-region>
-              {hiddenSections.map(({ id, title, paragraphs }) => (
-                <ArticleSection
-                  key={id}
-                  id={id}
-                  title={title}
-                  paragraphs={paragraphs}
-                />
-              ))}
+              {hiddenSections.map((section) => {
+                const { id } = section
+
+                return <ArticleSection key={id} {...section} />
+              })}
             </div>
           )}
         </div>

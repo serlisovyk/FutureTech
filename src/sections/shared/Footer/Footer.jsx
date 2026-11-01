@@ -12,14 +12,11 @@ export function Footer() {
     <footer className="footer">
       <div className="container">
         <nav className="footer__nav" aria-label="Footer">
-          {footer.columns.map(({ title, links, isButtons }) => (
-            <FooterColumn
-              key={title}
-              title={title}
-              links={links}
-              isButtons={isButtons}
-            />
-          ))}
+          {footer.columns.map((column) => {
+            const { title } = column
+
+            return <FooterColumn key={title} {...column} />
+          })}
         </nav>
         <div className="footer__bar">
           <ul className="footer__legal">

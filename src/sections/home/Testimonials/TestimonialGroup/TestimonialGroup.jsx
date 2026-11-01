@@ -6,22 +6,11 @@ export function TestimonialGroup({ items, id, isRegion = false }) {
 
   return (
     <ul className="testimonial-group" id={id} data-disclosure-region={region}>
-      {items.map((item) => {
-        const { id: itemId, name, place, avatar, rating, ratingLabel, text } = item
-
-        return (
-          <li key={itemId} className="testimonial-group__item">
-            <TestimonialCard
-              name={name}
-              place={place}
-              avatar={avatar}
-              rating={rating}
-              ratingLabel={ratingLabel}
-              text={text}
-            />
-          </li>
-        )
-      })}
+      {items.map(({ id: itemId, ...testimonial }) => (
+        <li key={itemId} className="testimonial-group__item">
+          <TestimonialCard {...testimonial} />
+        </li>
+      ))}
     </ul>
   )
 }

@@ -6,22 +6,11 @@ export function EpisodeGroup({ items, id, isRegion = false }) {
 
   return (
     <ul className="episode-group" id={id} data-disclosure-region={region}>
-      {items.map((item) => {
-        const { id: itemId, title, text, duration, image, videoId } = item
-
-        return (
-          <li key={itemId} className="episode-group__item">
-            <VideoCard
-              title={title}
-              text={text}
-              duration={duration}
-              image={image}
-              videoId={videoId}
-              isEpisode
-            />
-          </li>
-        )
-      })}
+      {items.map(({ id: itemId, ...episode }) => (
+        <li key={itemId} className="episode-group__item">
+          <VideoCard {...episode} isEpisode />
+        </li>
+      ))}
     </ul>
   )
 }

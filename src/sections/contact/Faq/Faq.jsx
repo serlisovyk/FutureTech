@@ -25,20 +25,10 @@ export function Faq() {
         </div>
 
         <ul className="faq__list">
-          {faq.map((item, index) => {
-            const { id: itemId, answerId, question, answer } = item
-
+          {faq.map(({ id: itemId, ...item }, index) => {
             const isOpen = index === 0
 
-            return (
-              <FaqItem
-                key={itemId}
-                answerId={answerId}
-                question={question}
-                answer={answer}
-                isOpen={isOpen}
-              />
-            )
+            return <FaqItem key={itemId} {...item} isOpen={isOpen} />
           })}
         </ul>
       </div>

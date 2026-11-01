@@ -14,21 +14,11 @@ export function ResourceCards() {
       </h2>
 
       <ul className="resource-cards__list container">
-        {resourceCards.map((resourceCard) => {
-          const { id, titleId, title, text, image, detailsHref } = resourceCard
-
-          return (
-            <li key={id} className="resource-cards__item">
-              <ResourceCard
-                titleId={titleId}
-                title={title}
-                text={text}
-                image={image}
-                detailsHref={detailsHref}
-              />
-            </li>
-          )
-        })}
+        {resourceCards.map(({ id, ...resourceCard }) => (
+          <li key={id} className="resource-cards__item">
+            <ResourceCard {...resourceCard} />
+          </li>
+        ))}
       </ul>
     </section>
   )
