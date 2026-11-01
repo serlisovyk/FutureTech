@@ -33,17 +33,14 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `Features` (id `features`: the heading band and two `FeatureGroup`s, each beside a 2 x 2 grid
   of `FeatureCard`s), `Blogs` (id `blogs`: `SectionHeading` and a `PostFeed` of the `blogs` posts), `Resources` (id `resources`:
   `SectionHeading` and two `ResourceShowcase`s, Ebooks and Whitepapers),
-  `Testimonials` (id `testimonials`, the last section: `SectionHeading` with the "View All Testimonials" button that
-  drives `Disclosure` below 768px, and six `TestimonialCard`s in two `TestimonialGroup` lists, the second one the
-  `Disclosure` region).
+  `Testimonials` (id `testimonials`, the last section: a `DisclosureSection` of six `TestimonialCard`s).
 - News sections (`sections/news/`), in design order on `pages/news.jsx`: `NewsIntro` (the `PageIntro` of News), `FeaturedNews` (the `featured`
   post: photo, title, text, `MetaGrid`, counters, Read More), `TrendingStories` (id `trending-stories`: three `NewsCard`s, a hidden `h2`),
   `NewsHub` (id `news-hub`: a `PostFeed` of every News post),
   `FeaturedVideos` (id `featured-videos`: the `videos` as a 2 x 2 list of `VideoCard`s split by lines).
 - Podcasts sections (`sections/podcasts/`), in design order on `pages/podcasts.jsx`: `PodcastsIntro` (the `PageIntro` of Podcasts),
   `TopPodcasts` (id `top-podcasts`: one `PodcastShow` per show of `podcasts`: host plate with Listen Podcast
-  beside the video preview, lead text and `MetaGrid` stats), `LatestPodcasts` (id `latest-podcasts`: `SectionHeading` with the "View All
-  Episodes" button that drives `Disclosure` below 768px, and six episode `VideoCard`s in two `EpisodeGroup` lists, the second one the region).
+  beside the video preview, lead text and `MetaGrid` stats), `LatestPodcasts` (id `latest-podcasts`: a `DisclosureSection` of six episode `VideoCard`s).
 - Resources sections (`sections/resources/`), in design order on `pages/resources.jsx`: `ResourcesIntro` (the `PageIntro` of Resources),
   `ResourceStats` (id `resource-stats`: the four large `Stat`s of `stats`, a hidden `h2`),
   `ResourceLibrary` (id `resource-library`: `SectionHeading` with the Whitepapers / Ebooks / Reports tabs, one `ResourcePanel`
@@ -56,7 +53,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `ArticleSidebar` (the second grid column from 1024px): large `CounterPill`s (the like is a toggle), the 2 x 2 `MetaGrid`
   with the reading time. Then `SimilarNews` (three `NewsCard`s from `getSimilarPosts`). Texts: `data/article.js`.
 - Contact sections (`sections/contact/`), in design order on `pages/contact.jsx`: `ContactInfo` (id `contact-info`: the page's
-  hidden `h1` and four `ContactColumn`s of `contacts`, each with `ContactLinks`, `ContactOffice` or `ContactSocials`),
+  hidden `h1` and four `ContactColumn`s of `contacts`, each with `ContactLinks`, `ContactOffice` or `SocialLinks`),
   `ContactForm` (the `<form id="contact-form">` beside the icon and `h2`: a field part per kind, `ContactFormController` checks it,
   the phone field is a flag box over a native country `<select>`; countries in `data/countries.js`),
   `Faq` (id `faq`: the "Ask Question" link to the form, beside one `FaqItem` per question of `faq`, each
@@ -68,26 +65,27 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `components/head/`: the head's parts (`FontPreloads`, `SeoMeta`, `SocialMeta`, `JsonLd` with `utils/get-*-json-ld.js`, …).
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
 - UI kit (`components/ui/`): `Button`, `Tag`, `Badge`, `SectionHeading`, `Stat`, `MetaItem` and `MetaGrid`, `CounterPill`,
-  `AvatarGroup`, `PlayButton` (opens the video modal), `Heading`. `/ui` shows each in every variant.
-- Cards (`components/cards/`): `NewsCard` and `VideoCard` (`isEpisode` adds Listen Podcast, which opens the same video). Both are on `/ui`.
+  `AvatarGroup`, `PlayButton` (opens the video modal), `Heading`, `Rating`, `SocialLinks`, `ArrowCircle`. `/ui` shows the kit.
+- Cards (`components/cards/`): `NewsCard` and `VideoCard` (`isEpisode` adds Listen Podcast, which opens the same video), `LinkCard`
+  (the card link that moves its `ArrowCircle`), `CardGroup` (a list of cards split by lines).
 - Where the key buttons lead: Download PDF Now, the newsletter strips and Community Forum to `/contact`; Home's Download Ebooks /
   Whitepapers Now and Preview to that tab of `/resources`; View All to the page that lists more (News's to the Home blog feed);
   play, Listen Podcast and the article's like are buttons, card likes are counters.
 - `PageIntro` (`components/page/`): the page's `h1` over two lines with the text beside the second one (stacked at
   390); News (with the taller `isSpacious` bottom), Podcasts and Resources render it from their data; 404 puts its button under the text.
+  `DisclosureSection` there is a section whose cards after the first N sit behind a button below 768px.
 - `PostRow` (cards) and `PostFeed` (`components/feeds/`: the category
   tabs and the list of `PostRow`s, filtered in the browser by `PostFeedController`); both are on `/ui`.
 - `src/data/` — the texts, ids and lists the components render, as plain exported values, one file per entity or
   section: `posts` (with their article `body`), `authors`, `categories`, `videos`, `podcasts`, `resources`, `testimonials`,
   `features`, `stats`, `faq`, `navigation`, `footer`, `socials`, `contacts`, `contact-form`, `countries`, `cta`, `hero`,
-  `blogs`, `news`, `not-found`, `article`, `post-feed`, `video-modal`, `card-photos` (photo `sizes` and widths), `ui-kit` (`/ui` demo
-  lists), `pages` (each page's metadata) and `site` (the name, origin, locale, theme colour, icons, social image).
+  `blogs`, `news`, `not-found`, `article`, `post-feed`, `video-modal`, `card-photos` (photo `sizes` and widths), `rating`, `ui-labels`, `ui-kit` (`/ui` demo), `pages` (each page's metadata) and `site` (the name, origin, locale, theme colour, icons, social image).
 - `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, …), re-exported by
   `index.js` (plain JS, no JSX), imported by components, sections and the layout.
 - `src/constants/` — what utils and scripts share (formats, keys, hook selectors, `aria-*` names, media queries, storage keys, widget
   settings), one file per meaning, re-exported by `index.js`.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
-  `.container`, `.visually-hidden`), `reveal.css` (the scroll-reveal keyframes and hidden start state), `fonts.css`; `global.css` imports them, the layout imports it first.
+  `.container`, `.split-layout`, `.visually-hidden`), `reveal.css` (the scroll-reveal keyframes and hidden start state), `fonts.css`; `global.css` imports them.
   Components and sections import their own stylesheet; the build bundles all into one file.
 - `src/scripts/` — all browser JavaScript: `main.js` (the one entry, loaded by the layout: a table of root hook →
   class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`, `VideoModal`, `CountUp`, `FormField`, `LikeButton`, `Reveal`: root `<html data-reveal-root>`),

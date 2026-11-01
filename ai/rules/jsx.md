@@ -72,8 +72,8 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
   `/blog/<slug>`, is generated; a link to it is always `getPostUrl(slug)`, never a typed path.
 - A section's tag, title, text and optional "View All" link are the shared heading component,
   never a per-section title markup.
-- UI kit first, then your own markup: a button, tag, badge, stat, meta pair, counter pill or avatar group is
-  the kit's component (`ai/map.md`), never a copy of its markup or styles. A variant the kit lacks is added to
+- UI kit first, then your own markup: a button, tag, badge, stat, meta pair, counter pill, avatar group, rating, social
+  links or round arrow is the kit's component (`ai/map.md`), never a copy of its markup or styles. A variant the kit lacks is added to
   the kit and to `/ui`, not drawn in the section.
 
 ## Images and icons

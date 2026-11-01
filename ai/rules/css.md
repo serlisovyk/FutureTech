@@ -59,6 +59,8 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
   are `--font-kumbh` and `--font-inter`; `--border` is the 1px line. A new token follows these.
 - A divider is `--border` on a full-width section, its content in a `.container` inside: the line ignores
   the side padding by construction, no utility class.
+- The grid of an intro beside a panel is the utility `.split-layout` of the base styles (the intro's width is
+  `--split-intro-width` when a block differs), not a copy in each block.
 - A value one block uses is written in that block's stylesheet, not made a token. A value used
   twice in one block is a custom property on its root rule. When a second block needs it, it
   becomes a token on the existing scale.
