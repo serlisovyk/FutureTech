@@ -1,6 +1,6 @@
 import { clsx } from 'clsx'
-import { FooterPillLink } from '@sections/shared/Footer/FooterPillLink'
-import { FooterTextLink } from '@sections/shared/Footer/FooterTextLink'
+import { FooterPillLink } from '../FooterPillLink'
+import { FooterTextLink } from '../FooterTextLink'
 
 export function FooterColumn({ title, links, isButtons = false }) {
   const LinkItem = isButtons ? FooterPillLink : FooterTextLink

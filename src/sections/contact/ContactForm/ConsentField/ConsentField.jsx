@@ -1,6 +1,6 @@
 import { Icon } from '@components'
-import { FormError } from '@sections/contact/ContactForm/FormError'
-import { RequiredMark } from '@sections/contact/ContactForm/RequiredMark'
+import { FormError } from '../FormError'
+import { RequiredMark } from '../RequiredMark'
 import './ConsentField.css'
 
 export function ConsentField({ id, errorId, name, label, errors }) {

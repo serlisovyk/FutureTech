@@ -1,4 +1,4 @@
-import { TestimonialCard } from '@sections/home/Testimonials/TestimonialCard'
+import { TestimonialCard } from '../TestimonialCard'
 import './TestimonialGroup.css'
 
 export function TestimonialGroup({ items, id, isRegion = false }) {

@@ -1,4 +1,4 @@
-import { FormField } from '@sections/contact/ContactForm/FormField'
+import { FormField } from '../FormField'
 
 export function MessageField(props) {
   const { id, errorId, name, label, placeholder, errors } = props

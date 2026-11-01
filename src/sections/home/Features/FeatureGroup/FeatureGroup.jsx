@@ -1,6 +1,6 @@
 import { clsx } from 'clsx'
 import { Heading, Icon } from '@components'
-import { FeatureCard } from '@sections/home/Features/FeatureCard'
+import { FeatureCard } from '../FeatureCard'
 import './FeatureGroup.css'
 
 export function FeatureGroup({ icon, title, text, cards, hasWideIcon = false }) {

@@ -25,7 +25,7 @@ order of the work.
    `<section>` with the block class and a container inside; the heading through the shared
    heading component. Roles and ARIA go in the JSX; the root gets `data-<name>`, the children
    the hooks of the widget that drives them (`ai/rules/oop.md`). A part of the section is a folder
-   `<Name>/<Part>/` (`<Part>.jsx`, `<Part>.css` when it has styles, `index.jsx`), imported as `./<Part>`; a data
+   `<Name>/<Part>/` (`<Part>.jsx`, `<Part>.css` when it has styles, `index.jsx`), imported as `./<Part>` (a sibling part is `../<Part>`); a data
    item made for the part's props is spread (`<Part key={id} {...item} />`, `ai/rules/jsx.md`).
 4. **Styles** — `<Name>.css` in the folder, beside the JSX of each new block, imported by it
    (`import './Name.css'`): BEM, native nesting, colours and shared values from the tokens, the

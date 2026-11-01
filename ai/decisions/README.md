@@ -72,7 +72,7 @@ each with the record that replaced it.
 - [Aliases cover the `src/` folders others import from; `vite/` reads the `src/` barrels by relative path](2026-11-01-path-aliases-imported-folders.md)
 - [Components and sections are folders with barrels (`@components`, `@sections`, `@utils`); assets sit in subfolders](2026-10-28-folders-and-barrels.md)
 - [Constants live in one folder (`@constants`), data is a barrel (`@data`), page metadata is data](2026-11-01-constants-folder-data-barrel.md)
-- [The parts of a section are folders, like components; a part imports a sibling by its folder path](2026-11-01-section-parts-in-folders.md)
+- [The parts of a section are folders, like components; a part imports a sibling part as `../<Part>`](2026-11-01-part-imports-by-parent-folder.md)
 - [A data item made for a component's props is spread; the rest `...props` stays forbidden](2026-11-01-spread-of-a-data-item.md)
 - [Styles live next to their JSX; `styles/` holds only global CSS](2026-10-28-styles-next-to-components.md)
 - [Fluid values, hover and breakpoints are short notations that PostCSS plugins expand; `fluid()` writes each step as a number](2026-11-01-postcss-notations.md)
@@ -113,4 +113,5 @@ each with the record that replaced it.
 - [Fluid values, hover and breakpoints are short notations that PostCSS plugins expand](2026-11-01-postcss-shorthands.md) — replaced by `postcss-notations`
 - [Fonts are self-hosted static woff2 files, latin subset](2026-10-28-self-hosted-fonts.md) — replaced by `font-preloads`
 - [ESLint (with the JSX plugins), Stylelint and a Husky pre-commit hook; no more rule sets](2026-10-28-linters.md) — replaced by `linters-guards`
+- [The parts of a section are folders, like components; a part imports a sibling by its folder path](2026-11-01-section-parts-in-folders.md) — replaced by `part-imports-by-parent-folder`
 - [Imports across folders use one alias per folder (`@components`, `@scripts`, …), never `../`](2026-10-28-path-aliases.md) — replaced by `path-aliases-imported-folders`

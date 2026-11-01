@@ -1,6 +1,6 @@
 # The parts of a section are folders, like components
 
-Date: 2026-11-01 · Status: accepted
+Date: 2026-11-01 · Status: superseded by 2026-11-01-part-imports-by-parent-folder.md
 
 ## Context
 

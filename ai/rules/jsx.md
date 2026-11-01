@@ -23,19 +23,19 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
 - A component is a folder: `components/<group>/<Component>/` holds `<Component>.jsx`, `<Component>.css` and an
   `index.jsx`; a section is `sections/<group>/<Section>/` with `<Section>.jsx`, its stylesheet, an `index.jsx` that
   exports the section only, and a folder per part. Each group has an `index.jsx`, and the root `index.jsx` of
-  `components/` and `sections/` re-exports the groups (decisions `folders-and-barrels`, `section-parts-in-folders`).
+  `components/` and `sections/` re-exports the groups (decisions `folders-and-barrels`, `part-imports-by-parent-folder`).
 - One file holds one component and nothing else: a part of a section is a folder built like a component
   (`FooterColumn/` with `FooterColumn.jsx`, `FooterColumn.css` when it has styles, `index.jsx`), a helper goes to
   `utils/`, a text or an id to `data/`.
 - One root element per component, with the block's class. A component is used by sections
   only; a section does not render another section.
 - An import that crosses folders uses the folder alias (list in `ai/map.md`): `import { Button, Tag } from '@components'`,
-  `from '@sections'`, `from '@utils'`, `from '@data'`, `from '@constants'` (the barrels, never a file of them); one inside the same folder stays `./`; never `../`. A component of
+  `from '@sections'`, `from '@utils'`, `from '@data'`, `from '@constants'` (the barrels, never a file of them); one inside the same folder stays `./`; `../` only for a sibling part (below). A component of
   `components/` imports another by its folder (`@components/media/Icon`), never the root barrel: that is a cycle.
   The one exception is a root path (`/src/assets/…`, `/src/scripts/main.js`): minista's `Sprite`, `Svg`
   and `Picture` read their `src` from the project root, not through Vite's aliases.
-- A section imports its part as `./<Part>`; a part imports a sibling part by its folder, `@sections/<group>/<Section>/<Part>`,
-  never through the `@sections` barrel (a cycle).
+- A section imports its part as `./<Part>`; a part imports a sibling part as `../<Part>`, never through the `@sections`
+  barrel (a cycle) and never a `../` that leaves its section (decision `part-imports-by-parent-folder`).
 
 ## Props and data
 
