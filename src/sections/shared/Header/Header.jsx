@@ -1,17 +1,13 @@
 import { Svg } from 'minista/assets'
 import { Button, Icon } from '@components'
-import { getAriaCurrent } from '@utils'
-import {
-  menuIconSize,
-  navigationAction,
-  navigationLinks,
-  newsletter,
-  site,
-} from '@data'
+import { getAriaCurrent, getLinkHref } from '@utils'
+import { banner, menuIconSize, navigationAction, navigationLinks, site } from '@data'
 import './Header.css'
 
 export function Header({ currentPath }) {
-  const { href: bannerHref, lead, extra, tail } = newsletter
+  const { lead, extra, tail } = banner
+
+  const bannerHref = getLinkHref(banner)
 
   const { name: siteName } = site
 

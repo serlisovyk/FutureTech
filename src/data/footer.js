@@ -28,7 +28,6 @@ export const footer = {
         { label: 'Resources', path: '/', id: resourcesSection.id, isNew: true },
         { label: 'Testimonials', path: '/', id: testimonialsSection.id },
         { label: navigationAction.label, path: navigationAction.href },
-        { label: 'Newsletter', path: navigationAction.href },
       ],
     },
     {
@@ -126,6 +125,6 @@ export const footer = {
   sourceCode: {
     href: 'https://github.com/serlisovyk/FutureTech',
     label: 'Source code on GitHub (opens in a new tab)',
-    icon: 'social/github',
+    icon: 'ui/code',
   },
 }

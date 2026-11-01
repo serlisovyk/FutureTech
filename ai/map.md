@@ -29,7 +29,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   the header, the CTA (`CtaRevolution`) and the footer join it from `sections/shared/`.
 - `src/sections/` — one folder per section (JSX, stylesheet, `index.jsx`, a folder per part), by page group (`home/`, `news/`, …,
   `ui/`; `shared/` when two pages use it); `sections/index.jsx` re-exports the groups.
-  `shared/Header` is on every page: the skip link, the newsletter strip, the navbar and the mobile menu (decision `mobile-menu-drawer`).
+  `shared/Header` is on every page: the skip link, the banner strip, the navbar and the mobile menu (decision `mobile-menu-drawer`).
   `shared/VideoModal` is the one `<dialog>` the layout renders on every
   page; any `[data-video-id]` button opens it.
 - Home sections (`sections/home/`), in design order on `pages/index.jsx`: `Hero` (the page's `h1`, the eyebrow, three
@@ -73,7 +73,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `AvatarGroup`, `PlayButton` (opens the video modal), `Heading`, `Rating`, `SocialLinks`, `ArrowCircle`. `/ui` shows the kit.
 - Cards (`components/cards/`): `NewsCard` and `VideoCard` (`isEpisode` adds Listen Podcast, which opens the same video), `LinkCard`
   (the card link that moves its `ArrowCircle`), `CardGroup` (a list of cards split by lines).
-- Where the key buttons lead: Download PDF Now, the newsletter strips and Community Forum to `/contact`; Home's Download Ebooks /
+- Where the key buttons lead: Download PDF Now and Community Forum to `/contact`, the header strip to Home's Blogs; Home's Download Ebooks /
   Whitepapers Now and Preview to that tab of `/resources`; View All to the page that lists more (News's to the Home blog feed);
   play, Listen Podcast and the article's like are buttons, card likes are counters.
 - `PageIntro` (`components/page/`): the page's `h1` over two lines with the text beside the second one (stacked at
