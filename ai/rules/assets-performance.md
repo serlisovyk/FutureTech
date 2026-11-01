@@ -51,5 +51,5 @@ build. Where the files are: `ai/map.md`. Why the site is static: decision
   origin without a new record.
 - A dependency is added only with the author's yes; the browser runtime has none.
 - The size budget (`npm run size`, run by CI on every push) holds the built JS, CSS, fonts and
-  images to their limits (decision `size-budget`); a change that comes near them is questioned
+  images to their limits (decision `size-budget-after-audit`); a change that comes near them is questioned
   first, and raising a limit is a new dated record.
