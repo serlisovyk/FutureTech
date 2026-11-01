@@ -5,9 +5,18 @@
   --feature-intro-width: calc(413px + (519 - 413) * var(--ramp-1440-1920));
   --feature-panel-padding: calc(60px + (80 - 60) * var(--ramp-1440-1920));
 
+  position: relative;
   display: grid;
   grid-template-columns: min(var(--feature-intro-width), 34%) 1fr;
   column-gap: calc(60px + (80 - 60) * var(--ramp-1440-1920));
+
+  & + &::before {
+    content: '';
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline: 0;
+    border-block-start: var(--border);
+  }
 
   @media (width < 1024px) {
     grid-template-columns: 1fr;
