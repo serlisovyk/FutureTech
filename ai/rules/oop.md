@@ -1,7 +1,7 @@
 # OOP Rules
 
 The browser JavaScript is object-oriented: a class per widget and per section. These rules
-apply to every file in `scripts/`. Why: decisions `oop-javascript` and `script-helper-classes`. JSX components are not
+apply to every file in `scripts/`. Why: decision `script-helper-classes`. JSX components are not
 classes and follow `ai/rules/jsx.md`.
 
 ## Files and modules

@@ -144,9 +144,8 @@ git branch -d my-<n>-<slug>
 - If the branch was pushed (for a preview), delete it on the remote too
   (`git push origin --delete my-<n>-<slug>`).
 - Remove the worktree if one was used (`git worktree remove <path>`).
-- Move the Linear issue to `Done` once the merge is on `main` (and on the live site, once there
-  is one), and comment with the merged commit SHAs, the author's decisions, what was checked and
-  what was not.
+- Move the Linear issue to `Done` once the merge is on `main`, and comment with the merged
+  commit SHAs, the author's decisions, what was checked and what was not.
 
 ## Parallel work
 

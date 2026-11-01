@@ -42,7 +42,7 @@ anything `ai/rules/` and `ai/map.md` already cover. Do not create noise records.
 ## Records
 
 The first groups are the records in force, by topic; the last one lists the superseded records,
-each with the record that replaced it.
+each with the record in force at the end of its chain.
 
 ### Project and process
 
@@ -96,9 +96,9 @@ each with the record that replaced it.
 - [Pages set their head through minista's metadata and `Head`; CSS and one script entry are loaded by the layout](2026-10-28-page-head-and-entries.md) — replaced by `shared-page-head`
 - [The sitemap, robots.txt and llms.txt are built from the built pages; JSON-LD is Organization and BlogPosting](2026-10-30-seo-files-and-structured-data.md) — replaced by `seo-markup-and-logo`
 - [Article bodies are JS sections in `data/`, no MDX](2026-10-28-article-data.md) — replaced by `article-without-contents`
-- [Browser JavaScript in OOP style: a class per widget and per section](2026-10-28-oop-javascript.md) — replaced by `script-helpers`
+- [Browser JavaScript in OOP style: a class per widget and per section](2026-10-28-oop-javascript.md) — replaced by `script-helper-classes`
 - [Browser scripts are classes, with pure helper functions in `scripts/utils/`](2026-11-01-script-helpers.md) — replaced by `script-helper-classes`
-- [Breakpoints and fluid values: two structural queries, ramps between the drawn widths](2026-10-28-fluid-ramps.md) — replaced by `postcss-shorthands`
+- [Breakpoints and fluid values: two structural queries, ramps between the drawn widths](2026-10-28-fluid-ramps.md) — replaced by `postcss-notations`
 - [The CSS limit is raised to 4 kB for the header, the CTA and the footer](2026-10-28-shared-blocks-css-limit.md) — replaced by `size-budget-after-audit`
 - [The limits are raised for the cards and the video modal; images are measured as a total](2026-10-28-cards-and-modal-size-limits.md) — replaced by `size-budget-after-audit`
 - [The CSS and images limits are raised for the post feed](2026-10-28-post-feed-size-limits.md) — replaced by `size-budget-after-audit`
