@@ -175,7 +175,7 @@ The values in use, as a scale: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 30, 3
 | ------------------------------------------------------ | ----------- | ---------- | ---------- |
 | Cards, trays, images, quote card                       | 12          | 10         | 10         |
 | Podcast lead video                                     | 20          | 16         | 12         |
-| Outline "View All" button / "Preview" button           | 12 / 10     | 8 / 8      | 8 / 8      |
+| Outline "View All" button / "View Details" button      | 12 / 10     | 8 / 8      | 8 / 8      |
 | Ghost / download button, field, footer link button     | 8           | 6          | 6          |
 | Contact Us, active nav pill                            | 10          | 6          | -          |
 | Filter tab                                             | 8           | 7          | 7          |
@@ -193,10 +193,10 @@ The values in use, as a scale: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 30, 3
 ## 5. Components
 
 - **Tag:** pill-box `Dark/20`, text `tag` role, padding 6 x 10 / 4 x 8 / 4 x 8, radius 4, hugs its text.
-- **Outline button** ("View All", "Read More", "Preview", "Listen Podcast", "View Blog", "View Details"): fill
+- **Outline button** ("View All", "Read More", "Listen Now", "View Details", "View Blogs"): fill
   `Dark/08`, border `Dark/15`, label `button label`, then the arrow glyph in `Yellow/55`; height 63 / 49 / 49,
   hugs its content. Full width (358) at 390 in heading bands.
-- **Ghost button** ("Download Ebooks Now", "Download PDF Now", contact buttons, "Ask Qustion"): the same with fill
+- **Ghost button** ("Browse Ebooks", "Request the PDF", contact buttons, "Ask Qustion"): the same with fill
   `Dark/10`; the download button is full column width, height 63 / 57 / 57, label centred.
 - **Primary button:** `Yellow/55` fill, text `Dark/08` I500. Contact Us: 137x55 / 103x41, padding 14 x 20 / 10 x
   14, radius 10 / 6, no border. Send: padding 18 x 46 / 14 x 34, radius 8, 137x60 / 103x52.
@@ -220,7 +220,7 @@ The values in use, as a scale: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 30, 3
   an outline button. Sizes 718x412 / 590x331 / 358x210 (video), 471x290 / 387x244 / 358x208 (episode). The
   podcast lead video is 917x412 with the play disc centred.
 - **Resource card:** image 471x290 / 387x290 / 358x223, title (card title), text, two buttons ("View Details"
-  outline, "Download PDF Now" ghost) 225 wide each at 1920, gap 20.
+  outline, "Request the PDF" ghost) 225 wide each at 1920, gap 20.
 - **Feature card:** `Dark/10`, border, radius 12 / 10 / 10, padding 40 / 30 / 24, a card heading and a body line.
 - **CTA card:** same surface inside a tray (`Dark/08`, border, radius 12 / 10 / 10, padding 20 / 10 / 10): title
   `card title` with a round arrow button on the right, body below. Three across, stacked at 390.
@@ -265,11 +265,11 @@ Section names are the design's sitemap. A page is the header, its sections, the 
   horizontal lines.
 - Features: heading band, then two split rows: left icon + h3 feature + body, right 2 x 2 feature cards. 390: stacked,
   cards one column.
-- Blogs: heading band with "View All Blogs", tab bar (6), three list rows (author, text with three counters,
-  "View Blog"). 390: tabs scroll sideways; author and button on one line, text below.
-- Resources: heading band, two split rows (Ebooks, Whitepapers): left icon, h3, lead, ghost download button,
+- Blogs: heading band with "View All News", tab bar (6), three list rows (author, text with three counters,
+  "Read More"). 390: tabs scroll sideways; author and button on one line, text below.
+- Resources: heading band, two split rows (Ebooks, Whitepapers): left icon, h3, lead, ghost button,
   "Downloaded By" panel; right title and description, image 917x332 / 747x275 / 358x169, two meta cells and
-  Preview, an expertise cell. 390: stacked, cells stacked.
+  "View Details", an expertise cell. 390: stacked, cells stacked.
 - Testimonials: heading band, 3 x 2 testimonial cards split by lines. 390: three in a column (see the Flag in
   section 1).
 - CTA: logo mark 150 / 120 / 60 beside a tag, h2 and a Grey/50 paragraph; the tray with 3 CTA cards under it.
@@ -280,7 +280,7 @@ Section names are the design's sitemap. A page is the header, its sections, the 
 - Header section: display title on two lines, the paragraph at the right of the second line (gap 80 / 60); 390:
   title, then the paragraph.
 - Blogs: featured story (image 515x427 / 515x325 / 358x213, title lead, text, 3 meta cells, counters, "Read More")
-  and a row of 3 news cards; then a heading band (tag "Welcome to Our News Hub", h2, "View All News"), tab bar (6)
+  and a row of 3 news cards; then a heading band (tag "Welcome to Our News Hub", h2, "View Blogs"), tab bar (6)
   and three list rows. 390: featured story and cards stacked in one column, tabs scroll.
 - Videos: heading band (tag "Featured Videos"), 2 x 2 video cards split by a vertical line. 390: one column,
   horizontal lines.
@@ -288,7 +288,7 @@ Section names are the design's sitemap. A page is the header, its sections, the 
 **Podcasts** - Navigation bar, Header section, Top Podcasts, Latest Podcasts, CTA, Footer.
 
 - Header section: as News.
-- Top Podcasts: two split rows; left: icon, show title with a 5-star pill, host cell with "Listen Podcast"; right:
+- Top Podcasts: two split rows; left: icon, show title with a 5-star pill, host cell with "Listen Now"; right:
   lead video 917x412 (radius 20), lead title, text, three meta cells (Total Episodes, Average Episode Length,
   Release Frequency). 390: stacked; the left block, then a card (padding 40 x 24) with video and text.
 - Latest Podcasts: heading band (tag, h2, no button), 2 x 3 episode cards split by lines. 390: one column of 3
@@ -299,7 +299,7 @@ Section names are the design's sitemap. A page is the header, its sections, the 
 - Header section: display title, paragraph, then 4 counters (stat XL over a label) split by vertical lines. 390:
   2 x 2 with lines.
 - Resources: heading band (tag, h2) with the segmented tabs at the right (below the title at 390); two split rows
-  (icon, h3 resource, body | image 917x332, title, text, "Download PDF Now", 4 meta cells); then 3 resource
+  (icon, h3 resource, body | image 917x332, title, text, "Request the PDF", 4 meta cells); then 3 resource
   cards in a row split by lines. 390: stacked.
 
 **Blog article** - Navigation bar, Header section, Information, Similar Blogs, CTA, Footer.
