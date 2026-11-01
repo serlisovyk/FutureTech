@@ -14,8 +14,8 @@ with no state.
 - What stays from `oop-javascript`, which this record refines: the behavior of a widget or a section is an ES class with
   `#private` state, one per file, `constructor(root, options)` and `start()`, in `components/` or `controllers/`,
   created by `main.js`; composition over inheritance; no factories or DI containers.
-- `scripts/utils/` holds plain function modules in camelCase, named exports, one thing per file (`storage.js`,
-  `observeVisible.js`): a wrapper over a browser API or a check two or more classes share. A helper keeps no state,
+- `scripts/utils/` holds plain function modules in kebab-case behind a barrel (`index.js`), named exports, one thing per file (`storage.js`,
+  `observe-visible.js`): a wrapper over a browser API or a check two or more classes share. A helper keeps no state,
   touches no section's markup, and handles a refusing browser (`try` / `catch` with a returned fallback) itself.
 - The details are `ai/rules/oop.md`.
 

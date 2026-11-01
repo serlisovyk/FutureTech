@@ -1,7 +1,5 @@
 import { COUNT_UP } from '@constants'
-import { canObserveVisible } from '@scripts/utils/canObserveVisible.js'
-import { isReducedMotion } from '@scripts/utils/isReducedMotion.js'
-import { observeVisible } from '@scripts/utils/observeVisible.js'
+import { canObserveVisible, isReducedMotion, observeVisible } from '@scripts/utils'
 
 export class CountUp {
   #options

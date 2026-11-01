@@ -1,5 +1,5 @@
 import { SELECTORS, STORAGE } from '@constants'
-import { readStorage, removeStorage, writeStorage } from '@scripts/utils/storage.js'
+import { readStorage, removeStorage, writeStorage } from '@scripts/utils'
 
 export class LikeButton {
   #root

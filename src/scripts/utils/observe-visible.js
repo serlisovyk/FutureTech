@@ -1,12 +1,13 @@
-import { canObserveVisible } from '@scripts/utils/canObserveVisible.js'
+import { canObserveVisible } from './can-observe-visible.js'
 
 export function observeVisible(elements, onVisible, options = {}) {
   if (!canObserveVisible()) return () => {}
 
   const observer = new IntersectionObserver((entries) => {
     const visibleElements = entries
-      .filter((entry) => entry.isIntersecting)
-      .map((entry) => entry.target)
+      .filter(({ isIntersecting }) => isIntersecting)
+      .map(({ target }) => target)
+
     const isNoneVisible = visibleElements.length === 0
     if (isNoneVisible) return
 

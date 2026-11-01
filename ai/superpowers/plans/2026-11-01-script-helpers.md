@@ -12,14 +12,14 @@ new record, see below), `styles-next-to-components`, `path-aliases`.
 
 ## Changes
 
-- `scripts/utils/` (new folder, plain function modules in camelCase, no state, no DOM of their own; imported through
-  `@scripts/utils/<name>.js`):
+- `scripts/utils/` (new folder, plain function modules in kebab-case behind a barrel `index.js`, no state, no DOM of their own; imported through
+  `@scripts/utils`):
   - `storage.js`: `readStorage(key, fallback)`, `writeStorage(key, value)`, `removeStorage(key)`; `try` / `catch` inside,
     the fallback (or `false`) is returned when the browser refuses.
-  - `observeVisible.js`: `observeVisible(elements, onVisible, options)` creates the observer, calls `onVisible` with the
+  - `observe-visible.js`: `observeVisible(elements, onVisible, options)` creates the observer, calls `onVisible` with the
     elements of one callback batch that intersect, unobserves them (once), and returns a function that disconnects.
     Without `IntersectionObserver` it observes nothing and returns a no-op disconnect.
-  - `canObserveVisible.js` and `isReducedMotion.js`: the two checks the callers ask before changing the DOM.
+  - `can-observe-visible.js` and `is-reduced-motion.js`: the two checks the callers ask before changing the DOM.
 - `LikeButton` reads and writes through `storage.js`; `#readStorage` / `#writeStorage` go.
 - `CountUp` and `Reveal` observe through `observeVisible`; their own observers, the `unobserve` and `disconnect` calls and
   the inline `matchMedia` / `'IntersectionObserver' in window` checks go. `Reveal` still drops the hook from first-screen

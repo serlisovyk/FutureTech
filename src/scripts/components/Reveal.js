@@ -1,7 +1,5 @@
 import { REVEAL } from '@constants'
-import { canObserveVisible } from '@scripts/utils/canObserveVisible.js'
-import { isReducedMotion } from '@scripts/utils/isReducedMotion.js'
-import { observeVisible } from '@scripts/utils/observeVisible.js'
+import { canObserveVisible, isReducedMotion, observeVisible } from '@scripts/utils'
 
 export class Reveal {
   #root
@@ -36,6 +34,7 @@ export class Reveal {
     observeVisible(belowItems, (items) => this.#renderBatch(items), {
       rootMargin: this.#options.rootMargin,
     })
+
     this.#root.classList.add(REVEAL.readyClass)
   }
 
