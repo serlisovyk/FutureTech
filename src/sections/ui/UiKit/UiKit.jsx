@@ -1,357 +1,51 @@
-import {
-  AvatarGroup,
-  Badge,
-  Button,
-  CounterPill,
-  Heading,
-  MetaGrid,
-  NewsCard,
-  PostFeed,
-  SectionHeading,
-  Stat,
-  Tag,
-  VideoCard,
-} from '@components'
-import { getPostsByPlacement } from '@utils'
-import {
-  resourceShowcases,
-  stats,
-  articleMeta,
-  blogFeedDemo,
-  episodeCardDemo,
-  newsFeedDemo,
-  podcastMeta,
-  sectionHeadingDemo,
-  videoCardDemo,
-} from '@data'
+import { Heading } from '@components'
+import { uiKit } from '@data'
+import { AvatarDemo } from './AvatarDemo'
+import { BadgeDemo } from './BadgeDemo'
+import { ButtonDemo } from './ButtonDemo'
+import { CounterDemo } from './CounterDemo'
+import { FeedDemo } from './FeedDemo'
+import { MetaDemo } from './MetaDemo'
+import { NewsCardDemo } from './NewsCardDemo'
+import { SectionHeadingDemo } from './SectionHeadingDemo'
+import { StatDemo } from './StatDemo'
+import { TagDemo } from './TagDemo'
+import { VideoCardDemo } from './VideoCardDemo'
 import './UiKit.css'
 
 export function UiKit() {
-  const { meta: ebookMeta, avatars } = resourceShowcases[0]
-
-  const {
-    tag: headingTag,
-    title: headingTitle,
-    link: headingLink,
-  } = sectionHeadingDemo
-
-  const {
-    id: blogFeedId,
-    categories: blogFeedCategories,
-    placement: blogFeedPlacement,
-  } = blogFeedDemo
-
-  const {
-    id: newsFeedId,
-    categories: newsFeedCategories,
-    placement: newsFeedPlacement,
-    limit: newsFeedLimit,
-  } = newsFeedDemo
-
-  const trendingPosts = getPostsByPlacement('trending')
-
-  const blogPosts = getPostsByPlacement(blogFeedPlacement)
-
-  const headlinePosts = getPostsByPlacement(newsFeedPlacement)
+  const { title, intro } = uiKit
 
   return (
     <div className="ui-kit">
       <div className="container">
         <Heading level={1} size="display">
-          UI kit
+          {title}
         </Heading>
-        <p className="ui-kit__intro">
-          Every component of the site in each of its variants.
-        </p>
+        <p className="ui-kit__intro">{intro}</p>
       </div>
 
-      <section className="ui-kit__group">
-        <div className="container ui-kit__body">
-          <Heading level={2} size="h3">
-            Button
-          </Heading>
-          <p className="ui-kit__caption">
-            Primary: a link, a button, with each icon
-          </p>
-          <div className="ui-kit__row">
-            <Button href="/contact">Contact Us</Button>
-            <Button>Contact Us</Button>
-            <Button href="/contact" icon="ui/arrow-up-right">
-              Contact Us
-            </Button>
-            <Button icon="ui/arrow-down">Download</Button>
-          </div>
-          <p className="ui-kit__caption">Primary, large: a button</p>
-          <div className="ui-kit__row">
-            <Button isLarge>Send</Button>
-          </div>
-          <p className="ui-kit__caption">
-            Outline: a link, a button, with each icon
-          </p>
-          <div className="ui-kit__row">
-            <Button variant="outline" href="/news">
-              Read More
-            </Button>
-            <Button variant="outline">Read More</Button>
-            <Button variant="outline" href="/news" icon="ui/arrow-up-right">
-              Read More
-            </Button>
-            <Button variant="outline" icon="ui/arrow-down">
-              Download
-            </Button>
-          </div>
-          <p className="ui-kit__caption">Outline, small: a link and a button</p>
-          <div className="ui-kit__row">
-            <Button
-              variant="outline"
-              href="/resources"
-              icon="ui/arrow-up-right"
-              isSmall
-            >
-              Whitepapers
-            </Button>
-            <Button variant="outline" icon="ui/arrow-up-right" isSmall>
-              Whitepapers
-            </Button>
-          </div>
-          <p className="ui-kit__caption">Outline, compact: a link and a button</p>
-          <div className="ui-kit__row">
-            <Button
-              variant="outline"
-              href="/resources"
-              icon="ui/arrow-down"
-              isCompact
-            >
-              Read Full Blog
-            </Button>
-            <Button variant="outline" icon="ui/arrow-down" isCompact>
-              Read Full Blog
-            </Button>
-          </div>
-          <p className="ui-kit__caption">Ghost: a link and a button</p>
-          <div className="ui-kit__row">
-            <Button variant="ghost" href="/resources" icon="ui/arrow-up-right">
-              Download Ebooks Now
-            </Button>
-            <Button variant="ghost" icon="ui/arrow-up-right">
-              Download Ebooks Now
-            </Button>
-          </div>
-          <p className="ui-kit__caption">Ghost, compact: a link and a button</p>
-          <div className="ui-kit__row">
-            <Button
-              variant="ghost"
-              href="/contact"
-              icon="ui/arrow-up-right"
-              isCompact
-            >
-              Contact Us
-            </Button>
-            <Button variant="ghost" icon="ui/arrow-up-right" isCompact>
-              Contact Us
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ButtonDemo />
 
-      <section className="ui-kit__group">
-        <div className="container ui-kit__body">
-          <Heading level={2} size="h3">
-            Tag
-          </Heading>
-          <div className="ui-kit__row">
-            <Tag>Learn, Connect, and Innovate</Tag>
-          </div>
-        </div>
-      </section>
+      <TagDemo />
 
-      <section className="ui-kit__group">
-        <div className="container ui-kit__body">
-          <Heading level={2} size="h3">
-            SectionHeading
-          </Heading>
-          <p className="ui-kit__caption">With the View All link, then without it</p>
-        </div>
-        <SectionHeading tag={headingTag} title={headingTitle} link={headingLink} />
-        <SectionHeading tag={headingTag} title={headingTitle} />
-      </section>
+      <SectionHeadingDemo />
 
-      <section className="ui-kit__group">
-        <div className="container ui-kit__body">
-          <Heading level={2} size="h3">
-            Stat
-          </Heading>
-          <p className="ui-kit__caption">Regular, then large</p>
-          <div className="ui-kit__row ui-kit__row--wide">
-            {stats.map(({ id, ...stat }) => (
-              <Stat key={id} {...stat} />
-            ))}
-          </div>
-          <div className="ui-kit__row ui-kit__row--wide">
-            {stats.map(({ id, ...stat }) => (
-              <Stat key={id} {...stat} isLarge />
-            ))}
-          </div>
-        </div>
-      </section>
+      <StatDemo />
 
-      <section className="ui-kit__group">
-        <div className="container ui-kit__body">
-          <Heading level={2} size="h3">
-            MetaItem and MetaGrid
-          </Heading>
-          <p className="ui-kit__caption">Plain pairs</p>
-          <MetaGrid items={articleMeta} />
-          <p className="ui-kit__caption">Cards, three and two</p>
-          <MetaGrid items={podcastMeta} isCard />
-          <MetaGrid items={ebookMeta} isCard />
-        </div>
-      </section>
+      <MetaDemo />
 
-      <section className="ui-kit__group">
-        <div className="container ui-kit__body">
-          <Heading level={2} size="h3">
-            CounterPill
-          </Heading>
-          <p className="ui-kit__caption">
-            Liked, then likes, comments, views and shares
-          </p>
-          <div className="ui-kit__row">
-            <CounterPill icon="ui/heart" label="likes" count="24.5k" isLiked />
-            <CounterPill icon="ui/heart" label="likes" count="24.5k" />
-            <CounterPill icon="ui/comment" label="comments" count="340" />
-            <CounterPill icon="ui/eye" label="views" count="1.2k" />
-            <CounterPill icon="ui/send" label="shares" count="86" />
-          </div>
-          <p className="ui-kit__caption">Large, with the like as a toggle button</p>
-          <div className="ui-kit__row">
-            <CounterPill
-              icon="ui/heart"
-              label="likes"
-              count="24.5k"
-              likedCount="24.5k"
-              likeKey="ui-kit"
-              isLarge
-            />
-            <CounterPill icon="ui/eye" label="views" count="50k" isLarge />
-            <CounterPill icon="ui/send" label="shares" count="206" isLarge />
-          </div>
-        </div>
-      </section>
+      <CounterDemo />
 
-      <section className="ui-kit__group">
-        <div className="container ui-kit__body">
-          <Heading level={2} size="h3">
-            Badge
-          </Heading>
-          <div className="ui-kit__row">
-            <Badge>New</Badge>
-          </div>
-        </div>
-      </section>
+      <BadgeDemo />
 
-      <section className="ui-kit__group">
-        <div className="container ui-kit__body">
-          <Heading level={2} size="h3">
-            AvatarGroup
-          </Heading>
-          <p className="ui-kit__caption">In a rounded box, then in a capsule</p>
-          <div className="ui-kit__panel">
-            <AvatarGroup avatars={avatars} />
-          </div>
-          <div className="ui-kit__row">
-            <AvatarGroup avatars={avatars} isCapsule />
-          </div>
-        </div>
-      </section>
+      <AvatarDemo />
 
-      <section className="ui-kit__group">
-        <div className="container ui-kit__body">
-          <Heading level={2} size="h3">
-            NewsCard
-          </Heading>
-          <p className="ui-kit__caption">
-            Three across: the photo, the title, the category, the counters and the
-            link to the article
-          </p>
-          <div className="ui-kit__grid ui-kit__grid--news">
-            {trendingPosts.map((post) => {
-              const {
-                slug,
-                title,
-                category,
-                image,
-                imageAlt,
-                counters: { likes, comments },
-              } = post
+      <NewsCardDemo />
 
-              return (
-                <NewsCard
-                  key={slug}
-                  slug={slug}
-                  title={title}
-                  category={category}
-                  image={image}
-                  imageAlt={imageAlt}
-                  likes={likes}
-                  comments={comments}
-                />
-              )
-            })}
-          </div>
-        </div>
-      </section>
+      <VideoCardDemo />
 
-      <section className="ui-kit__group">
-        <div className="container ui-kit__body">
-          <Heading level={2} size="h3">
-            VideoCard
-          </Heading>
-          <p className="ui-kit__caption">
-            The video, two across: the play button, the duration, the title and the
-            text
-          </p>
-          <div className="ui-kit__grid ui-kit__grid--video">
-            {videoCardDemo.map(({ id, ...video }) => (
-              <VideoCard key={id} {...video} />
-            ))}
-          </div>
-          <p className="ui-kit__caption">
-            The episode, three across: the same with the Listen Podcast button
-          </p>
-          <div className="ui-kit__grid ui-kit__grid--episode">
-            {episodeCardDemo.map(({ id, ...episode }) => (
-              <VideoCard key={id} {...episode} isEpisode />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="ui-kit__group">
-        <div className="container ui-kit__body">
-          <Heading level={2} size="h3">
-            PostRow and PostFeed
-          </Heading>
-          <p className="ui-kit__caption">The blog feed: the tabs filter the rows</p>
-        </div>
-        <PostFeed
-          id={blogFeedId}
-          categories={blogFeedCategories}
-          posts={blogPosts}
-        />
-        <div className="container ui-kit__body">
-          <p className="ui-kit__caption">
-            The news feed, limited to the first two posts: a tab with no post shows
-            the empty state
-          </p>
-        </div>
-        <PostFeed
-          id={newsFeedId}
-          categories={newsFeedCategories}
-          posts={headlinePosts}
-          limit={newsFeedLimit}
-        />
-      </section>
+      <FeedDemo />
     </div>
   )
 }
