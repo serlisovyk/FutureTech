@@ -5,7 +5,8 @@ export const hero = {
   text: 'Welcome to the epicenter of AI innovation. FutureTech AI News is your passport to a world where machines think, learn, and reshape the future. Join us on this visionary expedition into the heart of AI.',
   decor: {
     src: '/src/assets/images/decor/hero-decor.png',
-    sizes: '(width < 1440px) 622px, 894px',
+    sizes:
+      'calc(423px + 199 * clamp(0px, (100vw - 390px) / 1050, 1px) + 272 * clamp(0px, (100vw - 1440px) / 480, 1px))',
     breakpoints: [423, 622, 894, 1788],
   },
   aside: {
