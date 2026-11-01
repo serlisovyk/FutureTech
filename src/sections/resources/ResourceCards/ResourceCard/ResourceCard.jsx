@@ -27,6 +27,7 @@ export function ResourceCard({ titleId, title, text, image, detailsHref }) {
         <h3 className="resource-card__title" id={titleId}>
           {title}
         </h3>
+
         <p>{text}</p>
       </div>
 
@@ -39,6 +40,7 @@ export function ResourceCard({ titleId, title, text, image, detailsHref }) {
           {detailsLabel}
           <span className="visually-hidden">: {title}</span>
         </Button>
+
         <Button
           variant="ghost"
           href={downloadHref}

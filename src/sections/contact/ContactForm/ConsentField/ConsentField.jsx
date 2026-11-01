@@ -20,6 +20,7 @@ export function ConsentField({ id, errorId, name, label, errors }) {
             data-form-control
             data-error-value-missing={valueMissing}
           />
+
           <Icon name="ui/check" className="consent-field__check" />
         </span>
 

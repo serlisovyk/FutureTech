@@ -46,11 +46,13 @@ export function PodcastShow(props) {
               >
                 {title}
               </Heading>
+
               <Rating value={rating} className="podcast-show__rating" isCompact />
             </div>
 
             <div className="podcast-show__host">
               <MetaGrid items={hostItems} className="podcast-show__host-meta" />
+
               <Button
                 variant="outline"
                 icon="ui/arrow-up-right"
@@ -76,10 +78,12 @@ export function PodcastShow(props) {
                 breakpoints={cardPhotoBreakpoints}
                 className="podcast-show__photo"
               />
+
               <div className="podcast-show__controls">
                 <PlayButton title={title} videoId={videoId} />
               </div>
             </div>
+
             <div className="podcast-show__text">
               <p className="podcast-show__lead-title">{tagline}</p>
               <p>{text}</p>

@@ -16,6 +16,7 @@ export function Faq() {
             <Heading level={2} size="h3" id={titleId} className="faq__title">
               {title}
             </Heading>
+
             <p>{text}</p>
           </div>
 

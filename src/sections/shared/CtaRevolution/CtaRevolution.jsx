@@ -15,16 +15,20 @@ export function CtaRevolution() {
             className="cta-revolution__logo"
             aria-hidden="true"
           />
+
           <div className="cta-revolution__tag">
             <Tag>{tag}</Tag>
           </div>
+
           <div className="cta-revolution__text">
             <Heading level={2} size="h2" id={titleId}>
               {title}
             </Heading>
+
             <p className="cta-revolution__lead">{text}</p>
           </div>
         </div>
+
         <ul className="cta-revolution__cards">
           {cards.map(({ id, href, title: cardTitle, text: cardText }) => (
             <li key={id} className="cta-revolution__item" data-reveal>
@@ -33,6 +37,7 @@ export function CtaRevolution() {
                   <h3 className="cta-revolution__card-title">{cardTitle}</h3>
                   <ArrowCircle />
                 </div>
+
                 <p>{cardText}</p>
               </LinkCard>
             </li>

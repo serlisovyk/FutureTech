@@ -43,11 +43,13 @@ export function FeaturedNews() {
           fetchPriority="high"
           className="featured-news__photo"
         />
+
         <div className="featured-news__body">
           <div className="featured-news__text">
             <h2 className="featured-news__title" id={titleId}>
               {title}
             </h2>
+
             <p className="featured-news__excerpt">{excerpt}</p>
           </div>
 
@@ -60,12 +62,14 @@ export function FeaturedNews() {
                 label={likesLabel}
                 count={formatCount(likes)}
               />
+
               <CounterPill
                 icon="ui/comment"
                 label={commentsLabel}
                 count={formatCount(comments)}
               />
             </div>
+
             <Button
               variant="outline"
               icon="ui/arrow-up-right"

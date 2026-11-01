@@ -27,12 +27,14 @@ export function ArticleSidebar({ post }) {
           likeKey={slug}
           isLarge
         />
+
         <CounterPill
           icon="ui/eye"
           label={viewsLabel}
           count={formatCount(views)}
           isLarge
         />
+
         <CounterPill
           icon="ui/send"
           label={sharesLabel}

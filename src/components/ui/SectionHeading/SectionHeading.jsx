@@ -13,6 +13,7 @@ export function SectionHeading({ tag, title, titleId, children, link = {} }) {
       <div className="section-heading__inner container" data-reveal>
         <div className="section-heading__text">
           <Tag>{tag}</Tag>
+
           <Heading id={titleId} level={2} size="h2">
             {title}
           </Heading>

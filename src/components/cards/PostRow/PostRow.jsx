@@ -45,30 +45,36 @@ export function PostRow(props) {
           breakpoints={postRowAvatarBreakpoints}
           className="post-row__avatar"
         />
+
         <div className="post-row__author-text">
           <p className="post-row__author-name">{authorName}</p>
           <p className="post-row__category">{getCategoryName(category)}</p>
         </div>
       </div>
+
       <div className="post-row__body">
         <time className="post-row__date" dateTime={date}>
           {formatDate(date)}
         </time>
+
         <div className="post-row__text">
           <h3 className="post-row__title">{title}</h3>
           <p className="post-row__excerpt">{excerpt}</p>
         </div>
+
         <div className="post-row__counters">
           <CounterPill
             icon="ui/heart"
             label={likesLabel}
             count={formatCount(likes)}
           />
+
           <CounterPill
             icon="ui/comment"
             label={commentsLabel}
             count={formatCount(comments)}
           />
+
           <CounterPill
             icon="ui/send"
             label={sharesLabel}
@@ -76,6 +82,7 @@ export function PostRow(props) {
           />
         </div>
       </div>
+
       <Button
         variant="outline"
         icon="ui/arrow-up-right"

@@ -20,6 +20,7 @@ export function Footer() {
             return <FooterColumn key={title} {...column} />
           })}
         </nav>
+
         <div className="footer__bar">
           <ul className="footer__legal">
             {legal.map(({ label }) => (
@@ -28,7 +29,9 @@ export function Footer() {
               </li>
             ))}
           </ul>
+
           <SocialLinks socials={socials} className="footer__socials" />
+
           <p className="footer__copyright">
             © {currentYear} {copyright}
           </p>

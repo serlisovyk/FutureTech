@@ -19,6 +19,7 @@ export function FeatureGroup({ icon, title, text, cards, hasWideIcon = false }) 
           <Heading level={3} size="h3">
             {title}
           </Heading>
+
           <p>{text}</p>
         </div>
       </div>

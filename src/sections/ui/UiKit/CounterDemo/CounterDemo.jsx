@@ -15,6 +15,7 @@ export function CounterDemo() {
         {groups.map(({ id, caption, pills }) => (
           <Fragment key={id}>
             <p className="ui-kit__caption">{caption}</p>
+
             <div className="ui-kit__row">
               {pills.map(({ id: pillId, ...pill }) => (
                 <CounterPill key={pillId} {...pill} />

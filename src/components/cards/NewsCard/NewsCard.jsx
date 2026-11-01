@@ -28,11 +28,13 @@ export function NewsCard(props) {
         breakpoints={cardPhotoBreakpoints}
         className="news-card__photo"
       />
+
       <div className="news-card__body">
         <div className="news-card__text">
           <h3 className="news-card__title">{title}</h3>
           <p className="news-card__category">{getCategoryName(category)}</p>
         </div>
+
         <div className="news-card__footer">
           <div className="news-card__counters">
             <CounterPill
@@ -40,12 +42,14 @@ export function NewsCard(props) {
               label={likesLabel}
               count={formatCount(likes)}
             />
+
             <CounterPill
               icon="ui/comment"
               label={commentsLabel}
               count={formatCount(comments)}
             />
           </div>
+
           <Button
             variant="outline"
             icon="ui/arrow-up-right"

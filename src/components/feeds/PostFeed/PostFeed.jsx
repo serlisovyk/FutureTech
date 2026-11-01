@@ -55,7 +55,9 @@ export function PostFeed({ id, categories, posts, limit = posts.length }) {
           )
         })}
       </div>
+
       <p className="visually-hidden" role="status" data-post-feed-status />
+
       <div
         className="post-feed__panel"
         role="tabpanel"
@@ -93,6 +95,7 @@ export function PostFeed({ id, categories, posts, limit = posts.length }) {
             )
           })}
         </ul>
+
         <p className="post-feed__empty" data-post-feed-empty hidden={hasPosts}>
           {emptyText}
         </p>

@@ -13,8 +13,10 @@ export function Stat({ value, label, isLarge = false }) {
           <span data-count-up-number>{number}</span>
           {hasPlus && <span className="stat__plus">{STAT_FORMAT.plus}</span>}
         </span>
+
         <span className="visually-hidden">{value}</span>
       </p>
+
       <p className="stat__label">{label}</p>
     </div>
   )

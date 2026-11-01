@@ -22,6 +22,7 @@ export function ResourceRow(props) {
             >
               {title}
             </Heading>
+
             <p>{lead}</p>
           </div>
         </div>
@@ -42,8 +43,10 @@ export function ResourceRow(props) {
                 <p className="resource-row__name" aria-hidden="true">
                   {title}
                 </p>
+
                 <p>{text}</p>
               </div>
+
               <Button
                 variant="ghost"
                 icon="ui/arrow-up-right"

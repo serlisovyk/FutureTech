@@ -13,6 +13,7 @@ export function Rating({ value, className, isCompact = false }) {
       {stars.map((star) => (
         <Icon key={star} name="ui/star" className="rating__star" />
       ))}
+
       <span className="visually-hidden">{label}</span>
     </p>
   )

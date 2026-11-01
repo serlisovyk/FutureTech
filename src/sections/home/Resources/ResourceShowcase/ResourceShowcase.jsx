@@ -29,12 +29,15 @@ export function ResourceShowcase(props) {
         <div className="resource-showcase__main">
           <div className="resource-showcase__intro">
             <Icon name={icon} className="resource-showcase__icon" />
+
             <div className="resource-showcase__text">
               <Heading level={3} size="h3">
                 {title}
               </Heading>
+
               <p className="resource-showcase__lead">{lead}</p>
             </div>
+
             <Button variant="ghost" icon="ui/arrow-up-right" href={href}>
               {cta}
             </Button>
@@ -45,6 +48,7 @@ export function ResourceShowcase(props) {
               <p>{audienceLabel}</p>
               <p className="resource-showcase__users-count">{users}</p>
             </div>
+
             <AvatarGroup avatars={avatars} />
           </div>
         </div>
@@ -69,11 +73,13 @@ export function ResourceShowcase(props) {
               <div className="resource-showcase__total">
                 <MetaGrid items={[total]} isCard />
               </div>
+
               <div className="resource-showcase__formats">
                 <dl className="resource-showcase__format">
                   <dt>{formatsLabel}</dt>
                   <dd className="resource-showcase__format-value">{formatsValue}</dd>
                 </dl>
+
                 <Button variant="outline" icon="ui/eye" href={href}>
                   {previewLabel}
                   <span className="visually-hidden">: {title}</span>

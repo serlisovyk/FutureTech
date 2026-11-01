@@ -15,6 +15,7 @@ export function ButtonDemo() {
         {groups.map(({ id, caption, buttons }) => (
           <Fragment key={id}>
             <p className="ui-kit__caption">{caption}</p>
+
             <div className="ui-kit__row">
               {buttons.map(({ id: buttonId, label, ...button }) => (
                 <Button key={buttonId} {...button}>

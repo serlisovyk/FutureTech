@@ -34,6 +34,7 @@ export function Header({ currentPath }) {
           {lead} <span className="header__banner-extra">{extra} </span>
           {tail}
         </span>
+
         <Icon name="ui/arrow-up-right" className="header__banner-icon" />
       </a>
 

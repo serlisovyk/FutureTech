@@ -22,6 +22,7 @@ export function UiKit() {
         <Heading level={1} size="display">
           {title}
         </Heading>
+
         <p className="ui-kit__intro">{intro}</p>
       </div>
 

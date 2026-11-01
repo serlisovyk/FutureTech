@@ -33,15 +33,18 @@ export function VideoCard(props) {
           breakpoints={cardPhotoBreakpoints}
           className="video-card__photo"
         />
+
         <div className="video-card__controls">
           <PlayButton title={title} videoId={videoId} />
           <span className="video-card__duration">{duration}</span>
         </div>
       </div>
+
       <div className="video-card__body">
         <h3 className="video-card__title">{title}</h3>
         <p className="video-card__text">{text}</p>
       </div>
+
       {isEpisode && (
         <Button
           variant="outline"

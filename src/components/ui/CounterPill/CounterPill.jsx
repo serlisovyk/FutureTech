@@ -37,12 +37,14 @@ export function CounterPill(props) {
   const content = (
     <>
       <Icon name={iconName} className={iconClassNames} />
+
       {isToggle && (
         <Icon
           name={heartFilled}
           className="counter-pill__icon counter-pill__icon--on"
         />
       )}
+
       <span className="counter-pill__count">
         <span data-like-count={countHook}>{count}</span>
         <span className="visually-hidden"> {label}</span>

@@ -12,6 +12,7 @@ export function FooterCredits({ year }) {
       <p className="footer__author">
         {author}, {year}
       </p>
+
       <a
         className="footer__source"
         href={href}

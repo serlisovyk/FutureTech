@@ -14,6 +14,7 @@ export function PageIntro(props) {
         <span className="page-intro__title-start">{titleStart}</span>{' '}
         <span className="page-intro__title-end">{titleEnd}</span>
       </Heading>
+
       <p className="page-intro__text">{text}</p>
 
       {children && <div className="page-intro__action">{children}</div>}
