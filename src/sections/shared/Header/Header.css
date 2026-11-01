@@ -200,7 +200,7 @@
 .header__list {
   display: flex;
   align-items: center;
-  gap: calc(24px + (40 - 24) * var(--ramp-1440-1920));
+  gap: calc(6px + (16 - 6) * var(--ramp-1440-1920));
 
   @media (width < 768px) {
     flex-direction: column;
@@ -214,7 +214,12 @@
   --plate-padding-inline: calc(17px + (23 - 17) * var(--ramp-1440-1920));
   --plate-radius: calc(6px + (10 - 6) * var(--ramp-1440-1920));
 
-  display: block;
+  display: flex;
+  flex-direction: column;
+  padding-block: var(--plate-padding-block);
+  padding-inline: var(--plate-padding-inline);
+  border: 1px solid transparent;
+  border-radius: var(--plate-radius);
   color: var(--grey-50);
   font-size: var(--font-size-button);
   letter-spacing: 0;
@@ -222,25 +227,23 @@
     border-color var(--transition-duration),
     color var(--transition-duration);
 
-  @media (width < 768px) {
-    padding-block: var(--plate-padding-block);
-    padding-inline: var(--plate-padding-inline);
-    border: 1px solid transparent;
-    border-radius: var(--plate-radius);
+  &::after {
+    content: attr(data-label);
+    height: 0;
+    font-weight: 500;
+    letter-spacing: inherit;
+    overflow: hidden;
+    visibility: hidden;
   }
 
   @media (hover: hover) {
     &:hover {
-      border-color: var(--dark-20);
       color: var(--white);
     }
   }
 
   &[aria-current='page'] {
-    padding-block: var(--plate-padding-block);
-    padding-inline: var(--plate-padding-inline);
-    border: 1px solid var(--dark-20);
-    border-radius: var(--plate-radius);
+    border-color: var(--dark-20);
     background-color: var(--dark-08);
     color: var(--white);
     font-weight: 500;
