@@ -108,13 +108,13 @@ spacing; K = Kumbh Sans, I = Inter.
 | h3 feature       | K600 | 40   | 30   | 24  | 1.5  | White; Home features, Ebooks, Whitepapers                                       |
 | h3 show          | K600 | 40   | 24   | 20  | 1.5  | White; Podcasts show title                                                      |
 | h3 resource      | K600 | 40   | 30   | 21  | 1.5  | White; Resources item title                                                     |
-| h3 FAQ           | K600 | 40   | 28   | 20  | 1.5  | White; Contact "Asked question"                                                 |
+| h3 FAQ           | K600 | 40   | 28   | 20  | 1.5  | White; Contact FAQ title                                                        |
 | counter          | K400 | 18   | 14   | 14  | 1.5  | Grey/60; pill numbers                                                           |
 | strip caption    | K400 | 20   | 16   | 16  | 1.5  | Grey/60; Home strip. **Flag:** 14 in the first card at 390, 16 in the other two |
 | article title    | I600 | 64   | 44   | 28  | 1.5  | White; Blog                                                                     |
 | lead title       | I600 | 32   | 24   | 20  | 1.5  | White; News featured story                                                      |
 | row title        | I600 | 26   | 22   | 18  | 1.5  | White; list rows, podcast lead                                                  |
-| panel title      | I600 | 24   | 20   | 18  | 1.5  | White; video titles, "Variety of Topics", "10k + Users"                         |
+| panel title      | I600 | 24   | 20   | 18  | 1.5  | White; video titles, "Variety of Topics", "10k+ Users"                          |
 | card title       | I600 | 22   | 18   | 16  | 1.5  | White; CTA cards, episode and resource cards                                    |
 | small card title | I600 | 20   | 16   | 16  | 1.5  | White; News story cards                                                         |
 | stat XL          | I600 | 60   | 40   | 24  | 1.5  | White; Resources counters                                                       |
@@ -123,7 +123,7 @@ spacing; K = Kumbh Sans, I = Inter.
 | author name      | I600 | 20   | 18   | 18  | 1.5  | White                                                                           |
 | article h2       | I500 | 28   | 22   | 18  | 1.5  | White; Blog sections                                                            |
 | article h3       | I500 | 20   | 20   | 18  | 1.5  | White; Blog "Introduction"                                                      |
-| card heading     | I500 | 24   | 20   | 18  | 1.5  | White; feature cards, "Explore 1000+ resources"                                 |
+| card heading     | I500 | 24   | 20   | 18  | 1.5  | White; feature cards, "Explore 150+ resources"                                  |
 | card subheading  | I500 | 20   | 18   | 16  | 1.5  | White; strip titles, podcast stat values, the expertise remark                  |
 | value            | I500 | 18   | 16   | 14  | 1.5  | White; Blog and podcast meta values                                             |
 | value L          | I500 | 20   | 16   | 14  | 1.5  | White; Resources meta values                                                    |
@@ -216,7 +216,7 @@ The values in use, as a scale: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 30, 3
 - **News card:** image 512x222 / 407x185 / 358x185 (radius 12 / 10 / 10), then title, category (Grey/60 20 / 16 /
   14), then counters beside a "Read More" outline button; gap 20 / 16 / 16.
 - **Video / episode card:** image with the bottom fade, a white play disc (70 / 50 / 50, a play triangle cut
-  out of it) bottom left, the duration ("2.30 min", Grey/50 as drawn, white as built) right of it; below: title, text, and on episodes
+  out of it) bottom left, the duration ("2:30 min", Grey/50 as drawn, white as built) right of it; below: title, text, and on episodes
   an outline button. Sizes 718x412 / 590x331 / 358x210 (video), 471x290 / 387x244 / 358x208 (episode). The
   podcast lead video is 917x412 with the play disc centred.
 - **Resource card:** image 471x290 / 387x290 / 358x223, title (card title), text, two buttons ("View Details"
@@ -229,7 +229,7 @@ The values in use, as a scale: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 30, 3
   `Dark/10`, border, radius 12 / 12 / 10, padding 50 30 30 30 / 40 24 24 24 / 30 20 20 20.
 - **Avatar group:** 4 overlapping circles (overlap 9 to 14) with a 2 / 1 / 1px ring. Hero: in a capsule
   (`Dark/10`, border, radius 100, padding 10 / 8 / 8, avatars 60 / 50 / 40). "Downloaded By": in a rounded box
-  (`Dark/08`, radius 12, avatars 50 / 40 / 40) inside a panel with the "10k + Users" text.
+  (`Dark/08`, radius 12, avatars 50 / 40 / 40) inside a panel with the "10k+ Users" text.
 - **"New" badge:** badge role text on `Dark/10`, 1px gradient border, padding 4 x 12 / 2 x 10 / 2 x 10, radius
   6 / 4 / 4; after "Resources", "Biotechnology", "AI Revolution" in the footer.
 - **Header:** top banner (fill `Dark/08`, 1px bottom line, `banner` text + yellow arrow, centred) over the
@@ -259,7 +259,7 @@ Section names are the design's sitemap. A page is the header, its sections, the 
 **Home** - Navigation bar, Hero, Features, Blogs, Resources, Testimonials, CTA, Footer.
 
 - Hero: left column 1105 / 837 wide (eyebrow, title of two lines, paragraph, then 3 stats separated by vertical
-  lines), right column 653 / 523 with a left line (the decor clipped by it, avatar capsule, "Explore 1000+
+  lines), right column 653 / 523 with a left line (the decor clipped by it, avatar capsule, "Explore 150+
   resources", outline button). Under it a strip of 3 items (two-tone icon, title, "Stay Current" / similar, round
   arrow, caption) split by vertical lines. 390: everything stacked; stats in 3 columns; strip rows split by
   horizontal lines.
@@ -339,7 +339,7 @@ Section names are the design's sitemap. A page is the header, its sections, the 
   banner, round buttons), counters (outline 1.5, 24 / 20 / 20; 34 on the article page): heart (outline, filled),
   comment (a speech bubble, the second pill of a card), eye (the second pill on the article page), send;
   arrow-down, star (filled, stars), play (disc 70 / 50 / 50), menu (bars, 34), plus and minus (FAQ 24 / 20 / 20),
-  chevron-down (phone code); brand glyphs Twitter (the bird, not X), Medium, LinkedIn (24 / 20 / 20, footer and
+  chevron-down (phone code); brand glyphs: the design draws Twitter, Medium and LinkedIn, the site keeps GitHub (24 / 20 / 20, footer and
   Contact). The Contact page draws no envelope, phone or map-pin.
 - **Photos** (placeholders in the design; the site needs its own, through the image plugin). Sizes 1920 / 1440 / 390:
 

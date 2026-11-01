@@ -38,7 +38,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `Disclosure` region).
 - News sections (`sections/news/`), in design order on `pages/news.jsx`: `NewsIntro` (the `PageIntro` of News), `FeaturedNews` (the `featured`
   post: photo, title, text, `MetaGrid`, counters, Read More), `TrendingStories` (id `trending-stories`: three `NewsCard`s, a hidden `h2`),
-  `NewsHub` (id `news-hub`: a `PostFeed` of the `headlines` posts),
+  `NewsHub` (id `news-hub`: a `PostFeed` of every News post),
   `FeaturedVideos` (id `featured-videos`: the `videos` as a 2 x 2 list of `VideoCard`s split by lines).
 - Podcasts sections (`sections/podcasts/`), in design order on `pages/podcasts.jsx`: `PodcastsIntro` (the `PageIntro` of Podcasts),
   `TopPodcasts` (id `top-podcasts`: one `PodcastShow` per show of `podcasts`: host plate with Listen Podcast
@@ -78,7 +78,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `PostRow` (cards) and `PostFeed` (`components/feeds/`: the category
   tabs and the list of `PostRow`s, filtered in the browser by `PostFeedController`); both are on `/ui`.
 - `src/data/` — the texts, ids and lists the components render, as plain exported values, one file per entity or
-  section: `posts` (with their article `body`), `categories`, `videos`, `podcasts`, `resources`, `testimonials`,
+  section: `posts` (with their article `body`), `authors`, `categories`, `videos`, `podcasts`, `resources`, `testimonials`,
   `features`, `stats`, `faq`, `navigation`, `footer`, `socials`, `contacts`, `contact-form`, `countries`, `cta`, `hero`,
   `blogs`, `news`, `not-found`, `article`, `post-feed`, `video-modal`, `card-photos` (photo `sizes` and widths), `ui-kit` (`/ui` demo
   lists), `pages` (each page's metadata) and `site` (the name, origin, locale, theme colour, icons, social image).
