@@ -36,7 +36,7 @@ export class Tabs {
     this.#renderPanels(selectedTab.dataset.tab)
     this.#handleSelect(selectedTab)
 
-    if (shouldFocus) selectedTab.focus()
+    if (shouldFocus) this.#focusTab(selectedTab)
   }
 
   #handleClick(event) {
@@ -74,6 +74,28 @@ export class Tabs {
   #choose(selectedTab, shouldFocus = false) {
     this.select(selectedTab, shouldFocus)
     this.#renderHash(selectedTab)
+  }
+
+  #focusTab(tab) {
+    tab.focus({ preventScroll: true })
+    this.#revealTab(tab)
+  }
+
+  #revealTab(tab) {
+    const { paddingLeft, paddingRight } = getComputedStyle(this.#tabList)
+
+    const listRect = this.#tabList.getBoundingClientRect()
+    const tabRect = tab.getBoundingClientRect()
+
+    const hiddenStart = listRect.left + parseFloat(paddingLeft) - tabRect.left
+    const hiddenEnd = tabRect.right - listRect.right + parseFloat(paddingRight)
+
+    if (hiddenStart > 0) {
+      this.#tabList.scrollLeft -= hiddenStart
+      return
+    }
+
+    if (hiddenEnd > 0) this.#tabList.scrollLeft += hiddenEnd
   }
 
   #renderHash(selectedTab) {
