@@ -1,12 +1,12 @@
 # FutureTech
 
-📰 A fast multi-page tech blog written in JSX and built by minista into static HTML.
+📰 A fast multi-page tech blog written in JSX and built by Minista into static HTML.
 
 **[▶ Open the demo](https://futuretech-cyan.vercel.app)**
 
 ![FutureTech demo: the Home page with its count-up and reveal, a blog feed tab, an article with Read Full Blog and a like, the News page and another article](assets/demo.gif)
 
-A tech blog of five pages and an article page for every post, built from a third-party design template. The pages, layouts and components are JSX that minista 5 renders into plain HTML at build time, so React never reaches the browser: it gets HTML, one stylesheet and one small script of vanilla JavaScript classes. The content lives in `src/data/`, and every article page is generated from it. It keeps production habits from larger projects: a Vite build with optimised images, size budgets, CI, linting hooks, accessibility, and search and link-preview metadata.
+A tech blog of five pages and an article page for every post, built from a third-party design template. The pages, layouts and components are JSX that Minista 5 renders into plain HTML at build time, so React never reaches the browser: it gets HTML, one stylesheet and one small script of vanilla JavaScript classes. The content lives in `src/data/`, and every article page is generated from it. It keeps production habits from larger projects: a Vite build with optimised images, size budgets, CI, linting hooks, accessibility, and search and link-preview metadata.
 
 ## ✨ Features
 
@@ -23,12 +23,12 @@ A tech blog of five pages and an article page for every post, built from a third
 
 ## 🧰 Tech Stack
 
-- minista 5
+- Minista 5
 - Vite 8
 - React 19 (at build time only)
 - JSX
 - CSS (native nesting, design tokens, PostCSS plugins of the repo)
-- JavaScript (ES modules)
+- JavaScript
 - ESLint
 - Stylelint
 - Prettier
@@ -110,7 +110,7 @@ Preview the production build locally (run `npm run build` first):
 npm run preview
 ```
 
-Check the routes and pages of the project with minista:
+Check the routes and pages of the project with Minista:
 
 ```bash
 npm run check
@@ -142,7 +142,7 @@ npm run size
 
 ## 🔄 CI
 
-Every push runs [GitHub Actions](.github/workflows/ci.yml): lint, CSS lint, format check, build, the minista check, and the size budgets from [`.size-limit.json`](.size-limit.json).
+Every push runs [GitHub Actions](.github/workflows/ci.yml): lint, CSS lint, format check, build, the Minista check, and the size budgets from [`.size-limit.json`](.size-limit.json).
 
 The pre-commit hook (Husky and lint-staged) runs ESLint, Stylelint and Prettier on the staged files.
 
@@ -150,13 +150,13 @@ The pre-commit hook (Husky and lint-staged) runs ESLint, Stylelint and Prettier 
 
 ## 🧱 Architecture Notes
 
-### Why minista
+### Why Minista
 
 - JSX components, layouts and pages render into static HTML at build time; React 19 runs only during the build, so no React reaches the browser ([decision](ai/decisions/2026-10-28-minista-jsx-static-html.md))
 - Components are plain functions with no hooks or handlers: behavior lives in a small vanilla script, and every page works without it
 - Article routes come from data: `pages/blog/[slug].jsx` makes one page per entry of `src/data/posts.js`, and the same data feeds the feeds, the similar news, the sitemap and `llms.txt`
 - The JavaScript stays small, with its budget in `.size-limit.json`; no router, no hydration, no islands
-- The alternatives were Astro, Vite with Handlebars partials and Next.js; minista's JSX-to-HTML model fit a site that needs components and data-driven routes but no runtime. It has a small community, so the versions are pinned and its API is checked against its docs
+- The alternatives were Astro, Vite with Handlebars partials and Next.js; Minista's JSX-to-HTML model fit a site that needs components and data-driven routes but no runtime. It has a small community, so the versions are pinned and its API is checked against its docs
 
 ### Other decisions
 
