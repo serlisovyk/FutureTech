@@ -8,46 +8,36 @@
   margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+:where(h1, h2, h3, h4, h5, h6) {
   font-size: inherit;
   font-weight: inherit;
 }
 
-ul,
-ol {
+:where(ul, ol) {
   padding: 0;
   list-style: none;
 }
 
-img,
-svg {
+:where(img, svg) {
   display: block;
   max-width: 100%;
 }
 
-img {
+:where(img) {
   height: auto;
 }
 
-a {
+:where(a) {
   color: inherit;
   text-decoration: none;
 }
 
-button,
-input,
-select,
-textarea {
+:where(button, input, select, textarea) {
   color: inherit;
   font: inherit;
 }
 
-button {
+:where(button) {
   padding: 0;
   border: 0;
   background-color: transparent;

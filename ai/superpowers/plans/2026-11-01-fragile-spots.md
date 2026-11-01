@@ -26,9 +26,7 @@ classes and the footer links built from data (a convention with an obvious alter
   (breaks "stylesheet last", and an order is a thing a reader must remember; `:where()` is stated in the rule itself).
   `.visually-hidden` stays as it is, on purpose: it is the one class meant to win over a block (a block's `position` or
   `width` must never un-hide it), which `:where()` would reverse; `css.md` says so. Stylelint's
-  `selector-class-pattern` and `no-descending-specificity` are checked after the change. A tag rule of the reset
-  (`ul`, `a`, `button`, …) now beats `:where(.container)` on such a tag: no `.container` or `.split-layout` sits on one,
-  and the computed-style comparison proves it.
+  `selector-class-pattern` and `no-descending-specificity` are checked after the change. The reset was the second half of it: its tag rules (`ul { padding: 0 }`) outranked `:where(.container)` on the four lists that are also a container, which the first comparison showed (Hero features, 1024 and 1440), so every tag rule of the reset is in `:where()` too. The comparison of the final CSS is empty.
 - **`color-scheme`.** `html { color-scheme: dark }` in `base.css`; the line in `PhoneField.css` goes.
 - **Footer hrefs.** `data/` cannot import `@utils` (Node loads it from `vite/`) and `../` out of a section is
   forbidden, so the data holds a descriptor and the component resolves it: `{ label, path, id }` for a section,

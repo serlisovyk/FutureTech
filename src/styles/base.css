@@ -27,7 +27,7 @@ body {
   outline: none;
 }
 
-.container {
+:where(.container) {
   width: 100%;
   padding-inline: var(--space-container);
 }
@@ -42,7 +42,7 @@ body {
   animation-duration: var(--transition-duration);
 }
 
-.split-layout {
+:where(.split-layout) {
   display: grid;
   grid-template-columns: min(var(--split-intro-width, fluid(413, 413, 519)), 34%) 1fr;
   column-gap: var(--space-panel);

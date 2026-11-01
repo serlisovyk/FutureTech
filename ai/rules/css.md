@@ -16,6 +16,10 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
 - `styles/` holds only global CSS: tokens, reset, base (`body`, `:focus-visible`, the
   container), the `@font-face` rules, utilities — never a component's or a section's rules
   (decision `styles-next-to-components`).
+- A global style never outranks a block: the reset's tag rules, `.container` and `.split-layout` are written in
+  `:where()` (specificity 0), so a block's own rule on the same element wins whatever the bundle order, and
+  `global.css` stays the last style import of the layout. `.visually-hidden` keeps its specificity: it is the one
+  global class that must win, no block rule may un-hide it (decision `zero-specificity-globals`).
 - A heading is never styled by its tag: the reset zeroes `h1`–`h6`, and the look comes from the
   `Heading` component's class (`heading--display`, `heading--h2`, `heading--h3`) or the block's
   own class.
