@@ -31,15 +31,20 @@ focuses a tab without `preventScroll`, so the tab that is `:target` scrolls the 
    one line (a script on the `espree` AST, then Prettier). Single-line neighbours stay together.
 5. **Tokens.** `fluid(8, 8, 10)`, `fluid(16, 16, 20)`, `fluid(20, 24, 30)`, `fluid(20, 40, 50)`, `fluid(30, 40, 50)` become
    `--space-xs`, `--space-s`, `--space-m`, `--space-l`, `--space-xl` in `variables.css`, replacing every use as a gap or a
-   padding. A use as a font size, a radius or an icon size keeps its literal: a spacing token must not size a glyph.
+   padding; the local custom properties that held the same value (`--tabs-padding-block`, `--article-counters-padding`,
+   `--hero-feature-space`) go. A use as a font size, a radius or an icon size keeps its literal: a spacing token must not
+   size a glyph.
    `39px 40px` is not touched (`borders-inside`).
 6. **5a. `Tabs.focus`.** A key selection focuses with `preventScroll: true`; then the selected tab is brought into view
    on the list's own horizontal axis only (`scrollLeft`), so the page never moves vertically and a narrow, horizontally
    scrolling list still shows the focused tab.
 7. **Footer socials (author's decision).** The footer keeps the credits (name, year, GitHub icon to the repo) and loses
    the `SocialLinks` block: `Footer` stops rendering it, `footer__socials` and the bar's middle column go, and
-   `SocialLinks` loses its now unused `plain` variant and `className` (the contact page's boxed row stays).
-8. **Docs.** `css.md` (the scale names), `design-system.md` (the footer row, the spacing tokens), `map.md`, `README.md`.
+   `SocialLinks` loses its now unused `plain` variant, `variant` and `className`: the boxed look becomes the base rule
+   (the contact page's row keeps its computed style).
+8. **Docs.** `css.md` (the scale names), `jsx.md` (nothing a loop decides is typed in JSX), `oop.md` (the tab focus),
+   `design-system.md` (the footer row), a record `footer-one-github-link`. `map.md` and `README.md` name no footer socials
+   and no changed file, so they stay.
 
 ## Verification
 

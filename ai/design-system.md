@@ -240,9 +240,9 @@ The values in use, as a scale: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 24, 28, 30, 3
 - **Footer:** inside the CTA band section: block padding 80 / 60 / 40; five columns 255 / 216 wide (Home, News,
   Blogs, Podcasts, Resources), each a footer heading over links; Resources lists 4 outline-style link buttons
   (fill `Dark/08`, border, radius 8 / 6 / 6, padding 10 x 16 / 8 x 14, 20 / 18 arrow). Bottom bar (1px line on
-  top): Terms and Privacy left with a short divider, 3 social icons centre (White, 24 / 20 / 20), copyright
-  right. At 390: columns 2 x 2 (Home + News, Podcasts + Blogs), Resources buttons in a wrapping row, the bar
-  stacked and centred (icons, links, copyright).
+  top): Terms and Privacy left with a short divider, copyright right (the 3 social icons of the design centre are
+  not drawn: `footer-one-github-link`). At 390: columns 2 x 2 (Home + News, Podcasts + Blogs), Resources buttons in a
+  wrapping row, the bar stacked and centred (links, copyright).
 - **FAQ item:** `Dark/10`, border, radius 12 / 10 / 8, padding 34 / 24 / 24, question `FAQ question` and a 24 / 20
   / 20 icon on the right (yellow plus when closed, white minus when open). Open: question, a 1px `Dark/15` line,
   the answer, gap 24 / 20 / 16. Closed height 92 / 70 / 68 to 86 (a two-line question).
@@ -339,8 +339,8 @@ Section names are the design's sitemap. A page is the header, its sections, the 
   banner, round buttons), counters (outline 1.5, 24 / 20 / 20; 34 on the article page): heart (outline, filled),
   comment (a speech bubble, the second pill of a card), eye (the second pill on the article page), send;
   arrow-down, star (filled, stars), play (disc 70 / 50 / 50), menu (bars, 34), plus and minus (FAQ 24 / 20 / 20),
-  chevron-down (phone code); brand glyphs: the design draws Twitter, Medium and LinkedIn, the site keeps GitHub (24 / 20 / 20, footer and
-  Contact). The Contact page draws no envelope, phone or map-pin.
+  chevron-down (phone code); brand glyphs: the design draws Twitter, Medium and LinkedIn, the site keeps GitHub (24 / 20 / 20, the footer's
+  credits and Contact). The Contact page draws no envelope, phone or map-pin.
 - **Photos** (placeholders in the design; the site needs its own, through the image plugin). Sizes 1920 / 1440 / 390:
 
 | Photo                          | 1920     | 1440              | 390           |

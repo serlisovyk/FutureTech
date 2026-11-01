@@ -60,6 +60,7 @@ each with the record in force at the end of its chain.
 - [`/ui` ships, noindex and unlinked; the CSS limit is raised and an images limit added](2026-10-28-ui-page-and-size-limits.md)
 - [The size limits after the audit fixes: CSS 11.5 kB, images 3.9 MB](2026-11-01-size-budget-after-audit.md)
 - [Placeholder contact data use reserved names, and social links go only to real profiles](2026-11-01-placeholder-content.md)
+- [The footer shows one GitHub link, the credits'; its block of social icons is gone](2026-11-01-footer-one-github-link.md)
 - [The contact form validates in the browser and sends nothing](2026-10-30-contact-form-without-backend.md)
 - [The design is a third-party template: a reference only, never published](2026-10-28-design-is-a-reference.md)
 

@@ -66,6 +66,8 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
 - Texts and lists that repeat or are rendered by a loop live **only** in `data/` and are
   imported by the section that renders them, never copied into JSX. A literal in a section is
   for text unique to that section.
+- Nothing a loop or a page decides is written in the JSX: a slice of a list, an item that starts open or selected, a
+  separator, a label, an id used twice are `data/`, and a typed string used twice is a constant in `@constants`.
 - A `data/` module exports named constants of plain values; it holds no JSX, class names or
   styles. A list item rendered by `map` has a stable `key` from its data.
 - A new article is one entry in `data/posts.js` with a unique `slug` and a `body` of at least one section: its page,

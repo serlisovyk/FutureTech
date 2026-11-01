@@ -60,7 +60,7 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
   `currentColor` stay keywords. Never hard-code a colour; a size only one block uses is written in
   that block (the heading sizes live in `Heading.css`).
 - Names: a colour is its design style in lowercase (`--dark-15`, `--yellow-55`, `--white`; the off-palette
-  heart is `--color-like`); a size is `--font-size-<role>`, `--space-<role>` or `--radius-<role>`; the families
+  heart is `--color-like`); a size is `--font-size-<role>`, `--space-<role>` (or a step of the shared gaps and paddings, `--space-xs` to `--space-xl`) or `--radius-<role>`; the families
   are `--font-kumbh` and `--font-inter`; `--border` is the 1px line. A new token follows these.
 - A divider is `--border` on a full-width section, its content in a `.container` inside: the line ignores
   the side padding by construction, no utility class.
