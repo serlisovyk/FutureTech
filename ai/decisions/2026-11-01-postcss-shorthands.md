@@ -1,6 +1,6 @@
 # Fluid values, hover and breakpoints are short notations that PostCSS plugins expand
 
-Date: 2026-11-01 · Status: accepted
+Date: 2026-11-01 · Status: superseded by 2026-11-01-postcss-notations.md
 
 ## Context
 

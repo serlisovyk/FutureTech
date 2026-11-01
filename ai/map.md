@@ -8,7 +8,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `package.json` — the scripts (`check` is `minista check`, `size` is size-limit);
   `vite.config.js` — only re-exports `vite/config.js`, which builds the config from `vite/parts/` (one `get…`
   per concern: `aliases`, `plugins`, `image`, `css`, `build`); `vite/paths.js` — the paths; `vite/constants.js` — the
-  constants the build plugins share; `vite/plugins/` — build plugins: `source-type`, and `site-files` (helpers in `vite/site-files/`) that emits
+  constants the build plugins share; `vite/plugins/` — build plugins: `source-type`, `unused-originals` (drops the JPGs no page names), and `site-files` (helpers in `vite/site-files/`) that emits
   `robots.txt`, `sitemap.xml` and `llms.txt` from the built pages; `vite/postcss/` — the PostCSS plugins `fluid`, `hover`, `breakpoints`.
 - `.prettierrc`, `.prettierignore` — Prettier. `eslint.config.js`, `.stylelintrc.json` — ESLint and Stylelint.
   `.husky/pre-commit` and `.lintstagedrc.json` — the pre-commit hook that runs them on the staged files.

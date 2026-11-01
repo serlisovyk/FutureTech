@@ -8,8 +8,8 @@ build. Where the files are: `ai/map.md`. Why the site is static: decision
 
 - Kumbh Sans (headings) and Inter (text) are self-hosted `woff2` files in `src/assets/fonts/`
   with `font-display: swap`. No font CDN, no request to Google Fonts.
-- Only the weights the design uses are shipped, latin subset (decision `self-hosted-fonts`).
-  `FontPreloads` (in the layout) preloads the body face (Inter 400) and the heading face (Kumbh Sans 500).
+- Only the weights the design uses are shipped, latin subset (decision `font-preloads`).
+  `FontPreloads` (in the layout) preloads the body face (Inter 400), the medium text face (Inter 500) and the heading face (Kumbh Sans 500).
 - A new weight, style or face is a decision for the author, not a drive-by edit.
 
 ## Images
@@ -20,7 +20,9 @@ build. Where the files are: `ai/map.md`. Why the site is static: decision
   and a photo there carries `fetchpriority="high"`.
 - Photos go through minista's image plugin (`Photo`): AVIF with a WebP fallback and a `srcset` with
   `sizes` that match the layout at the three widths (formats and quality: decision `image-formats`).
-  The source file in `assets/images/` is never shipped as it is: keep it near the largest size drawn.
+  `sizes` repeats the drawn size, a fluid one as the same ramp, an avatar cropped square from a 3:2 source as 1.5 times its box.
+  The source file in `assets/images/` is never shipped as it is: keep it near the largest size drawn at 2x. Only the JPEG an
+  article's `og:image` names is shipped as a source (decision `og-image-originals`).
 - Icons are SVG, a sprite per folder (`assets/icons/ui/`, `social/`, `feature/`, `flag/`), used through `Icon`; an SVG that must be inline
   (the logo) goes through minista's SVG plugin (`assets/logos/`). A decor made of hundreds of vectors is a
   raster. An export from a design tool is cleaned before it is committed (no editor metadata, no embedded
@@ -49,5 +51,5 @@ build. Where the files are: `ai/map.md`. Why the site is static: decision
   origin without a new record.
 - A dependency is added only with the author's yes; the browser runtime has none.
 - The size budget (`npm run size`, run by CI on every push) holds the built JS, CSS, fonts and
-  images to their limits (decision `size-limits`); a change that comes near them is questioned
+  images to their limits (decision `size-budget`); a change that comes near them is questioned
   first, and raising a limit is a new dated record.

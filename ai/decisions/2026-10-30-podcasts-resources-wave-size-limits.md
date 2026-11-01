@@ -1,6 +1,6 @@
 # The JS, CSS and images limits are raised for the Podcasts episodes and the Resources page
 
-Date: 2026-10-30 · Status: superseded by 2026-11-01-size-limits.md
+Date: 2026-10-30 · Status: superseded by 2026-11-01-size-budget.md
 
 ## Context
 

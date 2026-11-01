@@ -58,7 +58,7 @@ each with the record that replaced it.
 - [Every response carries four security headers, with a strict Content-Security-Policy](2026-11-01-security-headers.md)
 - [CI on every push, and a size budget with limits by fact](2026-10-28-ci-size-limit.md)
 - [`/ui` ships, noindex and unlinked; the CSS limit is raised and an images limit added](2026-10-28-ui-page-and-size-limits.md)
-- [The size limits: the current budget, set by fact, with one record to read](2026-11-01-size-limits.md)
+- [The size limits: the current budget, set by fact, after the avatars and the fluid() change](2026-11-01-size-budget.md)
 - [The contact form validates in the browser and sends nothing](2026-10-30-contact-form-without-backend.md)
 - [The design is a third-party template: a reference only, never published](2026-10-28-design-is-a-reference.md)
 
@@ -73,12 +73,13 @@ each with the record that replaced it.
 - [The parts of a section are folders, like components; a part imports a sibling by its folder path](2026-11-01-section-parts-in-folders.md)
 - [A data item made for a component's props is spread; the rest `...props` stays forbidden](2026-11-01-spread-of-a-data-item.md)
 - [Styles live next to their JSX; `styles/` holds only global CSS](2026-10-28-styles-next-to-components.md)
-- [Fluid values, hover and breakpoints are short notations that PostCSS plugins expand](2026-11-01-postcss-shorthands.md)
+- [Fluid values, hover and breakpoints are short notations that PostCSS plugins expand; `fluid()` writes each step as a number](2026-11-01-postcss-notations.md)
 - [VS Code learns `@tablet` and `@mobile` from a custom data file in `.vscode/`](2026-11-01-vscode-css-data.md)
 - [Borders are drawn inside the design's size: padding is the design's value minus the border](2026-10-28-borders-inside.md)
 - [Grey text is raised to AA, form controls get a 3:1 border, other borders stay as drawn](2026-10-31-grey-text-and-control-borders.md)
 - [Photos ship as AVIF with a WebP fallback, through one component](2026-10-28-image-formats.md)
-- [Fonts are self-hosted static woff2 files, latin subset](2026-10-28-self-hosted-fonts.md)
+- [Only the JPG originals an article names reach `dist/`](2026-11-01-og-image-originals.md)
+- [Fonts are self-hosted static woff2 files, latin subset; Inter 400, Inter 500 and Kumbh Sans 500 are preloaded](2026-11-01-font-preloads.md)
 - [Lighthouse is measured with PageSpeed Insights on the deployed site](2026-11-01-lighthouse-on-pagespeed.md)
 - [The Vite config is split into `vite/`, one module per concern](2026-10-28-vite-config-split.md)
 - [Article bodies are JS sections in `data/`, and an article has no table of contents](2026-11-01-article-without-contents.md)
@@ -94,14 +95,17 @@ each with the record that replaced it.
 - [Browser JavaScript in OOP style: a class per widget and per section](2026-10-28-oop-javascript.md) — replaced by `script-helpers`
 - [Browser scripts are classes, with pure helper functions in `scripts/utils/`](2026-11-01-script-helpers.md) — replaced by `script-helper-classes`
 - [Breakpoints and fluid values: two structural queries, ramps between the drawn widths](2026-10-28-fluid-ramps.md) — replaced by `postcss-shorthands`
-- [The CSS limit is raised to 4 kB for the header, the CTA and the footer](2026-10-28-shared-blocks-css-limit.md) — replaced by `size-limits`
-- [The limits are raised for the cards and the video modal; images are measured as a total](2026-10-28-cards-and-modal-size-limits.md) — replaced by `size-limits`
-- [The CSS and images limits are raised for the post feed](2026-10-28-post-feed-size-limits.md) — replaced by `size-limits`
-- [The CSS and images limits are raised for the first Home sections](2026-10-28-home-wave-size-limits.md) — replaced by `size-limits`
-- [The CSS and images limits are raised for the last Home sections and the News first screen](2026-10-30-home-news-wave-size-limits.md) — replaced by `size-limits`
-- [The CSS and images limits are raised for the rest of News and the top of Podcasts](2026-10-30-news-podcasts-wave-size-limits.md) — replaced by `size-limits`
-- [The JS, CSS and images limits are raised for the Podcasts episodes and the Resources page](2026-10-30-podcasts-resources-wave-size-limits.md) — replaced by `size-limits`
-- [The CSS and images limits are raised for the Resources cards and the first Contact sections](2026-10-30-resources-contact-wave-size-limits.md) — replaced by `size-limits`
-- [The JS and CSS limits are raised for the article pages, the reveal and hover states, and the Contact form](2026-10-30-forms-reveal-wave-size-limits.md) — replaced by `size-limits`
-- [The JS, CSS and images limits are raised for the article page and the SEO wave](2026-10-31-article-seo-wave-size-limits.md) — replaced by `size-limits`
-- [The JS and images limits are lowered after the review fixes](2026-11-01-review-wave-size-limits.md) — replaced by `size-limits`
+- [The CSS limit is raised to 4 kB for the header, the CTA and the footer](2026-10-28-shared-blocks-css-limit.md) — replaced by `size-budget`
+- [The limits are raised for the cards and the video modal; images are measured as a total](2026-10-28-cards-and-modal-size-limits.md) — replaced by `size-budget`
+- [The CSS and images limits are raised for the post feed](2026-10-28-post-feed-size-limits.md) — replaced by `size-budget`
+- [The CSS and images limits are raised for the first Home sections](2026-10-28-home-wave-size-limits.md) — replaced by `size-budget`
+- [The CSS and images limits are raised for the last Home sections and the News first screen](2026-10-30-home-news-wave-size-limits.md) — replaced by `size-budget`
+- [The CSS and images limits are raised for the rest of News and the top of Podcasts](2026-10-30-news-podcasts-wave-size-limits.md) — replaced by `size-budget`
+- [The JS, CSS and images limits are raised for the Podcasts episodes and the Resources page](2026-10-30-podcasts-resources-wave-size-limits.md) — replaced by `size-budget`
+- [The CSS and images limits are raised for the Resources cards and the first Contact sections](2026-10-30-resources-contact-wave-size-limits.md) — replaced by `size-budget`
+- [The JS and CSS limits are raised for the article pages, the reveal and hover states, and the Contact form](2026-10-30-forms-reveal-wave-size-limits.md) — replaced by `size-budget`
+- [The JS, CSS and images limits are raised for the article page and the SEO wave](2026-10-31-article-seo-wave-size-limits.md) — replaced by `size-budget`
+- [The JS and images limits are lowered after the review fixes](2026-11-01-review-wave-size-limits.md) — replaced by `size-budget`
+- [The size limits: the current budget, set by fact, with one record to read](2026-11-01-size-limits.md) — replaced by `size-budget`
+- [Fluid values, hover and breakpoints are short notations that PostCSS plugins expand](2026-11-01-postcss-shorthands.md) — replaced by `postcss-notations`
+- [Fonts are self-hosted static woff2 files, latin subset](2026-10-28-self-hosted-fonts.md) — replaced by `font-preloads`

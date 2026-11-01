@@ -1,6 +1,6 @@
 # The CSS and images limits are raised for the rest of News and the top of Podcasts
 
-Date: 2026-10-30 · Status: superseded by 2026-11-01-size-limits.md
+Date: 2026-10-30 · Status: superseded by 2026-11-01-size-budget.md
 
 ## Context
 

@@ -71,7 +71,7 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
 ## Breakpoints and fluid values
 
 - The design is drawn at three widths: Desktop 1920, Laptop 1440, Mobile 390 (the values at each
-  are in `ai/design-system.md`, in that order). The scheme is decision `postcss-shorthands`.
+  are in `ai/design-system.md`, in that order). The scheme is decision `postcss-notations`.
 - Media queries change structure only: `@tablet` (`width < 1024px`) stacks side-by-side
   compositions, `@mobile` (`width < 768px`) makes grids one column and the header a menu button; more
   conditions follow the name (`@mobile and (scripting: enabled)`). The widths live in the build config;

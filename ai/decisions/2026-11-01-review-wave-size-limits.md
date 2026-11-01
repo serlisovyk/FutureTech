@@ -1,6 +1,6 @@
 # The JS and images limits are lowered after the review fixes
 
-Date: 2026-11-01 · Status: superseded by 2026-11-01-size-limits.md
+Date: 2026-11-01 · Status: superseded by 2026-11-01-size-budget.md
 
 ## Context
 

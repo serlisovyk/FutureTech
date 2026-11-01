@@ -1,6 +1,6 @@
 # Fonts are self-hosted static woff2 files, latin subset
 
-Date: 2026-10-28 · Status: accepted
+Date: 2026-10-28 · Status: superseded by 2026-11-01-font-preloads.md
 
 ## Context
 

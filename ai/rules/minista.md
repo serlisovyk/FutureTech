@@ -34,7 +34,7 @@ Why it was chosen: decision `minista-jsx-static-html`. Where its config lives: `
   The defaults `loading` and `decoding` of `pluginImage` do not reach `Picture` in the render build:
   `Photo` sets them.
 - minista runs Vite's CSS pipeline on the page CSS: our PostCSS plugins (`vite/postcss/`) sit in the config's
-  `css.postcss.plugins`, never in a `postcss.config.*` (decision `postcss-shorthands`).
+  `css.postcss.plugins`, never in a `postcss.config.*` (decision `postcss-notations`).
 - minista has no HTML minifier and needs none: React writes the pages without whitespace between tags.
 - A plugin of ours that edits the built pages (`vite/`) declares `enforce: 'post'` and
   `generateBundle: { order: 'post', handler }`: minista rewrites the pages (images, sprite, SVG) in its own

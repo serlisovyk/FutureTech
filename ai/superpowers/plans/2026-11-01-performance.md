@@ -40,17 +40,20 @@ ramps). The CSS gzip size, the file list and sizes of `dist/assets`, Lighthouse 
    `AvatarGroup` already asks for 150 and 225 under `50px`, and stays.
 6. **Card photos**: the measure is the trending `NewsCard` at 1440 and 1920 (a 406 and a 512 px slot take the 720 w file now).
    Candidates `[360, 540, 720, 1080]` against the present list, judged by the image budget; if it passes 3.7 MB the limit is raised.
-   The result and the numbers go in this plan when known.
+   Result: the 540 step adds 0.83 MB (3.65 to 4.48 MB), serves only a 1x screen and does nothing for the 626 px sources, so the
+   list stays `[360, 720, 1080]` and the limit is not raised for it.
 7. **Inter 500 preload**: `interMedium` in the `fonts` barrel and a third `<link rel="preload">` in `FontPreloads`. Checked
    with the network log that every page's first screen asks for the file (the active menu item, Contact Us). A new record
    supersedes `self-hosted-fonts`.
-8. **Size limits by fact** from the final build; a new `size-limits` record only if a number moves.
+8. **Size limits by fact** from the final build; a new record only if a number moves. They move: CSS 11.5 to 11 kB, images
+   3.7 to 3.8 MB (the avatars).
 
 ## Docs
 
-- Records: `fluid-notation` (supersedes `postcss-shorthands`), `inter-medium-preload` (supersedes `self-hosted-fonts`), one on
-  the pruned originals (narrows the Consequences of `seo-files-and-structured-data`, which stays in force), `size-limits` if needed;
-  the index in `ai/decisions/README.md` is merged by the orchestrator.
+- Records: `postcss-notations` (supersedes `postcss-shorthands`), `font-preloads` (supersedes `self-hosted-fonts`),
+  `og-image-originals` (narrows one sentence of `seo-files-and-structured-data`, which stays in force), `size-budget`
+  (supersedes `size-limits`, and the eleven records that pointed to it now point to it); the index in `ai/decisions/README.md`
+  and the lines of `ai/map.md` are merged by the orchestrator.
 - `ai/rules/assets-performance.md`: the preloaded faces; the originals sentence. `ai/map.md`: the new plugin in `vite/plugins/`.
 - Within `ai/rules/docs.md` limits; `ai/map.md` stays under 12288 bytes as git stores it.
 

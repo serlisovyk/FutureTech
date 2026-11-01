@@ -4,7 +4,7 @@ The design in words and numbers, read once so CSS and sections are written witho
 third-party template (decision `design-is-a-reference`): only this description is in the repo.
 
 - Every size is px, in the order **1920 / 1440 / 390** (Desktop, Laptop, Mobile); a fluid value is `fluid(Mobile, Laptop, Desktop)`
-  with the same three numbers, **reversed** (decision `postcss-shorthands`). "-" means not drawn at that width.
+  with the same three numbers, **reversed** (decision `postcss-notations`). "-" means not drawn at that width.
 - Line heights are unitless; letter spacing is -3% unless a row says `ls 0`. Colours are the design's colour
   styles (`Dark/10` = `#1A1A1A`); token names: `ai/rules/css.md`.
 - Drawn states: nav item active / inactive, filter tab default / active, counter pill normal / liked, FAQ item

@@ -1,6 +1,6 @@
 # The CSS and images limits are raised for the post feed
 
-Date: 2026-10-28 · Status: superseded by 2026-11-01-size-limits.md
+Date: 2026-10-28 · Status: superseded by 2026-11-01-size-budget.md
 
 ## Context
 

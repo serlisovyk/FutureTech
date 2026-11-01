@@ -1,6 +1,6 @@
 # The size limits: the current budget, set by fact
 
-Date: 2026-11-01 · Status: accepted
+Date: 2026-11-01 · Status: superseded by 2026-11-01-size-budget.md
 
 ## Context
 
