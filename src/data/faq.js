@@ -2,7 +2,7 @@ export const faqSection = {
   id: 'faq',
   titleId: 'faq-title',
   icon: 'feature/faq',
-  title: 'Asked question',
+  title: 'Frequently Asked Questions',
   text: 'If the question is not available on our FAQ section, feel free to contact us personally.',
   askLabel: 'Ask Question',
   askHref: '#contact-form',

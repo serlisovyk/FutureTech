@@ -46,7 +46,7 @@ export const resourceShowcases = [
       value:
         'Ebooks are authored by renowned experts with an average of 15 years of experience.',
     },
-    users: '10k + Users',
+    users: '10k+ Users',
     avatars: [
       '/src/assets/images/portraits/portrait-man-denim-shirt.png',
       '/src/assets/images/portraits/portrait-man-yellow-tshirt.png',
@@ -75,7 +75,7 @@ export const resourceShowcases = [
       value:
         'Whitepapers are authored by subject matter experts with an average of 20 years of experience.',
     },
-    users: '10k + Users',
+    users: '10k+ Users',
     avatars: [
       '/src/assets/images/portraits/portrait-woman-beanie-denim.png',
       '/src/assets/images/portraits/portrait-man-black-blazer.png',
