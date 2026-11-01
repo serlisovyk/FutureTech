@@ -1,27 +1,35 @@
 .contact-info__list {
   --contact-info-gap: calc(60px + (100 - 60) * var(--ramp-1440-1920));
+  --contact-info-column: 250px;
+  --contact-info-bleed: 4px;
 
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(
+      min(100%, calc(var(--contact-info-column) * 2 + var(--contact-info-gap))),
+      1fr
+    )
+  );
   column-gap: var(--contact-info-gap);
-
-  @media (width < 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (width < 768px) {
-    grid-template-columns: 1fr;
-  }
+  clip-path: inset(0 calc(var(--space-container) - var(--contact-info-bleed)));
 }
 
+.contact-info__group {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, var(--contact-info-column)), 1fr)
+  );
+  column-gap: var(--contact-info-gap);
+}
+
+.contact-info__group,
 .contact-info__item {
   position: relative;
   min-width: 0;
-  padding-block: calc(
-    20px + (60 - 20) * var(--ramp-390-1440) + (80 - 60) * var(--ramp-1440-1920)
-  );
 
-  &:not(:first-child)::before {
+  &::before {
     content: '';
     position: absolute;
     inset-block: 0;
@@ -29,39 +37,18 @@
     border-inline-start: var(--border);
   }
 
-  @media (width < 1024px) {
-    &:nth-child(odd)::before {
-      display: none;
-    }
-
-    &:nth-child(n + 3)::after {
-      content: '';
-      position: absolute;
-      inset-block-start: 0;
-      inset-inline: calc(var(--contact-info-gap) / -2);
-      border-block-start: var(--border);
-    }
-
-    &:nth-child(3)::after {
-      inset-inline-start: 0;
-    }
-
-    &:nth-child(4)::after {
-      inset-inline-end: 0;
-    }
+  &::after {
+    content: '';
+    position: absolute;
+    inset-block-start: -1px;
+    inset-inline: calc(var(--contact-info-gap) * -1)
+      calc(var(--contact-info-bleed) * -1);
+    border-block-start: var(--border);
   }
+}
 
-  @media (width < 768px) {
-    &:not(:first-child)::before {
-      display: none;
-    }
-
-    &:nth-child(n + 2)::after {
-      content: '';
-      position: absolute;
-      inset-block-start: 0;
-      inset-inline: 0;
-      border-block-start: var(--border);
-    }
-  }
+.contact-info__item {
+  padding-block: calc(
+    20px + (60 - 20) * var(--ramp-390-1440) + (80 - 60) * var(--ramp-1440-1920)
+  );
 }
