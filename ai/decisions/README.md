@@ -66,6 +66,8 @@ each with the record in force at the end of its chain.
 ### Code
 
 - [Letter spacing is a custom property, not a value set on `*` or inherited from `body`](2026-11-01-letter-spacing-property.md)
+- [Global layout classes and the reset are written in `:where()`; `.visually-hidden` stays a normal rule](2026-11-01-zero-specificity-globals.md)
+- [A link to a section or a feed tab is a descriptor of data ids; `getLinkHref` builds the href](2026-11-01-links-from-data-ids.md)
 - [Browser scripts are all classes; browser-API wrappers are classes in `scripts/services/`](2026-11-01-script-helper-classes.md)
 - [The layout builds the title and the head meta from the page's `metadata`; the site name lives in `data/site.js`](2026-10-28-shared-page-head.md)
 - [The Organization logo is a 512 px PNG, an article has dateModified, noindex pages have no canonical](2026-11-01-seo-markup-and-logo.md)
