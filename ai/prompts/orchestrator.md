@@ -17,12 +17,11 @@ Before anything else, read `AGENTS.md`, `ai/workflow.md`, and `ai/map.md`.
 - Fetch the Linear project **FutureTech**: every issue with its state, milestone, "blocked by"
   relations and its «Порядок» section.
 - A candidate is a `Todo` issue whose blockers are all `Done`. Go in milestone order.
-- Take up to **3** issues at once: three when that many are unblocked and touch different files,
-  otherwise two. Take **one** for a repo-wide task (build config, the init, linters or CI, the
-  AI-docs setup) or when only one is unblocked; such a task never runs alongside others.
+- The size of a batch and what may run together are in `ai/workflow.md`, "Parallel work": up
+  to three issues, one for a repo-wide task (build config, the init, linters or CI, the AI-docs
+  setup) or when only one is unblocked.
 - Build the batch from the "blocked by" relations and the «Параллельно с…» line of each issue's
-  «Порядок» section. Use `ai/map.md` and each issue's «Что сделать» to judge overlap: two tasks
-  that edit the same component, section, stylesheet or `main.js` do not run together. When
+  «Порядок» section. Use `ai/map.md` and each issue's «Что сделать» to judge overlap. When
   unsure, take fewer.
 
 ## 2. Ask the author everything up front
@@ -91,5 +90,6 @@ When the batch is merged, go back to step 1. Keep the author posted with one sho
   issue.
 - No pull requests; never force-push `main`.
 - Never start an issue whose blockers are not `Done`.
-- Never run a repo-wide task in parallel with anything; never more than three tasks at once.
+- Never run a repo-wide task in parallel with anything, never more than three tasks at once
+  (`ai/workflow.md`, "Parallel work").
 - Chat with the author in Russian; code, commits, and docs stay in English.

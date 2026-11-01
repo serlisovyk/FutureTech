@@ -7,8 +7,6 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
 
 - A component is a plain function of its props: no hooks (`useState`, `useEffect`, …), no
   context, no refs, no event props (`onClick`), no `dangerouslySetInnerHTML`, no browser API.
-- What a user can do on the page is wired by a class in `scripts/` through `data-*` hooks
-  (`ai/rules/oop.md`), never by JSX.
 - Computation that the markup needs (a reading time, a filtered list, a URL, the current year)
   is a pure helper in `utils/`, one function per file, called by the component; never logic
   spread across the JSX.
@@ -60,8 +58,7 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
 - The stylesheet import comes last.
 - A `map` callback destructures its item (`({ label, href }) =>`); when that does not fit on one line, the callback
   takes the item and destructures it in a block body the same way.
-- No ternary in a `return` and none for an optional attribute: compute a named `const` above the `return`, or
-  return early (`ai/rules/style.md`).
+- No ternary in a `return` and none for an optional attribute (`ai/rules/style.md`, "A clean `return`").
 - A variation is a prop and a BEM modifier (`isFeatured` → `news-card--featured`); class names
   are joined with `clsx`, not by string concatenation or a ternary in each file.
 - Texts and lists that repeat or are rendered by a loop live **only** in `data/` and are
@@ -102,8 +99,7 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
 - The logo is a link to `/` named by its image's `alt`.
 - A control with no visible text, or whose text is not enough (▶, a social icon), has an
   accessible name (`aria-label`); an icon next to text is decorative (`alt=""`, `aria-hidden`).
-- Widgets (tabs, disclosure, menu, dialog) carry their roles, `aria-controls` and
-  `aria-labelledby` in the JSX; the script changes only the states (`ai/rules/style.md`).
-- A hook for a script is a `data-<block>-<role>` attribute, not a BEM class.
-- No inline `style`, no `<br>` for spacing. Interface texts follow the design; one action has
+- Widgets (tabs, disclosure, menu, dialog) are marked up as `ai/rules/style.md` (ARIA patterns)
+  and `ai/rules/oop.md` (markup a widget expects) say.
+- No `<br>` for spacing. Interface texts follow the design; one action has
   one name wherever it shows.

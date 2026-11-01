@@ -72,16 +72,9 @@ you change.
 
 ## 7. Keep docs in the same change
 
-Only what the change made wrong, within the limits of `ai/rules/docs.md`:
-
-- `README.md` — when what a user sees, the scripts, or the structure changed, if the repo
-  has one.
-- `ai/map.md` — when a page, layout, section, component, stylesheet, script, data file, or
-  asset folder was added, removed, renamed, or moved.
-- `ai/rules/*` or `ai/skills/*` — when the change reshaped a pattern.
-- `ai/decisions/` — a new dated record when the change meets the criteria in its
-  `README.md`.
-- A doc that crosses its size limit is trimmed in this same change.
+Only what the change made wrong, within the limits of `ai/rules/docs.md`, which says which
+doc each kind of change touches (`README.md`, `ai/map.md`, `ai/rules/*`, `ai/skills/*`, a
+record in `ai/decisions/`). A doc that crosses its size limit is trimmed in this same change.
 
 ## 8. Verify
 

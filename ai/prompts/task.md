@@ -13,9 +13,8 @@ First, set up the environment:
 - Fetch the issue from Linear. Check its "blocked by" relations — if a blocker is not `Done`, stop
   and say so. Read its «Порядок» section and its «Решения автора» section if there is one — those
   answers are final.
-- Work on branch `my-{ISSUE}-<slug>` off the latest `main` — lowercase issue id, your own short
-  English slug (do not use Linear's `gitBranchName`: it prepends a username and transliterates the
-  Russian title).
+- Work on branch `my-{ISSUE}-<slug>` off the latest `main`, named as `ai/workflow.md` step 2
+  says (your own short English slug, not Linear's `gitBranchName`).
 - If you were given a worktree, work only inside it. If other tasks may run in parallel, create one:
   `git worktree add .claude/worktrees/my-{ISSUE}-<slug> -b my-{ISSUE}-<slug> main`, enter it
   (`EnterWorktree` with that `path` in Claude Code), and run `npm ci` there.

@@ -31,7 +31,7 @@ Prettier decides the formatting; these are the rules it does not. Markup and dat
 
 ## Hooks for scripts
 
-- A script finds its elements by `data-*` attributes (`data-tab-panel`,
+- A script finds its elements by `data-<block>-<role>` attributes (`data-tab-panel`,
   `data-toggle-button`, `data-header-nav`), never by BEM classes. A class says how something
   looks, an attribute says what the code does with it, so renaming a class never breaks a
   script.

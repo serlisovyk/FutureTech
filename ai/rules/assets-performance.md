@@ -41,11 +41,10 @@ build. Where the files are: `ai/map.md`. Why the site is static: decision
 
 ## Bundle and third parties
 
-- No third-party runtime scripts, no analytics, no font or icon CDN. A video embed is loaded
-  only after a click.
-- No React, no minista island runtime in the browser (decision `minista-jsx-static-html`).
+- No third-party runtime scripts, no analytics, no font or icon CDN. React and minista's island
+  runtime never reach the browser (`ai/rules/architecture.md`).
 - No source maps in the production build.
 - A dependency is added only with the author's yes; the browser runtime has none.
-- The size budget (`npm run size`, run by CI on every push) holds the built JS, CSS and fonts to
-  their limits (images join with the first photo); a change that comes near them is questioned
+- The size budget (`npm run size`, run by CI on every push) holds the built JS, CSS, fonts and
+  images to their limits (decision `size-limits`); a change that comes near them is questioned
   first, and raising a limit is a new dated record.

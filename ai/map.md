@@ -24,8 +24,8 @@ Navigation only: where things live and who owns what. How it works is in the cod
   the header, the CTA (`CtaRevolution`) and the footer join it from `sections/shared/`.
 - `src/sections/` — one folder per section (JSX, stylesheet, `index.jsx`, a folder per part), by page group (`home/`, `news/`, …,
   `ui/`; `shared/` when two pages use it); `sections/index.jsx` re-exports the groups.
-  `shared/Header` is on every page: the skip link, the newsletter strip, the navbar and the mobile menu (a drawer, one
-  `data-header` root; the layout passes it the current path). `shared/VideoModal` is the one `<dialog>` the layout renders on every
+  `shared/Header` is on every page: the skip link, the newsletter strip, the navbar and the mobile menu (decision `mobile-menu-drawer`).
+  `shared/VideoModal` is the one `<dialog>` the layout renders on every
   page; any `[data-video-id]` button opens it.
 - Home sections (`sections/home/`), in design order on `pages/index.jsx`: `Hero` (the page's `h1`, the eyebrow, three
   stats, the avatar capsule with the link to Resources, three feature links, `HeroFeature`),
@@ -60,23 +60,21 @@ Navigation only: where things live and who owns what. How it works is in the cod
   the phone field is a flag box over a native country `<select>`; countries in `data/countries.js`),
   `Faq` (id `faq`: the "Ask Question" link to the form, beside one `FaqItem` per question of `faq`, each
   its own `Disclosure`, the first open).
-- `public/` — fixed-URL files copied as they are: `favicon.svg`, `favicon.png`, `og-image.png` (with the author's name)
-  (1200 x 630). An article's `og:image` is its photo's hashed JPEG (`getSocialMeta`); the build generates `robots.txt`,
-  `sitemap.xml` and `llms.txt`; `JsonLd` prints `Organization` and `BlogPosting` (`utils/get-*-json-ld.js`).
+- `public/` — fixed-URL files copied as they are: `favicon.svg`, `favicon.png`, `og-image.png` (1200 x 630); the build
+  adds `robots.txt`, `sitemap.xml` and `llms.txt` (decision `seo-files-and-structured-data`).
 - `src/components/` — repeated elements as JSX, one folder each (`ui/Button/`: `Button.jsx`, `Button.css`, `index.jsx`),
   in groups by role with an `index.jsx`; `components/index.jsx` re-exports the groups.
-- `components/head/`: the head's parts (`FontPreloads`, `SeoMeta`, `SocialMeta`, `JsonLd`, …).
+- `components/head/`: the head's parts (`FontPreloads`, `SeoMeta`, `SocialMeta`, `JsonLd` with `utils/get-*-json-ld.js`, …).
 - `components/media/`: `Icon` renders a sprite icon (`name` is its path under `assets/icons/`), `Photo` an optimized photo.
-- UI kit (`components/ui/`): `Button`, `Tag`, `Badge`, `SectionHeading`, `Stat` (its number counts up from 0 in view), `MetaItem` and `MetaGrid`,
-  `CounterPill` (`isLarge`; `likeKey` makes it the like toggle), `AvatarGroup` (has a capsule variant), `PlayButton` (▶, opens the video modal), `Heading` (`level` is the tag, `size` the look; `hero` is the Home title, `minor` the grey one). `/ui` shows each in every variant.
-- Cards (`components/cards/`): `NewsCard` (photo, title, category, counters, link to the article) and `VideoCard` (preview with the
-  `PlayButton`; `isEpisode` adds Listen Podcast, which opens the same video). Both are on `/ui`.
+- UI kit (`components/ui/`): `Button`, `Tag`, `Badge`, `SectionHeading`, `Stat`, `MetaItem` and `MetaGrid`, `CounterPill`,
+  `AvatarGroup`, `PlayButton` (opens the video modal), `Heading`. `/ui` shows each in every variant.
+- Cards (`components/cards/`): `NewsCard` and `VideoCard` (`isEpisode` adds Listen Podcast, which opens the same video). Both are on `/ui`.
 - Where the key buttons lead: Download PDF Now, the newsletter strips and Community Forum to `/contact`; Home's Download Ebooks /
   Whitepapers Now and Preview to that tab of `/resources`; View All to the page that lists more (News's to the Home blog feed);
   play, Listen Podcast and the article's like are buttons, card likes are counters.
 - `PageIntro` (`components/page/`): the page's `h1` over two lines with the text beside the second one (stacked at
   390); News (with the taller `isSpacious` bottom), Podcasts and Resources render it from their data; 404 puts its button under the text.
-- `PostRow` (cards: author, date, title, excerpt, counters, link to the article) and `PostFeed` (`components/feeds/`: the category
+- `PostRow` (cards) and `PostFeed` (`components/feeds/`: the category
   tabs and the list of `PostRow`s, filtered in the browser by `PostFeedController`); both are on `/ui`.
 - `src/data/` — the texts, ids and lists the components render, as plain exported values, one file per entity or
   section: `posts` (with their article `body`), `categories`, `videos`, `podcasts`, `resources`, `testimonials`,
@@ -85,7 +83,6 @@ Navigation only: where things live and who owns what. How it works is in the cod
   lists), `pages` (each page's metadata) and `site` (the name, origin, locale, theme colour, icons, social image).
 - `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, …), re-exported by
   `index.js` (plain JS, no JSX), imported by components, sections and the layout.
-  `getSimilarPosts(post, count)`: the same category first, then the newest, never `post`.
 - `src/constants/` — what utils and scripts share (formats, keys, selectors, media queries, storage keys, widget
   settings), one file per meaning, re-exported by `index.js`.
 - `src/styles/` — global CSS only: `variables.css` (the tokens), `reset.css`, `base.css` (body, focus ring,
@@ -118,6 +115,6 @@ Navigation only: where things live and who owns what. How it works is in the cod
 
 ## Not in this project
 
-- No React in the browser, no TypeScript, no backend or CMS: decision `minista-jsx-static-html`.
-- No automated tests: decision `no-automated-tests`. No pull requests: decision `local-merge-without-pr`.
-- No login or sign-up pages; forms send nothing to a server of the project's own (`ai/rules/scope.md`).
+- What the project does not add is listed in `ai/rules/scope.md`. The decisions behind the main
+  ones: `minista-jsx-static-html` (no React in the browser, no TypeScript), `no-automated-tests`,
+  `local-merge-without-pr`, `contact-form-without-backend`.

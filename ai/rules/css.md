@@ -21,9 +21,8 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
   own class.
 - An `@import` or `url()` that leaves the stylesheet's folder uses the alias
   (`url('@assets/fonts/inter-latin-400.woff2')`); one in the same folder stays `./`.
-- A state a script sets is a native attribute (`[aria-expanded='true']`, `[aria-selected]`,
-  `[hidden]`, `[inert]`) or a BEM modifier; a hook for a script is a `data-*` attribute,
-  never a class (`ai/rules/style.md`).
+- A state a script sets is styled by its native attribute (`[aria-expanded='true']`, `[hidden]`)
+  or a BEM modifier, and a script's hook is never a class (`ai/rules/style.md`, "Hooks for scripts").
 - A tag selector appears only inside its block (`.faq__button svg`), never globally outside
   the base styles.
 

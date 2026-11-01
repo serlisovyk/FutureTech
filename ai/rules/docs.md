@@ -25,5 +25,3 @@ docs answer **where** (`ai/map.md`), **what must hold** (`ai/rules/`, `ai/skills
   script, data file or asset folder added, renamed or removed → the map; a pattern reshaped →
   the rule or skill; a durable decision → a record (criteria in `ai/decisions/README.md`); what
   a user sees, the scripts or the structure → a short line in `README.md`, if the repo has one.
-- **Language.** Everything in `ai/`, `AGENTS.md` and `CLAUDE.md` is English; Linear issues are
-  Russian.

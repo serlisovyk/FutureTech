@@ -41,7 +41,7 @@ Each class has one reason to change:
 | Composition root (`main.js`) | finding section roots, creating and starting     | hold logic                    |
 
 - A component works inside its `root`: it finds its children by `data-*` hooks within it,
-  never by BEM classes and never from `document`. Component hooks are generic (`data-tab`,
+  never from `document`. Component hooks are generic (`data-tab`,
   `data-toggle-button`, `data-disclosure-trigger`) and section roots are `data-<section>`;
   what is section-specific (texts, a query) comes in `options`.
 - A controller works with several instances on a page: `main.js` creates one per root.
@@ -101,7 +101,6 @@ The JSX carries the roles, `aria-controls`, `aria-labelledby` and the initial `a
   DOM into its first state. A listener that is removed later gets a `stop()`.
 - `main.js` only finds roots, creates instances and calls `start()`; a section missing from
   the page is skipped.
-- No global event buses, no singletons, no state on `window`.
 
 ## One method vocabulary
 
@@ -126,5 +125,4 @@ The JSX carries the roles, `aria-controls`, `aria-labelledby` and the initial `a
 
 - Classes: PascalCase nouns (`Tabs`, `PostFeedController`).
 - Methods: camelCase verbs (`start`, `select`, `renderExpanded`).
-- Booleans: `is` / `has` / `can` / `should` prefix (`isOpen`, `hasPanel`, `canWrap`).
 - Constants: `UPPER_SNAKE_CASE`.
