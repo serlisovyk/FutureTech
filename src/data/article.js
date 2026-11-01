@@ -4,8 +4,6 @@ export const article = {
   moreId: 'article-more',
   moreLabel: 'Read Full Blog',
   sidebarLabel: 'Article details',
-  contentsId: 'article-contents',
-  contentsTitle: 'Table of Contents',
   labels: {
     date: 'Publication Date',
     category: 'Category',

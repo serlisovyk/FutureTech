@@ -1,21 +1,15 @@
 import { Disclosure } from '@scripts/components/Disclosure.js'
-import { TableOfContents } from '@scripts/components/TableOfContents.js'
 import { SELECTORS } from '@scripts/constants.js'
 
 export class ArticleController {
   #root
   #region
   #disclosure
-  #contents
 
   constructor(root) {
     this.#root = root
     this.#region = root.querySelector(SELECTORS.disclosureRegion)
     this.#disclosure = null
-    this.#contents = new TableOfContents(
-      root.querySelector(SELECTORS.tableOfContents),
-      { scope: root },
-    )
 
     const hasRegion = this.#region !== null
     if (hasRegion) {
@@ -25,9 +19,6 @@ export class ArticleController {
 
   start() {
     this.#startDisclosure()
-
-    this.#contents.onNavigate((target) => this.#openFor(target))
-    this.#contents.start()
   }
 
   #startDisclosure() {

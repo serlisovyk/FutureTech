@@ -33,12 +33,6 @@
 }
 
 .article-sidebar__details {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: calc(
-    30px + (40 - 30) * var(--ramp-390-1440) + (50 - 40) * var(--ramp-1440-1920)
-  );
   padding-block: calc(var(--space-section) - 1px) var(--space-section);
   padding-inline: var(--article-sidebar-start) var(--article-sidebar-end);
   border-block-start: var(--border);

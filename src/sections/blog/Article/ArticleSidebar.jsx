@@ -1,11 +1,10 @@
 import { CounterPill, MetaGrid } from '@components'
 import { article } from '@data/article.js'
 import { formatCount, getArticleMeta } from '@utils'
-import { TableOfContents } from './TableOfContents.jsx'
 import './ArticleSidebar.css'
 
 export function ArticleSidebar({ post }) {
-  const { slug, counters, body } = post
+  const { slug, counters } = post
   const { likes, views, shares } = counters
 
   const meta = getArticleMeta(post, article.labels)
@@ -37,8 +36,6 @@ export function ArticleSidebar({ post }) {
 
       <div className="article-sidebar__details">
         <MetaGrid items={meta} className="article-sidebar__meta" />
-
-        <TableOfContents sections={body} />
       </div>
     </aside>
   )
