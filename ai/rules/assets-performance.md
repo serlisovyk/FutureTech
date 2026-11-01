@@ -9,7 +9,7 @@ build. Where the files are: `ai/map.md`. Why the site is static: decision
 - Kumbh Sans (headings) and Inter (text) are self-hosted `woff2` files in `src/assets/fonts/`
   with `font-display: swap`. No font CDN, no request to Google Fonts.
 - Only the weights the design uses are shipped, latin subset (decision `self-hosted-fonts`).
-  The layout preloads the body face (Inter 400) and the heading face (Kumbh Sans 500).
+  `FontPreloads` (in the layout) preloads the body face (Inter 400) and the heading face (Kumbh Sans 500).
 - A new weight, style or face is a decision for the author, not a drive-by edit.
 
 ## Images
