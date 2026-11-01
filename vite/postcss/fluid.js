@@ -1,11 +1,15 @@
 import { FLUID_CALL, FLUID_NAME, RAMP_PROPERTIES } from '../constants.js'
 
 function getRampTerm(from, to, property) {
-  return `(${to} - ${from}) * var(${property})`
+  const step = Number((to - from).toFixed(4))
+
+  if (step < 0) return `- ${-step} * var(${property})`
+
+  return `+ ${step} * var(${property})`
 }
 
 function expandFluid(_, mobile, laptop, desktop) {
-  const terms = [`${mobile}px`]
+  const terms = []
 
   if (Number(laptop) !== Number(mobile)) {
     terms.push(getRampTerm(mobile, laptop, RAMP_PROPERTIES.mobileToLaptop))
@@ -15,9 +19,9 @@ function expandFluid(_, mobile, laptop, desktop) {
     terms.push(getRampTerm(laptop, desktop, RAMP_PROPERTIES.laptopToDesktop))
   }
 
-  if (terms.length === 1) return terms[0]
+  if (terms.length === 0) return `${mobile}px`
 
-  return `calc(${terms.join(' + ')})`
+  return `calc(${mobile}px ${terms.join(' ')})`
 }
 
 export function fluid() {
