@@ -22,7 +22,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
 - `src/layouts/` — the shell of every page: `<html>`, the head (title, script, `components/head/` fed with the page's
   `metadata`, `url` and `post`), `<main>`;
   the header, the CTA (`CtaRevolution`) and the footer join it from `sections/shared/`.
-- `src/sections/` — one folder per section (its JSX, its stylesheet, its parts, an `index.jsx`), by page group (`home/`, `news/`, …,
+- `src/sections/` — one folder per section (its JSX, its stylesheet, an `index.jsx`, a folder per part), by page group (`home/`, `news/`, …,
   `ui/`; `shared/` when two pages use it); `sections/index.jsx` re-exports the groups.
   `shared/Header` is on every page: the skip link, the newsletter strip, the navbar and the mobile menu (a drawer, one
   `data-header` root; the layout passes it the current path). `shared/VideoModal` is the one `<dialog>` the layout renders on every
@@ -55,7 +55,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   `ArticleSidebar` (the second grid column from 1024px): large `CounterPill`s (the like is a toggle), the 2 x 2 `MetaGrid`
   with the reading time. Then `SimilarNews` (three `NewsCard`s from `getSimilarPosts`). Texts: `data/article.js`.
 - Contact sections (`sections/contact/`), in design order on `pages/contact.jsx`: `ContactInfo` (id `contact-info`: the page's
-  hidden `h1` and four `ContactColumn`s of `contacts`, two groups of two that wrap by fit),
+  hidden `h1` and four `ContactColumn`s of `contacts`, each with `ContactLinks`, `ContactOffice` or `ContactSocials`),
   `ContactForm` (the `<form id="contact-form">` beside the icon and `h2`: a field part per kind, `ContactFormController` checks it,
   the phone field is a flag box over a native country `<select>`; countries in `data/countries.js`),
   `Faq` (id `faq`: the "Ask Question" link to the form, beside one `FaqItem` per question of `faq`, each
@@ -75,14 +75,14 @@ Navigation only: where things live and who owns what. How it works is in the cod
   Now and Preview to that tab of `/resources`; View All to the page that lists more (News's "View All News" to the Home blog feed);
   play, Listen Podcast and the article's like are buttons, card likes are counters.
 - `PageIntro` (`components/page/`): the page's `h1` over two lines with the text beside the second one (stacked at
-  390); News, Podcasts and Resources render it with their data, News with the taller `isSpacious` bottom.
+  390); News (with the taller `isSpacious` bottom), Podcasts and Resources render it from their data.
 - `PostRow` (cards: author, date, title, excerpt, counters, link to the article) and `PostFeed` (`components/feeds/`: the category
   tabs and the list of `PostRow`s, filtered in the browser by `PostFeedController`); both are on `/ui`.
 - `src/data/` — the texts, ids and lists the components render, as plain exported values, one file per entity or
   section: `posts` (with their article `body`), `categories`, `videos`, `podcasts`, `resources`, `testimonials`,
   `features`, `stats`, `faq`, `navigation`, `footer`, `socials`, `contacts`, `contact-form`, `countries`, `cta`, `hero`,
-  `blogs`, `news`, `article`, `post-feed`, `video-modal`, `card-photos` (photo `sizes` and widths), `ui-kit` (`/ui` demo
-  lists), `pages` (each page's title, description, `robots`) and `site` (the name, origin, locale, theme colour, icons, social image).
+  `blogs`, `news`, `not-found`, `article`, `post-feed`, `video-modal`, `card-photos` (photo `sizes` and widths), `ui-kit` (`/ui` demo
+  lists), `pages` (each page's metadata) and `site` (the name, origin, locale, theme colour, icons, social image).
 - `src/utils/` — pure build-time helpers, one function per file (`get-page-title.js`, `get-post-url.js`, `get-reading-time.js`, `format-count.js`, …), re-exported by
   `index.js` (plain JS, no JSX), imported by components, sections and the layout.
   `getSimilarPosts(post, count)`: same-category posts first, then the newest, newest first, never `post`.

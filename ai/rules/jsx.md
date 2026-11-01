@@ -23,10 +23,12 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
   a new page adds them to `data/pages.js`), plus `robots` when the page needs it. The page has no `Head`, no site name and no
   text of its metadata: the layout builds the head (decision `shared-page-head`).
 - A component is a folder: `components/<group>/<Component>/` holds `<Component>.jsx`, `<Component>.css` and an
-  `index.jsx`; a section is `sections/<group>/<Section>/` with its parts. Each group has an `index.jsx`, and the root
-  `index.jsx` of `components/` and `sections/` re-exports the groups (decision `folders-and-barrels`).
-- One file holds one component and nothing else: a sub-component goes to its own file
-  (`FooterColumn.jsx`), a helper to `utils/`, a text or an id to `data/`.
+  `index.jsx`; a section is `sections/<group>/<Section>/` with `<Section>.jsx`, its stylesheet, an `index.jsx` that
+  exports the section only, and a folder per part. Each group has an `index.jsx`, and the root `index.jsx` of
+  `components/` and `sections/` re-exports the groups (decisions `folders-and-barrels`, `section-parts-in-folders`).
+- One file holds one component and nothing else: a part of a section is a folder built like a component
+  (`FooterColumn/` with `FooterColumn.jsx`, `FooterColumn.css` when it has styles, `index.jsx`), a helper goes to
+  `utils/`, a text or an id to `data/`.
 - One root element per component, with the block's class. A component is used by sections
   only; a section does not render another section.
 - An import that crosses folders uses the folder alias (list in `ai/map.md`): `import { Button, Tag } from '@components'`,
@@ -34,11 +36,16 @@ Where everything lives: `ai/map.md`; how the layers relate: `ai/rules/architectu
   `components/` imports another by its folder (`@components/media/Icon`), never the root barrel: that is a cycle.
   The one exception is a root path (`/src/assets/…`, `/src/scripts/main.js`): minista's `Sprite`, `Svg`
   and `Picture` read their `src` from the project root, not through Vite's aliases.
+- A section imports its part as `./<Part>`; a part imports a sibling part by its folder, `@sections/<group>/<Section>/<Part>`,
+  never through the `@sections` barrel (a cycle).
 
 ## Props and data
 
-- A repeated element takes its data as props, passed one by one by name. No `...props` rest or spread in a
-  component, and no `{...item}` of a data item: a prop the callers use is named in the signature.
+- A repeated element names its props in its signature and forwards none: no `...props` rest in a component. A data
+  item made exactly for the component's props is spread, `<TextField {...email} />`, `key` always beside it
+  (`<FeatureGroup key={id} {...group} />`); an `id` the component does not take is split off in the callback
+  (`({ id, ...group }) =>`). An item that is not the props (it nests the values or holds the section's own fields)
+  is passed by name (decision `spread-of-a-data-item`).
 - Props with a default come last in the destructuring list (`{ icon, children, variant = 'primary' }`).
 - A signature whose props do not fit on one line takes `props` and destructures them on the next line, followed
   by a blank line: `function NewsCard(props)`, then `const { slug, title, … } = props`.

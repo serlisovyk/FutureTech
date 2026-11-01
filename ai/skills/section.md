@@ -20,11 +20,13 @@ order of the work.
    cards, counters; `import { Button } from '@components'`) before writing markup. A new repeated part is a
    component: a folder `components/<group>/<Name>/` with `<Name>.jsx`, `<Name>.css` and `index.jsx`, plus a line in
    the group's `index.jsx`; one root, explicit props, its BEM block as the class, no hooks or handlers.
-3. **Section** — a folder `sections/<page>/<Name>/` (`shared/` when two pages use it) with `<Name>.jsx`, its
-   parts and `index.jsx`, and a line in the group's `index.jsx`: a root
+3. **Section** — a folder `sections/<page>/<Name>/` (`shared/` when two pages use it) with `<Name>.jsx`, an
+   `index.jsx` that exports the section only, and a line in the group's `index.jsx`: a root
    `<section>` with the block class and a container inside; the heading through the shared
    heading component. Roles and ARIA go in the JSX; the root gets `data-<name>`, the children
-   the hooks of the widget that drives them (`ai/rules/oop.md`).
+   the hooks of the widget that drives them (`ai/rules/oop.md`). A part of the section is a folder
+   `<Name>/<Part>/` (`<Part>.jsx`, `<Part>.css` when it has styles, `index.jsx`), imported as `./<Part>`; a data
+   item made for the part's props is spread (`<Part key={id} {...item} />`, `ai/rules/jsx.md`).
 4. **Styles** — `<Name>.css` in the folder, beside the JSX of each new block, imported by it
    (`import './Name.css'`): BEM, native nesting, colours and shared values from the tokens, the
    block's own values in its stylesheet (`ai/rules/css.md`). Compare the three design widths

@@ -79,6 +79,8 @@ each with the record that replaced it.
 - [Imports across folders use one alias per folder (`@components`, `@scripts`, …), never `../`](2026-10-28-path-aliases.md)
 - [Components and sections are folders with barrels (`@components`, `@sections`, `@utils`); assets sit in subfolders](2026-10-28-folders-and-barrels.md)
 - [Constants live in one folder (`@constants`), data is a barrel (`@data`), page metadata is data](2026-11-01-constants-folder-data-barrel.md)
+- [The parts of a section are folders, like components; a part imports a sibling by its folder path](2026-11-01-section-parts-in-folders.md)
+- [A data item made for a component's props is spread; the rest `...props` stays forbidden](2026-11-01-spread-of-a-data-item.md)
 - [Styles live next to their JSX; `styles/` holds only global CSS](2026-10-28-styles-next-to-components.md)
 - [Breakpoints and fluid values: two structural queries, ramps between the drawn widths](2026-10-28-fluid-ramps.md)
 - [Borders are drawn inside the design's size: padding is the design's value minus the border](2026-10-28-borders-inside.md)
