@@ -5,7 +5,6 @@
       "@components/*": ["./src/components/*"],
       "@sections": ["./src/sections"],
       "@sections/*": ["./src/sections/*"],
-      "@layouts/*": ["./src/layouts/*"],
       "@data": ["./src/data"],
       "@styles/*": ["./src/styles/*"],
       "@scripts/*": ["./src/scripts/*"],
