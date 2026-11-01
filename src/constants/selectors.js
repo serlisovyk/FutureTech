@@ -8,6 +8,7 @@ export const SELECTORS = Object.freeze({
   toggleTarget: '[data-toggle-target]',
   toggleDismiss: '[data-toggle-dismiss]',
   headerClose: '[data-header-close]',
+  headerLink: '[data-header-link]',
   videoTrigger: '[data-video-id]',
   videoModalTitle: '[data-video-modal-title]',
   videoModalPlayer: '[data-video-modal-player]',

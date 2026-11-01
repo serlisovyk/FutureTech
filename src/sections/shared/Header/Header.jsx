@@ -68,6 +68,7 @@ export function Header({ currentPath }) {
                         data-label={label}
                         aria-current={getAriaCurrent(href, currentPath)}
                         data-toggle-dismiss
+                        data-header-link
                       >
                         {label}
                       </a>

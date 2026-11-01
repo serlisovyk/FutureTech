@@ -24,7 +24,7 @@ export class Toggle {
 
     this.#button.addEventListener('click', () => this.toggle())
     this.#root.addEventListener('click', (event) => this.#handleClick(event))
-    this.#root.addEventListener('keydown', (event) => this.#handleKeydown(event))
+    document.addEventListener('keydown', (event) => this.#handleKeydown(event))
   }
 
   onToggle(handler) {

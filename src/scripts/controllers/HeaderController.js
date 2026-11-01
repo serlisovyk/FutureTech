@@ -5,12 +5,14 @@ export class HeaderController {
   #toggle
   #menu
   #closeButton
+  #firstLink
   #mobileQuery
 
   constructor(root) {
     this.#toggle = new Toggle(root)
     this.#menu = root.querySelector(SELECTORS.toggleTarget)
     this.#closeButton = root.querySelector(SELECTORS.headerClose)
+    this.#firstLink = root.querySelector(SELECTORS.headerLink)
     this.#mobileQuery = window.matchMedia(MEDIA.mobileMenu)
   }
 
@@ -22,9 +24,11 @@ export class HeaderController {
   }
 
   #handleViewportChange() {
-    if (this.#mobileQuery.matches) return
+    const isDrawerOpenOnDesktop = !this.#mobileQuery.matches && this.#toggle.isOpen
+    if (!isDrawerOpenOnDesktop) return
 
     this.#toggle.close()
+    this.#firstLink.focus()
   }
 
   #renderModal(isOpen) {
