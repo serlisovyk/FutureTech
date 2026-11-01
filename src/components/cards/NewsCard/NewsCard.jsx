@@ -2,13 +2,20 @@ import { Photo } from '@components/media/Photo'
 import { Button } from '@components/ui/Button'
 import { CounterPill } from '@components/ui/CounterPill'
 import { formatCount, getCategoryName, getPostUrl } from '@utils'
-import { cardPhotoBreakpoints, newsCardPhotoSizes, uiLabels } from '@data'
+import {
+  cardPhotoBreakpoints,
+  counterLabels,
+  newsCardPhotoSizes,
+  uiLabels,
+} from '@data'
 import './NewsCard.css'
 
 export function NewsCard(props) {
   const { slug, title, category, image, imageAlt, likes, comments } = props
 
   const { readMore, about } = uiLabels
+
+  const { likes: likesLabel, comments: commentsLabel } = counterLabels
 
   const hiddenLabel = ` ${about} ${title}`
 
@@ -28,10 +35,14 @@ export function NewsCard(props) {
         </div>
         <div className="news-card__footer">
           <div className="news-card__counters">
-            <CounterPill icon="ui/heart" label="likes" count={formatCount(likes)} />
+            <CounterPill
+              icon="ui/heart"
+              label={likesLabel}
+              count={formatCount(likes)}
+            />
             <CounterPill
               icon="ui/comment"
-              label="comments"
+              label={commentsLabel}
               count={formatCount(comments)}
             />
           </div>

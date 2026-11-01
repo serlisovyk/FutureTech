@@ -1,6 +1,7 @@
 import { BrowserMeta, FontPreloads, JsonLd, SeoMeta, SocialMeta } from '@components'
 import { CtaRevolution, Footer, Header, VideoModal } from '@sections'
 import { getAbsoluteUrl, getPageTitle } from '@utils'
+import { mainId } from '@data'
 import '@styles/global.css'
 
 export default function Layout(props) {
@@ -40,7 +41,7 @@ export default function Layout(props) {
       <body>
         <Header currentPath={url} />
 
-        <main className="main" id="main" tabIndex={-1}>
+        <main className="main" id={mainId} tabIndex={-1}>
           {children}
         </main>
 

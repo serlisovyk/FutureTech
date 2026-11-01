@@ -2,7 +2,12 @@ import { Photo } from '@components/media/Photo'
 import { Button } from '@components/ui/Button'
 import { CounterPill } from '@components/ui/CounterPill'
 import { formatCount, formatDate, getCategoryName, getPostUrl } from '@utils'
-import { postRowAvatarBreakpoints, postRowAvatarSizes, uiLabels } from '@data'
+import {
+  counterLabels,
+  postRowAvatarBreakpoints,
+  postRowAvatarSizes,
+  uiLabels,
+} from '@data'
 import './PostRow.css'
 
 export function PostRow(props) {
@@ -20,6 +25,12 @@ export function PostRow(props) {
   } = props
 
   const { readMore, about } = uiLabels
+
+  const {
+    likes: likesLabel,
+    comments: commentsLabel,
+    shares: sharesLabel,
+  } = counterLabels
 
   const hiddenLabel = ` ${about} ${title}`
 
@@ -48,13 +59,21 @@ export function PostRow(props) {
           <p className="post-row__excerpt">{excerpt}</p>
         </div>
         <div className="post-row__counters">
-          <CounterPill icon="ui/heart" label="likes" count={formatCount(likes)} />
+          <CounterPill
+            icon="ui/heart"
+            label={likesLabel}
+            count={formatCount(likes)}
+          />
           <CounterPill
             icon="ui/comment"
-            label="comments"
+            label={commentsLabel}
             count={formatCount(comments)}
           />
-          <CounterPill icon="ui/send" label="shares" count={formatCount(shares)} />
+          <CounterPill
+            icon="ui/send"
+            label={sharesLabel}
+            count={formatCount(shares)}
+          />
         </div>
       </div>
       <Button

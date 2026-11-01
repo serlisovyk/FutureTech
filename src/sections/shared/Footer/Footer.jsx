@@ -6,14 +6,14 @@ import { FooterCredits } from './FooterCredits'
 import './Footer.css'
 
 export function Footer() {
-  const { columns, legal, copyright } = footer
+  const { navLabel, columns, legal, copyright } = footer
 
   const currentYear = getCurrentYear()
 
   return (
     <footer className="footer">
       <div className="container">
-        <nav className="footer__nav" aria-label="Footer">
+        <nav className="footer__nav" aria-label={navLabel}>
           {columns.map((column) => {
             const { title } = column
 

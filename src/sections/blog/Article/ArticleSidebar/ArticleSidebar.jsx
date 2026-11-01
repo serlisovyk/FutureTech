@@ -1,6 +1,6 @@
 import { CounterPill, MetaGrid } from '@components'
 import { formatCount, getArticleMeta } from '@utils'
-import { article } from '@data'
+import { article, counterLabels } from '@data'
 import './ArticleSidebar.css'
 
 export function ArticleSidebar({ post }) {
@@ -9,6 +9,8 @@ export function ArticleSidebar({ post }) {
   const { likes, views, shares } = counters
 
   const { labels, sidebarLabel } = article
+
+  const { likes: likesLabel, views: viewsLabel, shares: sharesLabel } = counterLabels
 
   const meta = getArticleMeta(post, labels)
 
@@ -19,7 +21,7 @@ export function ArticleSidebar({ post }) {
       <div className="article-sidebar__counters">
         <CounterPill
           icon="ui/heart"
-          label="likes"
+          label={likesLabel}
           count={formatCount(likes)}
           likedCount={likedCount}
           likeKey={slug}
@@ -27,13 +29,13 @@ export function ArticleSidebar({ post }) {
         />
         <CounterPill
           icon="ui/eye"
-          label="views"
+          label={viewsLabel}
           count={formatCount(views)}
           isLarge
         />
         <CounterPill
           icon="ui/send"
-          label="shares"
+          label={sharesLabel}
           count={formatCount(shares)}
           isLarge
         />

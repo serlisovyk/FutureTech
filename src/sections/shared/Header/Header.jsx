@@ -1,11 +1,21 @@
 import { Svg } from 'minista/assets'
 import { Button, Icon } from '@components'
 import { getAriaCurrent, getLinkHref } from '@utils'
-import { banner, menuIconSize, navigationAction, navigationLinks, site } from '@data'
+import {
+  banner,
+  header,
+  mainId,
+  menuIconSize,
+  navigationAction,
+  navigationLinks,
+  site,
+} from '@data'
 import './Header.css'
 
 export function Header({ currentPath }) {
   const { lead, extra, tail } = banner
+
+  const { menuId, skipLabel, openLabel, closeLabel, navLabel } = header
 
   const bannerHref = getLinkHref(banner)
 
@@ -15,8 +25,8 @@ export function Header({ currentPath }) {
 
   return (
     <header className="header" data-header>
-      <Button className="header__skip" href="#main">
-        Skip to content
+      <Button className="header__skip" href={`#${mainId}`}>
+        {skipLabel}
       </Button>
 
       <a className="header__banner" href={bannerHref}>
@@ -40,29 +50,29 @@ export function Header({ currentPath }) {
           <button
             className="header__burger"
             type="button"
-            aria-label="Open menu"
+            aria-label={openLabel}
             aria-expanded="false"
-            aria-controls="header-menu"
+            aria-controls={menuId}
             data-toggle-button
           >
             <Icon name="ui/menu" size={menuIconSize} />
           </button>
 
-          <div className="header__menu" id="header-menu" data-toggle-target hidden>
+          <div className="header__menu" id={menuId} data-toggle-target hidden>
             <div className="header__backdrop" data-toggle-dismiss></div>
 
             <div className="header__drawer">
               <button
                 className="header__close"
                 type="button"
-                aria-label="Close menu"
+                aria-label={closeLabel}
                 data-toggle-dismiss
                 data-header-close
               >
                 <Icon name="ui/close" size={menuIconSize} />
               </button>
 
-              <nav className="header__nav" aria-label="Main">
+              <nav className="header__nav" aria-label={navLabel}>
                 <ul className="header__list">
                   {navigationLinks.map(({ label, href }) => (
                     <li key={href}>

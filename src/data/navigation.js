@@ -7,6 +7,16 @@ export const navigationLinks = [
   { label: 'Resources', href: '/resources' },
 ]
 
+export const mainId = 'main'
+
+export const header = {
+  menuId: 'header-menu',
+  skipLabel: 'Skip to content',
+  openLabel: 'Open menu',
+  closeLabel: 'Close menu',
+  navLabel: 'Main',
+}
+
 export const navigationAction = { label: 'Contact Us', href: '/contact' }
 
 export const menuIconSize = 34

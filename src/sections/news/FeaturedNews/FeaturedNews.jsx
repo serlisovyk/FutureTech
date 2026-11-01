@@ -2,6 +2,7 @@ import { Button, CounterPill, MetaGrid, Photo } from '@components'
 import { formatCount, getPostMeta, getPostsByPlacement, getPostUrl } from '@utils'
 import {
   featuredNewsPhotoBreakpoints,
+  counterLabels,
   featuredNewsPhotoSizes,
   featuredNews,
   uiLabels,
@@ -12,6 +13,8 @@ export function FeaturedNews() {
   const { titleId, placement, labels } = featuredNews
 
   const { readMore, about } = uiLabels
+
+  const { likes: likesLabel, comments: commentsLabel } = counterLabels
 
   const [post] = getPostsByPlacement(placement)
 
@@ -54,12 +57,12 @@ export function FeaturedNews() {
             <div className="featured-news__counters">
               <CounterPill
                 icon="ui/heart"
-                label="likes"
+                label={likesLabel}
                 count={formatCount(likes)}
               />
               <CounterPill
                 icon="ui/comment"
-                label="comments"
+                label={commentsLabel}
                 count={formatCount(comments)}
               />
             </div>

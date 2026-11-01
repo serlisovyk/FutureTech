@@ -5,3 +5,10 @@ export const uiLabels = {
   play: 'Play',
   about: 'about',
 }
+
+export const counterLabels = {
+  likes: 'likes',
+  comments: 'comments',
+  shares: 'shares',
+  views: 'views',
+}

@@ -18,6 +18,7 @@ const [aiRevolution, aiConversations] = podcasts
 const [whitepapers, ebooks, reports] = resourceTabs
 
 export const footer = {
+  navLabel: 'Footer',
   newLabel: 'New',
   columns: [
     {
