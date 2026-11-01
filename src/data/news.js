@@ -29,7 +29,7 @@ export const newsHub = {
   tag: 'Welcome to Our News Hub',
   title: 'Discover the World of Headlines',
   link: { href: '/#blogs', label: 'View All News' },
-  placement: 'headlines',
+  placements: ['featured', 'trending', 'headlines'],
 }
 
 export const featuredVideos = {

@@ -1,4 +1,5 @@
 export * from './article.js'
+export * from './authors.js'
 export * from './blogs.js'
 export * from './card-photos.js'
 export * from './categories.js'

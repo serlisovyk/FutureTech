@@ -6,5 +6,5 @@ export const blogs = {
   title: "Explore FutureTech's In-Depth Blog Posts",
   link: { href: '/news', label: 'View All Blogs' },
   placement: 'blogs',
-  limit: 3,
+  limit: 4,
 }

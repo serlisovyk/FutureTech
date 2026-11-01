@@ -6,7 +6,6 @@ export const blogCategories = [
   { slug: 'ai-ethics', name: 'AI Ethics' },
   { slug: 'space-exploration', name: 'Space Exploration' },
   { slug: 'biotechnology', name: 'Biotechnology' },
-  { slug: 'renewable-energy', name: 'Renewable Energy' },
 ]
 
 export const newsCategories = [
@@ -15,5 +14,4 @@ export const newsCategories = [
   { slug: 'politics', name: 'Politics' },
   { slug: 'health', name: 'Health' },
   { slug: 'environment', name: 'Environment' },
-  { slug: 'sports', name: 'Sports' },
 ]

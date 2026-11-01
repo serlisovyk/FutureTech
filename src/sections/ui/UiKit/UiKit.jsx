@@ -140,10 +140,10 @@ export function UiKit() {
               icon="ui/arrow-up-right"
               isCompact
             >
-              contact@ai-podcasts.com
+              Contact Us
             </Button>
             <Button variant="ghost" icon="ui/arrow-up-right" isCompact>
-              contact@ai-podcasts.com
+              Contact Us
             </Button>
           </div>
         </div>
@@ -327,10 +327,7 @@ export function UiKit() {
           <Heading level={2} size="h3">
             PostRow and PostFeed
           </Heading>
-          <p className="ui-kit__caption">
-            The blog feed: the tabs filter the rows; Biotechnology and Renewable
-            Energy have no post
-          </p>
+          <p className="ui-kit__caption">The blog feed: the tabs filter the rows</p>
         </div>
         <PostFeed
           id={blogFeedId}
@@ -339,7 +336,8 @@ export function UiKit() {
         />
         <div className="container ui-kit__body">
           <p className="ui-kit__caption">
-            The news feed, limited to the first two posts
+            The news feed, limited to the first two posts: a tab with no post shows
+            the empty state
           </p>
         </div>
         <PostFeed

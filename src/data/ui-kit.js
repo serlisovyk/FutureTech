@@ -4,7 +4,7 @@ import { videos } from './videos.js'
 
 export const articleMeta = [
   { label: 'Publication Date', value: 'October 15, 2023' },
-  { label: 'Category', value: 'Healthcare' },
+  { label: 'Category', value: 'Biotechnology' },
   { label: 'Reading Time', value: '10 Min' },
   { label: 'Author Name', value: 'Dr. Emily Walker' },
 ]
