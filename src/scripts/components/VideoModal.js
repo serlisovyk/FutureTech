@@ -1,4 +1,4 @@
-import { VIDEO_EMBED } from '@constants'
+import { SELECTORS, VIDEO_EMBED } from '@constants'
 
 export class VideoModal {
   #root
@@ -8,8 +8,8 @@ export class VideoModal {
 
   constructor(root) {
     this.#root = root
-    this.#title = root.querySelector('[data-video-modal-title]')
-    this.#player = root.querySelector('[data-video-modal-player]')
+    this.#title = root.querySelector(SELECTORS.videoModalTitle)
+    this.#player = root.querySelector(SELECTORS.videoModalPlayer)
     this.#opener = null
   }
 
@@ -32,7 +32,7 @@ export class VideoModal {
 
   #handleClick(event) {
     const isBackdrop = event.target === this.#root
-    const isCloseButton = event.target.closest('[data-video-modal-close]')
+    const isCloseButton = event.target.closest(SELECTORS.videoModalClose)
     if (!isBackdrop && !isCloseButton) return
 
     this.close()

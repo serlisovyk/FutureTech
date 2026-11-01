@@ -1,17 +1,15 @@
+import { ARIA, SELECTORS } from '@constants'
+
 export class Disclosure {
-  #options
   #trigger
   #region
-  #label
   #isOpen
   #handleToggle
 
-  constructor(root, options = {}) {
-    this.#options = { labels: null, ...options }
-    this.#trigger = root.querySelector('[data-disclosure-trigger]')
-    this.#region = root.querySelector('[data-disclosure-region]')
-    this.#label = root.querySelector('[data-disclosure-label]')
-    this.#isOpen = this.#trigger.getAttribute('aria-expanded') === 'true'
+  constructor(root) {
+    this.#trigger = root.querySelector(SELECTORS.disclosureTrigger)
+    this.#region = root.querySelector(SELECTORS.disclosureRegion)
+    this.#isOpen = this.#trigger.getAttribute(ARIA.expanded) === 'true'
     this.#handleToggle = () => {}
   }
 
@@ -49,17 +47,9 @@ export class Disclosure {
   }
 
   #renderExpanded() {
-    this.#trigger.setAttribute('aria-expanded', String(this.#isOpen))
+    this.#trigger.setAttribute(ARIA.expanded, String(this.#isOpen))
     this.#region.hidden = !this.#isOpen
 
-    this.#renderLabel()
     this.#handleToggle(this.#isOpen)
-  }
-
-  #renderLabel() {
-    const { labels } = this.#options
-    if (!labels || !this.#label) return
-
-    this.#label.textContent = this.#isOpen ? labels.whenOpen : labels.whenClosed
   }
 }

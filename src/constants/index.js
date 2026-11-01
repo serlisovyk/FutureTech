@@ -1,3 +1,4 @@
+export * from './aria.js'
 export * from './count-up.js'
 export * from './form.js'
 export * from './format.js'

@@ -1,23 +1,21 @@
-import { KEYS, NO_INDEX } from '@constants'
+import { ARIA, KEYS, NO_INDEX, SELECTORS } from '@constants'
 
 export class Tabs {
-  #options
   #tabList
   #tabs
   #panels
   #handleSelect
 
-  constructor(root, options = {}) {
-    this.#options = { shouldWrap: true, ...options }
-    this.#tabList = root.querySelector('[data-tab-list]')
-    this.#tabs = [...root.querySelectorAll('[data-tab]')]
-    this.#panels = [...root.querySelectorAll('[data-tab-panel]')]
+  constructor(root) {
+    this.#tabList = root.querySelector(SELECTORS.tabList)
+    this.#tabs = [...root.querySelectorAll(SELECTORS.tab)]
+    this.#panels = [...root.querySelectorAll(SELECTORS.tabPanel)]
     this.#handleSelect = () => {}
   }
 
   start() {
     const selectedTab = this.#tabs.find(
-      (tab) => tab.getAttribute('aria-selected') === 'true',
+      (tab) => tab.getAttribute(ARIA.selected) === 'true',
     )
     const hashTab = this.#findHashTab()
 
@@ -41,7 +39,7 @@ export class Tabs {
   }
 
   #handleClick(event) {
-    const selectedTab = event.target.closest('[data-tab]')
+    const selectedTab = event.target.closest(SELECTORS.tab)
     if (!selectedTab) return
 
     this.select(selectedTab)
@@ -56,7 +54,7 @@ export class Tabs {
   }
 
   #handleKeydown(event) {
-    const currentTab = event.target.closest('[data-tab]')
+    const currentTab = event.target.closest(SELECTORS.tab)
     if (!currentTab) return
 
     const currentIndex = this.#tabs.indexOf(currentTab)
@@ -70,7 +68,7 @@ export class Tabs {
   #findHashTab() {
     const { hash } = window.location
 
-    return this.#tabs.find((tab) => `#${tab.getAttribute('aria-controls')}` === hash)
+    return this.#tabs.find((tab) => `#${tab.getAttribute(ARIA.controls)}` === hash)
   }
 
   #findPanel(key) {
@@ -87,22 +85,16 @@ export class Tabs {
   }
 
   #stepIndex(currentIndex, step) {
-    const { shouldWrap } = this.#options
     const tabCount = this.#tabs.length
-    const nextIndex = currentIndex + step
-    const wrappedIndex = (nextIndex + tabCount) % tabCount
-    const clampedIndex = Math.min(Math.max(nextIndex, 0), tabCount - 1)
 
-    if (shouldWrap) return wrappedIndex
-
-    return clampedIndex
+    return (currentIndex + step + tabCount) % tabCount
   }
 
   #renderTabs(selectedTab) {
     for (const tab of this.#tabs) {
       const isSelected = tab === selectedTab
 
-      tab.setAttribute('aria-selected', String(isSelected))
+      tab.setAttribute(ARIA.selected, String(isSelected))
       tab.tabIndex = isSelected ? 0 : -1
     }
   }

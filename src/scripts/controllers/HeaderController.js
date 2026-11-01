@@ -1,5 +1,5 @@
 import { Toggle } from '@scripts/components/Toggle.js'
-import { MEDIA } from '@constants'
+import { MEDIA, SELECTORS } from '@constants'
 
 export class HeaderController {
   #toggle
@@ -9,8 +9,8 @@ export class HeaderController {
 
   constructor(root) {
     this.#toggle = new Toggle(root)
-    this.#menu = root.querySelector('[data-toggle-target]')
-    this.#closeButton = root.querySelector('[data-header-close]')
+    this.#menu = root.querySelector(SELECTORS.toggleTarget)
+    this.#closeButton = root.querySelector(SELECTORS.headerClose)
     this.#mobileQuery = window.matchMedia(MEDIA.mobileMenu)
   }
 

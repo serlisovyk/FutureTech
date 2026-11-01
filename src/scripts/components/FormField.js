@@ -1,4 +1,4 @@
-import { VALIDITY_ERRORS } from '@constants'
+import { ARIA, SELECTORS, VALIDITY_ERRORS } from '@constants'
 
 export class FormField {
   #control
@@ -7,8 +7,8 @@ export class FormField {
   #isInvalid
 
   constructor(root) {
-    this.#control = root.querySelector('[data-form-control]')
-    this.#error = root.querySelector('[data-form-error]')
+    this.#control = root.querySelector(SELECTORS.formControl)
+    this.#error = root.querySelector(SELECTORS.formError)
     this.#isTouched = false
     this.#isInvalid = false
   }
@@ -78,14 +78,14 @@ export class FormField {
   #renderInvalid() {
     this.#isInvalid = true
 
-    this.#control.setAttribute('aria-invalid', 'true')
+    this.#control.setAttribute(ARIA.invalid, 'true')
     this.#error.textContent = this.#getMessage()
   }
 
   #renderValid() {
     this.#isInvalid = false
 
-    this.#control.removeAttribute('aria-invalid')
+    this.#control.removeAttribute(ARIA.invalid)
     this.#error.textContent = ''
   }
 }

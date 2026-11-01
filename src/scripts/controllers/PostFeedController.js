@@ -1,5 +1,5 @@
 import { Tabs } from '@scripts/components/Tabs.js'
-import { ALL_CATEGORY, SELECTORS } from '@constants'
+import { ALL_CATEGORY, ARIA, SELECTORS } from '@constants'
 
 export class PostFeedController {
   #tabs
@@ -43,7 +43,7 @@ export class PostFeedController {
   }
 
   #renderPanelLabel(tabId) {
-    this.#panel.setAttribute('aria-labelledby', tabId)
+    this.#panel.setAttribute(ARIA.labelledBy, tabId)
   }
 
   #renderStatus(text) {

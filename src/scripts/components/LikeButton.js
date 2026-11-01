@@ -1,4 +1,4 @@
-import { SELECTORS, STORAGE } from '@constants'
+import { ARIA, SELECTORS, STORAGE } from '@constants'
 import { StorageItem } from '@scripts/services'
 
 export class LikeButton {
@@ -20,10 +20,6 @@ export class LikeButton {
     this.#isLiked = false
   }
 
-  get isLiked() {
-    return this.#isLiked
-  }
-
   start() {
     const storedValue = this.#storage.read()
 
@@ -43,7 +39,7 @@ export class LikeButton {
   #renderLiked() {
     const count = this.#isLiked ? this.#likedCount : this.#unlikedCount
 
-    this.#root.setAttribute('aria-pressed', String(this.#isLiked))
+    this.#root.setAttribute(ARIA.pressed, String(this.#isLiked))
     this.#count.textContent = count
   }
 

@@ -1,4 +1,4 @@
-import { COUNT_UP } from '@constants'
+import { COUNT_UP, SELECTORS } from '@constants'
 import { VisibilityObserver } from '@scripts/services'
 
 export class CountUp {
@@ -13,7 +13,7 @@ export class CountUp {
       threshold: COUNT_UP.threshold,
       ...options,
     }
-    this.#number = root.querySelector('[data-count-up-number]')
+    this.#number = root.querySelector(SELECTORS.countUpNumber)
     this.#parts = COUNT_UP.numberPattern.exec(this.#number.textContent.trim())
     this.#observer = new VisibilityObserver(
       [this.#number],

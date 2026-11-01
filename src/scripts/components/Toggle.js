@@ -1,19 +1,17 @@
-import { KEYS } from '@constants'
+import { ARIA, KEYS, SELECTORS } from '@constants'
 
 export class Toggle {
   #root
-  #options
   #button
   #target
   #isOpen
   #handleToggle
 
-  constructor(root, options = {}) {
+  constructor(root) {
     this.#root = root
-    this.#options = { labels: null, ...options }
-    this.#button = root.querySelector('[data-toggle-button]')
-    this.#target = root.querySelector('[data-toggle-target]')
-    this.#isOpen = this.#button.getAttribute('aria-expanded') === 'true'
+    this.#button = root.querySelector(SELECTORS.toggleButton)
+    this.#target = root.querySelector(SELECTORS.toggleTarget)
+    this.#isOpen = this.#button.getAttribute(ARIA.expanded) === 'true'
     this.#handleToggle = () => {}
   }
 
@@ -53,7 +51,7 @@ export class Toggle {
   }
 
   #handleClick(event) {
-    const isDismiss = event.target.closest('[data-toggle-dismiss]')
+    const isDismiss = event.target.closest(SELECTORS.toggleDismiss)
     if (!isDismiss || !this.#isOpen) return
 
     this.#closeToButton()
@@ -71,19 +69,9 @@ export class Toggle {
   }
 
   #renderExpanded() {
-    this.#button.setAttribute('aria-expanded', String(this.#isOpen))
+    this.#button.setAttribute(ARIA.expanded, String(this.#isOpen))
     this.#target.hidden = !this.#isOpen
 
-    this.#renderLabel()
     this.#handleToggle(this.#isOpen)
-  }
-
-  #renderLabel() {
-    const { labels } = this.#options
-    if (!labels) return
-
-    const label = this.#isOpen ? labels.whenOpen : labels.whenClosed
-
-    this.#button.setAttribute('aria-label', label)
   }
 }
