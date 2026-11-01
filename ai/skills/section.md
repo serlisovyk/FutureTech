@@ -29,8 +29,9 @@ order of the work.
    item made for the part's props is spread (`<Part key={id} {...item} />`, `ai/rules/jsx.md`).
 4. **Styles** — `<Name>.css` in the folder, beside the JSX of each new block, imported by it
    (`import './Name.css'`): BEM, native nesting, colours and shared values from the tokens, the
-   block's own values in its stylesheet (`ai/rules/css.md`). Compare the three design widths
-   with the design.
+   block's own values in its stylesheet (`ai/rules/css.md`). Sizes are `fluid(Mobile, Laptop, Desktop)`,
+   structure changes are `@tablet` and `@mobile`, hover is a plain `&:hover`. Compare the three design
+   widths with the design.
 5. **Behavior** — only when the section does something: a widget in `scripts/components/`, and a
    controller in `scripts/controllers/` only when the section needs more than one widget or its
    own logic. `constructor(root, options)` and `start()`; the page works without it.

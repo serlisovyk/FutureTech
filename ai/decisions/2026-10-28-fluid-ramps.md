@@ -1,6 +1,6 @@
 # Breakpoints and fluid values: two structural queries, ramps between the drawn widths
 
-Date: 2026-10-28 · Status: accepted
+Date: 2026-10-28 · Status: superseded by 2026-11-01-postcss-shorthands.md
 
 ## Context
 

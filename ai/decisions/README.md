@@ -82,7 +82,7 @@ each with the record that replaced it.
 - [The parts of a section are folders, like components; a part imports a sibling by its folder path](2026-11-01-section-parts-in-folders.md)
 - [A data item made for a component's props is spread; the rest `...props` stays forbidden](2026-11-01-spread-of-a-data-item.md)
 - [Styles live next to their JSX; `styles/` holds only global CSS](2026-10-28-styles-next-to-components.md)
-- [Breakpoints and fluid values: two structural queries, ramps between the drawn widths](2026-10-28-fluid-ramps.md)
+- [Fluid values, hover and breakpoints are short notations that PostCSS plugins expand](2026-11-01-postcss-shorthands.md)
 - [Borders are drawn inside the design's size: padding is the design's value minus the border](2026-10-28-borders-inside.md)
 - [Grey text is raised to AA, form controls get a 3:1 border, other borders stay as drawn](2026-10-31-grey-text-and-control-borders.md)
 - [Photos ship as AVIF with a WebP fallback, through one component](2026-10-28-image-formats.md)
@@ -100,3 +100,4 @@ each with the record that replaced it.
 - [Article bodies are JS sections in `data/`, no MDX](2026-10-28-article-data.md) — replaced by `article-without-contents`
 - [Browser JavaScript in OOP style: a class per widget and per section](2026-10-28-oop-javascript.md) — replaced by `script-helpers`
 - [Browser scripts are classes, with pure helper functions in `scripts/utils/`](2026-11-01-script-helpers.md) — replaced by `script-helper-classes`
+- [Breakpoints and fluid values: two structural queries, ramps between the drawn widths](2026-10-28-fluid-ramps.md) — replaced by `postcss-shorthands`

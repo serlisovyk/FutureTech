@@ -30,11 +30,12 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
 ## Nesting
 
 - States, pseudo-elements, children and media queries nest inside their rule: `&:hover`,
-  `&::after`, `@media (...)`. A media query sits inside the selector it changes, written as a
-  range (`@media (width < 768px)`).
+  `&::after`, `@tablet`. A media query sits inside the selector it changes, written as
+  `@tablet` or `@mobile` (below), any other as a range (`@media (scripting: enabled)`).
 - Nesting adds the parent's specificity: stay at two levels, and let order or a more
   specific selector win, never `!important`.
-- `:hover` only inside `@media (hover: hover)`, so a tap leaves no hover look.
+- `:hover` is written plain (`&:hover`), never inside `@media (hover: hover)`: the build wraps it, so a tap
+  leaves no hover look. A selector list is split, so `:focus-visible` is never wrapped.
 
 ## Longhands and plain grids
 
@@ -71,18 +72,20 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
 ## Breakpoints and fluid values
 
 - The design is drawn at three widths: Desktop 1920, Laptop 1440, Mobile 390 (the values at each
-  are in `ai/design-system.md`, in that order). The scheme is decision `fluid-ramps`.
-- Media queries change structure only: `@media (width < 1024px)` stacks side-by-side
-  compositions, `@media (width < 768px)` makes grids one column and the header a menu button.
-  There is no query at 1440, and no other breakpoint is invented.
+  are in `ai/design-system.md`, in that order). The scheme is decision `postcss-shorthands`.
+- Media queries change structure only: `@tablet` (`width < 1024px`) stacks side-by-side
+  compositions, `@mobile` (`width < 768px`) makes grids one column and the header a menu button; more
+  conditions follow the name (`@mobile and (scripting: enabled)`). The widths live in the build config;
+  there is no query at 1440, no `@desktop` (the base rule is Desktop) and no other breakpoint.
 - Type, spacing and radii are fluid: the size at 390 plus the growth of each segment, from the
-  design numbers, through the two ramps in the variables stylesheet, for example
-  `calc(28px + (44 - 28) * var(--ramp-390-1440) + (58 - 44) * var(--ramp-1440-1920))`. A flat
-  segment leaves its term out. Never a bare `vw` coefficient tuned by eye, never a query per width.
+  design numbers, written `fluid(28, 44, 58)`: always three unitless numbers, the px at 390, 1440 and
+  1920 (`fluid(185, 185, 222)` for a flat segment), also inside another function
+  (`round(fluid(20, 20, 24), 1px)`). The build expands it through the two ramps of the variables
+  stylesheet. Never a bare `vw` coefficient tuned by eye, never a query per width.
 - A new rule takes its values from the `ai/design-system.md` tables and is checked at the three
   widths and in between. The base rule is the widest layout; a narrower screen overrides it.
 - A block with a border has padding of the design's value minus the border width, so its outer size is the
-  design's (a 1px border on 18px padding: `calc(17px …)`; decision `borders-inside`). A transparent border keeps its width.
+  design's (a 1px border on 18px padding: `fluid(17, …)`; decision `borders-inside`). A transparent border keeps its width.
 - No horizontal scroll at any width from Mobile to Desktop, and none at 200% zoom.
 
 ## Motion and focus
@@ -98,7 +101,7 @@ Where the stylesheets live and how they are loaded: `ai/map.md`.
   content, not a full-width band with lines. Each card of a grid is marked itself: the cascade is the order in which
   they enter, not markup. The look lives in `reveal.css` (opacity and a short shift, only under
   `(scripting: enabled)` and `(prefers-reduced-motion: no-preference)`); a block never styles `[data-reveal]` itself.
-- Hover: `:hover` only inside `@media (hover: hover)`, a step that fits the block and never a jump. A control steps its
+- Hover: a step that fits the block and never a jump. A control steps its
   background one level up (Dark/08 to Dark/10, Dark/10 to Dark/15), brightens its border to `--dark-40` and turns its text
   white; a link with the ↗ arrow moves the arrow 2px up and right, and a link card does it for its arrow
   circle; a text link turns white, a social icon yellow. Transitions name `background-color`, `border-color`, `color` or

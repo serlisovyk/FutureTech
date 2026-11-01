@@ -3,8 +3,8 @@
 The design in words and numbers, read once so CSS and sections are written without opening it. It is a
 third-party template (decision `design-is-a-reference`): only this description is in the repo.
 
-- Every size is px, in the order **1920 / 1440 / 390** (Desktop, Laptop, Mobile); a fluid value is written from
-  these three numbers (decision `fluid-ramps`). "-" means not drawn at that width.
+- Every size is px, in the order **1920 / 1440 / 390** (Desktop, Laptop, Mobile); a fluid value is `fluid(Mobile, Laptop, Desktop)`
+  with the same three numbers, **reversed** (decision `postcss-shorthands`). "-" means not drawn at that width.
 - Line heights are unitless; letter spacing is -3% unless a row says `ls 0`. Colours are the design's colour
   styles (`Dark/10` = `#1A1A1A`); token names: `ai/rules/css.md`.
 - Drawn states: nav item active / inactive, filter tab default / active, counter pill normal / liked, FAQ item
@@ -329,7 +329,7 @@ Section names are the design's sitemap. A page is the header, its sections, the 
   blend mode `color-dodge`: over `Dark/08` only the grey end of each ray shows, soft light rays, not black ones.
   894x606 / 622x422 / 423x287, rotated 35.4 degrees about its top left corner placed at (143, -234) / (90, -159) /
   (51, -104) in the hero's right column (653x755 / 523x568 / 390x358), which clips it. One opaque raster of the
-  unrotated burst on `Dark/08` (`alt=""`), placed and rotated by CSS through the ramps; not inline SVG.
+  unrotated burst on `Dark/08` (`alt=""`), placed and rotated by CSS with `fluid()`; not inline SVG.
 - **Feature icons:** two-tone, `Yellow/55` + `Dark/25`, 80 / 60 / 50 (rows) and 50 / 40 / 30 (Home strip). About
   13 pieces: Home Future Technology Blog, Research Insights Blogs, Ebooks, Whitepapers, strip Latest News, Expert
   Contributors, Global Readership; Podcasts AI Revolution, AI Conversations; Resources, 2 whitepapers; Contact,
