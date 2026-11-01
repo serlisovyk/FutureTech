@@ -6,7 +6,7 @@ export const contactInfo = {
   title: 'Contact FutureTech',
 }
 
-export const contacts = [
+const contacts = [
   {
     id: 'general-inquiries',
     title: 'General Inquiries',
@@ -43,4 +43,11 @@ export const contacts = [
     title: 'Connect with Us',
     socials,
   },
+]
+
+const [generalInquiries, technicalSupport, ourOffice, connectWithUs] = contacts
+
+export const contactGroups = [
+  { id: 'reach-us', items: [generalInquiries, technicalSupport] },
+  { id: 'find-us', items: [ourOffice, connectWithUs] },
 ]

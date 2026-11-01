@@ -1,5 +1,6 @@
 import { clsx } from 'clsx'
 import { Icon } from '@components/media/Icon'
+import { ICONS } from '@constants'
 import './CounterPill.css'
 
 export function CounterPill(props) {
@@ -13,6 +14,8 @@ export function CounterPill(props) {
     isLarge = false,
   } = props
 
+  const { heartFilled } = ICONS
+
   const isToggle = Boolean(likeKey)
 
   const classNames = clsx(
@@ -22,7 +25,7 @@ export function CounterPill(props) {
     isToggle && 'counter-pill--toggle',
   )
 
-  const iconName = isLiked ? 'ui/heart-filled' : icon
+  const iconName = isLiked ? heartFilled : icon
 
   const iconClassNames = clsx(
     'counter-pill__icon',
@@ -36,7 +39,7 @@ export function CounterPill(props) {
       <Icon name={iconName} className={iconClassNames} />
       {isToggle && (
         <Icon
-          name="ui/heart-filled"
+          name={heartFilled}
           className="counter-pill__icon counter-pill__icon--on"
         />
       )}

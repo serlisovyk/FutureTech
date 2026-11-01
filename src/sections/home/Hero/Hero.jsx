@@ -1,5 +1,5 @@
 import { AvatarGroup, Button, Heading, Photo, Stat } from '@components'
-import { heroFeatures, hero, stats } from '@data'
+import { heroFeatures, heroStats, hero } from '@data'
 import { HeroFeature } from './HeroFeature'
 import './Hero.css'
 
@@ -17,8 +17,6 @@ export function Hero() {
       avatars,
     },
   } = hero
-
-  const heroStats = stats.slice(0, 3)
 
   return (
     <section className="hero" aria-labelledby={titleId}>

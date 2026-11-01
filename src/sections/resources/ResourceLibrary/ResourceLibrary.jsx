@@ -5,7 +5,7 @@ import { ResourcePanel } from './ResourcePanel'
 import './ResourceLibrary.css'
 
 export function ResourceLibrary() {
-  const { id, titleId, tag, title, tabListLabel } = resourceLibrary
+  const { id, titleId, tag, title, tabListLabel, selectedId } = resourceLibrary
 
   return (
     <section
@@ -21,10 +21,10 @@ export function ResourceLibrary() {
           aria-label={tabListLabel}
           data-tab-list
         >
-          {resourceTabs.map((resourceTab, index) => {
+          {resourceTabs.map((resourceTab) => {
             const { id: panelId, tabId, label } = resourceTab
 
-            const isSelected = index === 0
+            const isSelected = panelId === selectedId
 
             const tabIndex = getTabIndex(isSelected)
 

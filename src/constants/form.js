@@ -2,6 +2,10 @@ export const PHONE_PATTERN = Object.freeze({
   separators: '[\\s\\(\\)\\-.]',
 })
 
+export const INPUT_TYPES = Object.freeze({
+  checkbox: 'checkbox',
+})
+
 export const VALIDITY_ERRORS = Object.freeze({
   valueMissing: 'errorValueMissing',
   typeMismatch: 'errorTypeMismatch',

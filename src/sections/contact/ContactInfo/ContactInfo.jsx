@@ -1,5 +1,5 @@
 import { SocialLinks } from '@components'
-import { contactInfo, contacts } from '@data'
+import { contactGroups, contactInfo } from '@data'
 import { ContactColumn } from './ContactColumn'
 import { ContactLinks } from './ContactLinks'
 import { ContactOffice } from './ContactOffice'
@@ -8,8 +8,6 @@ import './ContactInfo.css'
 export function ContactInfo() {
   const { id, titleId, title } = contactInfo
 
-  const groups = [contacts.slice(0, 2), contacts.slice(2)]
-
   return (
     <section className="contact-info" id={id} aria-labelledby={titleId}>
       <h1 className="visually-hidden" id={titleId}>
@@ -17,9 +15,9 @@ export function ContactInfo() {
       </h1>
 
       <div className="contact-info__list container">
-        {groups.map((group) => (
-          <ul key={group[0].id} className="contact-info__group">
-            {group.map((contact) => {
+        {contactGroups.map(({ id: groupId, items }) => (
+          <ul key={groupId} className="contact-info__group">
+            {items.map((contact) => {
               const {
                 id: contactId,
                 title: contactTitle,

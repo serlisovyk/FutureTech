@@ -25,11 +25,9 @@ export function Faq() {
         </div>
 
         <ul className="faq__list">
-          {faq.map(({ id: itemId, ...item }, index) => {
-            const isOpen = index === 0
-
-            return <FaqItem key={itemId} {...item} isOpen={isOpen} />
-          })}
+          {faq.map(({ id: itemId, ...item }) => (
+            <FaqItem key={itemId} {...item} />
+          ))}
         </ul>
       </div>
     </section>

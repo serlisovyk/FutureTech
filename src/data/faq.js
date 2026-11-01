@@ -12,6 +12,7 @@ export const faq = [
   {
     id: 'what-is-ai',
     answerId: 'what-is-ai-answer',
+    isOpen: true,
     question: 'What is AI?',
     answer:
       'AI stands for Artificial Intelligence, which refers to the simulation of human intelligence in machines. It enables them to perform tasks like problem-solving, learning, and decision-making.',

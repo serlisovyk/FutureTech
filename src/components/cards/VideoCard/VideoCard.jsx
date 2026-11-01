@@ -13,11 +13,11 @@ import './VideoCard.css'
 export function VideoCard(props) {
   const { title, text, duration, image, videoId, isEpisode = false } = props
 
-  const { listenPodcast } = uiLabels
+  const { listenPodcast, separator } = uiLabels
 
   const photoSizes = isEpisode ? episodeCardPhotoSizes : videoCardPhotoSizes
 
-  const hiddenLabel = `: ${title}`
+  const hiddenLabel = `${separator} ${title}`
 
   return (
     <article

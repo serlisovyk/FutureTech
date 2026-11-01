@@ -4,6 +4,7 @@ export const uiLabels = {
   host: 'Host',
   play: 'Play',
   about: 'about',
+  separator: ':',
 }
 
 export const counterLabels = {

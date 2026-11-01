@@ -4,3 +4,7 @@ export const stats = [
   { id: 'users', value: '10k+', label: 'Active Users' },
   { id: 'countries', value: '100+', label: 'Countries Reached' },
 ]
+
+const [resources, downloads, users] = stats
+
+export const heroStats = [resources, downloads, users]

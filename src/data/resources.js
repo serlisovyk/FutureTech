@@ -85,16 +85,6 @@ export const resourceShowcases = [
   },
 ]
 
-export const resourceLibrary = {
-  id: 'resource-library',
-  titleId: 'resource-library-title',
-  tag: 'Dive into the Details',
-  title: 'In-Depth Reports and Analysis',
-  tabListLabel: 'Resource types',
-  downloadLabel: 'Request the PDF',
-  downloadHref: '/contact',
-}
-
 export const resourceTabs = [
   {
     id: 'whitepapers',
@@ -202,6 +192,19 @@ export const resourceTabs = [
     ],
   },
 ]
+
+const [whitepapers] = resourceTabs
+
+export const resourceLibrary = {
+  id: 'resource-library',
+  titleId: 'resource-library-title',
+  tag: 'Dive into the Details',
+  title: 'In-Depth Reports and Analysis',
+  tabListLabel: 'Resource types',
+  selectedId: whitepapers.id,
+  downloadLabel: 'Request the PDF',
+  downloadHref: '/contact',
+}
 
 export const resourceCardsSection = {
   id: 'resource-cards',

@@ -1,4 +1,4 @@
-import { ARIA, SELECTORS, VALIDITY_ERRORS } from '@constants'
+import { ARIA, INPUT_TYPES, SELECTORS, VALIDITY_ERRORS } from '@constants'
 
 export class FormField {
   #control
@@ -51,7 +51,7 @@ export class FormField {
   }
 
   #trimValue() {
-    const isCheckbox = this.#control.type === 'checkbox'
+    const isCheckbox = this.#control.type === INPUT_TYPES.checkbox
     if (isCheckbox) return
 
     this.#control.value = this.#control.value.trim()
