@@ -23,6 +23,7 @@ added. Everything else is structure, so the proof is a diff of the built HTML an
 - **Tab index values** `0` / `-1` become `TAB_INDEX` in constants (`NO_INDEX` means "no such index", not a tab stop).
 - **`Stat`'s plus sign** is `STAT_PLUS` in constants; a util `splitStatValue` returns the number and `hasPlus`.
 - **`NewsCard` props** come from `getNewsCardProps(post)` (util); the four callers spread it, `key` beside.
+  Removed after the author's review (c37abf1): a util that only renames fields is not wanted; the props are passed in place.
 - **Texts**: `Read More`, `View Blog`, `Listen Podcast`, `Host`, `Play` and the words that join them to a title go to
   `data/ui-labels.js`; the avatar photo `sizes` and breakpoints to `data/card-photos.js`; the menu icon size to
   `data/navigation.js`.
@@ -65,7 +66,8 @@ added. Everything else is structure, so the proof is a diff of the built HTML an
 3. Import order (script) + the decision and the rule.
 4. Blank lines between computed `const`s (script, then Prettier).
 5. Pointwise fixes: `SectionHeading`, `ArticleSidebar`, `Stat`, `TAB_INDEX`, avatar sizes and menu icon in data, `ALL_CATEGORY`,
-   `getPostFeedStatus`, the texts of 5a, `getNewsCardProps`.
+   `getPostFeedStatus`, the texts of 5a, `getNewsCardProps`
+   (removed after the author's review, c37abf1: the `NewsCard` props are passed in place).
 6. `Rating`, `SocialLinks`, `ArrowCircle` + `LinkCard`, `CardGroup` + `DisclosureSection` (one commit each).
 7. `UiKit` in parts.
 8. CSS: tokens, `.split-layout`, inline one-off properties, logical `Header.css`.
