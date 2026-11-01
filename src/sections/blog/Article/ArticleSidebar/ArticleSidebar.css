@@ -18,6 +18,7 @@
   --article-counters-padding: fluid(20, 40, 50);
 
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 14px;
   padding-block: calc(var(--article-counters-padding) - 1px)

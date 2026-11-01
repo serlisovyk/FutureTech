@@ -8,16 +8,17 @@ the page, no page is wider than the viewport); no new behavior. No decision reco
 - **Scroll jump.** `.post-feed__tab` carries `scroll-margin-block-start: fluid(330, 330, 460)`. The margin is meant for the
   footer links (`/news#news-hub-feed-tab-health`, `/#blogs-feed-tab-<slug>`), which target the tab and need the section
   heading to stay in view, but it also applies when a script or the keyboard focuses a tab. With the tab list in the top
-  330 px of the viewport, ArrowRight / ArrowLeft and Shift+Tab move the page by 190-213 px (1440 and 390, `/news` and `/`).
-- **Overflow at 320.** `.article-sidebar__counters` is a flex row that does not wrap, so its three counters push the page
+  330 px of the viewport, ArrowRight / ArrowLeft and Shift+Tab move the page by 190-213 px (1440 and 390, `/news` and `/`).- **Overflow at 320.** `.article-sidebar__counters` is a flex row that does not wrap, so its three counters push the page
   wider than the viewport: `the-rise-of-artificial-intelligence-in-healthcare` by 9 px and
   `tech-giants-announce-new-product-line` by 1 px (the other nine articles and every other page fit).
 
 ## Changes
 
 - `PostFeed.css`: the `scroll-margin-block-start` moves from `.post-feed__tab` to `.post-feed__tab:target`, so only the
-  fragment navigation to a tab uses it. Check that a tab that stays `:target` after a footer link does not jump when it
-  is focused again; if it does, the rule is narrowed further.
+  fragment navigation to a tab uses it. Known leftover: the tab a footer link targeted stays `:target` (the script's
+  `replaceState` does not change it), so focusing that one tab again by key still moves the page by about 190 px.
+  `:target:not(:focus)` was tried and rejected: the browser focuses the target before it scrolls, so the footer link
+  stopped keeping the heading in view. Clearing the target belongs in `Tabs.js`, outside this task.
 - `ArticleSidebar.css`: `flex-wrap: wrap` on `.article-sidebar__counters` (the `row-gap` stays the 14 px `gap`).
 - No doc changes expected: no rule, map entry or record mentions either declaration.
 
