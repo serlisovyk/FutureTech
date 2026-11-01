@@ -1,4 +1,4 @@
-import { Icon } from '@components'
+import { SocialLinks } from '@components'
 import { getCurrentYear } from '@utils'
 import { footer, socials } from '@data'
 import { FooterColumn } from './FooterColumn'
@@ -28,15 +28,7 @@ export function Footer() {
               </li>
             ))}
           </ul>
-          <ul className="footer__socials">
-            {socials.map(({ name, href, icon }) => (
-              <li key={name}>
-                <a className="footer__social" href={href} aria-label={name}>
-                  <Icon name={icon} className="footer__social-icon" />
-                </a>
-              </li>
-            ))}
-          </ul>
+          <SocialLinks socials={socials} className="footer__socials" />
           <p className="footer__copyright">
             © {currentYear} {copyright}
           </p>

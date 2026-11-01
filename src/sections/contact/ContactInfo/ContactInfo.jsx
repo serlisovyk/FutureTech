@@ -1,8 +1,8 @@
+import { SocialLinks } from '@components'
 import { contactInfo, contacts } from '@data'
 import { ContactColumn } from './ContactColumn'
 import { ContactLinks } from './ContactLinks'
 import { ContactOffice } from './ContactOffice'
-import { ContactSocials } from './ContactSocials'
 import './ContactInfo.css'
 
 export function ContactInfo() {
@@ -38,7 +38,7 @@ export function ContactInfo() {
                       <ContactOffice address={address} directions={directions} />
                     )}
 
-                    {socials && <ContactSocials socials={socials} />}
+                    {socials && <SocialLinks socials={socials} variant="boxed" />}
                   </ContactColumn>
                 </li>
               )

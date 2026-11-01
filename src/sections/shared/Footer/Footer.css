@@ -106,34 +106,9 @@
 }
 
 .footer__socials {
-  display: flex;
-  gap: fluid(14, 14, 20);
-
   @mobile {
     order: -1;
   }
-}
-
-.footer__social {
-  position: relative;
-  display: flex;
-  color: var(--white);
-  transition: color var(--transition-duration);
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: -12px;
-  }
-
-  &:hover {
-    color: var(--yellow-55);
-  }
-}
-
-.footer__social-icon {
-  width: var(--size-icon);
-  height: var(--size-icon);
 }
 
 .footer__copyright {
