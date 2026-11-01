@@ -1,0 +1,22 @@
+.disclosure-section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: var(--card-group-gap);
+  overflow-x: clip;
+
+  @tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.disclosure-section__more {
+  display: none;
+
+  @mobile and (scripting: enabled) {
+    display: inline-flex;
+  }
+}

@@ -1,24 +1,3 @@
-.latest-podcasts__grid {
-  --episode-gap: fluid(60, 60, 92);
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: var(--episode-gap);
-  overflow-x: clip;
-
-  @tablet {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @mobile {
-    grid-template-columns: 1fr;
-  }
-}
-
-.latest-podcasts__more {
-  display: none;
-
-  @mobile and (scripting: enabled) {
-    display: inline-flex;
-  }
+.latest-podcasts {
+  --card-group-gap: fluid(60, 60, 92);
 }

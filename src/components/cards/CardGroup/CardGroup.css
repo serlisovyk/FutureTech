@@ -1,4 +1,4 @@
-.testimonial-group {
+.card-group {
   display: contents;
 
   @mobile {
@@ -8,11 +8,9 @@
   }
 }
 
-.testimonial-group__item {
-  --testimonial-padding: fluid(40, 60, 80);
-
+.card-group__item {
   position: relative;
-  padding-block: var(--testimonial-padding);
+  padding-block: var(--space-section);
 
   &::after {
     content: '';
@@ -30,7 +28,7 @@
     content: none;
     position: absolute;
     inset-block: 0;
-    inset-inline-start: calc(var(--testimonial-gap) / -2);
+    inset-inline-start: calc(var(--card-group-gap) / -2);
     border-inline-start: var(--border);
   }
 
@@ -43,11 +41,11 @@
       content: none;
     }
 
-    .testimonial-group + .testimonial-group &:nth-child(odd)::before {
+    .card-group + .card-group &:nth-child(odd)::before {
       content: '';
     }
 
-    .testimonial-group + .testimonial-group &:nth-child(even)::before {
+    .card-group + .card-group &:nth-child(even)::before {
       content: none;
     }
   }
