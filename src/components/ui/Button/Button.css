@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: calc(4px + (10 - 4) * var(--ramp-1440-1920));
+  gap: fluid(4, 4, 10);
   font-size: var(--font-size-button);
   line-height: 1.5;
   text-align: center;
@@ -12,10 +12,8 @@
     border-color var(--transition-duration),
     color var(--transition-duration);
 
-  @media (hover: hover) {
-    &:hover .button__icon {
-      transform: translate(2px, -2px);
-    }
+  &:hover .button__icon {
+    transform: translate(2px, -2px);
   }
 }
 
@@ -27,9 +25,9 @@
 
 .button--primary {
   position: relative;
-  padding-block: calc(10px + (14 - 10) * var(--ramp-1440-1920));
-  padding-inline: calc(14px + (20 - 14) * var(--ramp-1440-1920));
-  border-radius: calc(6px + (10 - 6) * var(--ramp-1440-1920));
+  padding-block: fluid(10, 10, 14);
+  padding-inline: fluid(14, 14, 20);
+  border-radius: fluid(6, 6, 10);
   background-color: var(--yellow-55);
   color: var(--dark-08);
   font-weight: 500;
@@ -41,23 +39,21 @@
     inset: -2px;
   }
 
-  @media (hover: hover) {
-    &:hover {
-      background-color: color-mix(in srgb, var(--yellow-55), var(--white) 15%);
-    }
+  &:hover {
+    background-color: color-mix(in srgb, var(--yellow-55), var(--white) 15%);
   }
 }
 
 .button--large {
-  padding-block: calc(14px + (18 - 14) * var(--ramp-1440-1920));
-  padding-inline: calc(34px + (46 - 34) * var(--ramp-1440-1920));
+  padding-block: fluid(14, 14, 18);
+  padding-inline: fluid(34, 34, 46);
   border-radius: 8px;
   line-height: 24px;
 }
 
 .button--outline,
 .button--ghost {
-  padding-inline: calc(19px + (23 - 19) * var(--ramp-1440-1920));
+  padding-inline: fluid(19, 19, 23);
   border: var(--border);
   color: var(--grey-60);
 
@@ -65,27 +61,23 @@
     color: var(--yellow-55);
   }
 
-  @media (hover: hover) {
-    &:hover {
-      border-color: var(--dark-40);
-      color: var(--white);
-    }
+  &:hover {
+    border-color: var(--dark-40);
+    color: var(--white);
   }
 }
 
 .button--outline {
-  padding-block: calc(13px + (17 - 13) * var(--ramp-1440-1920));
-  border-radius: calc(8px + (12 - 8) * var(--ramp-1440-1920));
+  padding-block: fluid(13, 13, 17);
+  border-radius: fluid(8, 8, 12);
   background-color: var(--dark-08);
 
   &.button--compact {
     padding-block: 13px;
   }
 
-  @media (hover: hover) {
-    &:hover {
-      background-color: var(--dark-10);
-    }
+  &:hover {
+    background-color: var(--dark-10);
   }
 }
 
@@ -94,24 +86,22 @@
   border-radius: var(--radius-control);
   background-color: var(--dark-10);
 
-  @media (hover: hover) {
-    &:hover {
-      background-color: var(--dark-15);
-    }
+  &:hover {
+    background-color: var(--dark-15);
   }
 
   &.button--compact {
-    padding-block: calc(13px + (17 - 13) * var(--ramp-1440-1920));
+    padding-block: fluid(13, 13, 17);
   }
 }
 
 .button--small {
-  padding-block: calc(7px + (9 - 7) * var(--ramp-1440-1920));
-  padding-inline: calc(13px + (15 - 13) * var(--ramp-1440-1920));
+  padding-block: fluid(7, 7, 9);
+  padding-inline: fluid(13, 13, 15);
   border-radius: var(--radius-control);
 
   & .button__icon {
-    width: calc(18px + (20 - 18) * var(--ramp-1440-1920));
-    height: calc(18px + (20 - 18) * var(--ramp-1440-1920));
+    width: fluid(18, 18, 20);
+    height: fluid(18, 18, 20);
   }
 }

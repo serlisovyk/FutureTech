@@ -1,7 +1,7 @@
 .tag {
   display: inline-block;
-  padding-block: calc(4px + (6 - 4) * var(--ramp-1440-1920));
-  padding-inline: calc(8px + (10 - 8) * var(--ramp-1440-1920));
+  padding-block: fluid(4, 4, 6);
+  padding-inline: fluid(8, 8, 10);
   border-radius: 4px;
   background-color: var(--dark-20);
   color: var(--white);

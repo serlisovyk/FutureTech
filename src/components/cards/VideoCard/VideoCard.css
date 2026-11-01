@@ -1,14 +1,12 @@
 .video-card {
   display: flex;
   flex-direction: column;
-  gap: calc(20px + (30 - 20) * var(--ramp-1440-1920));
+  gap: fluid(20, 20, 30);
 }
 
 .video-card__preview {
   position: relative;
-  height: calc(
-    210px + (331 - 210) * var(--ramp-390-1440) + (412 - 331) * var(--ramp-1440-1920)
-  );
+  height: fluid(210, 331, 412);
   border-radius: var(--radius-card);
   overflow: hidden;
 
@@ -47,21 +45,19 @@
 .video-card__body {
   display: flex;
   flex-direction: column;
-  gap: calc(4px + (6 - 4) * var(--ramp-390-1440) + (10 - 6) * var(--ramp-1440-1920));
+  gap: fluid(4, 6, 10);
 }
 
 .video-card__title {
   color: var(--white);
-  font-size: calc(
-    18px + (20 - 18) * var(--ramp-390-1440) + (24 - 20) * var(--ramp-1440-1920)
-  );
+  font-size: fluid(18, 20, 24);
   font-weight: 600;
 }
 
 .video-card__button {
   align-self: flex-start;
 
-  @media (width < 768px) {
+  @mobile {
     align-self: stretch;
   }
 
@@ -71,21 +67,14 @@
 }
 
 .video-card--episode {
-  gap: calc(
-    20px + (24 - 20) * var(--ramp-390-1440) + (30 - 24) * var(--ramp-1440-1920)
-  );
+  gap: fluid(20, 24, 30);
 
   & .video-card__preview {
-    height: calc(
-      208px + (244 - 208) * var(--ramp-390-1440) + (290 - 244) *
-        var(--ramp-1440-1920)
-    );
+    height: fluid(208, 244, 290);
   }
 
   & .video-card__body {
-    gap: calc(
-      6px + (10 - 6) * var(--ramp-390-1440) + (14 - 10) * var(--ramp-1440-1920)
-    );
+    gap: fluid(6, 10, 14);
   }
 
   & .video-card__title {

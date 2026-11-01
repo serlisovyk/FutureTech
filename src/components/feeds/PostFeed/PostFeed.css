@@ -1,14 +1,12 @@
 .post-feed {
-  --tabs-padding-block: calc(
-    20px + (40 - 20) * var(--ramp-390-1440) + (50 - 40) * var(--ramp-1440-1920)
-  );
+  --tabs-padding-block: fluid(20, 40, 50);
 }
 
 .post-feed__tabs {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(152px, 1fr);
-  gap: calc(14px + (20 - 14) * var(--ramp-1440-1920));
+  gap: fluid(14, 14, 20);
   padding-block: var(--tabs-padding-block) calc(var(--tabs-padding-block) - 1px);
   padding-inline: var(--space-container);
   border-bottom: var(--border);
@@ -23,14 +21,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-block: calc(
-    17px + (23 - 17) * var(--ramp-390-1440) + (29 - 23) * var(--ramp-1440-1920)
-  );
-  padding-inline: calc(
-    15px + (19 - 15) * var(--ramp-390-1440) + (23 - 19) * var(--ramp-1440-1920)
-  );
+  padding-block: fluid(17, 23, 29);
+  padding-inline: fluid(15, 19, 23);
   border: var(--border);
-  border-radius: calc(7px + (8 - 7) * var(--ramp-1440-1920));
+  border-radius: fluid(7, 7, 8);
   color: var(--grey-60);
   font-size: var(--font-size-button);
   white-space: nowrap;
@@ -38,11 +32,9 @@
     border-color var(--transition-duration),
     color var(--transition-duration);
 
-  @media (hover: hover) {
-    &:hover {
-      border-color: var(--dark-40);
-      color: var(--white);
-    }
+  &:hover {
+    border-color: var(--dark-40);
+    color: var(--white);
   }
 
   &[aria-selected='true'] {

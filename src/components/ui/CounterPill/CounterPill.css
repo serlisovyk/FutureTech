@@ -1,9 +1,9 @@
 .counter-pill {
   display: inline-flex;
   align-items: center;
-  gap: calc(2px + (4 - 2) * var(--ramp-1440-1920));
-  padding-block: calc(5px + (7 - 5) * var(--ramp-1440-1920));
-  padding-inline: calc(11px + (15 - 11) * var(--ramp-1440-1920));
+  gap: fluid(2, 2, 4);
+  padding-block: fluid(5, 5, 7);
+  padding-inline: fluid(11, 11, 15);
   border: var(--border);
   border-radius: var(--radius-pill);
   background-color: var(--dark-10);
@@ -19,13 +19,13 @@
 
 .counter-pill--large {
   gap: 4px;
-  padding-block: calc(7px + (9 - 7) * var(--ramp-1440-1920));
-  padding-inline: calc(13px + (23 - 13) * var(--ramp-1440-1920));
+  padding-block: fluid(7, 7, 9);
+  padding-inline: fluid(13, 13, 23);
   background-color: var(--dark-08);
 
   & .counter-pill__icon {
-    width: calc(26px + (34 - 26) * var(--ramp-1440-1920));
-    height: calc(26px + (34 - 26) * var(--ramp-1440-1920));
+    width: fluid(26, 26, 34);
+    height: fluid(26, 26, 34);
   }
 }
 

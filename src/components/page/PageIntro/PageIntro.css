@@ -3,24 +3,17 @@
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto;
   align-items: center;
-  gap: 20px calc(60px + (80 - 60) * var(--ramp-1440-1920));
-  padding-block: calc(
-      40px + (80 - 40) * var(--ramp-390-1440) + (130 - 80) * var(--ramp-1440-1920)
-    )
-    calc(
-      40px + (100 - 40) * var(--ramp-390-1440) + (130 - 100) * var(--ramp-1440-1920)
-    );
+  gap: 20px fluid(60, 60, 80);
+  padding-block: fluid(40, 80, 130) fluid(40, 100, 130);
 
-  @media (width < 768px) {
+  @mobile {
     grid-template-columns: 1fr;
     row-gap: 14px;
   }
 }
 
 .page-intro--spacious {
-  padding-block-end: calc(
-    40px + (100 - 40) * var(--ramp-390-1440) + (150 - 100) * var(--ramp-1440-1920)
-  );
+  padding-block-end: fluid(40, 100, 150);
 }
 
 .page-intro__title {
@@ -31,7 +24,7 @@
   grid-template-rows: subgrid;
   align-self: stretch;
 
-  @media (width < 768px) {
+  @mobile {
     display: block;
     grid-row: 1;
   }
@@ -52,7 +45,7 @@
   grid-column: 2;
   grid-row: 2;
 
-  @media (width < 768px) {
+  @mobile {
     grid-column: 1;
   }
 }
@@ -62,7 +55,7 @@
   grid-row: 3;
   justify-self: start;
 
-  @media (width < 768px) {
+  @mobile {
     grid-column: 1;
   }
 }

@@ -2,8 +2,8 @@
   display: grid;
   flex: none;
   place-items: center;
-  width: calc(50px + (70 - 50) * var(--ramp-1440-1920));
-  height: calc(50px + (70 - 50) * var(--ramp-1440-1920));
+  width: fluid(50, 50, 70);
+  height: fluid(50, 50, 70);
   color: var(--white);
 
   @media (scripting: none) {
@@ -12,6 +12,6 @@
 }
 
 .play-button__icon {
-  width: calc(40.6px + (56.88 - 40.6) * var(--ramp-1440-1920));
-  height: calc(40.6px + (56.88 - 40.6) * var(--ramp-1440-1920));
+  width: fluid(40.6, 40.6, 56.88);
+  height: fluid(40.6, 40.6, 56.88);
 }

@@ -1,6 +1,6 @@
 .avatar-group {
   display: inline-flex;
-  padding: calc(8px + (10 - 8) * var(--ramp-1440-1920));
+  padding: fluid(8, 8, 10);
   border-radius: 12px;
   background-color: var(--dark-08);
 
@@ -10,16 +10,16 @@
 }
 
 .avatar-group__photo {
-  width: calc(40px + (50 - 40) * var(--ramp-1440-1920));
-  height: calc(40px + (50 - 40) * var(--ramp-1440-1920));
-  border: calc(1px + (2 - 1) * var(--ramp-1440-1920)) solid var(--dark-40);
+  width: fluid(40, 40, 50);
+  height: fluid(40, 40, 50);
+  border: fluid(1, 1, 2) solid var(--dark-40);
   border-radius: 50%;
   background-color: var(--dark-15);
   object-fit: cover;
 }
 
 .avatar-group--capsule {
-  padding: calc(7px + (9 - 7) * var(--ramp-1440-1920));
+  padding: fluid(7, 7, 9);
   border: var(--border);
   border-radius: var(--radius-pill);
   background-color: var(--dark-10);
@@ -29,11 +29,7 @@
   }
 
   & .avatar-group__photo {
-    width: calc(
-      40px + (50 - 40) * var(--ramp-390-1440) + (60 - 50) * var(--ramp-1440-1920)
-    );
-    height: calc(
-      40px + (50 - 40) * var(--ramp-390-1440) + (60 - 50) * var(--ramp-1440-1920)
-    );
+    width: fluid(40, 50, 60);
+    height: fluid(40, 50, 60);
   }
 }

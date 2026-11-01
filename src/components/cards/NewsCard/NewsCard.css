@@ -1,12 +1,12 @@
 .news-card {
   display: flex;
   flex-direction: column;
-  gap: calc(16px + (20 - 16) * var(--ramp-1440-1920));
+  gap: fluid(16, 16, 20);
 }
 
 .news-card__photo {
   width: 100%;
-  height: calc(185px + (222 - 185) * var(--ramp-1440-1920));
+  height: fluid(185, 185, 222);
   border-radius: var(--radius-card);
   object-fit: cover;
 }
@@ -15,20 +15,18 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: calc(
-    10px + (16 - 10) * var(--ramp-390-1440) + (20 - 16) * var(--ramp-1440-1920)
-  );
+  gap: fluid(10, 16, 20);
 }
 
 .news-card__text {
   display: flex;
   flex-direction: column;
-  gap: calc(4px + (10 - 4) * var(--ramp-1440-1920));
+  gap: fluid(4, 4, 10);
 }
 
 .news-card__title {
   color: var(--white);
-  font-size: calc(16px + (20 - 16) * var(--ramp-1440-1920));
+  font-size: fluid(16, 16, 20);
   font-weight: 600;
 }
 
@@ -46,7 +44,7 @@
 
 .news-card__counters {
   display: flex;
-  gap: calc(8px + (10 - 8) * var(--ramp-1440-1920));
+  gap: fluid(8, 8, 10);
 }
 
 .news-card__button {

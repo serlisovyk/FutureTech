@@ -1,14 +1,14 @@
 .post-row {
   display: grid;
-  grid-template-columns: calc(305px + (384 - 305) * var(--ramp-1440-1920)) 1fr auto;
+  grid-template-columns: fluid(305, 305, 384) 1fr auto;
   grid-template-areas: 'author body button';
   align-items: center;
-  column-gap: calc(40px + (50 - 40) * var(--ramp-1440-1920));
+  column-gap: fluid(40, 40, 50);
   padding-block: var(--space-section) calc(var(--space-section) - 1px);
   padding-inline: var(--space-container);
   border-bottom: var(--border);
 
-  @media (width < 1024px) {
+  @tablet {
     grid-template-columns: 1fr auto;
     grid-template-areas:
       'author button'
@@ -21,15 +21,13 @@
   display: flex;
   grid-area: author;
   align-items: center;
-  gap: calc(
-    8px + (10 - 8) * var(--ramp-390-1440) + (16 - 10) * var(--ramp-1440-1920)
-  );
+  gap: fluid(8, 10, 16);
 }
 
 .post-row__avatar {
   flex: none;
-  width: calc(60px + (80 - 60) * var(--ramp-1440-1920));
-  height: calc(60px + (80 - 60) * var(--ramp-1440-1920));
+  width: fluid(60, 60, 80);
+  height: fluid(60, 60, 80);
   border-radius: 50%;
   background-color: var(--dark-15);
   object-fit: cover;
@@ -38,12 +36,12 @@
 .post-row__author-text {
   display: flex;
   flex-direction: column;
-  gap: calc(0px + (2 - 0) * var(--ramp-1440-1920));
+  gap: fluid(0, 0, 2);
 }
 
 .post-row__author-name {
   color: var(--white);
-  font-size: calc(18px + (20 - 18) * var(--ramp-1440-1920));
+  font-size: fluid(18, 18, 20);
   font-weight: 600;
 }
 
@@ -51,9 +49,7 @@
   display: flex;
   grid-area: body;
   flex-direction: column;
-  gap: calc(
-    20px + (24 - 20) * var(--ramp-390-1440) + (30 - 24) * var(--ramp-1440-1920)
-  );
+  gap: fluid(20, 24, 30);
 }
 
 .post-row__date {
@@ -64,20 +60,18 @@
 .post-row__text {
   display: flex;
   flex-direction: column;
-  gap: calc(4px + (6 - 4) * var(--ramp-390-1440) + (10 - 6) * var(--ramp-1440-1920));
+  gap: fluid(4, 6, 10);
 }
 
 .post-row__title {
   color: var(--white);
-  font-size: calc(
-    18px + (22 - 18) * var(--ramp-390-1440) + (26 - 22) * var(--ramp-1440-1920)
-  );
+  font-size: fluid(18, 22, 26);
   font-weight: 600;
 }
 
 .post-row__counters {
   display: flex;
-  gap: calc(8px + (10 - 8) * var(--ramp-1440-1920));
+  gap: fluid(8, 8, 10);
 }
 
 .post-row__button {
