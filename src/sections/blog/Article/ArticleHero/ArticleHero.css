@@ -3,13 +3,9 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  height: calc(
-    281px + (439 - 281) * var(--ramp-390-1440) + (598 - 439) * var(--ramp-1440-1920)
-  );
+  height: fluid(281, 439, 598);
   padding-inline: var(--space-container);
-  padding-block-end: calc(
-    17px + (35 - 17) * var(--ramp-390-1440) + (65 - 35) * var(--ramp-1440-1920)
-  );
+  padding-block-end: fluid(17, 35, 65);
 
   &::after {
     content: '';
@@ -36,9 +32,7 @@
   position: relative;
   z-index: 1;
   color: var(--white);
-  font-size: calc(
-    28px + (44 - 28) * var(--ramp-390-1440) + (64 - 44) * var(--ramp-1440-1920)
-  );
+  font-size: fluid(28, 44, 64);
   font-weight: 600;
   text-align: center;
 }

@@ -1,13 +1,7 @@
 .article {
-  --article-inset-wide: calc(
-    24px + (80 - 24) * var(--ramp-390-1440) + (162 - 80) * var(--ramp-1440-1920)
-  );
-  --article-inset-narrow: calc(
-    24px + (60 - 24) * var(--ramp-390-1440) + (80 - 60) * var(--ramp-1440-1920)
-  );
-  --article-sidebar-width: calc(
-    330px + (570 - 330) * var(--ramp-390-1440) + (682 - 570) * var(--ramp-1440-1920)
-  );
+  --article-inset-wide: fluid(24, 80, 162);
+  --article-inset-narrow: fluid(24, 60, 80);
+  --article-sidebar-width: fluid(330, 570, 682);
 }
 
 .article__layout {
@@ -15,7 +9,7 @@
   grid-template-columns: 1fr var(--article-sidebar-width);
   grid-template-areas: 'body sidebar';
 
-  @media (width < 1024px) {
+  @tablet {
     grid-template-columns: 1fr;
     grid-template-areas:
       'sidebar'

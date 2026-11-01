@@ -1,7 +1,7 @@
 .testimonial-group {
   display: contents;
 
-  @media (width < 768px) {
+  @mobile {
     &[hidden] {
       display: none;
     }
@@ -9,9 +9,7 @@
 }
 
 .testimonial-group__item {
-  --testimonial-padding: calc(
-    40px + (60 - 40) * var(--ramp-390-1440) + (80 - 60) * var(--ramp-1440-1920)
-  );
+  --testimonial-padding: fluid(40, 60, 80);
 
   position: relative;
   padding-block: var(--testimonial-padding);
@@ -23,7 +21,7 @@
     inset-inline: -100vmax;
     border-block-end: var(--border);
 
-    @media (width < 768px) {
+    @mobile {
       inset-inline: 0;
     }
   }
@@ -40,7 +38,7 @@
     content: '';
   }
 
-  @media (width < 1024px) {
+  @tablet {
     &:nth-child(3)::before {
       content: none;
     }
@@ -54,7 +52,7 @@
     }
   }
 
-  @media (width < 768px) {
+  @mobile {
     &::before {
       display: none;
     }

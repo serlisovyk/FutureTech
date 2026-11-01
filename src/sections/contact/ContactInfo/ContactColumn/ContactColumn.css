@@ -1,9 +1,7 @@
 .contact-column {
   display: flex;
   flex-direction: column;
-  gap: calc(
-    20px + (30 - 20) * var(--ramp-390-1440) + (50 - 30) * var(--ramp-1440-1920)
-  );
+  gap: fluid(20, 30, 50);
 }
 
 .contact-column__title {
@@ -21,33 +19,31 @@
 }
 
 .contact-column__links {
-  gap: calc(10px + (15 - 10) * var(--ramp-1440-1920));
+  gap: fluid(10, 10, 15);
 }
 
 .contact-column__office {
-  gap: calc(12px + (15 - 12) * var(--ramp-1440-1920));
+  gap: fluid(12, 12, 15);
 }
 
 .contact-column__address {
   color: var(--grey-60);
-  font-size: calc(16px + (18 - 16) * var(--ramp-1440-1920));
+  font-size: fluid(16, 16, 18);
   line-height: 1.5;
 }
 
 .contact-column__socials {
   display: flex;
   flex-wrap: wrap;
-  gap: calc(10px + (20 - 10) * var(--ramp-1440-1920));
+  gap: fluid(10, 10, 20);
 }
 
 .contact-column__social {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(
-    96px + (85 - 96) * var(--ramp-390-1440) + (84 - 85) * var(--ramp-1440-1920)
-  );
-  height: calc(48px + (60 - 48) * var(--ramp-1440-1920));
+  width: fluid(96, 85, 84);
+  height: fluid(48, 48, 60);
   border: var(--border);
   border-radius: 6px;
   background-color: var(--dark-10);
@@ -57,12 +53,10 @@
     border-color var(--transition-duration),
     color var(--transition-duration);
 
-  @media (hover: hover) {
-    &:hover {
-      border-color: var(--dark-40);
-      background-color: var(--dark-15);
-      color: var(--yellow-55);
-    }
+  &:hover {
+    border-color: var(--dark-40);
+    background-color: var(--dark-15);
+    color: var(--yellow-55);
   }
 }
 

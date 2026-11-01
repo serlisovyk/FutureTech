@@ -1,14 +1,12 @@
 .feature-group {
-  --feature-icon-size: calc(
-    50px + (60 - 50) * var(--ramp-390-1440) + (80 - 60) * var(--ramp-1440-1920)
-  );
-  --feature-intro-width: calc(413px + (519 - 413) * var(--ramp-1440-1920));
-  --feature-panel-padding: calc(60px + (80 - 60) * var(--ramp-1440-1920));
+  --feature-icon-size: fluid(50, 60, 80);
+  --feature-intro-width: fluid(413, 413, 519);
+  --feature-panel-padding: fluid(60, 60, 80);
 
   position: relative;
   display: grid;
   grid-template-columns: min(var(--feature-intro-width), 34%) 1fr;
-  column-gap: calc(60px + (80 - 60) * var(--ramp-1440-1920));
+  column-gap: fluid(60, 60, 80);
 
   & + &::before {
     content: '';
@@ -18,7 +16,7 @@
     border-block-start: var(--border);
   }
 
-  @media (width < 1024px) {
+  @tablet {
     grid-template-columns: 1fr;
   }
 }
@@ -27,12 +25,10 @@
   display: flex;
   flex-direction: column;
   align-self: center;
-  gap: calc(
-    20px + (40 - 20) * var(--ramp-390-1440) + (50 - 40) * var(--ramp-1440-1920)
-  );
+  gap: fluid(20, 40, 50);
   min-width: 0;
 
-  @media (width < 1024px) {
+  @tablet {
     padding-block: 50px;
   }
 }
@@ -52,29 +48,25 @@
 .feature-group__text {
   display: flex;
   flex-direction: column;
-  gap: calc(
-    6px + (10 - 6) * var(--ramp-390-1440) + (16 - 10) * var(--ramp-1440-1920)
-  );
+  gap: fluid(6, 10, 16);
 }
 
 .feature-group__cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: calc(
-    10px + (20 - 10) * var(--ramp-390-1440) + (30 - 20) * var(--ramp-1440-1920)
-  );
+  gap: fluid(10, 20, 30);
   padding-block: var(--feature-panel-padding);
   padding-inline-start: calc(var(--feature-panel-padding) - 1px);
   border-inline-start: var(--border);
 
-  @media (width < 1024px) {
+  @tablet {
     padding-block: 29px 30px;
     padding-inline: 16px;
     border-inline-start: 0;
     border-block-start: var(--border);
   }
 
-  @media (width < 768px) {
+  @mobile {
     grid-template-columns: 1fr;
   }
 }
@@ -82,9 +74,7 @@
 .feature-group__card {
   display: flex;
   flex-direction: column;
-  gap: calc(
-    4px + (16 - 4) * var(--ramp-390-1440) + (20 - 16) * var(--ramp-1440-1920)
-  );
+  gap: fluid(4, 16, 20);
   padding: calc(var(--space-card) - 1px);
   border: var(--border);
   border-radius: var(--radius-card);
@@ -93,8 +83,6 @@
 
 .feature-group__card-title {
   color: var(--white);
-  font-size: calc(
-    18px + (20 - 18) * var(--ramp-390-1440) + (24 - 20) * var(--ramp-1440-1920)
-  );
+  font-size: fluid(18, 20, 24);
   font-weight: 500;
 }

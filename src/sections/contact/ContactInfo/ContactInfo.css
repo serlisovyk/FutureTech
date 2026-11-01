@@ -1,5 +1,5 @@
 .contact-info__list {
-  --contact-info-gap: calc(60px + (100 - 60) * var(--ramp-1440-1920));
+  --contact-info-gap: fluid(60, 60, 100);
   --contact-info-column: 250px;
   --contact-info-bleed: 4px;
 
@@ -48,7 +48,5 @@
 }
 
 .contact-info__item {
-  padding-block: calc(
-    20px + (60 - 20) * var(--ramp-390-1440) + (80 - 60) * var(--ramp-1440-1920)
-  );
+  padding-block: fluid(20, 60, 80);
 }

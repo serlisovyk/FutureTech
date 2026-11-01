@@ -5,9 +5,7 @@
 .similar-news__inner {
   display: flex;
   flex-direction: column;
-  gap: calc(
-    30px + (40 - 30) * var(--ramp-390-1440) + (60 - 40) * var(--ramp-1440-1920)
-  );
+  gap: fluid(30, 40, 60);
   padding-block: calc(var(--space-section) - 1px) var(--space-section);
 }
 
@@ -24,7 +22,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 
-  @media (width < 768px) {
+  @mobile {
     grid-template-columns: 1fr;
   }
 }

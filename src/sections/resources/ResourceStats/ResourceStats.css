@@ -3,15 +3,13 @@
 }
 
 .resource-stats__list {
-  --resource-stats-gap: calc(
-    20px + (100 - 20) * var(--ramp-390-1440) + (160 - 100) * var(--ramp-1440-1920)
-  );
+  --resource-stats-gap: fluid(20, 100, 160);
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: var(--resource-stats-gap);
 
-  @media (width < 768px) {
+  @mobile {
     --resource-stats-gap: 20px;
 
     grid-template-columns: repeat(2, 1fr);
@@ -19,9 +17,7 @@
 }
 
 .resource-stats__item {
-  --resource-stats-padding: calc(
-    20px + (60 - 20) * var(--ramp-390-1440) + (80 - 60) * var(--ramp-1440-1920)
-  );
+  --resource-stats-padding: fluid(20, 60, 80);
 
   position: relative;
   padding-block: var(--resource-stats-padding);
@@ -38,7 +34,7 @@
     border-inline-start: var(--border);
   }
 
-  @media (width < 768px) {
+  @mobile {
     &:nth-child(n + 3) {
       padding-block-start: var(--resource-stats-padding);
     }

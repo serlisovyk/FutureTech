@@ -1,7 +1,7 @@
 .episode-group {
   display: contents;
 
-  @media (width < 768px) {
+  @mobile {
     &[hidden] {
       display: none;
     }
@@ -19,7 +19,7 @@
     inset-inline: -100vmax;
     border-block-end: var(--border);
 
-    @media (width < 768px) {
+    @mobile {
       inset-inline: 0;
     }
   }
@@ -36,7 +36,7 @@
     content: '';
   }
 
-  @media (width < 1024px) {
+  @tablet {
     &:nth-child(3)::before {
       content: none;
     }
@@ -50,7 +50,7 @@
     }
   }
 
-  @media (width < 768px) {
+  @mobile {
     &::before {
       display: none;
     }

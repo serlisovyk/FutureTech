@@ -1,10 +1,8 @@
 .form-error {
   min-height: var(--contact-form-gap);
-  padding-block-start: calc(
-    2px + (6 - 2) * var(--ramp-390-1440) + (8 - 6) * var(--ramp-1440-1920)
-  );
+  padding-block-start: fluid(2, 6, 8);
   color: var(--color-error);
-  font-size: calc(14px + (16 - 14) * var(--ramp-1440-1920));
+  font-size: fluid(14, 14, 16);
   letter-spacing: 0;
   line-height: 1.2;
 }

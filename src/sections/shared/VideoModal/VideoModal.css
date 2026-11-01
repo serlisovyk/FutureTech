@@ -36,9 +36,7 @@
 .video-modal__title {
   min-width: 0;
   color: var(--white);
-  font-size: calc(
-    18px + (20 - 18) * var(--ramp-390-1440) + (24 - 20) * var(--ramp-1440-1920)
-  );
+  font-size: fluid(18, 20, 24);
   font-weight: 600;
   line-height: 1.5;
 }

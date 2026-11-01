@@ -7,7 +7,7 @@
   grid-area: sidebar;
   border-inline-start: var(--border);
 
-  @media (width < 1024px) {
+  @tablet {
     --article-sidebar-start: var(--article-inset-narrow);
 
     border-inline-start: 0;
@@ -15,9 +15,7 @@
 }
 
 .article-sidebar__counters {
-  --article-counters-padding: calc(
-    20px + (40 - 20) * var(--ramp-390-1440) + (50 - 40) * var(--ramp-1440-1920)
-  );
+  --article-counters-padding: fluid(20, 40, 50);
 
   display: flex;
   align-items: center;
@@ -27,7 +25,7 @@
   padding-inline: var(--article-sidebar-start) var(--article-sidebar-end);
   border-block-start: var(--border);
 
-  @media (width < 768px) {
+  @mobile {
     justify-content: center;
   }
 }
@@ -41,5 +39,5 @@
 .article-sidebar__meta {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: calc(20px + (30 - 20) * var(--ramp-1440-1920)) 20px;
+  gap: fluid(20, 20, 30) 20px;
 }

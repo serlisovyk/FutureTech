@@ -1,12 +1,12 @@
 .featured-videos__list {
-  --video-gap: calc(100px + (160 - 100) * var(--ramp-1440-1920));
+  --video-gap: fluid(100, 100, 160);
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: var(--video-gap);
   overflow-x: clip;
 
-  @media (width < 768px) {
+  @mobile {
     grid-template-columns: 1fr;
   }
 }
@@ -22,7 +22,7 @@
     inset-inline: -100vmax;
     border-block-end: var(--border);
 
-    @media (width < 768px) {
+    @mobile {
       inset-inline: 0;
     }
   }
@@ -34,7 +34,7 @@
     inset-inline-start: calc(var(--video-gap) / -2);
     border-inline-start: var(--border);
 
-    @media (width < 768px) {
+    @mobile {
       display: none;
     }
   }

@@ -50,20 +50,20 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 
-  @media (width < 768px) {
+  @mobile {
     grid-template-columns: 1fr;
   }
 }
 
 .ui-kit__grid--video {
   grid-template-columns: repeat(2, 1fr);
-  column-gap: calc(100px + (160 - 100) * var(--ramp-1440-1920));
+  column-gap: fluid(100, 100, 160);
 
-  @media (width < 768px) {
+  @mobile {
     grid-template-columns: 1fr;
   }
 }
 
 .ui-kit__grid--episode {
-  column-gap: calc(60px + (92 - 60) * var(--ramp-1440-1920));
+  column-gap: fluid(60, 60, 92);
 }

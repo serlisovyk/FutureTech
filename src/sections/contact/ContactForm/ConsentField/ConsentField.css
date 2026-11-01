@@ -1,5 +1,5 @@
 .consent-field {
-  --consent-field-box: calc(24px + (28 - 24) * var(--ramp-1440-1920));
+  --consent-field-box: fluid(24, 24, 28);
 
   min-width: 0;
 }
@@ -8,11 +8,11 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: calc(6px + (10 - 6) * var(--ramp-1440-1920));
+  gap: fluid(6, 6, 10);
   color: var(--white);
   letter-spacing: 0;
 
-  @media (width < 768px) {
+  @mobile {
     min-height: 42px;
   }
 

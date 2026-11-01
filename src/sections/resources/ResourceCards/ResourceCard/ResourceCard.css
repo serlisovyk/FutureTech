@@ -2,14 +2,12 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  gap: calc(
-    20px + (24 - 20) * var(--ramp-390-1440) + (30 - 24) * var(--ramp-1440-1920)
-  );
+  gap: fluid(20, 24, 30);
 }
 
 .resource-card__photo {
   width: 100%;
-  height: calc(223px + (290 - 223) * var(--ramp-390-1440));
+  height: fluid(223, 290, 290);
   border-radius: var(--radius-card);
   object-fit: cover;
 }
@@ -17,7 +15,7 @@
 .resource-card__text {
   display: flex;
   flex-direction: column;
-  gap: calc(10px + (14 - 10) * var(--ramp-1440-1920));
+  gap: fluid(10, 10, 14);
 }
 
 .resource-card__title {
@@ -29,7 +27,7 @@
 .resource-card__buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: calc(10px + (20 - 10) * var(--ramp-1440-1920));
+  gap: fluid(10, 10, 20);
   margin-block-start: auto;
 }
 

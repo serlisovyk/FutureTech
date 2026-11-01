@@ -1,6 +1,6 @@
 .phone-field {
   display: flex;
-  gap: calc(12px + (16 - 12) * var(--ramp-1440-1920));
+  gap: fluid(12, 12, 16);
 }
 
 .phone-field__code {
@@ -9,8 +9,8 @@
   flex: none;
   align-items: center;
   justify-content: center;
-  gap: calc(4px + (6 - 4) * var(--ramp-1440-1920));
-  width: calc(78px + (100 - 78) * var(--ramp-1440-1920));
+  gap: fluid(4, 4, 6);
+  width: fluid(78, 78, 100);
   border: var(--border-control);
   border-radius: 7px;
   background-color: var(--dark-10);
@@ -23,8 +23,8 @@
 
 .phone-field__flag {
   flex: none;
-  width: calc(30px + (34 - 30) * var(--ramp-1440-1920));
-  height: calc(30px + (34 - 30) * var(--ramp-1440-1920));
+  width: fluid(30, 30, 34);
+  height: fluid(30, 30, 34);
   border-radius: var(--radius-pill);
   overflow: hidden;
 }

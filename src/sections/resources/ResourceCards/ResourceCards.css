@@ -3,13 +3,13 @@
 }
 
 .resource-cards__list {
-  --resource-cards-gap: calc(60px + (92 - 60) * var(--ramp-1440-1920));
+  --resource-cards-gap: fluid(60, 60, 92);
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: var(--resource-cards-gap);
 
-  @media (width < 768px) {
+  @mobile {
     grid-template-columns: 1fr;
   }
 }
@@ -26,12 +26,12 @@
     inset-inline-start: calc(var(--resource-cards-gap) / -2);
     border-inline-start: var(--border);
 
-    @media (width < 768px) {
+    @mobile {
       display: none;
     }
   }
 
-  @media (width < 768px) {
+  @mobile {
     &:not(:first-child) {
       border-block-start: var(--border);
     }

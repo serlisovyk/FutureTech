@@ -1,7 +1,5 @@
 .article-section {
-  --article-text-gap: calc(
-    14px + (20 - 14) * var(--ramp-390-1440) + (24 - 20) * var(--ramp-1440-1920)
-  );
+  --article-text-gap: fluid(14, 20, 24);
 
   display: flex;
   flex-direction: column;
@@ -11,9 +9,7 @@
 
 .article-section__title {
   color: var(--white);
-  font-size: calc(
-    18px + (22 - 18) * var(--ramp-390-1440) + (28 - 22) * var(--ramp-1440-1920)
-  );
+  font-size: fluid(18, 22, 28);
   font-weight: 500;
 }
 
@@ -24,13 +20,13 @@
 }
 
 .article-section--lead {
-  --article-title-gap: calc(6px + (14 - 6) * var(--ramp-1440-1920));
+  --article-title-gap: fluid(6, 6, 14);
 
   padding-block: calc(var(--space-section) - 1px);
   padding-inline: var(--article-inset-wide) var(--article-inset-narrow);
   border-block: var(--border);
 
   & .article-section__title {
-    font-size: calc(18px + (20 - 18) * var(--ramp-390-1440));
+    font-size: fluid(18, 20, 20);
   }
 }

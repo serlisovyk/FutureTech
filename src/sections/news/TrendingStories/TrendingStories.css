@@ -4,7 +4,7 @@
   gap: 30px;
   padding-block: var(--space-section);
 
-  @media (width < 768px) {
+  @mobile {
     grid-template-columns: 1fr;
   }
 }

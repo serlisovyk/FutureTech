@@ -1,16 +1,16 @@
 .latest-podcasts__grid {
-  --episode-gap: calc(60px + (92 - 60) * var(--ramp-1440-1920));
+  --episode-gap: fluid(60, 60, 92);
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: var(--episode-gap);
   overflow-x: clip;
 
-  @media (width < 1024px) {
+  @tablet {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (width < 768px) {
+  @mobile {
     grid-template-columns: 1fr;
   }
 }
@@ -18,7 +18,7 @@
 .latest-podcasts__more {
   display: none;
 
-  @media (width < 768px) and (scripting: enabled) {
+  @mobile and (scripting: enabled) {
     display: inline-flex;
   }
 }
