@@ -1,8 +1,6 @@
 {
   "name": "futuretech",
   "description": "A multi-page tech blog built with minista 5, Vite 8, JSX rendered to static HTML, plain CSS and vanilla JavaScript.",
-  "homepage": "https://futuretech-cyan.vercel.app",
-  "repository": "github:serlisovyk/FutureTech",
   "author": "Serhii Lisovyk",
   "private": true,
   "type": "module",
