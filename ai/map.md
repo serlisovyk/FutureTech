@@ -93,7 +93,7 @@ Navigation only: where things live and who owns what. How it works is in the cod
   Components and sections import their own stylesheet; the build bundles all into one file.
 - `src/scripts/` — all browser JavaScript: `main.js` (the one entry, loaded by the layout: a table of root hook →
   class, each root found is created and started), `components/` (the widgets `Tabs`, `Disclosure`, `Toggle`, `VideoModal`, `CountUp`, `FormField`, `LikeButton`, `Reveal`: root `<html data-reveal-root>`),
-  `utils/` (helpers: `storage`, `observe-visible`, `can-observe-visible`, `is-reduced-motion`), `controllers/`
+  `services/` (`StorageItem`, `VisibilityObserver`), `controllers/`
   (one per section: `HeaderController`, which runs the menu; `VideoModalController`, which opens the modal from any play button;
   `PostFeedController`, which filters a feed's rows by the selected tab; `ContactFormController`, which checks and completes the form;
   `ArticleController`, which runs "Read Full Blog").
