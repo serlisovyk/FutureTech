@@ -63,12 +63,8 @@
 
 .contact-form__row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   column-gap: 50px;
-
-  @media (width < 768px) {
-    grid-template-columns: 1fr;
-  }
 }
 
 .contact-form__actions {
@@ -94,10 +90,19 @@
 }
 
 .contact-form__status {
+  position: absolute;
+  inset-block-start: 100%;
+  inset-inline: 0;
+  padding-block-start: 12px;
   color: var(--yellow-55);
   letter-spacing: 0;
 
-  &:not(:empty) {
-    margin-block-start: 20px;
+  @media (width < 1024px) {
+    position: static;
+    padding-block-start: 0;
+
+    &:not(:empty) {
+      margin-block-start: 20px;
+    }
   }
 }
